@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Signup and login</title>
+    <title>Digital Maturity Model - ICTA</title>
     <link rel="stylesheet" href="{{asset('cssfile/bootstrap.min.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('cssfile/aos.min.css') }}">
@@ -23,7 +23,7 @@
                     <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 14px;color: rgba(255,255,255,0.9);font-family: Poppins, sans-serif;">ICTA Digital Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">Capacity Building Drive</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">Download</a></li>
-                </ul><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Our Volunteers&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Events&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Contact Us&nbsp;</span><a class="btn btn-primary ms-md-2" role="button" href="#" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;), rgb(253,85,13);font-family: Poppins, sans-serif;">GET INVOLVED</a>
+                </ul><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Our Volunteers&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Events&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Contact Us&nbsp;</span><a class="btn btn-primary ms-md-2" role="button" href="#" style="border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;), rgb(253,85,13);font-family: Poppins, sans-serif;">GET INVOLVED</a>
             </div>
         </div>
     </nav>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('preliminary_assessment_results', function (Blueprint $table) {
+        Schema::create('preliminary_results', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('overall_result');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('preliminary_assessment_result');
+        Schema::dropIfExists('preliminary_result');
     }
 };

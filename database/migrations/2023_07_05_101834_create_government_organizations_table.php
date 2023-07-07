@@ -22,10 +22,11 @@ return new class extends Migration
             $table->string('districts_of_operations');
             $table->string('phone_number');
             $table->string('email');
+            $table->string('name_of_the_head');
             $table->string('designation');
-            $table->string('cio_name');
-            $table->string('cio_email');
-            $table->string('cio_contact_no');
+            $table->string('cdio_name');
+            $table->string('cdio_email');
+            $table->string('cdio_contact_no');
             $table->foreignId('user_id')->constrained('users');
         });
     }
