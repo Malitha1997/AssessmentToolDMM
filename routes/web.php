@@ -46,6 +46,7 @@ Auth::routes();
 
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
 });
 
 /*All Admin Routes List*/

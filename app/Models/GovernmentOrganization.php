@@ -19,17 +19,16 @@ class GovernmentOrganization extends Model
         'phone_number',
         'email',
         'designation',
-        'cio_name',
-        'cio_email',
-        'cio_contact_no'
+        'cdio_name',
+        'cdio_email',
+        'cdio_contact_no'
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
-    
-    public function preliminaryAssessments()
-    {
+
+    public function preliminaryAssessments(){
         return $this->hasMany(PreliminaryAssessment::class);
     }
 

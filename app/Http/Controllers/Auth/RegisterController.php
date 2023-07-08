@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'password' => 'required', 'string', 'min:8', 'same:confirm-password',
         ]);
 
+
     }
 
     protected function create(array $data)
@@ -62,6 +63,9 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
+
+        // return redirect()->route('govorganizations.create')
+        //         ->with('error','User account created successfully.');
     }
 
     /**
