@@ -50,8 +50,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => 'required', 'string', 'max:255', 'unique:users',
-            'password' => 'required', 'string', 'min:8', 'same:confirm-password',
+            'username' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:6|same:confirm-password',
         ]);
 
 
@@ -76,21 +76,4 @@ class RegisterController extends Controller
      */
 
 
-    // public function store(Request $request){
-
-    //     request()->validate([
-    //         'username' => 'required', 'string', 'max:255', 'unique:users',
-    //         'password' => 'required|same:confirm-password',
-    //     ]);
-
-    //     $user = new User;
-
-    //     $user->username = $request->username;
-    //     $user->password = Hash::make($request->password);
-
-    //     $user->save();
-
-    //     return redirect()->route('login')
-    //                         ->with('success','Account created successfully.');
-    // }
 }

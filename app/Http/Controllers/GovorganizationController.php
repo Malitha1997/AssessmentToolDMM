@@ -27,8 +27,9 @@ class GovorganizationController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {//dd($request);
         request()->validate([
+            'user_id'=> 'required',
             'gov_org_name'=> 'required|string|min:1|max:255',
             'organization_category'=> 'required|string',
             'number_of_employee'=> 'required|string',
@@ -44,9 +45,10 @@ class GovorganizationController extends Controller
             'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/'
 
         ]);
-
+        //dd($request);
         $governmentOrganization = new GovernmentOrganization;
 
+        $governmentOrganization->user_id = $request->user_id;
         $governmentOrganization->gov_org_name = $request->gov_org_name;
         $governmentOrganization->organization_category = $request->organization_category;
         $governmentOrganization->number_of_employee = $request->number_of_employee;
@@ -63,7 +65,7 @@ class GovorganizationController extends Controller
 
         $governmentOrganization->save();
 
-        return redirect()->route('home')
+        return redirect()->route('login')
                         ->with('success','User created successfully.');
     }
 

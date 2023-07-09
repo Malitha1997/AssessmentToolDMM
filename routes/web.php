@@ -24,22 +24,7 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
-// Route::get('/navbar', function () {
-//     return view('layouts.navbar');
-// });
-
-// Route::get('/signuplogin', function () {
-//     return view('Signup.signuplogin');
-// });
-
-// Route::get('/signup2', function () {
-//     return view('Signup.signup');
-// });
-
-//Route::get('/landing', [App\Http\Controllers\HomeController::class, 'landingHome'])->name('landing');
 Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 /*All Normal Users Routes List*/
@@ -47,6 +32,7 @@ Auth::routes();
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
+    Route::resource('govorganizations', GovorganizationController::class);
 });
 
 /*All Admin Routes List*/
