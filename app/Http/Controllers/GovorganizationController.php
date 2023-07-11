@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\GovernmentOrganization;
+use Illuminate\Validation\Validator;
+
 
 class GovorganizationController extends Controller
 {
@@ -29,20 +31,20 @@ class GovorganizationController extends Controller
     public function store(Request $request)
     {//dd($request);
         request()->validate([
-            'user_id'=> 'required',
+            'user_id'=> 'required|string',
             'gov_org_name'=> 'required|string|min:1|max:255',
             'organization_category'=> 'required|string',
-            'number_of_employee'=> 'required|string',
+            'number_of_employee'=> 'required|int',
             'related_ministry'=> 'required|string',
             'types_of_services_provide'=> 'required|string',
+            'availablity_of_IT_unit'=>'required|string',
             'districts_of_operations'=> 'required|string',
             'phone_number'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
-            'email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'name_of_the_head'=> 'required|string',
             'designation'=> 'required|string',
             'cdio_name'=> 'required|string|min:1|max:255',
             'cdio_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/'
+            'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
 
         ]);
         //dd($request);
@@ -54,9 +56,9 @@ class GovorganizationController extends Controller
         $governmentOrganization->number_of_employee = $request->number_of_employee;
         $governmentOrganization->related_ministry = $request->related_ministry;
         $governmentOrganization->types_of_services_provide = $request->types_of_services_provide;
+        $governmentOrganization->availablity_of_IT_unit = $request->availablity_of_IT_unit;
         $governmentOrganization->districts_of_operations = $request->districts_of_operations;
         $governmentOrganization->phone_number = $request->phone_number;
-        $governmentOrganization->email = $request->email;
         $governmentOrganization->name_of_the_head = $request->name_of_the_head;
         $governmentOrganization->designation = $request->designation;
         $governmentOrganization->cdio_name = $request->cdio_name;

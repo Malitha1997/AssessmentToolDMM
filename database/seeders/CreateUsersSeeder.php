@@ -33,19 +33,22 @@ class CreateUsersSeeder extends Seeder
         $users = [
 
             [
-               'username'=>'admin@icta.lk',
+               'username'=>'admin',
+               'email'=>'malithayasas123@gmail.com',
                'type'=>1,
                'password'=> bcrypt('123456'),
             ],
 
             [
-               'username'=>'manager@icta.lk',
+               'username'=>'manager',
+               'email'=>'manager@icta.lk',
                'type'=> 2,
                'password'=> bcrypt('123456'),
             ],
 
             [
-               'username'=>'user@icta.lk',
+               'username'=>'user',
+               'email'=>'user@icta.lk',
                'type'=>0,
                'password'=> bcrypt('123456'),
             ],

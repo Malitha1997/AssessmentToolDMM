@@ -10,12 +10,25 @@
             <form method="POST" action="{{ route('register') }}">
                 {{csrf_field()}}
             <div class="d-flex" style="width: 900px;height: 540px;font-family: Poppins, sans-serif;background: #ffffff;border-radius: 10px;padding-top: 0px;margin-top: 50px;margin-left: 40px;">
-                <div class="col" style="margin-top: 20px;"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Enter Username</span>
+                <div class="col" style="margin-top: 20px;">
                     <div class="row" style="margin-top: 20px;">
-                        <div class="col"><input class="form-control-lg" type="text" name="username" id="username" placeholder="Enter the Username" style="margin-left: 50px;width: 800px;">
-                            @if($errors->has('username'))
-                            <p class="text-danger">{{ $errors->first('username') }}</p>
-                            @endif
+                        <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Username</span>
+                            <div class="row">
+                                <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="username" id="username" type="text" placeholder="Enter the Username" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('username') }}">
+                                    @if($errors->has('username'))
+                                    <p class="text-danger">{{ $errors->first('username') }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Email</span>
+                            <div class="row">
+                                <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="email" id="email" type="email" placeholder="Enter the Email" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('email') }}">
+                                    @if($errors->has('email'))
+                                    <p class="text-danger">{{ $errors->first('email') }}</p>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row" style="margin-top: 30px;">

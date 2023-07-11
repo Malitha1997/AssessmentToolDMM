@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('types_of_services_provide');
             $table->string('districts_of_operations');
             $table->string('phone_number');
-            $table->string('email');
+            $table->string('availablity_of_IT_unit');
             $table->string('name_of_the_head');
             $table->string('designation');
             $table->string('cdio_name');

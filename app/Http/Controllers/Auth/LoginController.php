@@ -133,6 +133,49 @@ class LoginController extends Controller
 
     }
 
+    public function login2(Request $request): RedirectResponse
+    {
+        $input = $request->all();
+
+        $this->validate($request, [
+
+            'username' => 'required',
+
+            'password' => 'required',
+
+        ]);
+
+
+        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
+
+        {
+
+            if (auth()->user()->type == 'admin') {
+
+                return redirect()->route('home');
+
+            }else if (auth()->user()->type == 'manager') {
+
+                return redirect()->route('home');
+
+            }else{
+
+                return redirect()->route('home');
+
+            }
+
+        }else{
+
+            return redirect()->route('login')
+
+                ->with('error','Username And Password Are Wrong.');
+
+        }
+
+
+
+    }
+
     public function logout(){
         Auth::logout();
         Session::flush();

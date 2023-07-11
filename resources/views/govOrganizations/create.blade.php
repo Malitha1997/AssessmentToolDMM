@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col">
                                 <select id="related_ministry" name="related_ministry" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px;font-family: Poppins, sans-serif;color: #000000;margin-bottom: 0;padding-bottom: 0" value="{{ old('related_ministry')}}">
-                                    <option value="--Select option--">--Select option--</option>
+                                    <option  value="none" selected disabled hidden>--Select option--</option>
                                     <option value="A">Ministry of A</option>
                                     <option value="B">Ministry of B</option>
                                     <option value="C">Ministry of C</option>
@@ -56,7 +56,7 @@
                             <div class="col">
                                 <div class="col">
                                     <select id="organization_category" name="organization_category" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px" value="{{ old('organization_category')}}">
-                                        <option value="--Select option--">--Select option--</option>
+                                        <option  value="none" selected disabled hidden>--Select option--</option>
                                         <option value="A">Organization A</option>
                                         <option value="B">Organization B</option>
                                         <option value="C">Organization C</option>
@@ -78,7 +78,7 @@
                         <div class="row">
                             <div class="col">
                                 <select id="types_of_services_provide" name="types_of_services_provide" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px" value="{{ old('types_of_services_provide')}}">
-                                    <option value="--Select option--">--Select option--</option>
+                                    <option  value="none" selected disabled hidden>--Select option--</option>
                                     <option value="A">Service A</option>
                                     <option value="B">Service B</option>
                                     <option value="C">Service C</option>
@@ -121,10 +121,16 @@
                 </div>
                 <div class="row" style="margin-top: 10px;padding-top: 30px;padding-bottom: 30px;">
                     <div class="col"><span style="margin-top: 10px;margin-left: 10px;padding-top: 10px;padding-left: 5px;">Does the&nbsp; organization have a IT unit?</span></div>
-                    <div class="col"><label class="switch">
-                <input type="checkbox">
-                    <span class="slider round"></span>
-                </label></div>
+                    <div class="col">
+                        <select id="availablity_of_IT_unit" name="availablity_of_IT_unit" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px" value="{{ old('availablity_of_IT_unit')}}">
+                            <option  value="none" selected disabled hidden>--Select option--</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        @if($errors->has('availablity_of_IT_unit'))
+                        <p class="text-danger">{{ $errors->first('availablity_of_IT_unit') }}</p>
+                        @endif
+                    </div>
                 </div><span style="margin-top: 8px;margin-left: 10px;padding-top: 10px;padding-left: 5px;color: #f01f75;">Organization&nbsp; Contact Detaill</span>
                 <div class="row d-flex flex-row justify-content-center align-items-center" style="width: 1080px;margin-left: 5px;padding-top: 30px;">
                     <div class="col">
@@ -139,18 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="col"><span>Email Address *</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col"><input class="form-control-lg" name="email" type="email" placeholder="Enter the email address" style="width: 500px;" value="{{ old('email')}}">
-                                @if($errors->has('email'))
-                                <p class="text-danger">{{ $errors->first('email') }}</p>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div style="width: 1083px;height: 750px;color: rgb(0,0,0);background: #ffffff;margin-left: 33px;margin-top: 33px;border-radius: 10px;"><span style="margin-top: 50px;margin-bottom: 10px;margin-left: 10px;padding-top: 0px;padding-left: 5px;color: #f01f75;">Details of the Head of&nbsp; Organization</span>
@@ -169,7 +164,7 @@
                     </div>
                     <div class="col">
                         <div class="row">
-                            <div class="col"><span>Designation *</span></div>
+                            <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;">Designation *</span></div>
                         </div>
                         <div class="row">
                             <div class="col"><input class="form-control-lg" name="designation" type="text" placeholder="Enter the designation" style="width: 500px;" value="{{ old('designation')}}">
@@ -205,7 +200,7 @@
                     </div>
                     <div class="col">
                         <div class="row">
-                            <div class="col"><span>CDIO's Email Address *</span></div>
+                            <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;">CDIO's Email Address *</span></div>
                         </div>
                         <div class="row">
                             <div class="col"><input class="form-control-lg" name="cdio_email" type="email" placeholder="CDIO's email address" style="width: 500px;" value="{{ old('cdio_email')}}">
@@ -231,7 +226,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding-top: 100px;padding-bottom: 0px;padding-left: 750px;">
-                    <div class="col justify-content-center align-items-end align-content-end me-auto" style="height: 48px;"><button class="btn btn-primary btn-lg" type="reset" style="font-family: Poppins, sans-serif;padding-right: 11px;margin-right: 30px;background: rgb(255,255,255);color: rgb(238,110,17);border-color: rgb(238,110,17);">Cancel</button>
+                    <div class="col justify-content-center align-items-end align-content-end me-auto" style="height: 48px;">
                         <button class="btn btn-primary btn-lg" type="submit" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;padding-left: 10px;text-align: center;border-color: rgb(254,80,57);">Submit</button></div>
                 </div>
             </div>

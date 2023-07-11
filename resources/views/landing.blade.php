@@ -68,11 +68,10 @@
             alt="Screenshot56141615"
             class="landing-page-screenshot5614"
           />
-          <span class="landing-page-text21"><span>Get Start</span></span>
+          <span class="landing-page-text21"><a href="{{ route('login') }}" style="color: #5f2b84;"><span style="color: rgb(0, 0, 0);">Get start</span><br><br></a></span></div>
         </div>
       </div>
     </div>
   </div>
 
 
-  

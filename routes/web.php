@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GovorganizationController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ Route::get('/landing', function () {
 
 Auth::routes();
 
-
 /*All Normal Users Routes List*/
 
 Route::middleware(['auth', 'user-access:user'])->group(function () {
@@ -43,3 +43,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 Route::resource('users', UserController::class);
 Route::resource('govorganizations', GovorganizationController::class);
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
