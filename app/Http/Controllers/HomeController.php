@@ -83,6 +83,11 @@ class HomeController extends Controller
         return view('managerHome');
     }
 
+    public function userHome(): View
+    {
+        return view('userHome');
+    }
+
     public function landingHome(): View
     {
         return view('landing');

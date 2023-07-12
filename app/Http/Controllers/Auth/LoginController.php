@@ -56,7 +56,7 @@ class LoginController extends Controller
 
      */
 
-    protected $redirectTo = RouteServiceProvider::HOME;
+     protected $redirectTo = '/home';
 
 
 
@@ -117,7 +117,7 @@ class LoginController extends Controller
 
             }else{
 
-                return redirect()->route('home');
+                return redirect()->route('userHome');
 
             }
 

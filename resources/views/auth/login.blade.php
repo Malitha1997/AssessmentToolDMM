@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     </section>
-                        <a href="{{ route('password.request') }}" style="color: rgb(0,0,0);">Forgot Password</a>
+                        <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);">Forgot Password</a>
                         <button type="submit" class="btn btn-primary"  style="border-width: 0px;margin-right: 0px;margin-left: 50px;margin-top: 100px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;">{{ __('Login') }}</button>
                 </div>
             </div>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\GovernmentOrganization;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
+use App\Models\GovernmentOrganization;
+use App\Providers\RouteServiceProvider;
 
 
 class GovorganizationController extends Controller
@@ -67,8 +70,11 @@ class GovorganizationController extends Controller
 
         $governmentOrganization->save();
 
-        return redirect()->route('login')
-                        ->with('success','User created successfully.');
+        $user=new User;
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
     }
 
     /**

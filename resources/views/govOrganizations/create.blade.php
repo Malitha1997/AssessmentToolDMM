@@ -179,7 +179,7 @@
                     <div class="col"><span style="color: #f01f75;">CDIO's Contact Detail</span></div>
                 </div>
                 <div class="row" style="margin-top: 10px;padding-top: 30px;padding-bottom: 30px;">
-                    <div class="col"><span style="margin-top: 10px;margin-left: 10px;padding-top: 10px;padding-left: 5px;">Does the&nbsp; organization already have a CDIO?</span></div>
+                    <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;margin-top: 10px;margin-left: 10px;padding-top: 10px;padding-left: 5px;">Does the organization already have a CDIO?</span></div>
                     <div class="col"><label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -227,10 +227,18 @@
                 </div>
                 <div class="row" style="padding-top: 100px;padding-bottom: 0px;padding-left: 750px;">
                     <div class="col justify-content-center align-items-end align-content-end me-auto" style="height: 48px;">
-                        <button class="btn btn-primary btn-lg" type="submit" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;padding-left: 10px;text-align: center;border-color: rgb(254,80,57);">Submit</button></div>
+                        <button class="btn btn-primary btn-lg" type="submit" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;padding-left: 10px;text-align: center;border-color: rgb(254,80,57);" onclick="function1()">Submit</button></div>
                 </div>
             </div>
             </form>
         </div>
     </section>
+    <script language="JavaScript">
+        function function1() { 
+            swal("Success!", "Successfully Registered!", "success");
+        }
+        function function2() { 
+            swal("Sorry!", "Opps, something went wrong. Please try again later.", "error");
+        }
+    </script>
     @endsection

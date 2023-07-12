@@ -25,14 +25,17 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
+Route::resource('users', UserController::class);
+
 Auth::routes();
 
 /*All Normal Users Routes List*/
 
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('userHome');
     Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
     Route::resource('govorganizations', GovorganizationController::class);
+    
 });
 
 /*All Admin Routes List*/
@@ -48,3 +51,4 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+

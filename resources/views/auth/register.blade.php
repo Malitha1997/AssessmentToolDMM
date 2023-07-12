@@ -55,7 +55,7 @@
                         <div class="col" style="padding-top: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;border-radius: 10px;"><span style="color: #5f2b84;">Password must be at least&nbsp; 6 characters and contain at least one letter and one number. Password are case-sensitive.</span></div>
                     </div>
                     <div class="row">
-                        <div class="col d-flex flex-column justify-content-center align-items-center" style="margin-top: 30px;"><button class="btn btn-primary btn-lg" type="submit" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);border-width: 0px;">Continue</button></div>
+                        <div class="col d-flex flex-column justify-content-center align-items-center" style="margin-top: 30px;"><button class="btn btn-primary btn-lg" type="submit" style="background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);border-width: 0px;" onclick="function3()">Continue</button></div>
                     </div>
                     <div class="row" style="font-size: 20px;">
                         <div class="col d-flex flex-column justify-content-center align-items-center align-content-center" style="margin-top: 20px;"><span class="align-content-center" style="color: rgb(0,0,0);width: 500px;text-align: center;padding-bottom: 0px;">Existing user? Click here to&nbsp;<a href="{{ route('login') }}" style="color: #5f2b84;"><span style="color: rgb(0, 0, 0);">log in</span><br><br></a></span></div>
@@ -65,4 +65,9 @@
             </form>
         </div>
     </section>
+    <script language="JavaScript">
+        function function3() { 
+            swal("Success!", "Successfully Created Account.You can now register!");
+        }
+    </script>
     @endsection
