@@ -7,16 +7,17 @@
     <section data-aos="fade-down" data-aos-duration="1000" style="height: 800px;">
         <div class="container" style="width: 1008px;height: 738px;margin-top: 200px;background: url(&quot;{{ asset('img/Group 159.png') }}&quot;);">
             <h1 style="text-align: center;font-family: Poppins, sans-serif;padding-top: 50px;">Create Account</h1>
-            <form method="POST" action="{{ route('register') }}">
+            <form id="form" method="POST" action="{{ route('register') }}" onsubmit="return submitForm(this);">
                 {{csrf_field()}}
             <div class="d-flex" style="width: 900px;height: 540px;font-family: Poppins, sans-serif;background: #ffffff;border-radius: 10px;padding-top: 0px;margin-top: 50px;margin-left: 40px;">
                 <div class="col" style="margin-top: 20px;">
                     <div class="row" style="margin-top: 20px;">
                         <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Username</span>
                             <div class="row">
-                                <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="username" id="username" type="text" placeholder="Enter the Username" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('username') }}">
+                                <div class="col" style="padding-top: 16px;">
+                                    <input class="form-control-lg" name="username" id="username" type="text" placeholder="Enter the Username" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('username') }}">
                                     @if($errors->has('username'))
-                                    <p class="text-danger">{{ $errors->first('username') }}</p>
+                                    <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('username') }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -25,7 +26,7 @@
                             <div class="row">
                                 <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="email" id="email" type="email" placeholder="Enter the Email" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('email') }}">
                                     @if($errors->has('email'))
-                                    <p class="text-danger">{{ $errors->first('email') }}</p>
+                                    <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('email') }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -36,7 +37,7 @@
                             <div class="row">
                                 <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="password" id="password" type="password" placeholder="Enter the Password" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('password') }}">
                                     @if($errors->has('password'))
-                                    <p class="text-danger">{{ $errors->first('password') }}</p>
+                                    <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('password') }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -45,7 +46,7 @@
                             <div class="row">
                                 <div class="col" style="padding-top: 16px;"><input class="form-control-lg" name="confirm-password" type="password" placeholder="Confirm Password" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ old('confirm-password') }}">
                                     @if($errors->has('confirm-password'))
-                                    <p class="text-danger">{{ $errors->first('confirm-password') }}</p>
+                                    <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('confirm-password') }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -65,9 +66,22 @@
             </form>
         </div>
     </section>
-    <script language="JavaScript">
-        function function3() { 
-            swal("Success!", "Successfully Created Account.You can now register!");
+    <script>
+        function submitForm(form) {
+            swal({
+                title: "Are you sure?",
+                text: "This form will be submitted",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then(function (isOkay) {
+                if (isOkay) {
+                    form.submit();
+                }
+            });
+
+            return false;
         }
     </script>
     @endsection

@@ -2,9 +2,9 @@
 
 @section('content')
 
- <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);height: 1250px;">
+ <body style="border-color: rgb(46,127,208);color: rgb(255,255,255)">
 
-    <section style="height: 1850px;">
+    <section>
         <div class="container-fluid d-table float-none" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 200px;background: #5f2b84;width: 1177px;height: 1630px;border-radius: 10px;">
             <h1 style="font-family: Poppins, sans-serif;text-align: center;font-weight: bold;margin-top: 10px;margin-left: 10px;padding-top: 30px;padding-bottom: 10px;">Register Now</h1>
             <form method="POST" action="{{ route('govorganizations.store') }}">
@@ -234,10 +234,10 @@
         </div>
     </section>
     <script language="JavaScript">
-        function function1() { 
+        function function1() {
             swal("Success!", "Successfully Registered!", "success");
         }
-        function function2() { 
+        function function2() {
             swal("Sorry!", "Opps, something went wrong. Please try again later.", "error");
         }
     </script>

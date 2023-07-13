@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
 use App\Models\GovernmentOrganization;
@@ -17,7 +18,13 @@ class GovorganizationController extends Controller
      */
     public function index()
     {
-        //
+        $user_govorganizations = DB::table('users')
+        ->join('govorganizations', 'users.id', '=', 'govorganizations.user_id')
+        ->select('users.*' ,'users.id as usr_id', 'govorganizations.*')
+        ->paginate(10);
+
+        return view('home',compact('user_govorganizations'))
+        ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
