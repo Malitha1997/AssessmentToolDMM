@@ -5,13 +5,14 @@ namespace App\Models;
 use App\Models\GovernmentOrganization;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\PreliminaryAssessmentResult;
+use App\Models\GovernmentOrganizationDetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PreliminaryAssessment extends Model
 {
-    public function governmentOrganization()
+    public function governmentOrganizationDetail()
     {
-        return $this->belongsTo(GovernmentOrganization::class);
+        return $this->belongsTo(GovernmentOrganizationDetail::class);
     }
 
     public function preliminaryAssessmentResults()

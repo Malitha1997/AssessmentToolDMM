@@ -11,23 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('government_organizations', function (Blueprint $table) {
+        Schema::create('gov_organization_details', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('gov_org_name');
-            $table->string('organization_category');
+            $table->string('gov_org_address');
+            $table->string('gov_org_email');
             $table->string('number_of_employee');
-            $table->string('related_ministry');
-            $table->string('types_of_services_provide');
             $table->string('districts_of_operations');
             $table->string('phone_number');
             $table->string('availablity_of_IT_unit');
             $table->string('name_of_the_head');
+            $table->string('contact_number_of_the_head');
+            $table->string('email_of_the_head');
             $table->string('designation');
-            $table->string('cdio_name');
-            $table->string('cdio_email');
-            $table->string('cdio_contact_no');
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('related_ministry_id')->constrained('related_ministries');
+            $table->foreignId('organization_category_id')->constrained('organization_categories');
+            $table->foreignId('types_of_service_id')->constrained('types_of_services');
+            $table->foreignId('gov_organization_name_id')->constrained('gov_organization_names');
         });
     }
 
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('government_organization');
+        Schema::dropIfExists('gov_organization_detail');
     }
 };

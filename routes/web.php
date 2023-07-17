@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
@@ -35,13 +36,15 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('userHome');
     Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
     Route::resource('govorganizations', GovorganizationController::class);
-    
+    Route::get('/livesearch',[SearchController::class,'livesearch'])->name('livesearch');
+
 });
 
 /*All Admin Routes List*/
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home');
+
 });
 
 Route::resource('users', UserController::class);
@@ -52,3 +55,4 @@ Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPa
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+Route::get('/search',[SearchController::class,'govOrgNameSearching'])->name('search');
