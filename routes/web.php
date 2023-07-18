@@ -60,7 +60,7 @@ Route::get('/test',[GovorganizationController::class,'testing'])->name('test');
 Route::get('/testsearch',[SearchController::class,'testsearch'])->name('testsearch');
 
 Route::controller(SearchController::class)->group(function(){
-    Route::get('demo-search', 'index');
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
-
-});
+    Route::get('autocomplete2', 'autocomplete2')->name('autocomplete2');
+    Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
+}); 

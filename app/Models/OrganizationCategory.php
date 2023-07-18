@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationDetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class OrganizationCategory extends Model
+class Organizationcategory extends Model
 {
     public function governmentOrganization()
     {

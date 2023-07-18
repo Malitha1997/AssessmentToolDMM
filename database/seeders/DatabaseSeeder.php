@@ -21,6 +21,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CreateAdminUserSeeder::class,
+            GovOrganizationNameSeeder::class,
+           
+            OrganizationCategorySeeder::class,
+            RelatedministrySeeder::class
         ]);
     }
 }

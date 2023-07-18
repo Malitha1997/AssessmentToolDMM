@@ -17,15 +17,13 @@
                             <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;margin-bottom: 0;padding-bottom: 0;">Name of the organization *</span></div>
                         </div>
                         <div class="row">
-                            <div class="col"><input class="form-control-lg" name="gov_org_name" type="text" placeholder="Search Organization Name" id="gov_org_name" style="width: 500px;" value="{{ old('gov_org_name')}}">
-                                {{--  <input type="hidden" name="gov_org_name" id="gov_org_nameid" >  --}}
+                            <div class="col">
+                                <input class="form-control-lg" name="gov_org_name" type="text" placeholder="Select Organization Name" id="gov_org_name" style="width: 500px;" value="{{ old('gov_org_name')}}">
+                                <input type="hidden" name="gov_org_name" id="gov_org_nameid" >
+                                @if($errors->has('gov_org_name'))
+                                <p class="text-danger">{{ $errors->first('gov_org_name') }}</p>
+                                @endif
                             </div>
-
-                            {{--  <div class="col-md-8">
-                                <div class="card mycard m-2 p-2" style="width: 18rem;">
-
-                                </div>
-                            </div>  --}}
                         </div>
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     </div>
@@ -35,15 +33,8 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <select id="related_ministry" name="related_ministry" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px;font-family: Poppins, sans-serif;color: #000000;margin-bottom: 0;padding-bottom: 0" value="{{ old('related_ministry')}}">
-                                    <option  value="none" selected disabled hidden>--Select option--</option>
-                                    <option value="A">Ministry of A</option>
-                                    <option value="B">Ministry of B</option>
-                                    <option value="C">Ministry of C</option>
-                                    <option value="D">Ministry of D</option>
-                                    <option value="E">Ministry of E</option>
-                                    <option value="F">Ministry of F</option>
-                                </select>
+                                <input class="form-control-lg" name="related_ministry" type="text" placeholder="Select the Ministry Name" id="related_ministry" style="width: 500px;" value="{{ old('related_ministry')}}">
+                                <input type="hidden" name="related_ministry" id="related_ministryid" >
                                 @if($errors->has('related_ministry'))
                                 <p class="text-danger">{{ $errors->first('related_ministry') }}</p>
                                 @endif
@@ -59,18 +50,13 @@
                         <div class="row">
                             <div class="col">
                                 <div class="col">
-                                    <select id="organization_category" name="organization_category" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px" value="{{ old('organization_category')}}">
-                                        <option  value="none" selected disabled hidden>--Select option--</option>
-                                        <option value="A">Organization A</option>
-                                        <option value="B">Organization B</option>
-                                        <option value="C">Organization C</option>
-                                        <option value="D">Organization D</option>
-                                        <option value="E">Organization E</option>
-                                        <option value="F">Organization F</option>
-                                    </select>
-                                    @if($errors->has('organization_category'))
-                                    <p class="text-danger">{{ $errors->first('organization_category') }}</p>
-                                    @endif
+                                    <div class="col">
+                                        <input class="form-control-lg" name="org_category" type="text" placeholder="Select the Organization category" id="org_category" style="width: 500px;" value="{{ old('org_category')}}">
+                                        <input type="hidden" name="org_category" id="org_categoryid" >
+                                        @if($errors->has('org_category'))
+                                        <p class="text-danger">{{ $errors->first('org_category') }}</p>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,17 +67,9 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <select id="types_of_services_provide" name="types_of_services_provide" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height: 45px" value="{{ old('types_of_services_provide')}}">
-                                    <option  value="none" selected disabled hidden>--Select option--</option>
-                                    <option value="A">Service A</option>
-                                    <option value="B">Service B</option>
-                                    <option value="C">Service C</option>
-                                    <option value="D">Service D</option>
-                                    <option value="E">Service E</option>
-                                    <option value="F">Service F</option>
-                                </select>
-                                @if($errors->has('types_of_services_provide'))
-                                <p class="text-danger">{{ $errors->first('types_of_services_provide') }}</p>
+                                <input class="form-control-lg" name="types_of_service" type="text" placeholder="Enter type of services" id="types_of_service" style="width: 500px;" value="{{ old('types_of_service')}}">
+                                @if($errors->has('types_of_service'))
+                                <p class="text-danger">{{ $errors->first('types_of_service') }}</p>
                                 @endif
                             </div>
                         </div>
@@ -168,7 +146,7 @@
                             <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;">Email Address *</span></div>
                         </div>
                         <div class="row">
-                            <div class="col"><input class="form-control-lg" name="gov_org_email" type="email" placeholder="Enter the phone number" style="width: 500px;" value="{{ old('gov_org_email')}}">
+                            <div class="col"><input class="form-control-lg" name="gov_org_email" type="email" placeholder="Enter the email address" style="width: 500px;" value="{{ old('gov_org_email')}}">
                                 @if($errors->has('gov_org_email'))
                                 <p class="text-danger">{{ $errors->first('gov_org_email') }}</p>
                                 @endif
@@ -222,9 +200,9 @@
                             <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;">Email Address *</span></div>
                         </div>
                         <div class="row">
-                            <div class="col"><input class="form-control-lg" name="gov_org_email" type="email" placeholder="Enter the Email" style="width: 500px;" value="{{ old('gov_org_email')}}">
-                                @if($errors->has('gov_org_email'))
-                                <p class="text-danger">{{ $errors->first('gov_org_email') }}</p>
+                            <div class="col"><input class="form-control-lg" name="head_email" type="email" placeholder="Enter the Email" style="width: 500px;" value="{{ old('head_email')}}">
+                                @if($errors->has('head_email'))
+                                <p class="text-danger">{{ $errors->first('head_email') }}</p>
                                 @endif
                             </div>
                         </div>
@@ -309,9 +287,68 @@
         },
 
         select: function (event, ui) {
-           $('#gov_org_name').val(ui.item.label);
-           console.log(ui.item);
-           return false;
+            // Set selection
+            var id = event.target.id
+            $('#'+id).val(ui.item.label); // display the selected text
+            $('#'+id+'id').val(ui.item.value); // save selected id to input
+            //console.log(ui.item.value);
+            return false;
+        }
+      });
+</script>
+
+<script type="text/javascript">
+    var path2 = "{{ route('autocomplete2') }}";
+    $( "#related_ministry" ).autocomplete({
+        source: function( request, response ) {
+          $.ajax({
+            url: path2,
+            type: 'GET',
+            dataType: "json",
+            data: {
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+
+        select: function (event, ui) {
+            // Set selection
+            var id = event.target.id
+            $('#'+id).val(ui.item.label); // display the selected text
+            $('#'+id+'id').val(ui.item.value); // save selected id to input
+            //console.log(ui.item.value);
+            return false;
+        }
+      });
+</script>
+
+<script type="text/javascript">
+    var path3 = "{{ route('autocomplete3') }}";
+    $( "#org_category" ).autocomplete({
+        source: function( request, response ) {
+          $.ajax({
+            url: path3,
+            type: 'GET',
+            dataType: "json",
+            data: {
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
+
+        select: function (event, ui) {
+            // Set selection
+            var id = event.target.id
+            $('#'+id).val(ui.item.label); // display the selected text
+            $('#'+id+'id').val(ui.item.value); // save selected id to input
+            //console.log(ui.item.value);
+            return false;
         }
       });
 </script>

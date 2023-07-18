@@ -4,14 +4,14 @@ namespace App\Models;
 
 use App\Models\GovernmentOrganization;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\GovernmentOrganizationDetail;
+use App\Models\Governmentorganizationdetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class RelatedMinistry extends Model
+class Relatedministry extends Model
 {
     public function governmentOrganizationDetail()
     {
-    return $this->belongsTo(GovernmentOrganizationDetail::class);
+    return $this->belongsTo(Governmentorganizationdetail::class);
     }
 }
 

@@ -51,55 +51,47 @@ class GovorganizationController extends Controller
             'gov_org_name'=> 'required|string|min:1|max:255',
             'gov_org_address'=> 'required|string|min:1|max:255',
             'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'organization_category'=> 'required|string',
+            'org_category'=> 'required|string',
             'number_of_employee'=> 'required|int',
             'related_ministry'=> 'required|string',
-            'types_of_services_provide'=> 'required|string',
+            'types_of_service'=> 'required|string',
             'availablity_of_IT_unit'=>'required|string',
             'districts_of_operations'=> 'required|string',
             'phone_number'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
             'name_of_the_head'=> 'required|string',
+            'head_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'designation'=> 'required|string',
             'contact_number_of_the_head'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
-            'email_of_the_head'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'cdio_name'=> 'required|string|min:1|max:255',
             'cdio_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
 
         ]);
-        //dd($request);
+        dd($request);
         $governmentOrganization = new GovernmentOrganization;
 
         $governmentOrganization->user_id = $request->user_id;
-        $governmentOrganization->gov_org_name = $request->gov_org_name;
+        $governmentOrganization->govorganizationname_id = $request->gov_org_name;
         $governmentOrganization->gov_org_email = $request->gov_org_email;
         $governmentOrganization->gov_org_address = $request->gov_org_address;
+        $governmentOrganization->organizationcategory_id = $request->org_category;
         $governmentOrganization->number_of_employee = $request->number_of_employee;
+        $governmentOrganization->relatedministry_id = $request->related_ministry;
         $governmentOrganization->availablity_of_IT_unit = $request->availablity_of_IT_unit;
         $governmentOrganization->districts_of_operations = $request->districts_of_operations;
         $governmentOrganization->phone_number = $request->phone_number;
         $governmentOrganization->name_of_the_head = $request->name_of_the_head;
+        $governmentOrganization->head_email = $request->head_email;
         $governmentOrganization->contact_number_of_the_head = $request->contact_number_of_the_head;
-        $governmentOrganization->email_of_the_head = $request->email_of_the_head;
         $governmentOrganization->designation = $request->designation;
 
         $governmentOrganization->save();
 
-        $orgCategory =new OrganizationCategory;
-
-        $orgCategory->organization_category = $request->organization_category;
-
-        $orgCategory->save();
-
-        $relatedMinistry =new RelatedMinistry;
-
-        $relatedMinistry->related_ministry = $request->related_ministry;
-
-        $relatedMinistry->save();
-
         $typesOfServices =new TypesOfServices;
 
-        $typesOfServices->types_of_services_provide = $request->types_of_services_provide;
+        $typesOfServices->types_of_service = $request->types_of_service;
+
+        $typesOfServices->save();
 
         $cdio =new Cdio;
 
