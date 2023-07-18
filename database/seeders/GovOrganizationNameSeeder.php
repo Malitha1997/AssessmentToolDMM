@@ -13,11 +13,11 @@ class GovOrganizationNameSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('gov_organization_names')->insert([
+        DB::table('govorganizationnames')->insert([
             'gov_org_name' => 'Sri Lanka Institute of Local Government',
         ]);
 
-        DB::table('gov_organization_names')->insert([
+        DB::table('govorganizationnames')->insert([
             'gov_org_name' => 'Management Development Training Unit - North Province',
         ]);
     }

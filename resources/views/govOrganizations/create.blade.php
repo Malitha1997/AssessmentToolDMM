@@ -18,11 +18,14 @@
                         </div>
                         <div class="row">
                             <div class="col"><input class="form-control-lg" name="gov_org_name" type="text" placeholder="Search Organization Name" id="gov_org_name" style="width: 500px;" value="{{ old('gov_org_name')}}">
-                                
+                                {{--  <input type="hidden" name="gov_org_name" id="gov_org_nameid" >  --}}
                             </div>
-                            <div id="orgNameList">
 
-                            </div>
+                            {{--  <div class="col-md-8">
+                                <div class="card mycard m-2 p-2" style="width: 18rem;">
+
+                                </div>
+                            </div>  --}}
                         </div>
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     </div>
@@ -288,79 +291,29 @@
     </section>
 
 
-    <script>
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $( "#gov_org_name" ).autocomplete({
+        source: function( request, response ) {
+          $.ajax({
+            url: path,
+            type: 'GET',
+            dataType: "json",
+            data: {
+               search: request.term
+            },
+            success: function( data ) {
+               response( data );
+            }
+          });
+        },
 
+        select: function (event, ui) {
+           $('#gov_org_name').val(ui.item.label);
+           console.log(ui.item);
+           return false;
+        }
+      });
+</script>
 
-        $(document).ready(function(){
-            $(document).on('click', '#gov_org_name', function(e) {
-                //console.log("hi");
-                var route = "{{ route('livesearch') }}";
-                $(this).autocomplete({
-                    source: function( request, response ) {
-                        $.ajaxSetup({
-
-                            headers: {
-
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-
-                            }
-
-                        });
-                       // Fetch data
-                        $.ajax({
-                            url:route,
-                            type: 'post',
-                            dataType: "json",
-                            data: {
-                                query: request.term
-                            },
-                            success: function( data ) {
-                            response( data );
-
-                            }
-                        });
-                    },
-                    select: function (event, ui) {
-                        // Set selection
-                        var id = event.target.id
-                        $('#'+id).val(ui.item.label); // display the selected text
-                        $('#'+id+'id').val(ui.item.value); // save selected id to input
-                        //console.log(ui.item.value);
-                        return false;
-                    }
-                });
-            });
-
-
-        });
-
-
-    </script>
-
-{{--  <script>
-    $(document).ready(function()){
-        $("#gov_org_name").on('keyup',function(){
-            var value = $(this).val();
-            $.ajax({
-                url:"{{ route('search') }}";
-                type:"GET";
-                data:{'gov_org_name':value},
-                success:function(data){
-                    $("#orgNameList").html(data);
-
-                }
-            });
-        });
-
-        $(document).on('click','li',function(){
-            var value = $(this).text();
-            $("#gov_org_name").val(value);
-            $("#orgNameList").html("");
-        });
-
-    }
-
-
-</script>  --}}
-
-    @endsection
+@endsection

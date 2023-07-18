@@ -56,3 +56,11 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/search',[SearchController::class,'govOrgNameSearching'])->name('search');
+Route::get('/test',[GovorganizationController::class,'testing'])->name('test');
+Route::get('/testsearch',[SearchController::class,'testsearch'])->name('testsearch');
+
+Route::controller(SearchController::class)->group(function(){
+    Route::get('demo-search', 'index');
+    Route::get('autocomplete', 'autocomplete')->name('autocomplete');
+
+});

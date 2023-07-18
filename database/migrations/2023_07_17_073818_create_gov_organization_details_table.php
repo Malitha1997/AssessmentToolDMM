@@ -28,7 +28,7 @@ return new class extends Migration
             $table->foreignId('related_ministry_id')->constrained('related_ministries');
             $table->foreignId('organization_category_id')->constrained('organization_categories');
             $table->foreignId('types_of_service_id')->constrained('types_of_services');
-            $table->foreignId('gov_organization_name_id')->constrained('gov_organization_names');
+            $table->foreignId('govorganizationname_id')->constrained('govorganizationnames');
         });
     }
 

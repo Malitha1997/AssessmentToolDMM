@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 use App\Models\RelatedMinistry;
 use App\Models\TypesOfServices;
 use Illuminate\Support\Facades\DB;
+use App\Models\Govorganizationname;
 use App\Models\OrganizationCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
 use App\Models\GovernmentOrganization;
 use App\Providers\RouteServiceProvider;
+use App\Models\GovernmentOrganizationName;
 
 
 class GovorganizationController extends Controller
@@ -186,5 +188,21 @@ class GovorganizationController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function testing(Request $request){
+        $query = $request->get('query');
+          $govnames = Govorganizationname::where('gov_org_name', 'LIKE', '%'. $query. '%')->get();
+          //dd($user->getRoleNames());
+
+          foreach($govnames as $govname){
+            if($govname != null){
+
+             $response[] = array("value"=>$govname->id,"label"=>$govname->gov_org_name);
+
+                }
+            }
+
+          return response()->json($response);
     }
 }

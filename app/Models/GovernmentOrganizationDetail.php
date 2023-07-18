@@ -52,8 +52,8 @@ class GovernmentOrganizationDetail extends Model
         return $this->belongsTo(Cdio::class);
     }
 
-    public function governmentOrganizationName(){
-    return $this->belongsTo(GovernmentOrganizationName::class);
+    public function gove_organization_name(){
+    return $this->belongsTo(Gov_organization_name::class);
     }
 
 }
