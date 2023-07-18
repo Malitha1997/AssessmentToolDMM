@@ -12,19 +12,22 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationName;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class GovernmentOrganizationDetail extends Model
+class Govorganizationdetail extends Model
 {
     protected $fillable = [
-        'gov_org_name',
+        'govorganizationname_id',
+        'organizationcategory_id',
+        'relatedministry_id',
         'gov_org_address',
         'gov_org_email',
         'number_of_employee',
+        'gov_org_address',
         'availablity_of_IT_unit',
         'districts_of_operations',
         'phone_number',
         'name_of_the_head',
+        'head_email',
         'contact_number_of_the_head',
-        'email_of_the_head',
         'designation',
     ];
 

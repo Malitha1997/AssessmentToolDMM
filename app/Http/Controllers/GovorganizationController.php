@@ -12,9 +12,11 @@ use App\Models\Govorganizationname;
 use App\Models\OrganizationCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
+use App\Models\Govorganizationdetail;
 use App\Models\GovernmentOrganization;
 use App\Providers\RouteServiceProvider;
 use App\Models\GovernmentOrganizationName;
+use App\Models\Governmentorganizationdetail;
 
 
 class GovorganizationController extends Controller
@@ -67,8 +69,8 @@ class GovorganizationController extends Controller
             'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
 
         ]);
-        dd($request);
-        $governmentOrganization = new GovernmentOrganization;
+        //dd($request);
+        $governmentOrganization = new Govorganizationdetail;
 
         $governmentOrganization->user_id = $request->user_id;
         $governmentOrganization->govorganizationname_id = $request->gov_org_name;
@@ -84,22 +86,12 @@ class GovorganizationController extends Controller
         $governmentOrganization->head_email = $request->head_email;
         $governmentOrganization->contact_number_of_the_head = $request->contact_number_of_the_head;
         $governmentOrganization->designation = $request->designation;
+        $governmentOrganization->types_of_service = $request->types_of_service;
+        $governmentOrganization->cdio_name = $request->cdio_name;
+        $governmentOrganization->cdio_email = $request->cdio_email;
+        $governmentOrganization->cdio_contact_no = $request->cdio_contact_no;
 
         $governmentOrganization->save();
-
-        $typesOfServices =new TypesOfServices;
-
-        $typesOfServices->types_of_service = $request->types_of_service;
-
-        $typesOfServices->save();
-
-        $cdio =new Cdio;
-
-        $cdio->cdio_name = $request->cdio_name;
-        $cdio->cdio_email = $request->cdio_email;
-        $cdio->cdio_contact_no = $request->cdio_contact_no;
-
-        $cdio->save();
 
         $user=new User;
 

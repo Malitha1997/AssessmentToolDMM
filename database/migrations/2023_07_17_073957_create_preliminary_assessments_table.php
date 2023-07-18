@@ -44,7 +44,7 @@ return new class extends Migration
             $table->string('ans_Q30');
             $table->string('ans_Q31');
             $table->string('ans_Q32');
-            $table->foreignId('gov_organization_detail_id')->constrained('gov_organization_details');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
             });
     }
 

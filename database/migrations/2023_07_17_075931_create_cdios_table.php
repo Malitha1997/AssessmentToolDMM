@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('cdio_name');
             $table->string('cdio_email');
             $table->string('cdio_contact_number');
-            $table->foreignId('gov_organization_detail_id')->constrained('gov_organization_details');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
         });
     }
 

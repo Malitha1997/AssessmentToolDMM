@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('types_of_service');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
         });
     }
 
