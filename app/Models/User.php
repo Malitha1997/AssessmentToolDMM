@@ -10,12 +10,13 @@ use App\Models\Admin;
 
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Govorganizationdetail;
+
 use App\Models\GovernmentOrganization;
 
 use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -105,8 +106,8 @@ class User extends Authenticatable
         );
     }
 
-    public function governmentOrganization(){
-        return $this->hasOne(GovernmentOrganization::class);
+    public function govorganizationdetail(){
+        return $this->hasOne(Govorganizationdetail::class);
     }
 
     public function admin(){

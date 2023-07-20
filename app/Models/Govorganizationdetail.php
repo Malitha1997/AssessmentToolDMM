@@ -4,9 +4,10 @@ namespace App\Models;
 
 use App\Models\Cdio;
 use App\Models\User;
-use App\Models\RelatedMinistry;
+use App\Models\Relatedministry;
 use App\Models\TypesOfServices;
-use App\Models\OrganizationCategory;
+use App\Models\Govorganizationname;
+use App\Models\Organizationcategory;
 use App\Models\PreliminaryAssessment;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationName;
@@ -39,12 +40,12 @@ class Govorganizationdetail extends Model
         return $this->hasMany(PreliminaryAssessment::class);
     }
 
-    public function relatedminitries(){
-        return $this->hasMany(RelatedMinistry::class);
+    public function relatedministry(){
+        return $this->belongsTo(Relatedministry::class);
     }
 
-    public function organizationcategories(){
-        return $this->hasMany(OrganizationCategory::class);
+    public function organizationcategory(){
+        return $this->belongsTo(Organizationcategory::class);
     }
 
     public function typesofservices(){
@@ -55,8 +56,8 @@ class Govorganizationdetail extends Model
         return $this->belongsTo(Cdio::class);
     }
 
-    public function gove_organization_name(){
-    return $this->belongsTo(Gov_organization_name::class);
+    public function govorganizationname(){
+    return $this->belongsTo(Govorganizationname::class);
     }
 
 }

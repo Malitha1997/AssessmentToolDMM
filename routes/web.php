@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\PreliminaryassessmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,16 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::resource('govorganizations', GovorganizationController::class);
     Route::get('/livesearch',[SearchController::class,'livesearch'])->name('livesearch');
 
+    //Preliminary Assessment
+    Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, 'index'])->name('preliminaryAssessment1');
+    Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
+    Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
+
+    Route::controller(SearchController::class)->group(function(){
+        Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
+        // Route::get('autocomplete2', 'autocomplete2')->name('autocomplete2');
+        // Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
+    });
 });
 
 /*All Admin Routes List*/
@@ -63,4 +74,8 @@ Route::controller(SearchController::class)->group(function(){
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
     Route::get('autocomplete2', 'autocomplete2')->name('autocomplete2');
     Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
-}); 
+});
+
+Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, 'index'])->name('preliminaryAssessment1');
+Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
+Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');

@@ -56,6 +56,21 @@ class SearchController extends Controller
 
     }
 
+    public function autocomplete4(Request $request)
+    {
+        $query = $request->get('query');
+          $govnames = Govorganizationname::where('gov_org_name', 'LIKE', '%'. $query. '%')->get();
+
+          foreach($govnames as $govname){
+            if($govname != null){
+
+             $response[] = array("value"=>$govname->id,"label"=>$govname->gov_org_name);
+                }
+            }
+          return response()->json($response);
+
+    }
+
     // public function govOrgNameSearching(Request $request){
     //     if($request->ajax()) {
     //         $output = '';
