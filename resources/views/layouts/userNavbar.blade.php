@@ -32,7 +32,7 @@
                 <img src="{{ asset('img/Mask group 2.png') }}">
                 <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);"></a>
                     <div class="dropdown-menu" style="font-family: Popins">
-                        <a class="dropdown-item" href="{{ route('home') }}">Profile</a>
+                        <a class="dropdown-item" href="/home">Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
