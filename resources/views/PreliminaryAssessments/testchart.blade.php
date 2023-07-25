@@ -30,7 +30,6 @@
       }
     };
 </script>
-
 <script>
 var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
 var yValues = [55, 49, 44, 24, 15];

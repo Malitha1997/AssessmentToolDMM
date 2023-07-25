@@ -28,7 +28,7 @@
             <div class="row" style="text-align: center;">
                 <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;text-align: center;"><br>Summery of the Preliminary Assessment Results<br><br></span></div>
             </div>
-            <div class="row" style="text-align: center;">
+            {{--  <div class="row" style="text-align: center;">
                 <div class="col"><canvas id="chartId" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 200px;font-size: 20px" height="664" width="830"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
                     <script>
@@ -58,7 +58,7 @@
                           },
                        });
                     </script></div>
-            </div>
+            </div>  --}}
             <div class="row" style="text-align: center;">
                 <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summery of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
             </div>
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col"><a class="btn btn-primary" id="clickModal" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" >Read More</a></div>
+                            <div class="col"><a class="btn btn-primary" href="/technologyresults" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" >Read More</a></div>
                         </div>
                     </div>
                 </div>

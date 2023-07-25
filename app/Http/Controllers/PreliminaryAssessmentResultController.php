@@ -19,7 +19,7 @@ class PreliminaryAssessmentResultController extends Controller
      */
     public function create()
     {
-        return view('PreliminaryAssessments.testchart');
+        return view('Results.technologyresults');
     }
 
     /**

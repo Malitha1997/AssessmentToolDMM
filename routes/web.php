@@ -82,5 +82,5 @@ Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, '
 Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
 Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
 
-Route::get('/testchart',[PreliminaryAssessmentResultController::class,'create'])->name('testchart');
+Route::get('/technologyresults',[PreliminaryAssessmentResultController::class,'create'])->name('technologyresults');
 
