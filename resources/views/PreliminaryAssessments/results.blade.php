@@ -66,7 +66,7 @@
                 <div class="col" style="text-align: center;">
                     <div data-aos="zoom-in" data-aos-duration="1000" style="width: 538px;height: 457px;box-shadow: 10px 10px 20px 2px rgb(146,140,140);margin-left: 35px;">
                         <div class="row">
-                            <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Technology &amp; Data<br><br></span></div>
+                            <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;" ><br>Technology &amp; Data<br><br></span></div>
                         </div>
                         <div class="row" style="height: 110px;">
                             <div class="col"><img src="{{ asset('img/Robotic%20hand.png') }}"></div>
@@ -74,8 +74,9 @@
                         <div class="row" style="text-align: left;margin-left: 5px;">
                             <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
+
                         <div class="row">
-                            <div class="col"><button class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;">Read More</button></div>
+                            <div class="col"><a class="btn btn-primary" id="clickModal" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" >Read More</a></div>
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,7 @@
                 <div class="col" style="text-align: center;">
                     <div data-aos="zoom-in" data-aos-duration="1000" style="width: 538px;height: 457px;box-shadow: 10px 10px 20px 2px rgb(146,140,140);margin-left: 360px;text-align: center;">
                         <div class="row" style="text-align: center;">
-                            <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Strategy<br><br></span></div>
+                            <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Organization & Culture<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;height: 110px;">
                             <div class="col"><img src="{{ asset('img/Unity.png') }}"></div>
@@ -149,7 +150,38 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal"  id="registerModal">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="row" style="text-align: center;">
+                    <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Technology & Data<br><br></span></div>
+                </div>
+                            <div class="bar-graph bar-graph-horizontal bar-graph-one" >
+                                <div class="bar-one" >
+                                    <span class="year">Emerging Technology and Applications</span>
+                                    <div class="bar" data-percentage="69.6%"></div>
+                                </div>
+                                <div class="bar-two">
+                                    <span class="year">Data Management</span>
+                                    <div class="bar" data-percentage="71%"></div>
+                                </div>
+                                <div class="bar-three">
+                                    <span class="year">Delivery Governance</span>
+                                    <div class="bar" data-percentage="74.7%"></div>
+                                </div>
+                            </div>
+
+            </div>
+        </div>
     </section>
+
+    {{--  <script>
+        function myFunction() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+    </script>  --}}
+
 
 </body>
 @endsection

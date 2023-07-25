@@ -1,37 +1,63 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-<head>
-   <meta charset- "UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+    <link rel="stylesheet" href="{{ asset('cssfile/chart.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
-   <canvas id="chartId" aria-label="chart" height="750" width="800"></canvas>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
-   <script>
-      var chrt = document.getElementById("chartId").getContext("2d");
-      var chartId = new Chart(chrt, {
-         type: 'radar',
-         data: {
-            labels: ["Technology & data", "Operation", "Organization & culture", "Strategy", "Customer"],
-            datasets: [{
-               label: "Marks for each dimension",
-               data: [20, 40, 57, 95, 80],
-               backgroundColor: ['lightgrey'],
-               pointBackgroundColor: ['yellow', 'aqua', 'pink', 'lightgreen', 'lightblue', 'gold'],
-               borderColor: ['black'],
-               borderWidth: 1,
-               pointRadius: 6,
-            }],
-         },
-         options: {
-            responsive: false,
-            elements: {
-               line: {
-                  borderWidth: 6
-               }
-            }
-         },
-      });
-   </script>
+<div>
+<button class="btn btn-primary" id="clickModal" type="button" onclick="popup()">Click</button>
+</div>
+<div class="modal"  id="registerModal">
+    <div class="overlay"></div>
+    <div class="content">
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+</div>
+<script>
+    const btn = document.getElementById('clickModal');
+    const modal = document.getElementById('registerModal');
+    const span = document.getElementsByClassName('close')[0];
+    
+    btn.onclick = function () {
+      modal.style.display = 'block';
+    };
+    span.onclick = function () {
+      modal.style.display = 'none';
+    };
+    
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+</script>
+
+<script>
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "horizontalBar",
+  data: {
+  labels: xValues,
+  datasets: [{
+    backgroundColor: barColors,
+    data: yValues
+  }]
+},
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    },
+    scales: {
+      xAxes: [{ticks: {min: 10, max:60}}]
+    }
+  }
+});
+</script>
+
+
 </body>
 </html>
