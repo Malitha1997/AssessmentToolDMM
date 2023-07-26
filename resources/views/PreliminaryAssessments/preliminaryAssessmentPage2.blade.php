@@ -5,7 +5,7 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2448px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;"><span style="color: #1f2471;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;margin-left: 20px;margin-top: 20px;">Section 2</span>
+            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2448px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
                 </div>
@@ -108,10 +108,10 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">16.&nbsp;How do you rate your organization’s strategy of data analytics? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">17.&nbsp;Have your organization classified available data?</span></div>
@@ -137,19 +137,19 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">18.&nbsp;How do you rate your organization's data interoperability mechanism? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">19.&nbsp;How do you rate social media support for your organization’s initiatives? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">20.&nbsp;Do you have a well defined change management process in your organization to changes processes/ application’s&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with minimum cost</span></div>
@@ -174,10 +174,10 @@
                         <div class="row">
                             <div class="col" style="text-align: left;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;text-align: left;">21.&nbsp;Rate your organization’s integrated service management to access data or services? (1 is low and 5 is highest)</span>
                                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                                 </div>
                             </div>
                         </div>

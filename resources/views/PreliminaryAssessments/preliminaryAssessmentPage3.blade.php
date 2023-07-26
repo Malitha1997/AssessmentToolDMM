@@ -5,7 +5,7 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2200px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;"><span style="color: #1f2471;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;margin-left: 20px;margin-top: 20px;">Section 2</span>
+            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2200px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>
                 </div>
@@ -81,10 +81,10 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">25.&nbsp;How do you rate your organization's long term digital roadmap? (1 is low/no roadmap and 5 is highest/well defined&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; roadmap)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">26.&nbsp;Have you consider digital transformation as a part of the organization policy?</span></div>
@@ -114,10 +114,10 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">27.&nbsp;Rate your organization’s leader's understanding on the digital strategy? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">28.&nbsp;How is the awareness on digital transformation goals among the employees?</span></div>
@@ -151,10 +151,10 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">29.&nbsp;Rate your organization branding strategy? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">30.&nbsp;Availability of digital appliances in your organization?</span></div>
@@ -189,10 +189,10 @@
                         <div class="row">
                             <div class="col" style="text-align: left;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;text-align: left;">31.&nbsp;Rate your organization’s overall employees level of knowledge on Information Technology (IT)? (1 is low and 5 is highest)</span>
                                 <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">1</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">2</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">3</label></div>
-                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: rgb(0,0,0);">4</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                                 </div>
                             </div>
                         </div>

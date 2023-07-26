@@ -3,7 +3,6 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-
     <section >
         <div class="container" style="margin-top: 150px;">
             <h1 data-aos="fade-down" data-aos-duration="1000" style="text-align: center;color: #1f2471;font-family: Poppins, sans-serif;font-weight: bold;">
@@ -11,6 +10,7 @@
             <canvas id="myChart" style="width:100%;max-width:800px;margin-left:10%;margin-top:30px;font-family: Poppins, sans-serif;margin-bottom:30px"></canvas>
         </div>
     </section>
+    
     <script>
         var xValues = ["Leadership and Culture", "Standards and Governance", "Employee Enablement / Employee Engagement", "Level of Skills", "Organization Design and Talent Managements"];
         var yValues = [25, 80, 13, 25, 50];
