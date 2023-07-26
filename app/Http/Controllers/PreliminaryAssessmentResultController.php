@@ -65,4 +65,16 @@ class PreliminaryAssessmentResultController extends Controller
     public function customerresult(){
         return view('Results.customerresults');
     }
+
+    public function cultureresult(){
+        return view('Results.cultureresults');
+    }
+
+    public function strategyresult(){
+        return view('Results.strategyresults');
+    }
+
+    public function operationresult(){
+        return view('Results.operationresults');
+    }
 }
