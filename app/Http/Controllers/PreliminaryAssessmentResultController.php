@@ -61,4 +61,8 @@ class PreliminaryAssessmentResultController extends Controller
     {
         //
     }
+
+    public function customerresult(){
+        return view('Results.customerresults');
+    }
 }
