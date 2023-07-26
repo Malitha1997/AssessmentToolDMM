@@ -16,16 +16,16 @@
                     <div class="col" style="height: 60px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">1. How do you rate&nbsp;your organization’s usage of Emerging Technologies and Applications such as Artificial Intelligence (AI),&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cryptocurrencies, etc.? (1 is the lowest and 5 is the highest) <br><br><br></span></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" value="3.125" id="weight">
+                    <input class="form-control" type="hidden" value="3.125" id="weight">
                 </div>
-                <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1" id="choice1" value="2.5"><label for="choice1" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1" id="choice2" value="5" ><label for="choice2" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1" id="choice3" value="7.5" ><label for="choice3" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1" id="choice4" value="10" ><label for="choice4" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                <div class="row" id="choise" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1"  value="2.5"><label for="choice1" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1"  value="5" ><label for="choice2" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1"  value="7.5" ><label for="choice3" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" style="font-size: 20px;margin-right: 20px;" name="sd1"  value="10" ><label for="choice4" class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" id="marks" name="marks_d1">
+                    <input class="form-control"  id="marks" name="marks_d1">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">2.&nbsp;Does your organization has a dedicated research and development team to try out the emerging solutions? </span></div>
@@ -45,13 +45,16 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">3.&nbsp;How would you rate your organization following the proper data governance process and mechanism in place to&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;facilitate sharing&nbsp;data with outsiders and internal departments in electronic form? (1 is the lowest and 5 is the highest) <br><br></span>
-                        <div class="row" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                        <div class="row" id="choise3" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
+                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;" value="2.5"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;" value="5"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;" value="7.5"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                            <div class="col"><input type="radio" name="sd3" style="font-size: 20px;margin-right: 20px;" value="10"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                         </div>
                     </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <input class="form-control"  id="marks3" name="marks_d3">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">4.&nbsp;Up to what extent does your organization conduct security audits for the systems in operation?</span></div>
@@ -214,7 +217,7 @@
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row" style="margin-top: 150px;">
-                            <div class="col ms-xxl-0" style="margin-left: 62px;"><span style="font-family: Poppins, sans-serif;color: #1f2471;font-size: 20px;font-weight: bold;margin-top: 50px;margin-left: 50px;">Continue to Next Section</span></div>
+                            <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                             <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                                 <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
                                 <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" href="/preliminaryAssessment2">Next</a></div>
@@ -224,49 +227,25 @@
             </form>
             </div>
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
         <script type="text/javascript">
-            {{--  var path = "{{ route('autocomplete') }}";  --}}
-
-            {{--  $( "#vehicle_name" ).autocomplete({
-                source: function( request, response ) {
-                    wei= document.getElementById("weight").value;
-                    mar= document.getElementById("marks").value;
-                  $.ajax({
-                    url: path,
-                    type: 'GET',
-                    dataType: "json",
-                    data: {
-                        wei:wei,
-                        mar:mar,
-                       search: request.term
-                    },
-                    success: function( data ) {
-                       response( data );
-                    }
-                  });
-
-
-                },
-
-                select: function (event, ui) {
-                    console.log(ui.item);
-                   $('#vehicle_name').val(ui.item.label);
-                   $('#vehicle_id').val(ui.item.id);
-                   $('#rent_cost').val(ui.item.rental_per_day);
-
-                   return false;
-                },
-
-
-              });  --}}
-              function myFunction(e) {
-
+            $('#choise').find(":radio").on('click', e => {
                 wei = document.getElementById("weight").value;
-                choi = document.getElementById("choice").value;
+                choi = e.target.value;
 
+                document.getElementById("marks").value = wei * choi;
+            });
 
-                document.getElementById("marks_d1").value = wei * choi;
-              }
+        </script>
+
+        <script type="text/javascript">
+            $('#choise3').find(":radio").on('click', e => {
+                wei = document.getElementById("weight").value;
+                choi = e.target.value;
+
+                document.getElementById("marks3").value = wei * choi;
+            });
         </script>
     </section>
 </body>
