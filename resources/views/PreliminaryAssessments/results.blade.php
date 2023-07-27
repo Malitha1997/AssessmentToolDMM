@@ -26,7 +26,7 @@
         </div>
         <div class="container">
             <div class="row" style="text-align: center;">
-                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;text-align: center;"><br>Summery of the Preliminary Assessment Results<br><br></span></div>
+                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;text-align: center;"><br>Summary of the Preliminary Assessment Results<br><br></span></div>
             </div>
             <div class="row" style="text-align: center;">
                 <div class="col"><canvas id="chartId" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 200px;font-size: 20px" height="664" width="830"></canvas>
@@ -59,6 +59,7 @@
                        });
                     </script></div>
             </div>
+            @foreach ($percentages as $percentage)
             <div class="row" style="text-align: center;">
                 <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summery of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
             </div>
@@ -72,7 +73,7 @@
                             <div class="col"><img src="{{ asset('img/Robotic%20hand.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ $percentage->technology }} result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
 
                         <div class="row">
@@ -89,7 +90,7 @@
                             <div class="col"><img src="{{ asset('img/Support.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ $percentage->customer }} result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/customerresults">Read More</a></div>
@@ -107,7 +108,7 @@
                             <div class="col"><img src="{{ asset('img/Gears.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ $percentage->operation }} result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/operationresults">Read More</a></div>
@@ -123,7 +124,7 @@
                             <div class="col"><img src="{{ asset('img/Marketing.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ $percentage->strategy }} result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/strategyresults">Read More</a></div>
@@ -141,7 +142,7 @@
                             <div class="col"><img src="{{ asset('img/Unity.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a 50% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ $percentage->culture }} result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/culturerresults">Read More</a></div>
@@ -149,6 +150,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
         <div class="modal"  id="registerModal">

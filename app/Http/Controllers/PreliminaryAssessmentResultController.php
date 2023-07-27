@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Govorganizationdetail;
 
 class PreliminaryAssessmentResultController extends Controller
 {
@@ -11,7 +15,7 @@ class PreliminaryAssessmentResultController extends Controller
      */
     public function index()
     {
-        return view('PreliminaryAssessments.results');
+        //
     }
 
     /**
@@ -60,6 +64,12 @@ class PreliminaryAssessmentResultController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function result()
+    {
+        $percentages = DB::select('select * from percentages');
+        return view('PreliminaryAssessments.results',['percentages'=>$percentages]);
     }
 
     public function customerresult(){

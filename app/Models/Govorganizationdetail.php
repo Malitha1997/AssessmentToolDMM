@@ -4,6 +4,12 @@ namespace App\Models;
 
 use App\Models\Cdio;
 use App\Models\User;
+use App\Models\Culture;
+use App\Models\Customer;
+use App\Models\Strategy;
+use App\Models\Operation;
+use App\Models\Percentage;
+use App\Models\Technology;
 use App\Models\Relatedministry;
 use App\Models\TypesOfServices;
 use App\Models\Govorganizationname;
@@ -60,4 +66,27 @@ class Govorganizationdetail extends Model
     return $this->belongsTo(Govorganizationname::class);
     }
 
+    public function customer(){
+        return $this->hasOne(Customer::class);
+    }
+
+    public function strategy(){
+        return $this->hasOne(Strategy::class);
+    }
+
+    public function technology(){
+        return $this->hasOne(Technology::class);
+    }
+
+    public function operation(){
+        return $this->hasOne(Operation::class);
+    }
+
+    public function culture(){
+        return $this->hasOne(Culture::class);
+    }
+
+    public function percentages(){
+    return $this->hasMany(Percentage::class);
+    }
 }

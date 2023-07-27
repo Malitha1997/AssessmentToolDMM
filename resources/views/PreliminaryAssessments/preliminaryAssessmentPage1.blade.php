@@ -27,7 +27,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks" name="marks_d1">
-                    <input class="form-control"  id="percentage" name="percentage_d1">
+                    <input class="form-control" type="hidden" id="percentage" name="percentage_d1">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">2.&nbsp;Does your organization has a dedicated research and development team to try out the emerging solutions? </span></div>
@@ -43,7 +43,7 @@
                             </div>
                         <div class="row" style="margin-top: 20px;">
                             <input class="form-control" type="hidden" id="marks2" name="marks_d2">
-                            <input class="form-control"  id="percentage2" name="percentage_d2">
+                            <input class="form-control" type="hidden" id="percentage2" name="percentage_d2">
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks3" name="marks_d3">
-                    <input class="form-control"  id="percentage3" name="percentage_d3">
+                    <input class="form-control" type="hidden" id="percentage3" name="percentage_d3">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">4.&nbsp;Up to what extent does your organization conduct security audits for the systems in operation?</span></div>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks4" name="marks_d4">
-                    <input class="form-control"  id="percentage4" name="percentage_d4">
+                    <input class="form-control" type="hidden" id="percentage4" name="percentage_d4">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">5.&nbsp;To what extent does your organization have the processes automated?</span></div>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks5" name="marks_d5">
-                    <input class="form-control"  id="percentage5" name="percentage_d5">
+                    <input class="form-control" type="hidden" id="percentage5" name="percentage_d5">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">6.&nbsp;Does your organization has a network/ system administrator who has access to the organization's network/systems?</span></div>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks6" name="marks_d6">
-                    <input class="form-control"  id="percentage6" name="percentage_d6">
+                    <input class="form-control" type="hidden" id="percentage6" name="percentage_d6">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">7.&nbsp;Up to what extent does your organization consume the network facility effectively throughout the business units?</span></div>
@@ -150,7 +150,7 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks7" name="marks_d7">
-                    <input class="form-control"  id="percentage7" name="percentage_d7">
+                    <input class="form-control" type="hidden" id="percentage7" name="percentage_d7">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">8.&nbsp;Rate your organization on the following security aspects?</span></div>

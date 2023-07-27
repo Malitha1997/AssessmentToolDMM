@@ -44,12 +44,13 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, 'index'])->name('preliminaryAssessment1');
     Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
     Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
-    Route::get('/preliminaryResults', [PreliminaryAssessmentResultController::class, 'index'])->name('preliminaryResults');
+    Route::get('/preliminaryResults', [PreliminaryAssessmentResultController::class, 'result'])->name('preliminaryResults');
     Route::get('/technologyresults',[PreliminaryAssessmentResultController::class,'create'])->name('technologyresults');
     Route::get('/customerresults',[PreliminaryAssessmentResultController::class,'customerresult'])->name('customerresults');
     Route::get('/culturerresults',[PreliminaryAssessmentResultController::class,'cultureresult'])->name('culturerresults');
     Route::get('/strategyresults',[PreliminaryAssessmentResultController::class,'strategyresult'])->name('strategyresults');
     Route::get('/operationresults',[PreliminaryAssessmentResultController::class,'operationresult'])->name('operationresults');
+
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
