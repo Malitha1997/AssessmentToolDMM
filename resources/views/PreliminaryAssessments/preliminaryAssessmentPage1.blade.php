@@ -5,7 +5,7 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3600px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <form method="POST" action="">
+            <form method="POST" action="{{ route('storeValue') }}">
                 {{csrf_field()}}
             <div class="d-flex justify-content-center mb-auto mb-md-auto" data-aos="fade-right" data-aos-duration="1000" style="width: 1358px;height: 163px;margin-top: 20px;background: #1f2471;border-radius: 10px;margin-left: -30px;">
                 <div class="text-center d-flex flex-column justify-content-center" style="width: 1358px;height: 194px;color: rgb(255, 255, 255);background: #ffffff;padding-top: 0px;text-align: center;border-radius: 10px;border: 1px solid #1f2471;padding-bottom: 0px;margin-top: 25px;"><span style="color: #1f2471;font-size: 20px;font-family: Poppins, sans-serif;font-weight: bold;height: 90px;padding-bottom: 0px;margin-top: -38px;margin-bottom: -42px;"><br>Digital Maturity Preliminary Assessment for Government Organizations<br><br></span><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;text-align: center;font-weight: bold;margin-top: 10px;padding-top: 0px;margin-bottom: -12px;"><br>The preliminary assessment is focused on evaluating the readiness of government organizations to apply the digital maturity model to their organization. Any government organization can perform the preliminary assessment and if it fulfills the expected entry requirements to conduct the ‘Deep Assessment’.<br><br></span></div>
@@ -273,15 +273,15 @@
                     <input class="form-control" type="hidden" id="percentage10" name="percentage_d10">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control"  id="page1_total_marks" name="page1_total">
-                    <input class="form-control"  id="percentage20" name="percentage_d20">
+                    <input class="form-control" type="hidden" id="page1_total_marks" name="page1_total" value="{{ session('input_value')>
+                    <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row" style="margin-top: 150px;">
                             <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                             <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                                 <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
-                                <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" href="/preliminaryAssessment2">Next</a></div>
+                                <button class="btn btn-primary" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;">Next</button></div>
                         </div>
                     </div>
                 </div>

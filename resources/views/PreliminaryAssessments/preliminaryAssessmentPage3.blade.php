@@ -5,10 +5,11 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2400px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2400px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
+                    <input type="hidden" name="page2_total" value="{{ session('input_value2') }}" id="page2_total_marks">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>
@@ -198,16 +199,19 @@
                         <div class="row d-flex flex-column" id="choise30" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Digital appliances are not available</label></div>
+                                    <div class="col"><input type="radio" value="5" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Importance and requirement is identified but digital appliances are not available</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="2.5" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Importance and requirement is identified.</label></div>
+                                    <div class="col"><input type="radio" value="2.5" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">b.&nbsp;Importance and requirement is identified.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="5" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Digital appliances are in place and does not have a proper sustainable approach</label></div>
+                                    <div class="col"><input type="radio" value="0" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Importance and requirement is not identified.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="10" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Inplace and organization has a sustainable approach</label></div>
+                                    <div class="col"><input type="radio" value="7.5" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Digital appliances are in place and does not have a proper sustainable approach</label></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 20px;">
+                                    <div class="col"><input type="radio" value="10" name="sd30" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">e.&nbsp;Inplace and organization has a sustainable approach</label></div>
                                 </div>
                             </div>
                         </div>
@@ -234,6 +238,11 @@
                     <div class="row" style="margin-top: 20px;">
                         <input class="form-control" type="hidden" id="marks31" name="marks_d31">
                         <input class="form-control" type="hidden" id="percentage31" name="percentage_d31">
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <input class="form-control" type="hidden" id="page3_total_marks" name="page3_total" value="">
+                        <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
+                        <input class="form-control" type="text" id="overall_percentage" name="overall">
                     </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 50px;">
                         <div class="row" style="margin-top: 150px;">
@@ -396,6 +405,31 @@
                 document.getElementById("percentage31").value = z + '%';
             });
 
+        </script>
+
+        <script type="text/javascript">
+            $('#page3').find(":radio").on('click', e => {
+                p2 = document.getElementById("page2_total_marks").value;
+                q22 = document.getElementById("marks22").value;
+                q23 = document.getElementById("marks23").value;
+                q24 = document.getElementById("marks24").value;
+                q25 = document.getElementById("marks25").value;
+                q26 = document.getElementById("marks26").value;
+                q27 = document.getElementById("marks27").value;
+                q28 = document.getElementById("marks28").value;
+                q29 = document.getElementById("marks29").value;
+                q30 = document.getElementById("marks30").value;
+                q31 = document.getElementById("marks31").value;
+
+                var a=Number(p2) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) + Number(q28) + Number(q29) + Number(q30) + Number(q31);
+
+                document.getElementById("page3_total_marks").value= a;
+
+                var b= a / 1000;
+                var c= (b * 100).toFixed(0);
+
+                document.getElementById("overall_percentage").value= c+'%';
+            });
         </script>
     </section>
 </body>

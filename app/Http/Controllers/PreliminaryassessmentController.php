@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PreliminaryassessmentController extends Controller
 {
@@ -67,6 +68,22 @@ class PreliminaryassessmentController extends Controller
     }
 
     public function prepage3(){
+        return view('PreliminaryAssessments.preliminaryAssessmentPage3');
+    }
+
+    public function storeValue(Request $request)
+    {//
+        $inputValue = $request->input('page1_total');
+        Session::put('input_value', $inputValue);
+
+        return view('PreliminaryAssessments.preliminaryAssessmentPage2');
+    }
+
+    public function storeValue2(Request $request)
+    {//dd('hi');
+        $inputValue = $request->input('page2_total');
+        Session::put('input_value2', $inputValue);
+
         return view('PreliminaryAssessments.preliminaryAssessmentPage3');
     }
 }

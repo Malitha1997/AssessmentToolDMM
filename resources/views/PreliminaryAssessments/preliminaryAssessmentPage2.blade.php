@@ -5,27 +5,34 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <div data-aos="fade-down" data-aos-duration="1000" style="width: 1282px;height: 2548px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <form method="POST" action="{{ route('storeValue2') }}">
+                {{csrf_field()}}
+            <div data-aos="fade-down" id="page2" data-aos-duration="1000" style="width: 1282px;height: 2548px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
+                    <input type="hidden" name="page1_total" value="{{ session('input_value') }}" id="page1_total_marks">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
                 </div>
-                <div class="col-xxl-12" style="margin-top: 20px;margin-bottom: 10px;">
+                <div class="col-xxl-12" id="choise11" style="margin-top: 20px;margin-bottom: 10px;">
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" value="2.5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" value="5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" value="7.5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" value="10" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
                     </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <input class="form-control" type="hidden" id="marks11" name="marks_d11">
+                    <input class="form-control" type="hidden" id="percentage11" name="percentage_d11">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">12.&nbsp;How does your organization capture citizens’ data?</span></div>
@@ -227,18 +234,38 @@
                         <input class="form-control" type="hidden" id="marks21" name="marks_d21">
                         <input class="form-control" type="hidden" id="percentage21" name="percentage_d21">
                     </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <input class="form-control" type="hidden" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')>
+                        <input class="form-control"  id="percentage20" name="percentage_d20">
+                    </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 0px;height: 206px;">
                         <div class="row" style="margin-top: 150px;">
                             <div class="col"></div>
                             <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                                 <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-size: 20px;color: #1f2471;background: rgb(255,255,255);font-family: Poppins, sans-serif;font-weight: bold;border-radius: 10px;border: 2px solid #1f2471 ;margin-right: 30px;" href="/preliminaryAssessment1">Previous</a>
                                 <a class="btn btn-primary" href="/home" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471;padding-left: 0px;margin-right: 30px;">Resume</a>
-                                <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" href="/preliminaryAssessment3">Next</a></div>
+                                <button class="btn btn-primary" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
+
+        {{--  Q11  --}}
+        <script type="text/javascript">
+            $('#choise11').find(":radio").on('click', e => {
+                wei = document.getElementById("weight").value;
+                max = document.getElementById("max_weight").value;
+                choi = e.target.value;
+                var x=wei * choi;
+                var y=x / max;
+                var z=y * 100;
+                document.getElementById("marks11").value = x;
+                document.getElementById("percentage11").value = z + '%';
+            });
+
+        </script>
 
         {{--  Q12  --}}
         <script type="text/javascript">
@@ -388,6 +415,27 @@
                 document.getElementById("percentage21").value = z + '%';
             });
 
+        </script>
+
+        <script type="text/javascript">
+            $('#page2').find(":radio").on('click', e => {
+                p1 = document.getElementById("page1_total_marks").value;
+                q11 = document.getElementById("marks11").value;
+                q12 = document.getElementById("marks12").value;
+                q13 = document.getElementById("marks13").value;
+                q14 = document.getElementById("marks14").value;
+                q15 = document.getElementById("marks15").value;
+                q16 = document.getElementById("marks16").value;
+                q17 = document.getElementById("marks17").value;
+                q18 = document.getElementById("marks18").value;
+                q19 = document.getElementById("marks19").value;
+                q20 = document.getElementById("marks20").value;
+                q21 = document.getElementById("marks21").value;
+
+                var a=Number(p1) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) + Number(q16) + Number(q17) + Number(q18) + Number(q20) + Number(q21) ;
+
+                document.getElementById("page2_total_marks").value= a;
+            });
         </script>
     </section>
 </body>

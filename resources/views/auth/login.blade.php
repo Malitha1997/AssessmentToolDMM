@@ -14,8 +14,8 @@
             @csrf
         <div class="container" style="width: 1008px;height: 468px;margin-top: 150px;border-style: solid;border-color: #5f2b84;">
             <div class="row" style="height: 468px;">
-                <div class="col" style="width: 527px;align-content: center;align-items: center;background: url(&quot;{{ asset('img/Group 3.png') }}&quot;), #161a55;">
-                    <div class="border rounded-0 flex-column justify-content-center align-items-center align-content-center align-self-center order-first" style="background: #ffffff;color: rgb(0,0,0);margin-top: 50px;width: 402px;height: 369px;margin-left: 36px;text-align: center;border-radius: 10px;">
+                <div class="col" style="width: 527px;background: url(&quot;{{ asset('img/Group 3.png') }}&quot;), #161a55;">
+                    <div class="border rounded-10 flex-column justify-content-center align-items-center align-content-center align-self-center order-first" style="background: #ffffff;color: rgb(0,0,0);margin-top: 50px;width: 402px;height: 369px;margin-left: 36px;text-align: center;border-radius: 10px;">
                         <h1 style="text-align: center;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;padding-top: 50px;color: #5f2b84;">Don't have an account?&nbsp;</h1><span style="font-family: Poppins, sans-serif;text-align: center;margin-top: 100px;margin-left: 10px;margin-right: 10px;"><br>Register Now and assess the Digital <br>Maturity level of organization.<br><br></span>
 
                         <a class="btn btn-primary d-flex flex-column justify-content-center align-items-center" href="{{ route('register') }}" style="border-width: 0px;margin-right: 0px;margin-left: 110px;margin-top: 90px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;text-align: center;">Signup</a>

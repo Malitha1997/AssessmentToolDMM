@@ -52,6 +52,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/strategyresults',[PreliminaryAssessmentResultController::class,'strategyresult'])->name('strategyresults');
     Route::get('/operationresults',[PreliminaryAssessmentResultController::class,'operationresult'])->name('operationresults');
 
+    Route::post('/store-value', [PreliminaryassessmentController::class, 'storeValue'])->name('storeValue');
+    Route::post('/store-value2', [PreliminaryassessmentController::class, 'storeValue2'])->name('storeValue2');
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
