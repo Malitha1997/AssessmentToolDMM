@@ -15,7 +15,7 @@
                     <div class="col"><span style="font-size: 20px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;"><br>You gained a result more than 50% for the Preliminary Assessment. You are eligible for <br>deep assessment.<br><br></span></div>
                 </div>
                 <div class="row">
-                    <div class="col"><button class="btn btn-primary" type="button" style="width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;">Show Results</button></div>
+                    <div class="col"><button class="btn btn-primary" type="button" style="width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;">Download</button></div>
                     <div class="col"><button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6.png') }}&quot;);border-width: 0px;font-size: 20px;font-family: Poppins, sans-serif;">Deep Assessment</button></div>
                 </div>
                 <div class="row">
