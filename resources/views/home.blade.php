@@ -6,7 +6,7 @@
     <section data-aos="fade-up" data-aos-duration="1000" >
         <div class="container" style="margin-top: 150px;margin-bottom: 20px;border-radius: 0px;border: 2px solid #5f2b84;">
             <div class="row">
-                <div style="width: auto;margin-top: 20px">
+                <div class="col" style="width: auto;margin-top: 20px">
                     <h1 style="font-family: Poppins, sans-serif;color: #1f2471;font-weight: bold;text-align: center;margin-top: 5px;">Organization Profile</h1>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">General Information</span></div>
