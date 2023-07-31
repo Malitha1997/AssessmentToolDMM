@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Percentage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -86,5 +87,23 @@ class PreliminaryAssessmentResultController extends Controller
 
     public function operationresult(){
         return view('Results.operationresults');
+    }
+
+    public function radarChart()
+    {//
+        $percentages = Percentage::select("customer","strategy","technology", "operation", "culture")->get();
+        $result = [['Customer','Strategy','Technology & data', 'Operation', 'Organization & culture']];
+        foreach ($percentages as $key => $value) {
+            $result[++$key]= [
+            (int) $value->customer,
+            (int) $value->strategy,
+            (int) $value->technology,
+            (int) $value->operation,
+            (int) $value->culture,
+        ];
+        }
+
+        return view('PreliminaryAssessments.results', compact('result'));
+
     }
 }

@@ -106,7 +106,7 @@
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
                         <div class="col" style="margin-top: 75px;text-align: right;">
-                            <button class="btn btn-primary" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #ef4323;background: rgb(255,255,255);border-width: 2px;border-color: #ef4323;margin-right: 10px;">View Results</button>
+                            <a class="btn btn-primary" href="/preliminaryResults" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #ef4323;background: rgb(255,255,255);border-width: 2px;border-color: #ef4323;margin-right: 10px;">View Results</a>
                             <a class="btn btn-primary" href="{{ route('govorganizations.edit',Auth::user()->govorganizationdetail->id) }}" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 7.png') }}&quot;);margin-right: 80px;">Edit Profile</a></div>
                     </div>
                 </div>

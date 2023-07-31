@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Technology;
 use Illuminate\Http\Request;
+use App\Models\Culture;
 
 class GoogleChartsController extends Controller
 {
@@ -66,6 +68,48 @@ class GoogleChartsController extends Controller
         }
 
         return view('Results.operationresults', compact('result'));
+
+    }
+
+    public function strategyChart()
+    {//
+        $strategies = Strategy::select("brand_management","brand_management","ecosystem_management", "finance", "market_intelligence", "strategic_management", "buisiness_assuarance","policy", "invention")->get();
+        $result = [['Brand Management','Brand Management','Ecosystem Management', 'Finance', 'Market Intelligence', 'Strategy Management', 'Buisiness Assuarance', 'Policy', 'Invention']];
+        foreach ($strategies as $key => $value) {
+            $result[++$key]= [
+            (int) $value->brand_management,
+            (int) $value->brand_management,
+            (int) $value->ecosystem_management,
+            (int) $value->finance,
+            (int) $value->market_intelligence,
+            (int) $value->strategic_management,
+            (int) $value->buisiness_assuarance,
+            (int) $value->policy,
+            (int) $value->invention,
+        ];
+        }
+
+        return view('Results.strategyresults', compact('result'));
+
+    }
+
+    public function cultureChart()
+    {//
+        $cultures = Culture::select("leadership","standards", "employee_engagement", "level_of_skill", "talent_management")->get();
+        $result[] = ['Subdimentions','Leadership','Standards', 'Employee Engagement', 'Level of Skill', 'Talent Management'];
+        foreach ($cultures as $key => $value) {
+            $result[++$key]= [
+            (int) $value->leadership,
+            (int) $value->leadership,
+            (int) $value->standards,
+            (int) $value->employee_engagement,
+            (int) $value->level_of_skill,
+            (int) $value->talent_management
+
+        ];
+        }
+
+        return view('Results.cultureresults', compact('result'));
 
     }
 }
