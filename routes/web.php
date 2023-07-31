@@ -5,6 +5,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\GoogleChartsController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\PreliminaryassessmentController;
@@ -46,11 +47,11 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
     Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
     Route::get('/preliminaryResults', [PreliminaryAssessmentResultController::class, 'result'])->name('preliminaryResults');
-    Route::get('/technologyresults',[PreliminaryAssessmentResultController::class,'create'])->name('technologyresults');
-    Route::get('/customerresults',[PreliminaryAssessmentResultController::class,'customerresult'])->name('customerresults');
+    Route::get('/technologyresults',[GoogleChartsController::class,'technologyChart'])->name('technologyresults');
+    Route::get('/customerresults',[GoogleChartsController::class,'customerChart'])->name('customerresults');
     Route::get('/culturerresults',[PreliminaryAssessmentResultController::class,'cultureresult'])->name('culturerresults');
     Route::get('/strategyresults',[PreliminaryAssessmentResultController::class,'strategyresult'])->name('strategyresults');
-    Route::get('/operationresults',[PreliminaryAssessmentResultController::class,'operationresult'])->name('operationresults');
+    Route::get('/operationresults',[GoogleChartsController::class,'operationChart'])->name('operationresults');
 
     Route::post('/store-value', [PreliminaryassessmentController::class, 'storeValue'])->name('storeValue');
     Route::post('/store-value2', [PreliminaryassessmentController::class, 'storeValue2'])->name('storeValue2');
@@ -60,6 +61,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
         // Route::get('autocomplete2', 'autocomplete2')->name('autocomplete2');
         // Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
     });
+
+
 });
 
 /*All Admin Routes List*/
@@ -92,4 +95,5 @@ Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, '
 Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
 
 Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
 

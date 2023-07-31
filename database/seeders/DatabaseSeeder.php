@@ -20,11 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            CreateAdminUserSeeder::class,
-            GovOrganizationNameSeeder::class,
-           
+            CreateUsersSeeder::class,
+            RelatedministrySeeder::class,
             OrganizationCategorySeeder::class,
-            RelatedministrySeeder::class
+            GovOrganizationNameSeeder::class,
+            GovorganizationSeeder::class,
+            CustomerSeeder::class,
+            PercentageSeeder::class,
         ]);
     }
 }
