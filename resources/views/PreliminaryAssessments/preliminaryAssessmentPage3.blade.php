@@ -9,7 +9,19 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="hidden" name="page2_total" value="{{ session('input_value2') }}" id="page2_total_marks">
+                    <input type="hidden" name="page2_total" value="{{  $inputValue['page2_total'] }}" id="page2_total_marks">
+                    <input class="form-control" type="hidden" id="customerPercentage" name="customer_percentage" value="{{ $inputValue['customer_percentage']}}">
+                    <input class="form-control" type="hidden" id="percentage1" name="percentage_d1" value="{{ $inputValue['percentage_d1']}}">
+                    <input class="form-control" type="hidden" id="percentage2" name="percentage_d2" value="{{ $inputValue['percentage_d2']}}">
+                    <input class="form-control" type="hidden" id="percentage3" name="percentage_d3" value="{{ $inputValue['percentage_d3']}}">
+                    <input class="form-control" type="hidden" id="percentage4" name="percentage_d4" value="{{ $inputValue['percentage_d4']}}">
+                    <input class="form-control" type="hidden" id="percentage5" name="percentage_d5" value="{{ $inputValue['percentage_d5']}}">
+                    <input class="form-control" type="hidden" id="strategyPercentage" name="strategy_percentage" value="{{ $inputValue['strategy_percentage']}}">
+                    <input class="form-control" type="hidden" id="percentage6" name="percentage_d6" value="{{ $inputValue['percentage_d6']}}">
+                    <input class="form-control" type="hidden" id="percentage7" name="percentage_d7" value="{{ $inputValue['percentage_d7']}}">
+                    <input class="form-control" type="hidden" id="percentage8" name="percentage_d8" value="{{ $inputValue['percentage_d8']}}">
+                    <input class="form-control" type="hidden" id="percentage9" name="percentage_d9" value="{{ $inputValue['percentage_d9']}}">
+                    <input class="form-control" type="hidden" id="percentage10" name="percentage_d10" value="{{ $inputValue['percentage_d10']}}">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>

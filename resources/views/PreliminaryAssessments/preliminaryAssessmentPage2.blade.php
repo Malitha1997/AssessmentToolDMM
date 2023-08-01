@@ -3,7 +3,7 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section class="d-flex flex-column align-items-center" style="height: 3200px;">
+    <section class="d-flex flex-column align-items-center" style="height: 4200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue2') }}">
                 {{csrf_field()}}
@@ -11,7 +11,19 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="hidden" name="page1_total" value="{{ session('input_value') }}" id="page1_total_marks">
+                    <input type="" id="page1_total_marks" name="page1_total" value="{{ $inputValue['page1_total']}}" id="page1_total_marks">
+                    <input class="form-control" type="hidden" id="customerPercentage" name="customer_percentage" value="{{ $inputValue['customer_percentage']}}">
+                    <input class="form-control" type="hidden" id="percentage1" name="percentage_d1" value="{{ $inputValue['percentage_d1']}}">
+                    <input class="form-control" type="hidden" id="percentage2" name="percentage_d2" value="{{ $inputValue['percentage_d2']}}">
+                    <input class="form-control" type="hidden" id="percentage3" name="percentage_d3" value="{{ $inputValue['percentage_d3']}}">
+                    <input class="form-control" type="hidden" id="percentage4" name="percentage_d4" value="{{ $inputValue['percentage_d4']}}">
+                    <input class="form-control" type="hidden" id="percentage5" name="percentage_d5" value="{{ $inputValue['percentage_d5']}}">
+                    <input class="form-control" type="hidden" id="strategyMarksPage1" name="strategy_marks_page1" value="{{ $inputValue['strategy_marks_page1']}}">
+                    <input class="form-control" type="hidden" id="percentage6" name="percentage_d6" value="{{ $inputValue['percentage_d6']}}">
+                    <input class="form-control" type="hidden" id="percentage7" name="percentage_d7" value="{{ $inputValue['percentage_d7']}}">
+                    <input class="form-control" type="hidden" id="percentage8" name="percentage_d8" value="{{ $inputValue['percentage_d8']}}">
+                    <input class="form-control" type="hidden" id="percentage9" name="percentage_d9" value="{{ $inputValue['percentage_d9']}}">
+                    <input class="form-control" type="hidden" id="percentage10" name="percentage_d10" value="{{ $inputValue['percentage_d10']}}">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
@@ -76,6 +88,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks13" name="marks_d13">
                     <input class="form-control" type="hidden" id="percentage13" name="percentage_d13">
+                    <input class="form-control" type="hidden" id="strategyPercentage" name="strategy_percentage">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">14.&nbsp;How does your organization manage citizens trust &amp; perception</span></div>
@@ -235,8 +248,9 @@
                         <input class="form-control" type="hidden" id="percentage21" name="percentage_d21">
                     </div>
                     <div class="row" style="margin-top: 20px;">
-                        <input class="form-control" type="hidden" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')>
-                        <input class="form-control"  id="percentage20" name="percentage_d20">
+                        <input class="form-control" type="" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')}}">
+
+                        <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
                     </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 0px;height: 206px;">
                         <div class="row" style="margin-top: 150px;">
@@ -420,6 +434,7 @@
         <script type="text/javascript">
             $('#page2').find(":radio").on('click', e => {
                 p1 = document.getElementById("page1_total_marks").value;
+                s1 = document.getElementById("strategyMarksPage1").value;
                 q11 = document.getElementById("marks11").value;
                 q12 = document.getElementById("marks12").value;
                 q13 = document.getElementById("marks13").value;
@@ -433,8 +448,12 @@
                 q21 = document.getElementById("marks21").value;
 
                 var a=Number(p1) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) + Number(q16) + Number(q17) + Number(q18) + Number(q20) + Number(q21) ;
-
                 document.getElementById("page2_total_marks").value= a;
+
+                var stra= Number(s1) + Number(q11) + Number(q12) + Number(q13);
+                var stra2= stra / 250;
+                var strategy= (stra2 * 100).toFixed(0);
+                document.getElementById("strategyPercentage").value= strategy;
             });
         </script>
     </section>

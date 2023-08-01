@@ -115,6 +115,9 @@
                     <input class="form-control" type="hidden" id="percentage5" name="percentage_d5">
                 </div>
                 <div class="row" style="margin-top: 20px;">
+                    <input class="form-control" type="hidden" id="customerPercentage" name="customer_percentage">
+                </div>
+                <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">6.&nbsp;Does your organization has a network/ system administrator who has access to the organization's network/systems?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise6" style="text-align: center;">
@@ -273,7 +276,8 @@
                     <input class="form-control" type="hidden" id="percentage10" name="percentage_d10">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="page1_total_marks" name="page1_total" value="{{ session('input_value')>
+                    <input class="form-control" type="" id="strategyMarksPage1" name="strategy_marks_page1" >
+                    <input class="form-control" type="" id="page1_total_marks" name="page1_total" >
                     <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
@@ -300,7 +304,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks").value = x;
-                document.getElementById("percentage").value = z + '%';
+                document.getElementById("percentage").value = z ;
             });
 
         </script>
@@ -315,7 +319,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks2").value = x;
-                document.getElementById("percentage2").value = z + '%';
+                document.getElementById("percentage2").value = z ;
             });
 
         </script>
@@ -330,7 +334,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks3").value = x;
-                document.getElementById("percentage3").value = z + '%';
+                document.getElementById("percentage3").value = z ;
             });
         </script>
 
@@ -344,7 +348,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks4").value = x;
-                document.getElementById("percentage4").value = z + '%';
+                document.getElementById("percentage4").value = z ;
             });
         </script>
 
@@ -358,7 +362,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks5").value = x;
-                document.getElementById("percentage5").value = z + '%';
+                document.getElementById("percentage5").value = z ;
             });
         </script>
 
@@ -372,7 +376,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks6").value = x;
-                document.getElementById("percentage6").value = z + '%';
+                document.getElementById("percentage6").value = z ;
             });
         </script>
 
@@ -386,7 +390,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks7").value = x;
-                document.getElementById("percentage7").value = z + '%';
+                document.getElementById("percentage7").value = z ;
             });
         </script>
 
@@ -440,7 +444,7 @@
                 var y=t / max;
                 var z=y * 100;
 
-                document.getElementById("percentage8").value = z + '%';
+                document.getElementById("percentage8").value = z ;
             });
         </script>
 
@@ -454,7 +458,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks9").value = x;
-                document.getElementById("percentage9").value = z + '%';
+                document.getElementById("percentage9").value = z ;
             });
         </script>
 
@@ -468,7 +472,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks10").value = x;
-                document.getElementById("percentage10").value = z + '%';
+                document.getElementById("percentage10").value = z ;
             });
         </script>
 
@@ -487,8 +491,16 @@
 
 
                 var a= Number(q1) + Number(q2) + Number(q3) + Number(q4) + Number(q5) + Number(q6) + Number(q7) + Number(q8) + Number(q9) + Number(q10);
-
                 document.getElementById("page1_total_marks").value= a;
+
+                var cus= Number(q1) + Number(q2) + Number(q3) + Number(q4) + Number(q5);
+                var cus2= cus / 156.25;
+                var customer= (cus2 * 100).toFixed(0);
+                document.getElementById("customerPercentage").value= customer;
+
+                var strategy= Number(q6) + Number(q7) + Number(q8) + Number(q9) + Number(q10);
+                document.getElementById("strategyMarksPage1").value= strategy;
+
             });
         </script>
 
