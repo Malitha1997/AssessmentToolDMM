@@ -52,6 +52,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/culturerresults',[GoogleChartsController::class,'cultureChart'])->name('culturerresults');
     Route::get('/strategyresults',[GoogleChartsController::class,'strategyChart'])->name('strategyresults');
     Route::get('/operationresults',[GoogleChartsController::class,'operationChart'])->name('operationresults');
+    Route::resource('preliminaryAssessments', PreliminaryAssessmentResultController::class);
 
     Route::post('/store-value', [PreliminaryassessmentController::class, 'storeValue'])->name('storeValue');
     Route::post('/store-value2', [PreliminaryassessmentController::class, 'storeValue2'])->name('storeValue2');

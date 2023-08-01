@@ -5,6 +5,8 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
+            <form method="POST" action="{{ route('preliminaryAssessments.store') }}">
+                {{csrf_field()}}
             <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2400px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
@@ -22,6 +24,19 @@
                     <input class="form-control" type="hidden" id="percentage8" name="percentage_d8" value="{{ $inputValue['percentage_d8']}}">
                     <input class="form-control" type="hidden" id="percentage9" name="percentage_d9" value="{{ $inputValue['percentage_d9']}}">
                     <input class="form-control" type="hidden" id="percentage10" name="percentage_d10" value="{{ $inputValue['percentage_d10']}}">
+                    <input class="form-control" type="hidden" id="percentage11" name="percentage_d11" value="{{ $inputValue['percentage_d11']}}">
+                    <input class="form-control" type="hidden" id="percentage12" name="percentage_d12" value="{{ $inputValue['percentage_d12']}}">
+                    <input class="form-control" type="hidden" id="percentage13" name="percentage_d13" value="{{ $inputValue['percentage_d13']}}">
+                    <input class="form-control" type="hidden" id="technologyMarksPage1" name="technology_marks_page1" value="{{ $inputValue['technology_marks_page1'] }}">
+                    <input class="form-control" type="hidden" id="percentage14" name="percentage_d14" value="{{ $inputValue['percentage_d14']}}">
+                    <input class="form-control" type="hidden" id="percentage15" name="percentage_d15" value="{{ $inputValue['percentage_d15']}}">
+                    <input class="form-control" type="hidden" id="percentage16" name="percentage_d16" value="{{ $inputValue['percentage_d16']}}">
+                    <input class="form-control" type="hidden" id="percentage17" name="percentage_d17" value="{{ $inputValue['percentage_d17']}}">
+                    <input class="form-control" type="hidden" id="percentage18" name="percentage_d18" value="{{ $inputValue['percentage_d18']}}">
+                    <input class="form-control" type="hidden" id="percentage19" name="percentage_d19" value="{{ $inputValue['percentage_d19']}}">
+                    <input class="form-control" type="hidden" id="percentage20" name="percentage_d20" value="{{ $inputValue['percentage_d20']}}">
+                    <input class="form-control" type="hidden" id="percentage21" name="percentage_d21" value="{{ $inputValue['percentage_d20']}}">
+                    <input class="form-control" type="hidden" id="gov_ord_id" name="gov_organization_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>
@@ -80,6 +95,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks23" name="marks_d23">
                     <input class="form-control" type="hidden" id="percentage23" name="percentage_d23">
+                    <input class="form-control" type="hidden" id="technologyPercentage" name="technology_percentage">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">24.&nbsp;Does your organization have the mechanism to develop a strategic plan?</span></div>
@@ -161,6 +177,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks27" name="marks_d27">
                     <input class="form-control" type="hidden" id="percentage27" name="percentage_d27">
+                    <input class="form-control" type="hidden" id="operationPercentage" name="operation_percentage">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">28.&nbsp;How is the awareness on digital transformation goals among the employees?</span></div>
@@ -250,11 +267,11 @@
                     <div class="row" style="margin-top: 20px;">
                         <input class="form-control" type="hidden" id="marks31" name="marks_d31">
                         <input class="form-control" type="hidden" id="percentage31" name="percentage_d31">
+                        <input class="form-control" type="hidden" id="culturePercentage" name="culture_percentage">
                     </div>
                     <div class="row" style="margin-top: 20px;">
                         <input class="form-control" type="hidden" id="page3_total_marks" name="page3_total" value="">
-                        <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
-                        <input class="form-control" type="text" id="overall_percentage" name="overall">
+                        <input class="form-control" type="hidden" id="overall_percentage" name="overall">
                     </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 50px;">
                         <div class="row" style="margin-top: 150px;">
@@ -262,11 +279,12 @@
                             <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                                 <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-size: 20px;color: #1f2471;background: rgb(255,255,255);font-family: Poppins, sans-serif;font-weight: bold;border-radius: 10px;border: 2px solid #1f2471 ; margin-right : 30px;" href="/preliminaryAssessment2">Previous</a>
                                 <a class="btn btn-primary" href="/home" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471;padding-left: 0px;margin-right: 30px;">Resume</a>
-                                <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" href="/preliminaryResults">Submit</a></div>
+                                <button class="btn btn-primary" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;">Submit</button></div>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
 
         {{--  Q22  --}}
@@ -279,7 +297,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks22").value = x;
-                document.getElementById("percentage22").value = z + '%';
+                document.getElementById("percentage22").value = z ;
             });
 
         </script>
@@ -294,7 +312,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks23").value = x;
-                document.getElementById("percentage23").value = z + '%';
+                document.getElementById("percentage23").value = z ;
             });
 
         </script>
@@ -309,7 +327,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks24").value = x;
-                document.getElementById("percentage24").value = z + '%';
+                document.getElementById("percentage24").value = z ;
             });
 
         </script>
@@ -324,7 +342,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks25").value = x;
-                document.getElementById("percentage25").value = z + '%';
+                document.getElementById("percentage25").value = z ;
             });
 
         </script>
@@ -339,7 +357,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks26").value = x;
-                document.getElementById("percentage26").value = z + '%';
+                document.getElementById("percentage26").value = z ;
             });
 
         </script>
@@ -354,7 +372,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks27").value = x;
-                document.getElementById("percentage27").value = z + '%';
+                document.getElementById("percentage27").value = z ;
             });
 
         </script>
@@ -369,7 +387,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks28").value = x;
-                document.getElementById("percentage28").value = z + '%';
+                document.getElementById("percentage28").value = z ;
             });
 
         </script>
@@ -384,7 +402,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks29").value = x;
-                document.getElementById("percentage29").value = z + '%';
+                document.getElementById("percentage29").value = z ;
             });
 
         </script>
@@ -399,7 +417,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks30").value = x;
-                document.getElementById("percentage30").value = z + '%';
+                document.getElementById("percentage30").value = z ;
             });
 
         </script>
@@ -414,7 +432,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks31").value = x;
-                document.getElementById("percentage31").value = z + '%';
+                document.getElementById("percentage31").value = z ;
             });
 
         </script>
@@ -422,6 +440,7 @@
         <script type="text/javascript">
             $('#page3').find(":radio").on('click', e => {
                 p2 = document.getElementById("page2_total_marks").value;
+                t1 = document.getElementById("technologyMarksPage1").value;
                 q22 = document.getElementById("marks22").value;
                 q23 = document.getElementById("marks23").value;
                 q24 = document.getElementById("marks24").value;
@@ -434,13 +453,26 @@
                 q31 = document.getElementById("marks31").value;
 
                 var a=Number(p2) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) + Number(q28) + Number(q29) + Number(q30) + Number(q31);
-
                 document.getElementById("page3_total_marks").value= a;
 
                 var b= a / 1000;
                 var c= (b * 100).toFixed(0);
-
                 document.getElementById("overall_percentage").value= c+'%';
+
+                var tec= Number(t1) + Number(q22) + Number(q23);
+                var tec2= tec / 312.5;
+                var technology= (tec2 * 100).toFixed(0);
+                document.getElementById("technologyPercentage").value= technology;
+
+                var opr= Number(q24) + Number(q25) + Number(q26) + Number(q27);
+                var opr2= opr / 125;
+                var operation= (opr2 * 100).toFixed(0);
+                document.getElementById("operationPercentage").value= operation;
+
+                var cul= Number(q28) + Number(q29) + Number(q30) + Number(q31);
+                var cul2= cul / 156.25;
+                var culture= (cul2 * 100).toFixed(0);
+                document.getElementById("culturePercentage").value= culture;
             });
         </script>
     </section>

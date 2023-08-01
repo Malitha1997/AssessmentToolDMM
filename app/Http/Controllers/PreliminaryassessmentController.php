@@ -28,7 +28,7 @@ class PreliminaryassessmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
     }
 
     /**
@@ -112,6 +112,18 @@ class PreliminaryassessmentController extends Controller
             'percentage_d8'=> $request->input('percentage_d8'),
             'percentage_d9'=> $request->input('percentage_d9'),
             'percentage_d10'=> $request->input('percentage_d10'),
+            'percentage_d11'=> $request->input('percentage_d11'),
+            'percentage_d12'=> $request->input('percentage_d12'),
+            'percentage_d13'=> $request->input('percentage_d13'),
+            'technology_marks_page1'=> $request->input('technology_marks_page1'),
+            'percentage_d14'=> $request->input('percentage_d14'),
+            'percentage_d15'=> $request->input('percentage_d15'),
+            'percentage_d16'=> $request->input('percentage_d16'),
+            'percentage_d17'=> $request->input('percentage_d17'),
+            'percentage_d18'=> $request->input('percentage_d18'),
+            'percentage_d19'=> $request->input('percentage_d19'),
+            'percentage_d20'=> $request->input('percentage_d20'),
+            'percentage_d21'=> $request->input('percentage_d21'),
         ];
 
         $request->session()->put('input_value', $data);

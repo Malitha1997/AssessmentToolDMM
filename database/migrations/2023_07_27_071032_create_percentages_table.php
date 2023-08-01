@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('technology');
             $table->string('operation');
             $table->string('culture');
+            $table->string('overall');
             $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
         });
     }

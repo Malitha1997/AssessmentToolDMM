@@ -276,9 +276,9 @@
                     <input class="form-control" type="hidden" id="percentage10" name="percentage_d10">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="" id="strategyMarksPage1" name="strategy_marks_page1" >
-                    <input class="form-control" type="" id="page1_total_marks" name="page1_total" >
-                    <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
+                    <input class="form-control" type="hidden" id="strategyMarksPage1" name="strategy_marks_page1" >
+                    <input class="form-control" type="hidden" id="page1_total_marks" name="page1_total" >
+                    
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row" style="margin-top: 150px;">

@@ -25,8 +25,7 @@ class DatabaseSeeder extends Seeder
             OrganizationCategorySeeder::class,
             GovOrganizationNameSeeder::class,
             GovorganizationSeeder::class,
-            CustomerSeeder::class,
-            PercentageSeeder::class,
+            
         ]);
     }
 }

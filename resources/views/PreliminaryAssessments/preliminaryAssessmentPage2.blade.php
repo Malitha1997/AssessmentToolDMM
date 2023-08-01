@@ -3,7 +3,7 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section class="d-flex flex-column align-items-center" style="height: 4200px;">
+    <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue2') }}">
                 {{csrf_field()}}
@@ -11,7 +11,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="" id="page1_total_marks" name="page1_total" value="{{ $inputValue['page1_total']}}" id="page1_total_marks">
+                    <input type="hidden" id="page1_total_marks" name="page1_total" value="{{ $inputValue['page1_total']}}" id="page1_total_marks">
                     <input class="form-control" type="hidden" id="customerPercentage" name="customer_percentage" value="{{ $inputValue['customer_percentage']}}">
                     <input class="form-control" type="hidden" id="percentage1" name="percentage_d1" value="{{ $inputValue['percentage_d1']}}">
                     <input class="form-control" type="hidden" id="percentage2" name="percentage_d2" value="{{ $inputValue['percentage_d2']}}">
@@ -248,9 +248,8 @@
                         <input class="form-control" type="hidden" id="percentage21" name="percentage_d21">
                     </div>
                     <div class="row" style="margin-top: 20px;">
-                        <input class="form-control" type="" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')}}">
-
-                        <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
+                        <input class="form-control" type="hidden" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')}}">
+                        <input class="form-control" type="hidden" id="technologyMarksPage1" name="technology_marks_page1" >
                     </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 0px;height: 206px;">
                         <div class="row" style="margin-top: 150px;">
@@ -276,7 +275,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks11").value = x;
-                document.getElementById("percentage11").value = z + '%';
+                document.getElementById("percentage11").value = z ;
             });
 
         </script>
@@ -291,7 +290,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks12").value = x;
-                document.getElementById("percentage12").value = z + '%';
+                document.getElementById("percentage12").value = z ;
             });
 
         </script>
@@ -306,7 +305,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks13").value = x;
-                document.getElementById("percentage13").value = z + '%';
+                document.getElementById("percentage13").value = z ;
             });
 
         </script>
@@ -321,7 +320,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks14").value = x;
-                document.getElementById("percentage14").value = z + '%';
+                document.getElementById("percentage14").value = z ;
             });
 
         </script>
@@ -336,7 +335,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks15").value = x;
-                document.getElementById("percentage15").value = z + '%';
+                document.getElementById("percentage15").value = z ;
             });
 
         </script>
@@ -351,7 +350,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks16").value = x;
-                document.getElementById("percentage16").value = z + '%';
+                document.getElementById("percentage16").value = z ;
             });
 
         </script>
@@ -366,7 +365,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks17").value = x;
-                document.getElementById("percentage17").value = z + '%';
+                document.getElementById("percentage17").value = z ;
             });
 
         </script>
@@ -381,7 +380,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks18").value = x;
-                document.getElementById("percentage18").value = z + '%';
+                document.getElementById("percentage18").value = z ;
             });
 
         </script>
@@ -396,7 +395,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks19").value = x;
-                document.getElementById("percentage19").value = z + '%';
+                document.getElementById("percentage19").value = z ;
             });
 
         </script>
@@ -411,7 +410,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks20").value = x;
-                document.getElementById("percentage20").value = z + '%';
+                document.getElementById("percentage20").value = z ;
             });
 
         </script>
@@ -426,7 +425,7 @@
                 var y=x / max;
                 var z=y * 100;
                 document.getElementById("marks21").value = x;
-                document.getElementById("percentage21").value = z + '%';
+                document.getElementById("percentage21").value = z ;
             });
 
         </script>
@@ -454,6 +453,9 @@
                 var stra2= stra / 250;
                 var strategy= (stra2 * 100).toFixed(0);
                 document.getElementById("strategyPercentage").value= strategy;
+
+                var technology=Number(q14) + Number(q15) + Number(q16) + Number(q17) + Number(q18) + Number(q20) + Number(q21) ;
+                document.getElementById("technologyMarksPage1").value= technology;
             });
         </script>
     </section>
