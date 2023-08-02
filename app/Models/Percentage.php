@@ -15,7 +15,8 @@ class Percentage extends Model
         'strategy',
         'technology',
         'operation',
-        'culture'
+        'culture',
+        'overall'
     ];
 
     public function govorganizationdetail(){

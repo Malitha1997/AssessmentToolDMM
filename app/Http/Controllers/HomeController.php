@@ -6,9 +6,10 @@ namespace App\Http\Controllers;
 
 
 
-use Illuminate\Http\Request;
-
 use Illuminate\View\View;
+
+use App\Models\Percentage;
+use Illuminate\Http\Request;
 
 
 
@@ -46,7 +47,8 @@ class HomeController extends Controller
 
     public function index(): View
     {
-        return view('home');
+        $dataExists = Percentage::exists();
+        return view('home',compact('dataExists'));
     }
 
 

@@ -66,17 +66,17 @@ class PreliminaryAssessmentResultController extends Controller
             'percentage_d26'=> 'required|string',
             'percentage_d27'=> 'required|string',
             'percentage_d28'=> 'required|string',
-            'percentage_d19'=> 'required|string',
+            'percentage_d29'=> 'required|string',
             'percentage_d30'=> 'required|string',
             'percentage_d31'=> 'required|string',
+            'percentage_d32'=> 'required|string',
             'customer_percentage'=> 'required|string',
             'strategy_percentage'=> 'required|string',
-            'technology_percentage'=> 'required|string',
             'technology_percentage'=> 'required|string',
             'operation_percentage'=> 'required|string',
             'culture_percentage'=> 'required|string',
             'overall'=> 'required|string',
-            'gov_organization_id'=> 'required|string'
+            'govorganizationdetail_id'=> 'required|string|unique:percentages'
         ]);
         //dd($request);
         $customer= new Customer;
@@ -86,7 +86,7 @@ class PreliminaryAssessmentResultController extends Controller
         $customer->citizen_experience_strategy=$request->percentage_d3;
         $customer->citizen_insights=$request->percentage_d4;
         $customer->citizen_trust=$request->percentage_d5;
-        $customer->govorganizationdetail_id=$request->gov_organization_id;
+        $customer->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $customer->save();
 
@@ -100,7 +100,7 @@ class PreliminaryAssessmentResultController extends Controller
         $strategy->buisiness_assuarance=$request->percentage_d11;
         $strategy->policy=$request->percentage_d12;
         $strategy->invention=$request->percentage_d13;
-        $strategy->govorganizationdetail_id=$request->gov_organization_id;
+        $strategy->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $strategy->save();
 
@@ -116,7 +116,7 @@ class PreliminaryAssessmentResultController extends Controller
         $technology->data_engineering=$request->percentage_d21;
         $technology->interoperbility=$request->percentage_d22;
         $technology->application_for_users=$request->percentage_d23;
-        $technology->govorganizationdetail_id=$request->gov_organization_id;
+        $technology->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $technology->save();
 
@@ -126,7 +126,7 @@ class PreliminaryAssessmentResultController extends Controller
         $operation->integrated_service_management=$request->percentage_d25;
         $operation->real_time_insights=$request->percentage_d26;
         $operation->smart_process_management=$request->percentage_d27;
-        $operation->govorganizationdetail_id=$request->gov_organization_id;
+        $operation->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $operation->save();
 
@@ -135,9 +135,9 @@ class PreliminaryAssessmentResultController extends Controller
         $culture->leadership=$request->percentage_d28;
         $culture->standards=$request->percentage_d29;
         $culture->employee_engagement=$request->percentage_d30;
-        $culture->level_of_skill=$request->percentage_31;
-        $culture->talent_management=$request->percentage_d31;
-        $culture->govorganizationdetail_id=$request->gov_organization_id;
+        $culture->level_of_skill=$request->percentage_d31;
+        $culture->talent_management=$request->percentage_d32;
+        $culture->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $culture->save();
 
@@ -149,11 +149,11 @@ class PreliminaryAssessmentResultController extends Controller
         $percentage->operation=$request->operation_percentage;
         $percentage->culture=$request->culture_percentage;
         $percentage->overall=$request->overall;
-        $percentage->govorganizationdetail_id=$request->gov_organization_id;
+        $percentage->govorganizationdetail_id=$request->govorganizationdetail_id;
 
         $percentage->save();
 
-        return view('PreliminaryAssessments.results');
+        return redirect()->route('preliminaryResults');
     }
 
     /**
@@ -190,8 +190,29 @@ class PreliminaryAssessmentResultController extends Controller
 
     public function result()
     {
-        $percentages = DB::select('select * from percentages');
-        return view('PreliminaryAssessments.results',['percentages'=>$percentages]);
+
+        // Fetch data for the radar chart
+        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
+
+        // Assuming the authenticated user has a "govorganizationdetail" and it's related to a "percentage"
+        $percentage = Auth::user()->govorganizationdetail->percentage;
+
+        // If there is no percentage data for the user, you can handle it accordingly
+        if (!$percentage) {
+            // Handle the case where the authenticated user doesn't have a related "percentage"
+            return redirect()->route('home')->with('error', 'No percentage data found.');
+        }
+
+        // Organize the percentage data for the radar chart
+        $percentages = [
+            (int) $percentage->customer,
+            (int) $percentage->strategy,
+            (int) $percentage->technology,
+            (int) $percentage->operation,
+            (int) $percentage->culture,
+        ];
+
+        return view('PreliminaryAssessments.results',compact('labels', 'percentages'));
     }
 
     public function customerresult(){

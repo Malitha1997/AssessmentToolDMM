@@ -7,7 +7,7 @@
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('preliminaryAssessments.store') }}">
                 {{csrf_field()}}
-            <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2400px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2700px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -36,7 +36,7 @@
                     <input class="form-control" type="hidden" id="percentage19" name="percentage_d19" value="{{ $inputValue['percentage_d19']}}">
                     <input class="form-control" type="hidden" id="percentage20" name="percentage_d20" value="{{ $inputValue['percentage_d20']}}">
                     <input class="form-control" type="hidden" id="percentage21" name="percentage_d21" value="{{ $inputValue['percentage_d20']}}">
-                    <input class="form-control" type="hidden" id="gov_ord_id" name="gov_organization_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
+                    <input class="form-control" type="" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>
@@ -267,6 +267,33 @@
                     <div class="row" style="margin-top: 20px;">
                         <input class="form-control" type="hidden" id="marks31" name="marks_d31">
                         <input class="form-control" type="hidden" id="percentage31" name="percentage_d31">
+                    </div>
+                    <div class="row" style="margin-top: 20px;text-align:left">
+                        <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">32.&nbsp;Question 32</span></div>
+                    </div>
+                    <div class="row d-flex flex-column" style="text-align: center;">
+                        <div class="col">
+                            <div class="row d-flex flex-column" id="choise32" style="text-align: center;">
+                                <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
+                                    <div class="row" style="margin-bottom: 20px;">
+                                        <div class="col"><input type="radio" value="0" name="sd32" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Choice 01</label></div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 20px;">
+                                        <div class="col"><input type="radio" value="5" name="sd32" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -8px;">b.&nbsp;Choice 2</label></div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 20px;">
+                                        <div class="col"><input type="radio" value="10" name="sd32" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -8px;">c.&nbsp;Choice 3</label></div>
+                                    </div>
+                                    <div class="row" style="margin-bottom: 20px;">
+                                        <div class="col"><input type="radio" value="2.5" name="sd32" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -8px;">d.&nbsp;Choice 4</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <input class="form-control" type="hidden" id="marks32" name="marks_d32">
+                        <input class="form-control" type="hidden" id="percentage32" name="percentage_d32">
                         <input class="form-control" type="hidden" id="culturePercentage" name="culture_percentage">
                     </div>
                     <div class="row" style="margin-top: 20px;">
@@ -274,7 +301,7 @@
                         <input class="form-control" type="hidden" id="overall_percentage" name="overall">
                     </div>
                     <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 50px;">
-                        <div class="row" style="margin-top: 150px;">
+                        <div class="row" style="margin-top: 10px;">
                             <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                             <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                                 <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-size: 20px;color: #1f2471;background: rgb(255,255,255);font-family: Poppins, sans-serif;font-weight: bold;border-radius: 10px;border: 2px solid #1f2471 ; margin-right : 30px;" href="/preliminaryAssessment2">Previous</a>
@@ -437,6 +464,21 @@
 
         </script>
 
+        {{--  Q32  --}}
+        <script type="text/javascript">
+            $('#choise32').find(":radio").on('click', e => {
+                wei = document.getElementById("weight").value;
+                max = document.getElementById("max_weight").value;
+                choi = e.target.value;
+                var x=wei * choi;
+                var y=x / max;
+                var z=y * 100;
+                document.getElementById("marks32").value = x;
+                document.getElementById("percentage32").value = z ;
+            });
+
+        </script>
+
         <script type="text/javascript">
             $('#page3').find(":radio").on('click', e => {
                 p2 = document.getElementById("page2_total_marks").value;
@@ -451,8 +493,9 @@
                 q29 = document.getElementById("marks29").value;
                 q30 = document.getElementById("marks30").value;
                 q31 = document.getElementById("marks31").value;
+                q32 = document.getElementById("marks32").value;
 
-                var a=Number(p2) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) + Number(q28) + Number(q29) + Number(q30) + Number(q31);
+                var a=Number(p2) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) + Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32);
                 document.getElementById("page3_total_marks").value= a;
 
                 var b= a / 1000;
@@ -469,7 +512,7 @@
                 var operation= (opr2 * 100).toFixed(0);
                 document.getElementById("operationPercentage").value= operation;
 
-                var cul= Number(q28) + Number(q29) + Number(q30) + Number(q31);
+                var cul= Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32);
                 var cul2= cul / 156.25;
                 var culture= (cul2 * 100).toFixed(0);
                 document.getElementById("culturePercentage").value= culture;

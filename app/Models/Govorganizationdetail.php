@@ -86,7 +86,7 @@ class Govorganizationdetail extends Model
         return $this->hasOne(Culture::class);
     }
 
-    public function percentages(){
-    return $this->hasMany(Percentage::class);
+    public function percentage(){
+        return $this->hasOne(Percentage::class);
     }
 }
