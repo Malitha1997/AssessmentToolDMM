@@ -1,120 +1,39 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-    <title>Laravel 10 Generate PDF Example - ItSolutionStuff.com</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <title>PDF Report</title>
+    <!-- Add any CSS styles specific to the PDF report here -->
 </head>
-
 <body>
+    <h1>PDF Report</h1>
+    <canvas id="chart_div" height="400" width="400"></canvas>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBasic);
 
-    <h1>{{ $title }}</h1>
+    function drawBasic() {
 
-    {{--  <p>{{ $date }}</p>  --}}
+      var data = google.visualization.arrayToDataTable({{ Js::from($result) }});
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      var options = {
 
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'Percentages',
+          minValue: 0,
+          maxValue: 100
+        },
+        vAxis: {
+          title: 'Subdimentions',
 
+        }
+      };
 
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 
-    <table class="table table-bordered">
-
-        <tr>
-
-            <th>ID</th>
-
-            <th>Name</th>
-
-            <th>Email</th>
-
-        </tr>
-
-        {{--  @foreach($users as $user)
-
-        <tr>
-
-            <td>{{ $user->id }}</td>
-
-            <td>{{ $user->name }}</td>
-
-            <td>{{ $user->email }}</td>
-
-        </tr>
-
-        @endforeach  --}}
-
-    </table>
-
-
-
+      chart.draw(data, options);
+    }
+    </script>
 </body>
-
 </html>
-
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-    <title>Laravel 10 Generate PDF Example - ItSolutionStuff.com</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-</head>
-
-<body>
-
-    <h1>{{ $title }}</h1>
-
-    {{--  <p>{{ $date }}</p>  --}}
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
-    tempor incididunt ut labore et dolore magna aliqua.</p>
-
-
-
-    <table class="table table-bordered">
-
-        <tr>
-
-            <th>ID</th>
-
-            <th>Name</th>
-
-            <th>Email</th>
-
-        </tr>
-            {{--  <img src="{{ public_path('img/Award.png') }}">  --}}
-        <tr>
-
-        </tr>
-
-        {{--  @foreach($users as $user)
-
-        <tr>
-
-            <td>{{ $user->id }}</td>
-
-            <td>{{ $user->name }}</td>
-
-            <td>{{ $user->email }}</td>
-
-        </tr>
-
-        @endforeach  --}}
-
-    </table>
-
-
-
-</body>
-
-</html>
-

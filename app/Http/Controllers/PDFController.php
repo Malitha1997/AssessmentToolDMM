@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use PDF;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PDFController extends Controller
 
@@ -20,24 +21,31 @@ class PDFController extends Controller
 
      */
 
-    public function generatePDF()
-    {
+     public function cultureChart()
+     {//
 
-        $users = User::get();
+         $culture = Auth::user()->govorganizationdetail->culture;
 
-        $data = [
+         // If there is no culture data for the user, you can handle it accordingly
+         if (!$culture) {
+             // Handle the case where the authenticated user doesn't have a related "culture"
+             return redirect()->route('home')->with('error', 'No culture data found.');
+         }
 
-            'title' => 'Welcome to ItSolutionStuff.com',
+         // Organize the culture data for Google Charts
+         $result = [
+             ['Category', 'Value'],
+             ['Leadership', (int) $culture->leadership],
+             ['Standards', (int) $culture->standards],
+             ['Employee Engagement', (int) $culture->employee_engagement],
+             ['Level of Skill', (int) $culture->level_of_skill],
+             ['Talent Management', (int) $culture->talent_management],
+         ];
 
-        ];
+         $pdf = PDF::loadView('myPDF', compact('result'));
+         return $pdf->download('report.pdf');
 
 
-        $pdf = PDF::loadView('myPDF', $data);
-
-
-        return $pdf->download('preliminary.pdf');
-
-
-    }
+     }
 
 }

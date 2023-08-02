@@ -15,7 +15,7 @@
                     <div class="col"><span style="font-size: 20px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->overall }} for the Preliminary Assessment.<br></span></div>
                 </div>
                 <div class="row" style="margin-bottom:20px;margin-top:30px">
-                    <div class="col"><button class="btn btn-primary" type="button" style="width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;">Download</button></div>
+                    <div class="col"><a class="btn btn-primary" type="button" style="width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;" href="/generate-pdf">Download</a></div>
                 </div>
                 <div class="row">
                     <div class="col"><span style="font-size: 16px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;">Back to&nbsp;<a href="/home" style="color: #5f2b84;"><span style="color: #5f2b84;">Organization profile</span><br><br></a></span>

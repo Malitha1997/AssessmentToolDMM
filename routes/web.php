@@ -63,6 +63,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
         // Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
     });
 
+    Route::get('generate-pdf', [PDFController::class, 'cultureChart']);
 
 });
 
@@ -95,6 +96,6 @@ Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, '
 Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
 Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
 
-Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
 
 
