@@ -30,6 +30,10 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
+Route::get('/report', function () {
+    return view('chart');
+});
+
 Route::resource('users', UserController::class);
 
 Auth::routes();
@@ -96,6 +100,8 @@ Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, '
 Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
 Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
 
+Route::get('preview', [PDFController::class,'preview']);
 
+Route::get('download', [PDFController::class,'download'])->name('download');
 
 

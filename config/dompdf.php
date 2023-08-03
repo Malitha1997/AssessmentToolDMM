@@ -13,7 +13,7 @@ return array(
     */
     'show_warnings' => false,   // Throw an Exception on warnings from dompdf
 
-    'public_path' => null,  // Override the public path if needed
+      // Override the public path if needed
 
     /*
      * Dejavu Sans font is missing glyphs for converted entities, turn it off if you need to show € and £.
@@ -21,6 +21,7 @@ return array(
     'convert_entities' => true,
 
     'options' => array(
+        'public_path' => public_path('img'),
         /**
          * The location of the DOMPDF font directory
          *
