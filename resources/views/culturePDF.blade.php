@@ -17,6 +17,7 @@
         function drawChart() {
             var data = google.visualization.arrayToDataTable(@json($result));
             //console.log('Data:', data);
+
             var options = {
                 chartArea: { width: '50%' },
                 hAxis: {
