@@ -24,8 +24,8 @@ class PDFController extends Controller
 
 
 
-        public function generatePDF()
-        {
+        public function generatePDF(Request $request)
+        {//dd($request);
             // Fetch data for the radar chart
         $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
 
@@ -91,7 +91,7 @@ class PDFController extends Controller
     ];
 
         // Render the view with Google Charts code and other content
-        $html = View::make('report', compact('result','govorganizationname','percentages','labels','result2'))->render();
+        $html = View::make('report', compact('request'))->render();
         //dd($html);
         // Generate the PDF
         $pdf = PDF::loadHTML($html);
