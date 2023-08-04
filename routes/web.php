@@ -67,7 +67,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
         // Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
     });
 
-    Route::post('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
+    Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
 
 });
 

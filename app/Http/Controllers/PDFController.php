@@ -26,7 +26,11 @@ class PDFController extends Controller
 
         public function generatePDF(Request $request)
         {//dd($request);
-            // Fetch data for the radar chart
+
+        //Get the government organization name
+        $govorganizationname = Auth::user()->govorganizationdetail->govorganizationname;
+
+        // Fetch data for the radar chart
         $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
 
         // Assuming the authenticated user has a "govorganizationdetail" and it's related to a "percentage"
@@ -39,15 +43,15 @@ class PDFController extends Controller
         }
 
         // Organize the percentage data for the radar chart
-        $percentages = [
+        $percentage = [
             (int) $percentage->customer,
             (int) $percentage->strategy,
             (int) $percentage->technology,
             (int) $percentage->operation,
             (int) $percentage->culture,
+            (int) $percentage->overall,
         ];
-        //Get the government organization name
-        $govorganizationname = Auth::user()->govorganizationdetail->govorganizationname;
+
 
         // Get the authenticated user's culture data
         $culture = Auth::user()->govorganizationdetail->culture;
@@ -58,7 +62,7 @@ class PDFController extends Controller
         }
 
         // Organize the culture data for Google Charts
-        $result = [
+        $culture = [
             ['Category', 'Value'],
             ['Leadership', (int) $culture->leadership],
             ['Standards', (int) $culture->standards],
@@ -76,7 +80,7 @@ class PDFController extends Controller
     }
 
     // Organize the technology data for Google Charts
-    $result2 = [
+    $technology = [
         ['Category', 'Value'],
         ['Emerging Technology', (int) $technology->emerging_technology],
         ['Data Management', (int) $technology->data_management],
@@ -90,12 +94,13 @@ class PDFController extends Controller
         ['Application for users', (int) $technology->application_for_users],
     ];
 
+        return view('report',compact('request','govorganizationname','percentage','culture','technology','labels'));
         // Render the view with Google Charts code and other content
-        $html = View::make('report', compact('request'))->render();
-        //dd($html);
-        // Generate the PDF
-        $pdf = PDF::loadHTML($html);
-        return $pdf->download('PreliminaryAssessmentReport.pdf');
+        //$html = View::make('report', compact('request','govorganizationname','percentage','culture','technology','labels'))->render();
+        // //dd($html);
+        // // Generate the PDF
+        //$pdf = PDF::loadHTML($html);
+        //return $pdf->download('PreliminaryAssessmentReport.pdf');
 
 
 

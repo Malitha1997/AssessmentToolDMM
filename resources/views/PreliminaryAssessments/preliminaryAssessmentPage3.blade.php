@@ -36,7 +36,7 @@
                     <input class="form-control" type="hidden" id="percentage19" name="percentage_d19" value="{{ $inputValue['percentage_d19']}}">
                     <input class="form-control" type="hidden" id="percentage20" name="percentage_d20" value="{{ $inputValue['percentage_d20']}}">
                     <input class="form-control" type="hidden" id="percentage21" name="percentage_d21" value="{{ $inputValue['percentage_d20']}}">
-                    <input class="form-control" type="" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
+                    <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">22.&nbsp;Could your organization generate real time reports if required?<br><br></span></div>

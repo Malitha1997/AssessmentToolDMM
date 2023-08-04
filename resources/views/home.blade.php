@@ -109,20 +109,24 @@
                             @if($dataExists)
                             <a class="btn btn-primary" href="/preliminaryResults" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #ef4323;background: rgb(255,255,255);border-width: 2px;border-color: #ef4323;margin-right: 10px; border-radius: 10px">View Results</a>
                             @else
-                            <a class="btn btn-primary" href="#" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #898382;background: rgb(255,255,255);border-width: 2px;border-color: #898382;margin-right: 10px; border-radius: 10px" disabled>View Results</a>
+                            <button class="btn btn-primary" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #898382;background: rgb(255,255,255);border-width: 2px;border-color: #898382;margin-right: 10px; border-radius: 10px" disabled>View Results</button>
                             @endif
                             <a class="btn btn-primary" href="{{ route('govorganizations.edit',Auth::user()->govorganizationdetail->id) }}" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 7.png') }}&quot;);margin-right: 80px;">Edit Profile</a></div>
                     </div>
                 </div>
                 <div style="width :450.3px;background: url(&quot;{{ asset('img/Screenshot (560) 1(2).png') }}&quot;);">
-
+                    @if($dataExists)
+                    <h1 data-aos="fade-down" style="font-family: Poppins, sans-serif;text-align: center;font-size: 24px;margin-top: 500px;">You have already<br> done the <br>Preliminary Assessment.&nbsp;</h1>
+                    @else
                     <h1 data-aos="fade-down" style="font-family: Poppins, sans-serif;text-align: center;font-size: 24px;margin-top: 500px;">You are eligible for Preliminary assessment. <br>Assess the Digital Maturity Level of organization.&nbsp;</h1>
-
+                    @endif
                     <div class="row" style="margin-top: 90px;">
                         <div class="col" style="text-align: center;">
-
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment1" >Preliminary Assessment</a></div>
-                            
+                            @if($dataExists)
+                            <button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" disabled>Preliminary Assessment</button>
+                            @else
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment1" >Preliminary Assessment</a>
+                            @endif
                         </div>
                     <div class="row" style="margin-top: 50px;">
                         {{--  <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;), url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" disabled>Deep Assessment</button></div>  --}}

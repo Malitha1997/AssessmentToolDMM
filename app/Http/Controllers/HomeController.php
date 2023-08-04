@@ -10,6 +10,7 @@ use Illuminate\View\View;
 
 use App\Models\Percentage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -47,7 +48,7 @@ class HomeController extends Controller
 
     public function index(): View
     {
-        $dataExists = Percentage::exists();
+        $dataExists = Auth::user()->govorganizationdetail->percentage;
         return view('home',compact('dataExists'));
     }
 
