@@ -30,16 +30,16 @@
                 </div>
                 <div class="col-xxl-12" id="choise11" style="margin-top: 20px;margin-bottom: 10px;">
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" value="2.5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_1" value="2.5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" value="5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_2" value="5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" value="7.5" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_3" value="7.5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" value="10" name="sd11" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_4" value="10" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -52,16 +52,16 @@
                 <div class="row d-flex flex-column" id="choise12" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="0" name="sd12" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We do not capture citizens’ data</label></div>
+                            <div class="col"><input type="radio" id="sd12_1" value="0" name="sd12" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd12_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We do not capture citizens’ data</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="2.5" name="sd12" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Manually (once they come)</label></div>
+                            <div class="col"><input type="radio" id="sd12_2" value="2.5" name="sd12" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd12_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Manually (once they come)</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="5" name="sd12" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Have an online process for some applications</label></div>
+                            <div class="col"><input type="radio" id="sd12_3" value="5" name="sd12" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd12_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Have an online process for some applications</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="10" name="sd12" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Fully automated</label></div>
+                            <div class="col"><input type="radio" id="sd12_4" value="10" name="sd12" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd12_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Fully automated</label></div>
                         </div>
                     </div>
                 </div>
@@ -75,13 +75,13 @@
                 <div class="row d-flex flex-column" id="choise13" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="5" name="sd13" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. We have a well defined digitalized data privacy mechanism to resolve the citizen's problems</label></div>
+                            <div class="col"><input type="radio" id="sd13_1" value="5" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. We have a well defined digitalized data privacy mechanism to resolve the citizen's problems</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="10" name="sd13" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Yes. We have a partially automated solution</label></div>
+                            <div class="col"><input type="radio" id="sd13_2" value="10" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Yes. We have a partially automated solution</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="0" name="sd13" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">We do not have proper mechanism. All manual</label></div>
+                            <div class="col"><input type="radio" id="sd13_3" value="0" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">We do not have proper mechanism. All manual</label></div>
                         </div>
                     </div>
                 </div>
@@ -98,16 +98,16 @@
                         <div class="row d-flex flex-column" id="choise14" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="10" name="sd14" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have a well defined digital workflows triggered dynamically for problem resolution and communication</label></div>
+                                    <div class="col"><input type="radio" id="sd14_1" value="10" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have a well defined digital workflows triggered dynamically for problem resolution and communication</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="7.5" name="sd14" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Citizen information are captured using digital means</label></div>
+                                    <div class="col"><input type="radio" id="sd14_2" value="7.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Citizen information are captured using digital means</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd14" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not have proper mechanism</label></div>
+                                    <div class="col"><input type="radio" id="sd14_3" value="0" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not have proper mechanism</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="2.5" name="sd14" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Citizen's data are captured manually and connecting them manually</label></div>
+                                    <div class="col"><input type="radio" id="sd14_4" value="2.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Citizen's data are captured manually and connecting them manually</label></div>
                                 </div>
                             </div>
                         </div>
@@ -125,13 +125,13 @@
                         <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="10" name="sd15" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. we are practicing</label></div>
+                                    <div class="col"><input type="radio" id="sd15_1" value="10" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. we are practicing</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="5" name="sd15" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Sometimes</label></div>
+                                    <div class="col"><input type="radio" id="sd15_2" value="5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Sometimes</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd15" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Do not have any idea on Agile Change Management</label></div>
+                                    <div class="col"><input type="radio" id="sd15_3" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Do not have any idea on Agile Change Management</label></div>
                                 </div>
                             </div>
                         </div>
@@ -145,11 +145,11 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">16.&nbsp;How do you rate your organization’s strategy of data analytics? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" id="choise16" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" value="2" name="sd16" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" value="4" name="sd16" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" value="6" name="sd16" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" value="8" name="sd16" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" value="10" name="sd16" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
+                    <div class="col"><input type="radio" id="sd16_1" value="2" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" id="sd16_2" value="4" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" id="sd16_3" value="6" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" id="sd16_4" value="8" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                    <div class="col"><input type="radio" id="sd16_5" value="10" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks16" name="marks_d16">
@@ -163,13 +163,13 @@
                         <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="10" name="sd17" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
+                                    <div class="col"><input type="radio" id="sd17_1" value="10" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd17" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
+                                    <div class="col"><input type="radio" id="sd17_2" value="0" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd17" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
+                                    <div class="col"><input type="radio" id="sd17_3" value="0" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
                                 </div>
                             </div>
                         </div>
@@ -183,11 +183,11 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">18.&nbsp;How do you rate your organization's data interoperability mechanism? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" id="choise18" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" value="2" name="sd18" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" value="4" name="sd18" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" value="6" name="sd18" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" value="8" name="sd18" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" value="10" name="sd18" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
+                    <div class="col"><input type="radio" id="sd18_1" value="2" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" id="sd18_2" value="4" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" id="sd18_3" value="6" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" id="sd18_4" value="8" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                    <div class="col"><input type="radio" id="sd18_5" value="10" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks18" name="marks_d18">
@@ -197,11 +197,11 @@
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">19.&nbsp;How do you rate social media support for your organization’s initiatives? (1 is low and 5 is highest)</span></div>
                 </div>
                 <div class="row" id="choise19" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" value="2" name="sd19" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" value="4" name="sd19" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" value="6" name="sd19" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" value="8" name="sd19" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" value="10" name="sd19" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
+                    <div class="col"><input type="radio" id="sd19_1" value="2" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                    <div class="col"><input type="radio" id="sd19_2" value="4" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                    <div class="col"><input type="radio" id="sd19_3" value="6" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                    <div class="col"><input type="radio" id="sd19_4" value="8" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                    <div class="col"><input type="radio" id="sd19_5" value="10" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks19" name="marks_d19">
@@ -215,13 +215,13 @@
                         <div class="row d-flex flex-column" id="choise20" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="10" name="sd20" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
+                                    <div class="col"><input type="radio" id="sd20_1" value="10" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd20" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
+                                    <div class="col"><input type="radio" id="sd20_2" value="0" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" value="0" name="sd20" style="margin-left: 100px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
+                                    <div class="col"><input type="radio" id="sd20_3" value="0" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
                                 </div>
                             </div>
                         </div>
@@ -234,11 +234,11 @@
                         <div class="row">
                             <div class="col" style="text-align: left;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;text-align: left;">21.&nbsp;Rate your organization’s integrated service management to access data or services? (1 is low and 5 is highest)</span>
                                 <div class="row" id="choise21" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                                    <div class="col"><input type="radio" value="2" name="sd21" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                                    <div class="col"><input type="radio" value="4" name="sd21" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                                    <div class="col"><input type="radio" value="6" name="sd21" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                                    <div class="col"><input type="radio" value="8" name="sd21" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                                    <div class="col"><input type="radio" value="10" name="sd21" style="font-size: 20px;margin-right: 20px;"><label class="form-label" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
+                                    <div class="col"><input type="radio" id="sd21_1" value="2" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
+                                    <div class="col"><input type="radio" id="sd21_2" value="4" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                                    <div class="col"><input type="radio" id="sd21_3" value="6" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
+                                    <div class="col"><input type="radio" id="sd21_4" value="8" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
+                                    <div class="col"><input type="radio" id="sd21_5" value="10" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
                                 </div>
                             </div>
                         </div>

@@ -34,10 +34,10 @@
                     <li class="nav-item"><a class="nav-link" href="#" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">Download</a></li>
                 </ul><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Our Volunteers&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Events&nbsp;</span><span class="navbar-text" style="font-size: 14px;color: rgb(255,255,255);font-family: Poppins, sans-serif;">&nbsp;Contact Us&nbsp;</span>
                 <img src="{{ asset('img/Mask group 2.png') }}">
-                <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);"></a>
-                    <div class="dropdown-menu" style="font-family: Popins">
-                        <a class="dropdown-item" href="/home">Profile</a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);margin-right:70px"></a>
+                    <div class="dropdown-menu" style="font-family: Popins;width:50px;margin-right:50px">
+                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/home">Profile</a>
+                        <a class="dropdown-item" style="font-family: Poppins" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                             Logout

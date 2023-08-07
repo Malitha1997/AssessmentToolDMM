@@ -15,7 +15,7 @@
                     <div class="col"><span style="font-size: 20px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;"><br>Your organization gained {{ Auth::user()->govorganizationdetail->percentage->overall }} for the Preliminary Assessment.<br></span></div>
                 </div>
                 <div class="row" style="margin-bottom:20px;margin-top:30px">
-                    <div class="col"><a class="btn btn-primary" type="button" style="width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;" href="/generate-pdf">Download</a></div>
+                    <div class="col"><a class="btn btn-primary" type="button" style="text-align:center;width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;" href="/generate-pdf">Print Report...</a></div>
                 </div>
                 <div class="row">
                     <div class="col"><span style="font-size: 16px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;">Back to&nbsp;<a href="/home" style="color: #5f2b84;"><span style="color: #5f2b84;">Organization profile</span><br><br></a></span>
@@ -37,7 +37,7 @@
                             datasets: [{
                                 label: "Marks for each dimension",
                                 data: {!! json_encode($percentages) !!},
-                                backgroundColor: "rgba(229, 89, 52, 0.6)",
+                                backgroundColor: "transparent",
                                 borderColor: "rgba(229, 89, 52, 1)",
                                 borderWidth: 2,
                                 pointBackgroundColor: "pink",
@@ -52,12 +52,18 @@
                                     borderWidth: 6,
                                 }
                             },
+
                             scale: {
+                                pointLabels: {
+                                    fontSize: 24,
+                                },
                                 ticks: {
                                     beginAtZero: true,
                                     max: 100,
-                                    stepSize: 20,
+                                    stepSize: 10,
+                                    fontSize: 36,
                                 }
+
                             }
                         };
 

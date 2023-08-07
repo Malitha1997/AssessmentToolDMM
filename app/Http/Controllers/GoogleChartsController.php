@@ -101,7 +101,7 @@ class GoogleChartsController extends Controller
             // Handle the case where the authenticated user doesn't have a related "strategy"
             return redirect()->route('home')->with('error', 'No strategy data found.');
         }
- 
+
         // Organize the strategy data for Google Charts
         $result = [
             ['Category', 'Value'],
@@ -111,7 +111,7 @@ class GoogleChartsController extends Controller
             ['Market Intelligence', (int) $strategy->market_intelligence],
             ['Strategy Management', (int) $strategy->strategic_management],
             ['Buisiness Assuarance', (int) $strategy->buisiness_assuarance],
-            ['policy', (int) $strategy->policy],
+            ['Policy', (int) $strategy->policy],
             ['Invention', (int) $strategy->invention]
         ];
 
