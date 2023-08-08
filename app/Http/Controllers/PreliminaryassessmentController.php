@@ -73,22 +73,21 @@ class PreliminaryassessmentController extends Controller
         return view('PreliminaryAssessments.preliminaryAssessmentPage3',compact('inputValue'));
     }
 
-    public function storeValue(Request $request)
+    public function prepage4(Request $request){
+        $inputValue = $request->session()->get('input_value');
+        return view('PreliminaryAssessments.preliminaryAssessmentPage4',compact('inputValue'));
+    }
+
+    public function prepage5(Request $request){
+        $inputValue = $request->session()->get('input_value');
+        return view('PreliminaryAssessments.preliminaryAssessmentPage5',compact('inputValue'));
+    }
+
+    public function storeValuePage01(Request $request)
     {//dd('hi');
         $data =[
-            'page1_total' => $request->input('page1_total'),
-            'customer_percentage'=> $request->input('customer_percentage'),
-            'percentage_d1'=> $request->input('percentage_d1'),
-            'percentage_d2'=> $request->input('percentage_d2'),
-            'percentage_d3'=> $request->input('percentage_d3'),
-            'percentage_d4'=> $request->input('percentage_d4'),
-            'percentage_d5'=> $request->input('percentage_d5'),
-            'strategy_marks_page1'=> $request->input('strategy_marks_page1'),
-            'percentage_d6'=> $request->input('percentage_d6'),
-            'percentage_d7'=> $request->input('percentage_d7'),
-            'percentage_d8'=> $request->input('percentage_d8'),
-            'percentage_d9'=> $request->input('percentage_d9'),
-            'percentage_d10'=> $request->input('percentage_d10'),
+            'technologyMarks'=> $request->input('technologyMarks'),
+            'technologyPercentage'=> $request->input('technologyPercentage'),
         ];
 
         $request->session()->put('input_value', $data);
@@ -96,38 +95,45 @@ class PreliminaryassessmentController extends Controller
         return redirect()->route('preliminaryAssessment2');
     }
 
-    public function storeValue2(Request $request)
+    public function storeValuePage02(Request $request)
     {//dd('hi');
         $data =[
-            'page2_total' => $request->input('page2_total'),
-            'customer_percentage'=> $request->input('customer_percentage'),
-            'percentage_d1'=> $request->input('percentage_d1'),
-            'percentage_d2'=> $request->input('percentage_d2'),
-            'percentage_d3'=> $request->input('percentage_d3'),
-            'percentage_d4'=> $request->input('percentage_d4'),
-            'percentage_d5'=> $request->input('percentage_d5'),
-            'strategy_percentage'=> $request->input('strategy_percentage'),
-            'percentage_d6'=> $request->input('percentage_d6'),
-            'percentage_d7'=> $request->input('percentage_d7'),
-            'percentage_d8'=> $request->input('percentage_d8'),
-            'percentage_d9'=> $request->input('percentage_d9'),
-            'percentage_d10'=> $request->input('percentage_d10'),
-            'percentage_d11'=> $request->input('percentage_d11'),
-            'percentage_d12'=> $request->input('percentage_d12'),
-            'percentage_d13'=> $request->input('percentage_d13'),
-            'technology_marks_page1'=> $request->input('technology_marks_page1'),
-            'percentage_d14'=> $request->input('percentage_d14'),
-            'percentage_d15'=> $request->input('percentage_d15'),
-            'percentage_d16'=> $request->input('percentage_d16'),
-            'percentage_d17'=> $request->input('percentage_d17'),
-            'percentage_d18'=> $request->input('percentage_d18'),
-            'percentage_d19'=> $request->input('percentage_d19'),
-            'percentage_d20'=> $request->input('percentage_d20'),
-            'percentage_d21'=> $request->input('percentage_d21'),
+            'page2_marks'=> $request->input('page2_marks'),
+            'technologyPercentage'=> $request->input('technologyPercentage'),
+            'customerPercentage'=> $request->input('customerPercentage'),
         ];
 
         $request->session()->put('input_value', $data);
 
         return redirect()->route('preliminaryAssessment3');
+    }
+
+    public function storeValuePage03(Request $request)
+    {//dd('hi');
+        $data =[
+            'page3_marks'=> $request->input('page3_marks'),
+            'technologyPercentage'=> $request->input('technologyPercentage'),
+            'customerPercentage'=> $request->input('customerPercentage'),
+            'operationPercentage'=> $request->input('operationPercentage'),
+        ];
+
+        $request->session()->put('input_value', $data);
+
+        return redirect()->route('preliminaryAssessment4');
+    }
+
+    public function storeValuePage04(Request $request)
+    {//dd('hi');
+        $data =[
+            'page4_marks'=> $request->input('page4_marks'),
+            'technologyPercentage'=> $request->input('technologyPercentage'),
+            'customerPercentage'=> $request->input('customerPercentage'),
+            'operationPercentage'=> $request->input('operationPercentage'),
+            'strategyPercentage'=> $request->input('strategyPercentage'),
+        ];
+
+        $request->session()->put('input_value', $data);
+
+        return redirect()->route('preliminaryAssessment5');
     }
 }

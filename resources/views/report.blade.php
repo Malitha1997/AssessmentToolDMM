@@ -22,8 +22,11 @@
         <body>
             {{--  Page 01  --}}
         <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
-            <div class="container" style="width: 535px;height: 782px;">
-                <div class="row" style="margin-top: 200px;">
+            <div class="container" style="width: 535px;height: 782px;text-align:center">
+                <div class="row" style="margin-top: 100px;">
+                    <div class="col" style="text-align: center;"><img src="{{ asset('emblem.png') }}" style="width:58px;height:82px"></div>
+                </div>
+                <div class="row" style="margin-top: 50px;">
                     <div class="col" style="text-align: center;"><span style="font-size: 40px;color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">Results Report<br>of<br>Preliminary Assessment<br>for<br>{{ Auth::user()->govorganizationdetail->govorganizationname->gov_org_name }}</span></div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 650px;">
@@ -153,96 +156,82 @@
                     </script>
                 </div>
             </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col"><span style="color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">2.&nbsp; Customer</span></div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col">
+                    <div id="chart_div3" style="margin-left:100px;width: 800px; height: 300px;"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', {packages: ['corechart', 'bar']});
+                        google.charts.setOnLoadCallback(drawBasic);
+
+                    function drawBasic() {
+                        {{--  var vAxis = ["Citizen Experience Strategy", "Citizen Engagement", "Citizen Experience", "Citizen Trust & Perception", "Citizen Insights & Behavior"];  --}}
+                    var data = google.visualization.arrayToDataTable({{ Js::from($customer) }});
+
+                    var options = {
+
+                        chartArea: {width: '50%'},
+                        hAxis: {
+                        title: 'Percentages',
+                        minValue: 0,
+                        maxValue: 100
+                        },
+                        vAxis: {
+                        title: 'Subdimentions',
+
+                        }
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
+
+                    chart.draw(data, options);
+                    }
+                    </script>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col"><span style="color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">3.&nbsp; Operation</span></div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col">
+                    <div id="chart_div4" style="margin-left:100px;width: 800px; height: 300px;"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', {packages: ['corechart', 'bar']});
+                        google.charts.setOnLoadCallback(drawBasic);
+
+                    function drawBasic() {
+
+                      var data = google.visualization.arrayToDataTable({{ Js::from($operation) }});
+
+                      var options = {
+
+                        chartArea: {width: '50%'},
+                        hAxis: {
+                          title: 'Percentages',
+                          minValue: 0,
+                          maxValue: 100
+                        },
+                        vAxis: {
+                          title: 'Subdimentions',
+
+                        }
+                      };
+
+                      var chart = new google.visualization.BarChart(document.getElementById('chart_div4'));
+
+                      chart.draw(data, options);
+                    }
+                    </script>
+                </div>
+            </div>
         </div>
     </div>
 
     {{--  Page 05  --}}
-    <div class="page-break"></div>
-    <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
-    <div class="container" style="width: 535px;height: 782px;">
-        <div class="row" style="margin-top: 50px;">
-            <div class="col"><span style="color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">2.&nbsp; Customer</span></div>
-        </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col">
-                <div id="chart_div3" style="margin-left:100px;width: 800px; height: 300px;"></div>
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script>
-                    google.charts.load('current', {packages: ['corechart', 'bar']});
-                    google.charts.setOnLoadCallback(drawBasic);
-
-                function drawBasic() {
-                    {{--  var vAxis = ["Citizen Experience Strategy", "Citizen Engagement", "Citizen Experience", "Citizen Trust & Perception", "Citizen Insights & Behavior"];  --}}
-                var data = google.visualization.arrayToDataTable({{ Js::from($customer) }});
-
-                var options = {
-
-                    chartArea: {width: '50%'},
-                    hAxis: {
-                    title: 'Percentages',
-                    minValue: 0,
-                    maxValue: 100
-                    },
-                    vAxis: {
-                    title: 'Subdimentions',
-
-                    }
-                };
-
-                var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
-
-                chart.draw(data, options);
-                }
-                </script>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    {{--  Page 06  --}}
-    <div class="page-break"></div>
-    <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
-    <div class="container" style="width: 535px;height: 782px;">
-        <div class="row" style="margin-top: 50px;">
-            <div class="col"><span style="color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">3.&nbsp; Operation</span></div>
-        </div>
-        <div class="row" style="margin-top: 50px;">
-            <div class="col">
-                <div id="chart_div4" style="margin-left:100px;width: 800px; height: 300px;"></div>
-                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                <script>
-                    google.charts.load('current', {packages: ['corechart', 'bar']});
-                    google.charts.setOnLoadCallback(drawBasic);
-
-                function drawBasic() {
-
-                  var data = google.visualization.arrayToDataTable({{ Js::from($operation) }});
-
-                  var options = {
-
-                    chartArea: {width: '50%'},
-                    hAxis: {
-                      title: 'Percentages',
-                      minValue: 0,
-                      maxValue: 100
-                    },
-                    vAxis: {
-                      title: 'Subdimentions',
-
-                    }
-                  };
-
-                  var chart = new google.visualization.BarChart(document.getElementById('chart_div4'));
-
-                  chart.draw(data, options);
-                }
-                </script>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    {{--  Page 07  --}}
     <div class="page-break"></div>
     <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
     <div class="container" style="width: 535px;height: 782px;">
@@ -282,14 +271,6 @@
                 </script>
             </div>
         </div>
-    </div>
-    </div>
-
-
-    {{--  Page 08  --}}
-    <div class="page-break"></div>
-    <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
-    <div class="container" style="width: 535px;height: 782px;">
         <div class="row" style="margin-top: 50px;">
             <div class="col"><span style="color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">5.&nbsp; Organization & Culture</span></div>
         </div>
@@ -329,7 +310,6 @@
         </div>
     </div>
     </div>
-
 </body>
 </html>
 

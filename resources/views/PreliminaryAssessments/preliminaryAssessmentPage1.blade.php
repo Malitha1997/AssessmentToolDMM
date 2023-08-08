@@ -5,12 +5,12 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3600px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <form method="POST" action="{{ route('storeValue') }}">
+            <form method="POST" action="{{ route('storeValue1') }}">
                 {{csrf_field()}}
             <div class="d-flex justify-content-center mb-auto mb-md-auto" data-aos="fade-right" data-aos-duration="1000" style="width: 1358px;height: 163px;margin-top: 20px;background: #1f2471;border-radius: 10px;margin-left: -30px;">
                 <div class="text-center d-flex flex-column justify-content-center" style="width: 1358px;height: 194px;color: rgb(255, 255, 255);background: #ffffff;padding-top: 0px;text-align: center;border-radius: 10px;border: 1px solid #1f2471;padding-bottom: 0px;margin-top: 25px;"><span style="color: #1f2471;font-size: 20px;font-family: Poppins, sans-serif;font-weight: bold;height: 90px;padding-bottom: 0px;margin-top: -38px;margin-bottom: -42px;"><br>Digital Maturity Preliminary Assessment for Government Organizations<br><br></span><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;text-align: center;font-weight: bold;margin-top: 10px;padding-top: 0px;margin-bottom: -12px;"><br>The preliminary assessment is focused on evaluating the readiness of government organizations to apply the digital maturity model to their organization. Any government organization can perform the preliminary assessment and if it fulfills the expected entry requirements to conduct the ‘Deep Assessment’.<br><br></span></div>
             </div>
-
+            <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
             <div data-aos="fade-down" id="page1" data-aos-duration="1000" style="width: 1282px;height: 2900px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 60px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">1. How do you rate&nbsp;your organization’s usage of Emerging Technologies and Applications such as Artificial Intelligence (AI),&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cryptocurrencies, etc.? (1 is the lowest and 5 is the highest) <br><br><br></span></div>
@@ -27,8 +27,8 @@
                     <div class="col"><input type="radio" style="height:15px;width:15px" name="sd1" id="sd1_5" value="10" ><label class="form-label" for="sd1_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left:20px">5</label></div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" onkeyup="checkInputs()" type="hidden" id="marks" name="marks_d1">
-                    <input class="form-control" onkeyup="checkInputs()" type="hidden" id="percentage" name="percentage_d1">
+                    <input class="form-control"  type="hidden" id="marks" name="marks_d1">
+                    <input class="form-control"  type="hidden" id="percentage" name="percentage_d1">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">2.&nbsp;Does your organization has a dedicated research and development team to try out the emerging solutions? </span></div>
@@ -276,9 +276,8 @@
                     <input class="form-control" type="hidden" id="percentage10" name="percentage_d10">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="strategyMarksPage1" name="strategy_marks_page1" >
-                    <input class="form-control" type="hidden" id="page1_total_marks" name="page1_total" >
-
+                    <input class="form-control" type="hidden" id="technology_marks" name="technologyMarks" >
+                    <input class="form-control" type="hidden" id="technology_percentage" name="technologyPercentage" >
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
                         <div class="row" style="margin-top: 150px;">
@@ -491,39 +490,14 @@
 
 
                 var a= Number(q1) + Number(q2) + Number(q3) + Number(q4) + Number(q5) + Number(q6) + Number(q7) + Number(q8) + Number(q9) + Number(q10);
-                document.getElementById("page1_total_marks").value= a;
+                document.getElementById("technology_marks").value= a;
 
-                var cus= Number(q1) + Number(q2) + Number(q3) + Number(q4) + Number(q5);
-                var cus2= cus / 156.25;
-                var customer= (cus2 * 100).toFixed(0);
-                document.getElementById("customerPercentage").value= customer;
-
-                var strategy= Number(q6) + Number(q7) + Number(q8) + Number(q9) + Number(q10);
-                document.getElementById("strategyMarksPage1").value= strategy;
+                var b= a / 312.5;
+                var technology= (b * 100).toFixed(0);
+                document.getElementById("technology_percentage").value= technology;
 
             });
         </script>
-
-        <script>
-            function checkInputs() {
-                var inputFields = document.querySelectorAll('.inputField');
-                var next = document.getElementById('next');
-
-                var anyInputEmpty = false;
-                inputFields.forEach(function(inputField) {
-                    if (inputField.value.trim() === '') {
-                        anyInputEmpty = true;
-                    }
-                });
-
-                if (anyInputEmpty) {
-                    next.disabled = true;
-                } else {
-                    next.disabled = false;
-                }
-            }
-        </script>
-
 
     </section>
 </body>

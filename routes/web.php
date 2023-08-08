@@ -34,6 +34,10 @@ Route::get('/report', function () {
     return view('chart');
 });
 
+Route::get('/adminNavbar', function () {
+    return view('layouts.adminNavbar');
+});
+
 Route::resource('users', UserController::class);
 
 Auth::routes();
@@ -50,6 +54,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, 'index'])->name('preliminaryAssessment1');
     Route::get('/preliminaryAssessment2', [PreliminaryassessmentController::class, 'prepage2'])->name('preliminaryAssessment2');
     Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, 'prepage3'])->name('preliminaryAssessment3');
+    Route::get('/preliminaryAssessment4', [PreliminaryassessmentController::class, 'prepage4'])->name('preliminaryAssessment4');
+    Route::get('/preliminaryAssessment5', [PreliminaryassessmentController::class, 'prepage5'])->name('preliminaryAssessment5');
     Route::get('/preliminaryResults', [PreliminaryAssessmentResultController::class, 'result'])->name('preliminaryResults');
     Route::get('/technologyresults',[GoogleChartsController::class,'technologyChart'])->name('technologyresults');
     Route::get('/customerresults',[GoogleChartsController::class,'customerChart'])->name('customerresults');
@@ -58,8 +64,11 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/operationresults',[GoogleChartsController::class,'operationChart'])->name('operationresults');
     Route::resource('preliminaryAssessments', PreliminaryAssessmentResultController::class);
 
-    Route::post('/store-value', [PreliminaryassessmentController::class, 'storeValue'])->name('storeValue');
-    Route::post('/store-value2', [PreliminaryassessmentController::class, 'storeValue2'])->name('storeValue2');
+    Route::post('/store-value-page01', [PreliminaryassessmentController::class, 'storeValuePage01'])->name('storeValue1');
+    Route::post('/store-value-page02', [PreliminaryassessmentController::class, 'storeValuePage02'])->name('storeValue2');
+    Route::post('/store-value-page03', [PreliminaryassessmentController::class, 'storeValuePage03'])->name('storeValue3');
+    Route::post('/store-value-page04', [PreliminaryassessmentController::class, 'storeValuePage04'])->name('storeValue4');
+
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');

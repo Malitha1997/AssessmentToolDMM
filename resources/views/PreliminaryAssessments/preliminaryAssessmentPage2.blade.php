@@ -11,19 +11,9 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="hidden" id="page1_total_marks" name="page1_total" value="{{ $inputValue['page1_total']}}" id="page1_total_marks">
-                    <input class="form-control" type="hidden" id="customerPercentage" name="customer_percentage" value="{{ $inputValue['customer_percentage']}}">
-                    <input class="form-control" type="hidden" id="percentage1" name="percentage_d1" value="{{ $inputValue['percentage_d1']}}">
-                    <input class="form-control" type="hidden" id="percentage2" name="percentage_d2" value="{{ $inputValue['percentage_d2']}}">
-                    <input class="form-control" type="hidden" id="percentage3" name="percentage_d3" value="{{ $inputValue['percentage_d3']}}">
-                    <input class="form-control" type="hidden" id="percentage4" name="percentage_d4" value="{{ $inputValue['percentage_d4']}}">
-                    <input class="form-control" type="hidden" id="percentage5" name="percentage_d5" value="{{ $inputValue['percentage_d5']}}">
-                    <input class="form-control" type="hidden" id="strategyMarksPage1" name="strategy_marks_page1" value="{{ $inputValue['strategy_marks_page1']}}">
-                    <input class="form-control" type="hidden" id="percentage6" name="percentage_d6" value="{{ $inputValue['percentage_d6']}}">
-                    <input class="form-control" type="hidden" id="percentage7" name="percentage_d7" value="{{ $inputValue['percentage_d7']}}">
-                    <input class="form-control" type="hidden" id="percentage8" name="percentage_d8" value="{{ $inputValue['percentage_d8']}}">
-                    <input class="form-control" type="hidden" id="percentage9" name="percentage_d9" value="{{ $inputValue['percentage_d9']}}">
-                    <input class="form-control" type="hidden" id="percentage10" name="percentage_d10" value="{{ $inputValue['percentage_d10']}}">
+                    <input type="hidden" id="technology_marks" name="technologyMarks" value="{{ $inputValue['technologyMarks']}}">
+                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
+                    <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
@@ -88,7 +78,6 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks13" name="marks_d13">
                     <input class="form-control" type="hidden" id="percentage13" name="percentage_d13">
-                    <input class="form-control" type="hidden" id="strategyPercentage" name="strategy_percentage">
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">14.&nbsp;How does your organization manage citizens trust &amp; perception</span></div>
@@ -140,129 +129,20 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks15" name="marks_d15">
                     <input class="form-control" type="hidden" id="percentage15" name="percentage_d15">
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">16.&nbsp;How do you rate your organization’s strategy of data analytics? (1 is low and 5 is highest)</span></div>
-                </div>
-                <div class="row" id="choise16" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" id="sd16_1" value="2" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" id="sd16_2" value="4" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" id="sd16_3" value="6" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" id="sd16_4" value="8" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" id="sd16_5" value="10" name="sd16" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd16_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="marks16" name="marks_d16">
-                    <input class="form-control" type="hidden" id="percentage16" name="percentage_d16">
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">17.&nbsp;Have your organization classified available data?</span></div>
-                </div>
-                <div class="row d-flex flex-column" id="choise17" style="text-align: center;">
-                    <div class="col">
-                        <div class="row d-flex flex-column" style="text-align: center;">
-                            <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd17_1" value="10" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd17_2" value="0" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd17_3" value="0" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="marks17" name="marks_d17">
-                    <input class="form-control" type="hidden" id="percentage17" name="percentage_d17">
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">18.&nbsp;How do you rate your organization's data interoperability mechanism? (1 is low and 5 is highest)</span></div>
-                </div>
-                <div class="row" id="choise18" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" id="sd18_1" value="2" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" id="sd18_2" value="4" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" id="sd18_3" value="6" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" id="sd18_4" value="8" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" id="sd18_5" value="10" name="sd18" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd18_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="marks18" name="marks_d18">
-                    <input class="form-control" type="hidden" id="percentage18" name="percentage_d18">
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">19.&nbsp;How do you rate social media support for your organization’s initiatives? (1 is low and 5 is highest)</span></div>
-                </div>
-                <div class="row" id="choise19" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                    <div class="col"><input type="radio" id="sd19_1" value="2" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                    <div class="col"><input type="radio" id="sd19_2" value="4" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                    <div class="col"><input type="radio" id="sd19_3" value="6" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                    <div class="col"><input type="radio" id="sd19_4" value="8" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                    <div class="col"><input type="radio" id="sd19_5" value="10" name="sd19" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd19_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="hidden" id="marks19" name="marks_d19">
-                    <input class="form-control" type="hidden" id="percentage19" name="percentage_d19">
-                </div>
-                <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">20.&nbsp;Do you have a well defined change management process in your organization to changes processes/ application’s&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; with minimum cost</span></div>
-                </div>
-                <div class="row d-flex flex-column" style="text-align: center;">
-                    <div class="col">
-                        <div class="row d-flex flex-column" id="choise20" style="text-align: center;">
-                            <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd20_1" value="10" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd20_2" value="0" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd20_3" value="0" name="sd20" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd20_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No idea</label></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 20px;">
-                        <input class="form-control" type="hidden" id="marks20" name="marks_d20">
-                        <input class="form-control" type="hidden" id="percentage20" name="percentage_d20">
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <div class="col" style="text-align: left;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;text-align: left;">21.&nbsp;Rate your organization’s integrated service management to access data or services? (1 is low and 5 is highest)</span>
-                                <div class="row" id="choise21" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
-                                    <div class="col"><input type="radio" id="sd21_1" value="2" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
-                                    <div class="col"><input type="radio" id="sd21_2" value="4" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                                    <div class="col"><input type="radio" id="sd21_3" value="6" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
-                                    <div class="col"><input type="radio" id="sd21_4" value="8" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
-                                    <div class="col"><input type="radio" id="sd21_5" value="10" name="sd21" style="width:15px;height:15px;font-size: 20px;margin-right: 20px;"><label class="form-label" for="sd21_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-top: 20px;">
-                        <input class="form-control" type="hidden" id="marks21" name="marks_d21">
-                        <input class="form-control" type="hidden" id="percentage21" name="percentage_d21">
-                    </div>
-                    <div class="row" style="margin-top: 20px;">
-                        <input class="form-control" type="hidden" id="page2_total_marks" name="page2_total" value="{{ session('input_value2')}}">
-                        <input class="form-control" type="hidden" id="technologyMarksPage1" name="technology_marks_page1" >
-                    </div>
-                    <div class="col" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 0px;height: 206px;">
-                        <div class="row" style="margin-top: 150px;">
-                            <div class="col"></div>
-                            <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
-                                <a class="btn btn-primary" type="button" style="width: 152px;height: 55px;font-size: 20px;color: #1f2471;background: rgb(255,255,255);font-family: Poppins, sans-serif;font-weight: bold;border-radius: 10px;border: 2px solid #1f2471 ;margin-right: 30px;" href="/preliminaryAssessment1">Previous</a>
-                                <a class="btn btn-primary" href="/home" type="button" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471;padding-left: 0px;margin-right: 30px;">Resume</a>
-                                <button class="btn btn-primary" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
-                        </div>
-                    </div>
+                    <input class="form-control" type="" id="page2_total_marks" name="page2_marks">
+                    <input class="form-control" type="" id="customer_percentage" name="customerPercentage">
                 </div>
             </div>
-            </form>
+            <div class="col" data-aos="fade-down" data-aos-duration="1000">
+                <div class="row" style="margin-top: 150px;">
+                    <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
+                    <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
+                        <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
+                        <button class="btn btn-primary" id="next" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
+                </div>
+            </div>
+        </div>
+        </form>
         </div>
 
         {{--  Q11  --}}
@@ -340,122 +220,23 @@
 
         </script>
 
-        {{--  Q16  --}}
-        <script type="text/javascript">
-            $('#choise16').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks16").value = x;
-                document.getElementById("percentage16").value = z ;
-            });
-
-        </script>
-
-        {{--  Q17  --}}
-        <script type="text/javascript">
-            $('#choise17').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks17").value = x;
-                document.getElementById("percentage17").value = z ;
-            });
-
-        </script>
-
-        {{--  Q18  --}}
-        <script type="text/javascript">
-            $('#choise18').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks18").value = x;
-                document.getElementById("percentage18").value = z ;
-            });
-
-        </script>
-
-        {{--  Q19  --}}
-        <script type="text/javascript">
-            $('#choise19').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks19").value = x;
-                document.getElementById("percentage19").value = z ;
-            });
-
-        </script>
-
-        {{--  Q20  --}}
-        <script type="text/javascript">
-            $('#choise20').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks20").value = x;
-                document.getElementById("percentage20").value = z ;
-            });
-
-        </script>
-
-        {{--  Q21  --}}
-        <script type="text/javascript">
-            $('#choise21').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks21").value = x;
-                document.getElementById("percentage21").value = z ;
-            });
-
-        </script>
-
         <script type="text/javascript">
             $('#page2').find(":radio").on('click', e => {
-                p1 = document.getElementById("page1_total_marks").value;
-                s1 = document.getElementById("strategyMarksPage1").value;
+                tec = document.getElementById("technology_marks").value;
                 q11 = document.getElementById("marks11").value;
                 q12 = document.getElementById("marks12").value;
                 q13 = document.getElementById("marks13").value;
                 q14 = document.getElementById("marks14").value;
                 q15 = document.getElementById("marks15").value;
-                q16 = document.getElementById("marks16").value;
-                q17 = document.getElementById("marks17").value;
-                q18 = document.getElementById("marks18").value;
-                q19 = document.getElementById("marks19").value;
-                q20 = document.getElementById("marks20").value;
-                q21 = document.getElementById("marks21").value;
 
-                var a=Number(p1) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) + Number(q16) + Number(q17) + Number(q18) + Number(q20) + Number(q21) ;
+                var a=Number(tec) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
                 document.getElementById("page2_total_marks").value= a;
 
-                var stra= Number(s1) + Number(q11) + Number(q12) + Number(q13);
-                var stra2= stra / 250;
-                var strategy= (stra2 * 100).toFixed(0);
-                document.getElementById("strategyPercentage").value= strategy;
+                var cus= Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
+                var cus2= cus / 156.25;
+                var customer= (cus2 * 100).toFixed(0);
+                document.getElementById("customer_percentage").value= customer;
 
-                var technology=Number(q14) + Number(q15) + Number(q16) + Number(q17) + Number(q18) + Number(q20) + Number(q21) ;
-                document.getElementById("technologyMarksPage1").value= technology;
             });
         </script>
     </section>
