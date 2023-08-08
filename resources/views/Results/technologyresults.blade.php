@@ -11,11 +11,11 @@
                 <div id="chart_div" style="width:1200px;height:400px;font-family: Poppins;margin-left:50px"></div>
 
             </div>
-            <form method="post" action="{{ route('generate-pdf') }}">
+            {{--  <form method="post" action="{{ route('generate-pdf') }}">
                 {{csrf_field()}}
                 <input type="hidden" name="chartImg" id="chart_input">
                 <button type="submit" >print</button>
-            </form>
+            </form>  --}}
     </section>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
@@ -40,13 +40,17 @@
         }
       };
 
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      {{--  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
       google.visualization.events.addListener(chart, 'ready', function () {
        var chart_div = '<img src="' + chart.getImageURI() + '">';
        chart_input.value = chart.getImageURI();
 
 
       });
+      chart.draw(data, options);  --}}
+      
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
       chart.draw(data, options);
     }
     </script>

@@ -7,11 +7,11 @@
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue3') }}">
                 {{csrf_field()}}
-            <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2700px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page3" data-aos-duration="1000" style="width: 1282px;height: 2700px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="" id="page2_total_marks" name="page2_marks" value="{{ $inputValue['page2_marks']}}">
+                    <input class="form-control" type="hidden" id="page2_total_marks" name="page2_marks" value="{{ $inputValue['page2_marks']}}">
                     <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
                     <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
@@ -53,16 +53,16 @@
                                 <div class="row d-flex flex-column" id="choise17" style="text-align: center;">
                                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                         <div class="row" style="margin-bottom: 20px;">
-                                            <div class="col"><input type="radio" id="sd17_1" value="5" name="sd17" style="margin-left: 100px;"><label class="form-label" for="sd17_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Chief Digital Information Officer</label></div>
+                                            <div class="col"><input type="radio" id="sd17_1" value="5" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Chief Digital Information Officer</label></div>
                                         </div>
                                         <div class="row" style="margin-bottom: 20px;">
-                                            <div class="col"><input type="radio" id="sd17_2" value="10" name="sd17" style="margin-left: 100px;"><label class="form-label" for="sd17_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Head of Organization</label></div>
+                                            <div class="col"><input type="radio" id="sd17_2" value="10" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Head of Organization</label></div>
                                         </div>
                                         <div class="row" style="margin-bottom: 20px;">
-                                            <div class="col"><input type="radio" id="sd17_3" value="2.5" name="sd17" style="margin-left: 100px;"><label class="form-label" for="sd17_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Department Head</label></div>
+                                            <div class="col"><input type="radio" id="sd17_3" value="2.5" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Department Head</label></div>
                                         </div>
                                         <div class="row" style="margin-bottom: 20px;">
-                                            <div class="col"><input type="radio" id="sd17_4" value="0" name="sd17" style="margin-left: 100px;"><label class="form-label" for="sd17_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;No one</label></div>
+                                            <div class="col"><input type="radio" id="sd17_4" value="0" name="sd17" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd17_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;No one</label></div>
                                         </div>
                                     </div>
                                 </div>
@@ -112,8 +112,8 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks19" name="marks_d19">
                     <input class="form-control" type="hidden" id="percentage19" name="percentage_d19">
-                    <input class="form-control" type="" id="page3_total_marks" name="page3_marks">
-                    <input class="form-control" type="" id="operation_percentage" name="operationPercentage">
+                    <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks">
+                    <input class="form-control" type="hidden" id="operation_percentage" name="operationPercentage">
                 </div>
             </div>
             <div class="col" data-aos="fade-down" data-aos-duration="1000">

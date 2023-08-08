@@ -12,7 +12,7 @@
                     <div class="col"><span style="color: #1f2471;font-size: 32px;font-weight: bold;font-family: Poppins, sans-serif;"><br>Successfully completed Preliminary Assessment<br><br></span></div>
                 </div>
                 <div class="row">
-                    <div class="col"><span style="font-size: 20px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;"><br>Your organization gained {{ Auth::user()->govorganizationdetail->percentage->overall }} for the Preliminary Assessment.<br></span></div>
+                    <div class="col"><span style="font-size: 20px;color: rgb(0,0,0);font-family: Poppins, sans-serif;text-align: center;"><br>Your organization gained {{ Auth::user()->govorganizationdetail->percentage->overall }}% for the Preliminary Assessment.<br></span></div>
                 </div>
                 <div class="row" style="margin-bottom:20px;margin-top:30px">
                     <div class="col"><a class="btn btn-primary" type="button" style="text-align:center;width: 266px;height: 55px;color: #ef4323;font-size: 20px;background: rgb(255,255,255);border: 2px solid #ef4323;font-weight: bold;font-family: Poppins, sans-serif;" href="/generate-pdf">Print Report...</a></div>

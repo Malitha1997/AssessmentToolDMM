@@ -68,6 +68,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/store-value-page02', [PreliminaryassessmentController::class, 'storeValuePage02'])->name('storeValue2');
     Route::post('/store-value-page03', [PreliminaryassessmentController::class, 'storeValuePage03'])->name('storeValue3');
     Route::post('/store-value-page04', [PreliminaryassessmentController::class, 'storeValuePage04'])->name('storeValue4');
+    Route::post('/store-value-page05', [PreliminaryassessmentController::class, 'storeValuePage05'])->name('storeValue5');
 
 
     Route::controller(SearchController::class)->group(function(){

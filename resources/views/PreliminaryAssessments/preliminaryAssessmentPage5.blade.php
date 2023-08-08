@@ -5,9 +5,9 @@
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section class="d-flex flex-column align-items-center" style="height: 3200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
-            <form method="POST" action="{{ route('storeValue2') }}">
+            <form method="POST" action="{{ route('storeValue5') }}">
                 {{csrf_field()}}
-            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 2560px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 2560px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -133,8 +133,17 @@
                     <input class="form-control" type="hidden" id="marks32" name="marks_d32">
                     <input class="form-control" type="hidden" id="percentage32" name="percentage_d32">
                     <input class="form-control" type="hidden" id="culture_percentage" name="culturePercentage">
-                    <input class="form-control" type="hidden" id="overall" name="overall">
+                    <input class="form-control" type="hidden" id="overall" name="overallPercentage">
                 </div>
+                <div class="col" data-aos="fade-down" data-aos-duration="1000">
+                    <div class="row" style="margin-top: 150px;">
+                        <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
+                        <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
+                            <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
+                            <button class="btn btn-primary" id="next" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
+                    </div>
+                </div>
+            </div>
             </div>
             </form>
         </div>

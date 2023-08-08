@@ -7,16 +7,16 @@
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue4') }}">
                 {{csrf_field()}}
-                <div class="row" style="margin-top: 20px;">
+                <div class="row" style="margin-top: 10px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
+                    <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
                     <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
                     <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
                     <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
-            <div data-aos="fade-down" id="page4" data-aos-duration="1000" style="width: 1282px;height: 2900px;margin-top: 80px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page4" data-aos-duration="1000" style="width: 1282px;height: 2900px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -60,7 +60,7 @@
                         <div class="row" id="choise22" style="margin-right: 292px;margin-top: 30px;margin-left: 220px;">
                             <div class="col"><input type="radio" name="sd22" id="sd22_1" style="width:15px;height:15px;margin-right: 20px;" value="2"><label class="form-label" for="sd22_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">1</label></div>
                             <div class="col"><input type="radio" name="sd22" id="sd22_2" style="width:15px;height:15px;margin-right: 20px;" value="4"><label class="form-label" for="sd22_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
-                            <div class="col"><input type="radio" name="sd22" id="sd22_3" style="width:15px;height:15px;margin-right: 20px;" value="6"><label class="form-label" for="sd22_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">2</label></div>
+                            <div class="col"><input type="radio" name="sd22" id="sd22_3" style="width:15px;height:15px;margin-right: 20px;" value="6"><label class="form-label" for="sd22_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">3</label></div>
                             <div class="col"><input type="radio" name="sd22" id="sd22_4" style="width:15px;height:15px;margin-right: 20px;" value="8"><label class="form-label" for="sd22_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">4</label></div>
                             <div class="col"><input type="radio" name="sd22" id="sd22_5" style="width:15px;height:15px;margin-right: 20px;" value="10"><label class="form-label"for="sd22_5"  style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;">5</label></div>
                         </div>
@@ -148,7 +148,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">26.&nbsp;Does your organization has a network/ system administrator who has access to the organization's network/systems?</span></div>
                 </div>
-                <div class="row d-flex flex-column" id="choise6" style="text-align: center;">
+                <div class="row d-flex flex-column" id="choise26" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd26_1" value="10" name="sd26" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd26_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Yes</label></div>
@@ -189,7 +189,7 @@
                     <input class="form-control" type="hidden" id="percentage27" name="percentage_d27">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <input class="form-control" type="" id="page4_total_marks" name="page4_marks" >
+                    <input class="form-control" type="hidden" id="page4_total_marks" name="page4_marks" >
                     <input class="form-control" type="hidden" id="strategy_percentage" name="strategyPercentage" >
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
@@ -290,20 +290,6 @@
                 var z=y * 100;
                 document.getElementById("marks25").value = x;
                 document.getElementById("percentage25").value = z ;
-            });
-        </script>
-
-        {{--  Q26  --}}
-        <script type="text/javascript">
-            $('#choise26').find(":radio").on('click', e => {
-                wei = document.getElementById("weight").value;
-                max = document.getElementById("max_weight").value;
-                choi = e.target.value;
-                var x=wei * choi;
-                var y=x / max;
-                var z=y * 100;
-                document.getElementById("marks26").value = x;
-                document.getElementById("percentage26").value = z ;
             });
         </script>
 
