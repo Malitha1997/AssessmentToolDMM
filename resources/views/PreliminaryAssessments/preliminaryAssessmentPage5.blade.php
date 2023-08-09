@@ -3,11 +3,11 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section class="d-flex flex-column align-items-center" style="height: 3200px;">
+    <section class="d-flex flex-column align-items-center" style="height: 1800px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue5') }}">
                 {{csrf_field()}}
-            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 2560px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 1500px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -19,20 +19,17 @@
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">28.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
+                    <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">28.&nbsp;How is the awareness on digital transformation goals among the employees?</span></div>
                 </div>
                 <div class="col-xxl-12" id="choise28" style="margin-top: 20px;margin-bottom: 10px;">
-                    <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd28_1" value="2.5" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col"><input type="radio" id="sd28_1" value="2.5" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Digital Transformation goals are not defined.</label></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col"><input type="radio" id="sd28_2" value="5" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital Transformation goals are in place but no proper measurement criteria and rewards mechanism is <br>defined.</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd28_2" value="5" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
-                    </div>
-                    <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd28_3" value="7.5" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
-                    </div>
-                    <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd29_4" value="10" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd28_3" value="10" name="sd28" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd28_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Employees are well aware about the digital transformation goals, measurement framework and the rewards <br>structure.</label></div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -136,7 +133,7 @@
                     <input class="form-control" type="hidden" id="overall" name="overallPercentage">
                 </div>
                 <div class="col" data-aos="fade-down" data-aos-duration="1000">
-                    <div class="row" style="margin-top: 150px;">
+                    <div class="row" style="margin-top: 50px;">
                         <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                         <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                             <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>

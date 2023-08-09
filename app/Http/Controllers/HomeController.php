@@ -49,7 +49,12 @@ class HomeController extends Controller
     public function index(): View
     {
         $dataExists = Auth::user()->govorganizationdetail->percentage;
-        return view('home',compact('dataExists'));
+        $technologyDataExists = Auth::user()->govorganizationdetail->technology;
+        $customerDataExists = Auth::user()->govorganizationdetail->customer;
+        $operationDataExists = Auth::user()->govorganizationdetail->operation;
+        $strategyDataExists = Auth::user()->govorganizationdetail->strategy;
+        $cultureDataExists = Auth::user()->govorganizationdetail->culture;
+        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists'));
     }
 
 

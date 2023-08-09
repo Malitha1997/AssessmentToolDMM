@@ -124,8 +124,16 @@
                         <div class="col" style="text-align: center;">
                             @if($dataExists)
                             <button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" disabled>Preliminary Assessment</button>
-                            @else
+                            @elseif(!$technologyDataExists)
                             <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment1" >Preliminary Assessment</a>
+                            @elseif(!$customerDataExists)
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment2" >Preliminary Assessment</a>
+                            @elseif(!$operationDataExists)
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment3" >Preliminary Assessment</a>
+                            @elseif(!$strategyDataExists)
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment4" >Preliminary Assessment</a>
+                            @elseif(!$cultureDataExists)
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment5" >Preliminary Assessment</a>
                             @endif
                         </div>
                     <div class="row" style="margin-top: 50px;">
