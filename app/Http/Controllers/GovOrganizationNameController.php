@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Govorganizationname;
 use App\Models\GovernmentOrganizationName;
+use Illuminate\View\View;
+use Illuminate\Http\JsonResponse;
 
-class GovOrganizationName extends Controller
+class GovOrganizationNameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('govOrganizations.test');
     }
 
     /**
@@ -61,6 +65,15 @@ class GovOrganizationName extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    function fetch(Request $request): JsonResponse
+    {
+        $data = Govorganizationname::select("gov_org_name")
+        ->where('gov_org_name', 'LIKE', '%'. $request->get('query'). '%')
+        ->get();
+
+        return response()->json($data);
     }
 
 

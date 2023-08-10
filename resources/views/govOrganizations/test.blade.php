@@ -1,67 +1,63 @@
-@extends('layouts.navbar')
+<!DOCTYPE html>
 
-@section('content')
+<html>
 
-<div class="container mt-3 pd-3" style="height: 100px">
+<head>
 
-    <h2>Ajax Live Search Page</h2>
-    <hr>
+    <title>Laravel 10 Autocomplete Search from Database - ItSolutionStuff.com</title>
 
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="input-group">
-                <input type="search" id="gov_org_name" name="gov_org_name" class="form-control rounded" placeholder="Search" />
-                <button type="button" class="btn btn-outline-primary">search</button>
-            </div>
-        </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <div class="col-md-8">
-            <div class="card mycard m-2 p-2" style="width: 18rem;">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-            </div>
-        </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+    <h1>Laravel 10 Autocomplete Search from Database - ItSolutionStuff.com</h1>
+
+    <input class="typeahead form-control" id="gov_org" type="text">
 
 </div>
 
 
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
-
 <script type="text/javascript">
-    $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+
+    var path = "{{ route('autocomplete4') }}";
+
+
+
+    $('#gov_org').typeahead({
+
+            source: function (query, process) {
+
+                return $.get(path, {
+
+                    query: query
+
+                }, function (data) {
+
+                    return process(data);
+
+                });
+
+            }
+
+        });
+
+
+
 </script>
 
 
-<script>
 
-    $(document).ready(function () {
-        $('#gov_org_name').on('keyup', function(){
-            var value = $(this).val();
-            $.ajax({
-                type: "get",
-                url: "/search",
-                data: {'search':value},
-                success: function (data) {
-                    $('.mycard').html(data);
-                }
-            });
+</body>
 
-        });
-        $(document).on('click','h5',function(){
-            var value = $(this).text();
-            $("#gov_org_name").val(value).text();
-            $("#mycard").fadeOut();
-        });
-    });
-
-</script>
-
-
-
-
-
-@endsection
+</html>
