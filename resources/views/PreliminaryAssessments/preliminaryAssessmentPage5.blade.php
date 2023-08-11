@@ -3,11 +3,11 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section class="d-flex flex-column align-items-center" style="height: 1800px;">
+    <section class="d-flex flex-column align-items-center" style="height: 2200px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue5') }}">
                 {{csrf_field()}}
-            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 1500px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page5" data-aos-duration="1000" style="width: 1282px;height: 1900px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -37,21 +37,21 @@
                     <input class="form-control" type="hidden" id="percentage28" name="percentage_d28">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">29.&nbsp;How does your organization capture citizens’ data?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">29.&nbsp;How are the goal set for the processes are being analysed?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise29" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                        <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd29_1" value="0" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We do not capture citizens’ data</label></div>
+                        <div class="row" style="margin-bottom: 40px;">
+                            <div class="col"><input type="radio" id="sd29_1" value="0" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">We do not capture citizens’ data</label></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 40px;">
+                            <div class="col"><input type="radio" id="sd29_2" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">There is a document that has been reviewed and approved as the standard process. But activities might <br>not conducted according to the document as the document is outdated.</label></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 40px;">
+                            <div class="col"><input type="radio" id="sd29_3" value="5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">The activity that is documented is being deployed, It may not be deployed at all the intended locations, or <br>though all functions, or by all the intended owners, or all the activities defined in the process are not being <br>performed.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd29_2" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Manually (once they come)</label></div>
-                        </div>
-                        <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd29_3" value="5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Have an online process for some applications</label></div>
-                        </div>
-                        <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd29_4" value="10" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Fully automated</label></div>
+                            <div class="col"><input type="radio" id="sd29_4" value="10" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">There is no inconsistency between the documented process and the deployed process. The process also shows <br>seamless linkage between functions and other processes wherever there needs to be any interaction. The <br>process shows greater consistency of actions and better communication between functions.</label></div>
                         </div>
                     </div>
                 </div>
@@ -60,18 +60,21 @@
                     <input class="form-control" type="hidden" id="percentage29" name="percentage_d29">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">30.&nbsp;Does the organization has a proper mechanism to maintain citizens' data privacy by digitalizing and resolving the&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;citizen's problems?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">30.&nbsp;Availability of digital appliances in your organization?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise30" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd30_1" value="5" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. We have a well defined digitalized data privacy mechanism to resolve the citizen's problems</label></div>
+                            <div class="col"><input type="radio" id="sd30_1" value="5" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Digital appliances are not available.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd30_2" value="10" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Yes. We have a partially automated solution</label></div>
+                            <div class="col"><input type="radio" id="sd30_2" value="10" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Importance and requirement is identified.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd30_3" value="0" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">We do not have proper mechanism. All manual</label></div>
+                            <div class="col"><input type="radio" id="sd30_3" value="0" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital appliances are in place and does not have a proper sustainable approach.</label></div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col"><input type="radio" id="sd30_4" value="0" name="sd30" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd30_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital appliances are in place and have a proper sustainability mechanism.</label></div>
                         </div>
                     </div>
                 </div>
@@ -80,23 +83,26 @@
                     <input class="form-control" type="hidden" id="percentage30" name="percentage_d30">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">31.&nbsp;How does your organization manage citizens trust &amp; perception</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">31.&nbsp;Does the organization take necessary actions to continuous right skilling, Upskilling, reskilling and cross skilling?</span></div>
                 </div>
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="col">
                         <div class="row d-flex flex-column" id="choise31" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd31_1" value="10" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have a well defined digital workflows triggered dynamically for problem resolution and communication</label></div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd31_1" value="10" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;There is no continuous progression for upgrading skills of employees.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd31_2" value="7.5" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Citizen information are captured using digital means</label></div>
+                                    <div class="col"><input type="radio" id="sd31_2" value="7.5" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Upskilling and reskilling is done only when there is a need for the organization to elevate an employee due to <br>criticality of the position. No proper plan is in place.</label></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd31_3" value="0" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;There are intermediate actions to enhance/review and modify skills of employees.</label></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd31_4" value="2.5" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Majority of employee skill development through upskilling and reskilling have defined processes. There are <br>some elements those that need process definition and guidelines.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd31_3" value="0" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not have proper mechanism</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd31_4" value="2.5" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Citizen's data are captured manually and connecting them manually</label></div>
+                                    <div class="col"><input type="radio" id="sd31_5" value="2.5" name="sd31" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd31_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">e.&nbsp;There are well defined practices to right skill, upskill and reskill employees and the employees are fully aware <br>of the processes and are fully aligned to them.</label></div>
                                 </div>
                             </div>
                         </div>
@@ -107,20 +113,23 @@
                     <input class="form-control" type="hidden" id="percentage31" name="percentage_d31">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">32.&nbsp;Does your organization practice Agile Change Management?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">32.&nbsp;How is the alignment of the organizational Talent Management (TM) strategy with the Digital Strategy (DS)?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise32" style="text-align: center;">
                     <div class="col">
                         <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd32_1" value="10" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Yes. we are practicing</label></div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd32_1" value="10" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Talent Management is not considered as part of the Digital Strategy.</label></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd32_2" value="5" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Organization has identified the importance of aligning the Talent Management Strategy with the Digital Strategy. <br>However, no structured mechanism is in place to aligned the TM with DS.</label></div>
+                                </div>
+                                <div class="row" style="margin-bottom: 40px;">
+                                    <div class="col"><input type="radio" id="sd32_3" value="0" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Talent management strategy is partially connected. However clear goals, objectives are not defined aligned <br>with the DS.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd32_2" value="5" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Sometimes</label></div>
-                                </div>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd32_3" value="0" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Do not have any idea on Agile Change Management</label></div>
+                                    <div class="col"><input type="radio" id="sd32_4" value="0" name="sd32" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd32_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Talent Management plays a prominent role in the DS. The Talent Management strategy defines how it facilitate <br>the DS by recognizing and retaining the best talent.</label></div>
                                 </div>
                             </div>
                         </div>

@@ -109,10 +109,10 @@
                 </div>
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="col" id="choise4" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
-                        <div class="row" style="margin-bottom: 40px;">
+                        <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd4_1" value="0" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Fully</label></div>
                         </div>
-                        <div class="row" style="margin-bottom: 40px;">
+                        <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd4_2" value="0" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b. Up to some extent</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
