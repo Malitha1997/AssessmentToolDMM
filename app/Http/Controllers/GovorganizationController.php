@@ -121,7 +121,7 @@ class GovorganizationController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    { dd($request);
+    { //dd($request);
         request()->validate([
             'user_id'=> 'required|string',
             'gov_org_name'=> 'required|string|min:1|max:255',

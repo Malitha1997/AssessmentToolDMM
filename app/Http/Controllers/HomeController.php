@@ -6,11 +6,14 @@ namespace App\Http\Controllers;
 
 
 
-use Illuminate\View\View;
+use App\Models\Culture;
 
+use Illuminate\View\View;
 use App\Models\Percentage;
 use Illuminate\Http\Request;
+use App\Models\Govorganizationname;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Govorganizationdetail;
 
 
 
@@ -71,7 +74,11 @@ class HomeController extends Controller
 
     public function adminHome(): View
     {
-        return view('adminHome');
+        $govorganizations = Govorganizationdetail::get();
+        $overall[] = Percentage::select('overall');
+        
+//dd($overall);
+        return view('adminHome',compact('govorganizations'));
     }
 
 

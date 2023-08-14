@@ -12,7 +12,12 @@
                 <div class="row" style="margin-top: 50px;">
                     <div class="col">
                         <div data-aos="zoom-in" data-aos-duration="1000" style="width: 687px;height: 748px;box-shadow: 5px 0px 15px 1px #747678;">
-                            <h1 style="color: rgb(0,0,0);text-align: center;font-size: 32px;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results</h1>
+                            <div class="row">
+                                <h1 style="color: rgb(0,0,0);text-align: center;font-size: 32px;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results - Preliminary Assessment</h1>
+                            </div>
+                            <div class="row" id="overall" style="margin-top: 20px">
+                                <img src="{{ asset('img/Group 84(1).png') }}">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -23,7 +28,7 @@
                 <div class="col">
                     <div data-aos="zoom-in" data-aos-duration="1000" style="width: 341px;height: 185.37px;margin-top: 50px;box-shadow: 0px 0px 20px 4px var(--bs-body-color);border-radius: 10px;text-align: center;">
                         <div class="row">
-                            <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Total Registered Organizations</span>
+                            <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Registered Organizations</span>
                         </div>
                         <div class="row" style="text-align: center;margin-top: -10px;">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
@@ -67,10 +72,10 @@
                 <div class="col">
                     <div data-aos="zoom-in" data-aos-duration="1000" style="width: 341px;height: 185.37px;margin-top: 50px;box-shadow: 0px 0px 20px 4px var(--bs-body-color);border-radius: 10px;text-align: center;">
                         <div class="row">
-                            <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Total Organizations which complete Preliminary Assessment</span>
+                            <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Preliminary Assessment completed</span>
                         </div>
                         <div class="row">
-                            <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 5px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
+                            <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                     <?php
                                     $connection = mysqli_connect("localhost","root","","assessmenttool");
 
@@ -93,7 +98,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col" id="organization">
             <div data-aos="zoom-in" data-aos-duration="1000" style="width:1153px;height:692px;box-shadow: 5px 0px 15px 1px #747678;margin-top:450px">
                 <div class="row" style="margin-top: 20px">
                     <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Organizations</span>
@@ -102,26 +107,53 @@
                     <table class="table" style="width: 1100px">
                         <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                             <tr>
-                                {{--  <th scope="col" >Username</th>  --}}
+                                <th scope="col" >Username</th>
                                 <th scope="col">Organization Name</th>
                                 <th scope="col">Organization Category</th>
                                 <th scope="col">Phone Number</th>
                                 <th scope="col">Email</th>
                             </tr>
                         </thead>
-
-                        <tr>
-                            {{--  <td></td>  --}}
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                        @foreach ($govorganizations as $key => $govorganization)
+                        <tr style="font-family: Poppins, sans-serif;">
+                            <td>{{ $govorganization->user->username }}</td>
+                            <td>{{ $govorganization->govorganizationname->gov_org_name }}</td>
+                            <td>{{ $govorganization->organizationcategory->org_category }}</td>
+                            <td>{{ $govorganization->phone_number}}</td>
+                            <td>{{ $govorganization->gov_org_email}}</td>
                         </tr>
-
+                        @endforeach
                     </table>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <h1 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 50px;color: #161A55;margin-left: 30%;font-size: 32px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results of Each Dimension</h1>
+    </div>
+    {{--  <div class="row">
+        <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 30px;color: #161A55;margin-left: 52%;font-size: 16px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Technology & Data</h3>
+    </div>  --}}
+    <div class="row">
+        <img style="margin-left: 15%;margin-top: 20px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 96.png') }}">
+    </div>
+    <div class="row" style="width:900px;margin-left: 13%">
+        <div class="col">
+            <img style="width: 420px;height: 544px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 91.png') }}">
+        </div>
+        <div class="col">
+            <img style="width: 420px;height: 541px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 92.png') }}">
+        </div>
+    </div>
+    <div class="row" style="width:900px;margin-left: 13%">
+        <div class="col">
+            <img style="width: 420px;height: 544px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 248.png') }}">
+        </div>
+        <div class="col">
+            <img style="width: 420px;height: 541px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 249.png') }}">
+        </div>
+    </div>
+
 </div>
 @endsection

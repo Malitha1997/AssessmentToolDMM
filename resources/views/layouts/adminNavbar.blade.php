@@ -15,16 +15,16 @@
     <div id="wrapper">
         <div class="row">
         <div class="col"style="width:150px">
-        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:1975px;margin-top: 108px;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
+        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:3586px;margin-top: 108px;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
             <div class="container-fluid d-flex flex-column p-0" >
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-text mx-3" >
                         <ul class="navbar-nav text-light" id="accordionSidebar-1" style="margin-left: -15px;">
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="index.html"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="index.html"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organization</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"><a class="nav-link" href="index.html"><img src="{{ asset('img/Mask group(3).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Assessment</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="index.html"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="index.html"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="#overall"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organization"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(3).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Assessment</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>
                         </ul>
                     </div>
                 </a>
@@ -59,10 +59,10 @@
                         <path d="M256 112c-48.6 0-88 39.4-88 88C168 248.6 207.4 288 256 288s88-39.4 88-88C344 151.4 304.6 112 256 112zM256 240c-22.06 0-40-17.95-40-40C216 177.9 233.9 160 256 160s40 17.94 40 40C296 222.1 278.1 240 256 240zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-46.73 0-89.76-15.68-124.5-41.79C148.8 389 182.4 368 220.2 368h71.69c37.75 0 71.31 21.01 88.68 54.21C345.8 448.3 302.7 464 256 464zM416.2 388.5C389.2 346.3 343.2 320 291.8 320H220.2c-51.36 0-97.35 26.25-124.4 68.48C65.96 352.5 48 306.3 48 256c0-114.7 93.31-208 208-208s208 93.31 208 208C464 306.3 446 352.5 416.2 388.5z"></path>
                     </svg></li>
                 </ul>
-                <span style="font-family: Poppins, sans-serif;font-color:#ffffff;font-size:20px;margin-right: 15px;">{{ Auth::user()->username }}</span>
+                <span style="font-family: Poppins, sans-serif;font-size:20px;margin-right: 15px;">{{ Auth::user()->username }}</span>
                 <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);margin-right:70px"></a>
                     <div class="dropdown-menu" style="font-family: Popins;width:50px;margin-right:50px">
-                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/home">Profile</a>
+                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/admin/home">Profile</a>
                         <a class="dropdown-item" style="font-family: Poppins" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
