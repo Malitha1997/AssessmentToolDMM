@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div class="container" style="margin-left: 0px;;width: 900px;">
+<div class="container-fluid" style="margin-left: 0px;;width: 900px;">
+    <div id="wrapper">
     <div class="row">
         <div class="col">
             <div data-aos="fade-down" data-aos-duration="1000" style="width: 641px;height: 52px;margin-left: 30px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" style="color: rgb(0,0,0);width: 20px;height: 20px;margin-left: 15px;">
@@ -15,8 +16,9 @@
                             <div class="row">
                                 <h1 style="color: rgb(0,0,0);text-align: center;font-size: 32px;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results - Preliminary Assessment</h1>
                             </div>
-                            <div class="row" id="overall" style="margin-top: 20px">
-                                <img src="{{ asset('img/Group 84(1).png') }}">
+                            <div class="row" id="overall" style="margin-top: 30px;width: 604.32px;height: 522px">
+                                {{--  <img src="{{ asset('img/Group 84(1).png') }}">  --}}
+                                <canvas id="radarChart" style="margin-left: 90px"></canvas>
                             </div>
                         </div>
                     </div>
@@ -154,6 +156,44 @@
             <img style="width: 420px;height: 541px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 249.png') }}">
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById('radarChart').getContext('2d');
+        var sums = @json($sums);
 
+        var chart = new Chart(ctx, {
+            type: 'radar', // Use radar chart type
+            data: {
+                labels: ['Customer', 'Strategy', 'Technology', 'Operation', 'Culture'],
+                datasets: [
+                    {
+                        label: 'Overall Results',
+                        data: [sums.customer, sums.strategy, sums.technology, sums.operation, sums.culture],
+                        backgroundColor: 'transparent',
+                        borderColor: '#C51010',
+                        borderWidth: 1,
+                    }
+                ]
+            },
+            options: {
+                scale: {
+                    pointLabels: {
+                        fontSize: 24, // Set the font size
+                        fontStyle: 'bold', // Set the font style
+                    },
+                    gridLines: {
+                        lineWidth: 6, // Set the axis width
+                    },
+                    ticks: {
+                        beginAtZero: true, // Start ticks at 0
+                    min: 0, // Minimum value
+                    max: 100, // Maximum value
+                        stepSize: 10, // Set the step size
+                    }
+                }
+            }
+        });
+    </script>
+</div>
 </div>
 @endsection

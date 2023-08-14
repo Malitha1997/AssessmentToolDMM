@@ -75,10 +75,20 @@ class HomeController extends Controller
     public function adminHome(): View
     {
         $govorganizations = Govorganizationdetail::get();
-        $overall[] = Percentage::select('overall');
+        // $customerTotal = Percentage::get();
+        $percentages = Percentage::all();
+
+    $sums = [
+        'customer' => $percentages->avg('customer'),
+        'strategy' => $percentages->avg('strategy'),
+        'technology' => $percentages->avg('technology'),
+        'operation' => $percentages->avg('operation'),
+        'culture' => $percentages->avg('culture'),
         
+    ];
+
 //dd($overall);
-        return view('adminHome',compact('govorganizations'));
+        return view('adminHome',compact('govorganizations','sums'));
     }
 
 
