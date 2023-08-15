@@ -33,7 +33,7 @@
         vAxis: {
           title: 'Subdimentions',
 
-        }
+        },
       };
 
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));

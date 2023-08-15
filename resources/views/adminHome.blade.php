@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid" style="margin-left: 0px;;width: 900px;">
+<div class="container-fluid" style="margin-left: 0px;width: 900px;">
     <div id="wrapper">
     <div class="row">
         <div class="col">
@@ -131,29 +131,220 @@
         </div>
     </div>
 
-    <div class="row">
-        <h1 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 50px;color: #161A55;margin-left: 30%;font-size: 32px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results of Each Dimension</h1>
-    </div>
-    {{--  <div class="row">
-        <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 30px;color: #161A55;margin-left: 52%;font-size: 16px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Technology & Data</h3>
-    </div>  --}}
-    <div class="row">
-        <img style="margin-left: 15%;margin-top: 20px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 96.png') }}">
-    </div>
-    <div class="row" style="width:900px;margin-left: 13%">
-        <div class="col">
-            <img style="width: 420px;height: 544px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 91.png') }}">
+    <table>
+    <tr>
+        <h1 data-aos="zoom-in" data-aos-duration="1000" style="margin-left:35%;margin-top: 50px;color: #161A55;font-size: 32px;font-weight :bold;font-family: Poppins, sans-serif;">Overall Results of Each Dimension</h1>
+    </tr>
+    <tr style="text-align: center">
+        <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-left:57%;margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Technology & Data</h3>
+    <tr>
+    <tr>
+        <div id="tecChart" data-aos="zoom-in" data-aos-duration="1000" style="width: 1200px;height: 359px;margin-left: -30px"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+        var data = google.visualization.arrayToDataTable({{ Js::from($tecAvg) }});
+
+        var options = {
+
+            chartArea: {width: '50%'},
+            hAxis: {
+                minValue: 0,
+                maxValue: 100,
+                textStyle: {
+                    fontSize: 14,
+                    fontName: 'Poppins'
+                }
+
+            },
+            vAxis: {
+                textStyle: {
+                    fontSize: 14,
+                    fontName: 'Poppins'
+                }
+            },
+            colors: ['#64CDDB']
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('tecChart'));
+
+        chart.draw(data, options);
+        }
+        </script>
+    </tr>
+    <div class="row" style="width:1200px;">
+        <div class="col" style="width: 400px;">
+            <div class="row">
+                <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;text-align:center">Customer</h3>
+            </div>
+            <div id="cusChart" data-aos="zoom-in" data-aos-duration="1000" style="height:400px;width:550px"></div>
+
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {packages: ['corechart']});
+                google.charts.setOnLoadCallback(drawBasic);
+
+                function drawBasic() {
+
+                var data = google.visualization.arrayToDataTable({{ Js::from($cusAvg) }});
+
+                var options = {
+
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+
+                    },
+                    vAxis: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+                    },
+                    colors: ['#52ED59']
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('cusChart'));
+
+                chart.draw(data, options);
+                }
+            </script>
         </div>
         <div class="col">
-            <img style="width: 420px;height: 541px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 92.png') }}">
+            <div class="row">
+                <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;text-align:center">Operation</h3>
+            </div>
+            <div id="opChart" data-aos="zoom-in" data-aos-duration="1000" style="height:400px;width:550px"></div>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {packages: ['corechart']});
+                google.charts.setOnLoadCallback(drawBasic);
+
+                function drawBasic() {
+
+                var data = google.visualization.arrayToDataTable({{ Js::from($opAvg) }});
+
+                var options = {
+
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+
+                    },
+                    vAxis: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+                    },
+                    colors: ['#F01F75']
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('opChart'));
+
+                chart.draw(data, options);
+                }
+            </script>
         </div>
     </div>
-    <div class="row" style="width:900px;margin-left: 13%">
+    <div class="row" style="width:1200px;">
         <div class="col">
-            <img style="width: 420px;height: 544px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 248.png') }}">
+            <div class="row">
+                <h3 data-aos="zoom-in" data-aos-duration="1000" style="text-align: center;margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Organization & Culture</h3>
+            </div>
+            {{--  <img style="width: 420px;height: 544px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 248.png') }}">  --}}
+            <div id="culChart" data-aos="zoom-in" data-aos-duration="1000" style="height:400px;width:550px"></div>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {packages: ['corechart']});
+                google.charts.setOnLoadCallback(drawBasic);
+
+                function drawBasic() {
+
+                var data = google.visualization.arrayToDataTable({{ Js::from($culAvg) }});
+
+                var options = {
+
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+
+                    },
+                    vAxis: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+                    },
+                    colors: ['#BDE90B']
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('culChart'));
+
+                chart.draw(data, options);
+                }
+            </script>
         </div>
         <div class="col">
-            <img style="width: 420px;height: 541px" data-aos="zoom-in" data-aos-duration="1000" src="{{ asset('img/Group 249.png') }}">
+            <div class="row">
+                <h3 data-aos="zoom-in" data-aos-duration="1000" style="text-align: center;margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Strategy</h3>
+            </div>
+            <div id="strChart" data-aos="zoom-in" data-aos-duration="1000" style="height:400px;width:550px"></div>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script>
+                google.charts.load('current', {packages: ['corechart']});
+                google.charts.setOnLoadCallback(drawBasic);
+
+                function drawBasic() {
+
+                var data = google.visualization.arrayToDataTable({{ Js::from($strAvg) }});
+
+                var options = {
+
+                    chartArea: {width: '50%'},
+                    hAxis: {
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+
+                    },
+                    vAxis: {
+                        textStyle: {
+                            fontSize: 14,
+                            fontName: 'Poppins'
+                        }
+                    },
+                    colors: ['#E77812']
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('strChart'));
+
+                chart.draw(data, options);
+                }
+            </script>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
@@ -171,29 +362,36 @@
                         data: [sums.customer, sums.strategy, sums.technology, sums.operation, sums.culture],
                         backgroundColor: 'transparent',
                         borderColor: '#C51010',
-                        borderWidth: 1,
+                        borderWidth: 2,
+                        pointRadius: 6,
                     }
                 ]
             },
             options: {
+                elements: {
+                    line: {
+                       borderWidth: 10
+                    }
+                 },
                 scale: {
                     pointLabels: {
                         fontSize: 24, // Set the font size
                         fontStyle: 'bold', // Set the font style
                     },
                     gridLines: {
-                        lineWidth: 6, // Set the axis width
+                        lineWidth: 60, // Set the axis width
                     },
                     ticks: {
                         beginAtZero: true, // Start ticks at 0
-                    min: 0, // Minimum value
-                    max: 100, // Maximum value
+                        min: 0, // Minimum value
+                        max: 100, // Maximum value
                         stepSize: 10, // Set the step size
                     }
                 }
             }
         });
     </script>
+    </table>
 </div>
 </div>
 @endsection
