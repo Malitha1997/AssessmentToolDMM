@@ -337,7 +337,7 @@
                             fontName: 'Poppins'
                         }
                     },
-                    colors: ['#E77812']
+                    {{--  colors: ['#E77812']  --}}
                 };
 
                 var chart = new google.visualization.AreaChart(document.getElementById('strChart'));
