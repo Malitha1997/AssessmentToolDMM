@@ -181,7 +181,8 @@
                         vAxis: {
                         title: 'Subdimentions',
 
-                        }
+                        },
+                        colors: ['#52ED59']
                     };
 
                     var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
@@ -217,7 +218,8 @@
                         vAxis: {
                           title: 'Subdimentions',
 
-                        }
+                        },
+                        colors: ['#DB64B3']
                       };
 
                       var chart = new google.visualization.BarChart(document.getElementById('chart_div4'));
@@ -260,7 +262,8 @@
                         vAxis: {
                         title: 'Subdimentions',
 
-                        }
+                        },
+                        colors: ['#E77812']
                     };
 
                     var chart = new google.visualization.BarChart(document.getElementById('chart_div5'));
@@ -297,7 +300,7 @@
                       title: 'Subdimentions',
 
                     },
-
+                    colors: ['#BDE90B']
                   };
 
                   var chart = new google.visualization.BarChart(document.getElementById('chart_div6'));

@@ -22,36 +22,37 @@
         google.charts.load('current', {packages: ['corechart', 'bar']});
         google.charts.setOnLoadCallback(drawBasic);
 
-    function drawBasic() {
+        function drawBasic() {
 
-      var data = google.visualization.arrayToDataTable({{ Js::from($result) }});
+        var data = google.visualization.arrayToDataTable({{ Js::from($result) }});
 
-      var options = {
+        var options = {
+            chartArea: {
+                width: '50%'
+            },
+            hAxis: {
+                title: 'Percentages',
+                minValue: 0,
+                maxValue: 100
+            },
+            vAxis: {
+                title: 'Subdimentions',
+            },
+            colors: ['#64CDDB']
+        };
 
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'Percentages',
-          minValue: 0,
-          maxValue: 100
-        },
-        vAxis: {
-          title: 'Subdimentions',
-
-        }
-      };
-
-      {{--  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-      google.visualization.events.addListener(chart, 'ready', function () {
-       var chart_div = '<img src="' + chart.getImageURI() + '">';
-       chart_input.value = chart.getImageURI();
+        {{--  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        google.visualization.events.addListener(chart, 'ready', function () {
+        var chart_div = '<img src="' + chart.getImageURI() + '">';
+        chart_input.value = chart.getImageURI();
 
 
-      });
-      chart.draw(data, options);  --}}
-      
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        });
+        chart.draw(data, options);  --}}
 
-      chart.draw(data, options);
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
     }
     </script>
 </body>

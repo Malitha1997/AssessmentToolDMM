@@ -32,7 +32,7 @@
           title: 'Subdimentions',
 
         },
-        
+        colors: ['#BDE90B']
       };
 
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));

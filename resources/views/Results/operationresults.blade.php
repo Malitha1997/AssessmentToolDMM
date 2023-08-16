@@ -31,7 +31,8 @@
         vAxis: {
           title: 'Subdimentions',
 
-        }
+        },
+        colors: ['#DB64B3']
       };
 
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
