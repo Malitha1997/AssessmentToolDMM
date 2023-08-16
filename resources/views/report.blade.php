@@ -52,7 +52,7 @@
                                 <div class="col" ><span style="font-size: 24px;color: var(--bs-emphasis-color);font-weight: bold;"><br>Successfully completed<br>Preliminary Assessment</span></div>
                             </div>
                             <div class="row" style="text-align: center;margin-top:50px">
-                                <div class="col" ><span style="font-family: Poppins, sans-serif;font-size: 16px;">Your Organization gained<br>{{ Auth::user()->govorganizationdetail->percentage->overall }} for the Preliminary Assessment.</span></div>
+                                <div class="col" ><span style="font-family: Poppins, sans-serif;font-size: 16px;">Your Organization gained<br>{{ Auth::user()->govorganizationdetail->percentage->overall }}% for the Preliminary Assessment.</span></div>
                             </div>
                         </div>
                     </div>
