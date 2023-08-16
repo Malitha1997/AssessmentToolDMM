@@ -18,6 +18,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     </head>
         <body>
             {{--  Page 01  --}}
@@ -69,12 +70,12 @@
             <div class="row" style="text-align: center; margin-top: 50px;">
                 <div class="col"><span style="font-family: Poppins, sans-serif; font-size: 20px;">Overall Results of the Preliminary Assessment</span></div>
             </div>
-            <div class="row" style="text-align: center;margin-top:50px;border-style: solid;border-width: 1px;border-color: #ff0000">
+            <div class="row" style="text-align: center;margin-top:50px;border-style: solid;border-width: 1px;border-color: #ff0000;width: 500px;margin-left: 25%">
                 <div class="col" ><span style="font-family: Poppins, sans-serif;font-size: 16px;">Your Organization gained<br>{{ Auth::user()->govorganizationdetail->percentage->overall }}% for the Preliminary Assessment.</span></div>
             </div>
             <div class="row" style="margin-top: 50px;text-align: center">
                 <div class="col">
-                    <canvas id="chartId" aria-label="chart" style="margin-left:200px;margin-top:50px; font-size: 20px;" height="500" width="500"></canvas>
+                    <canvas id="chartId" aria-label="chart" style="margin-left:200px;margin-top:30px; font-size: 20px;" height="500" width="500"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
                     <script type="text/javascript">
                         var ctx = document.getElementById("chartId").getContext("2d");
@@ -114,11 +115,51 @@
                     </script>
                 </div>
             </div>
-            <div class="row" style="text-align: center;margin-top: 325px;">
+
+            <div class="row" style="text-align: center;margin-top: 550px;">
                 <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
             </div>
         </div>
     </div>
+
+        {{--  Page 03  --}}
+        <div class="page-break"></div>
+        <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
+        <div class="container" style="width: 2400px; height: 782px;margin-top: 100px ">
+            <table class="table">
+                <thead class="thead-light" style="font-family: Poppins, sans-serif;">
+                    <tr>
+                        <th scope="col" >Dimension</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Customer:</td>
+                    <td>The Customer dimension focuses on the government's commitment to citizen-centricity. It assesses the extent to which government services, processes, and interactions are designed to meet the needs and preferences of citizens. This involves understanding citizens' expectations, gathering feedback, and tailoring services accordingly. An advanced level in this dimension implies personalized services, user-friendly digital platforms, and active citizen engagement through digital channels. Effective use of data and analytics to anticipate citizen needs and preferences is a key indicator of maturity in this dimension.</td>
+                </tr>
+                <tr>
+                    <td>Strategy:</td>
+                    <td>The Strategy dimension evaluates the existence of a well-defined and comprehensive digital strategy. It assesses whether digital initiatives align with broader organizational goals and whether there is a clear roadmap for digital transformation. A mature organization will have a strategic approach that outlines priorities, investment plans, and a timeline for implementing digital initiatives. Alignment with national development goals, resource allocation, and a clear vision for leveraging technology to enhance government functions are essential aspects of a robust strategy.</td>
+                </tr>
+                <tr>
+                    <td>Technology & Data:</td>
+                    <td>In the Technology & Data dimension, the focus is on the adoption and integration of digital technologies. This includes the use of advanced technologies like cloud computing, artificial intelligence, and IoT. An advanced level in this dimension signifies a high degree of technology adoption, with well-established infrastructure, data centers, and modern digital tools. Data governance, data quality management, and robust architecture for data storage and processing are indicators of maturity. The ability to harness data for informed decision-making and predictive analytics is also crucial.</td>
+                </tr>
+                <tr>
+                    <td>Operation:</td>
+                    <td>The Operation dimension assesses the extent to which digital technologies are integrated into core government processes and operations. A mature organization will have digitized and automated processes, reducing manual interventions and improving efficiency. Advanced levels in this dimension involve the seamless integration of digital tools to streamline workflows, optimize resource allocation, and reduce operational bottlenecks. It also encompasses the implementation of e-governance practices, paperless processes, and real-time monitoring of operations.</td>
+                </tr>
+                <tr>
+                    <td>Organization & Culture:</td>
+                    <td>The Organization & Culture dimension examines the organizational culture and readiness for digital transformation. It evaluates the willingness of employees to adopt digital tools, their digital literacy, and the extent to which a culture of innovation and collaboration is fostered. A mature organization in this dimension encourages a mindset shift towards embracing technology, promotes continuous learning, and empowers employees to contribute to digital initiatives. Digital skills development, change management programs, and supportive leadership that champions innovation are key indicators of maturity.</td>
+                </tr>
+            </table>
+            <div class="row" style="text-align: center;margin-top: 200px;">
+                <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
+            </div>
+        </div>
+        </div>
+
 
         {{--  Page 04  --}}
         <div class="page-break"></div>
@@ -143,15 +184,16 @@
 
                         var options = {
 
-                            chartArea: {width: '50%'},
+                            chartArea: {
+                                width: '50%'
+                            },
                             hAxis: {
-                            title: 'Percentages',
-                            minValue: 0,
-                            maxValue: 100
+                                title: 'Percentages',
+                                minValue: 0,
+                                maxValue: 100
                             },
                             vAxis: {
-                            title: 'Subdimentions',
-
+                                title: 'Subdimentions',
                             }
                         };
 
