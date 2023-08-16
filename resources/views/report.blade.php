@@ -79,10 +79,9 @@
                             datasets: [{
                                 label: "Marks for each dimension",
                                 data: {!! json_encode($percentage) !!},
-                                backgroundColor: "rgba(229, 89, 52, 0.6)",
-                                borderColor: "rgba(229, 89, 52, 1)",
+                                backgroundColor: 'transparent',
+                                borderColor: '#C51010',
                                 borderWidth: 2,
-                                pointBackgroundColor: "pink",
                                 pointRadius: 6,
                             }],
                         };
@@ -98,7 +97,7 @@
                                 ticks: {
                                     beginAtZero: true,
                                     max: 100,
-                                    stepSize: 20,
+                                    stepSize: 10,
                                 }
                             }
                         };

@@ -36,7 +36,7 @@
                     <input class="form-control"  type="hidden" id="percentage20" name="percentage_d20">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">21.&nbsp;What is the mechanism to make participants to involve the ecosystem development?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">21.&nbsp;What is the mechanism to make participants to involve in the ecosystem development?</span></div>
                 </div>
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="row d-flex flex-column" style="text-align: center;">
@@ -73,13 +73,13 @@
                             <div class="col"><input type="radio" id="sd22_1" value="0" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Digital transformation is not led by a defined role in the organization without a proper roadmap.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd22_2" value="0" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Some level of focus is available for digital transformation, and it is not led by a defined role in the organization.</label></div>
+                            <div class="col"><input type="radio" id="sd22_2" value="2.5" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Some level of focus is available for digital transformation, and it is not led by a defined role in the organization.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd22_3" value="5" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital transformation is led by defined leader and driven by a proper roadmap.</label></div>
+                            <div class="col"><input type="radio" id="sd22_3" value="7.5" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital transformation is led by defined leader and driven by a proper roadmap.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd22_4" value="7.5" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital transformation is led by defined leader and driven by a proper roadmap with monitoring.</label></div>
+                            <div class="col"><input type="radio" id="sd22_4" value="10" name="sd22" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd22_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital transformation is led by defined leader and driven by a proper roadmap with monitoring.</label></div>
                         </div>
                     </div>
                 </div>
@@ -93,16 +93,16 @@
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="col" id="choise23" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd23_1" value="2" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Execution of some digital initiative on an adhoc basis, on the requirements of an external parties</label></div>
+                            <div class="col"><input type="radio" id="sd23_1" value="0" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Execution of some digital initiative on an adhoc basis, on the requirements of an external parties</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd23_2" value="4" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Some digital initiatives are identified based on the requirements of the services being offered by the organization</label></div>
+                            <div class="col"><input type="radio" id="sd23_2" value="2.5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Some digital initiatives are identified based on the requirements of the services being offered by the organization</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd23_3" value="6" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives based on the requirements of the organization's <br>customers and stakeholders</label></div>
+                            <div class="col"><input type="radio" id="sd23_3" value="5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives based on the requirements of the organization's <br>customers and stakeholders</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd23_4" value="8" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's <br>customers and stakeholders. APIs available to use by others.</label></div>
+                            <div class="col"><input type="radio" id="sd23_4" value="7.5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's <br>customers and stakeholders. APIs available to use by others.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd23_5" value="10" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's, customers <br>and stakeholders. APIs available. Constant improvements made based on market insights and demands.</label></div>
@@ -133,16 +133,16 @@
                 <div class="row d-flex flex-column" id="choise25" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="10" id="sd25_1" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Fund availability for digitally initiatives is not thought of</label></div>
+                            <div class="col"><input type="radio" value="0" id="sd25_1" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Fund availability for digitally initiatives is not thought of</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="7.5" id="sd25_2" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Allocation of funds from internal budgets for some digital initiatives</label></div>
+                            <div class="col"><input type="radio" value="5" id="sd25_2" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Allocation of funds from internal budgets for some digital initiatives</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" value="5" id="sd25_3" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Well defined budget acquisition mechanism for all planned digital initiatives</label></div>
+                            <div class="col"><input type="radio" value="7.5" id="sd25_3" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Well defined budget acquisition mechanism for all planned digital initiatives</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="0" id="sd25_4" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Well Defined budget allocation for all plan digital initiatives. Allocated funds are monitored and utilised properly. <br>Controls are in place</label></div>
+                            <div class="col"><input type="radio" value="10" id="sd25_4" name="sd25" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd25_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Well Defined budget allocation for all plan digital initiatives. Allocated funds are monitored and utilised properly. <br>Controls are in place</label></div>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <div class="col"><input type="radio" id="sd26_2" value="2.5" name="sd26" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd26_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Digital transformation is not part of the organization policy. However organizational plans captures at high level.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd26_3" value="5" name="sd26" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd26_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Digital transformation is included as part of the organization policy.</label></div>
+                            <div class="col"><input type="radio" id="sd26_3" value="7.5" name="sd26" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd26_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Digital transformation is included as part of the organization policy.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd26_4" value="10" name="sd26" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd26_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Digital transformation is included as part of the organization policy. Execution process is planned and <br>monitored.</label></div>
@@ -179,16 +179,16 @@
                 <div class="row d-flex flex-column" id="choise27" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="10" id="sd27_1" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Does not support invention and innovation.</label></div>
+                            <div class="col"><input type="radio" value="0" id="sd27_1" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Does not support invention and innovation.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="7.5" id="sd27_2" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Not restricted to come up with interventions and innovations.</label></div>
+                            <div class="col"><input type="radio" value="2.5" id="sd27_2" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Not restricted to come up with interventions and innovations.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="5" id="sd27_3" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Encourages to come up with interventions and innovations.</label></div>
+                            <div class="col"><input type="radio" value="7.5" id="sd27_3" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Encourages to come up with interventions and innovations.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" value="0" id="sd27_4" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Encourages to come up with interventions and innovations and it is recognized.</label></div>
+                            <div class="col"><input type="radio" value="10" id="sd27_4" name="sd27" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd27_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Encourages to come up with interventions and innovations and it is recognized.</label></div>
                         </div>
                     </div>
                 </div>

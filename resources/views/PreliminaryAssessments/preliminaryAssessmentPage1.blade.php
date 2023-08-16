@@ -84,16 +84,16 @@
                     <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" id="choise3" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 40px;margin-top:20px">
-                                    <div class="col"><input type="radio" id="sd3_1" value="0" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Risk for data loss, hacks, and major disruptions.  Organization have not classified the data and regular &nbsp;&nbsp;&nbsp;&nbsp;backups are not conducted.</label></div>
+                                    <div class="col"><input type="radio" id="sd3_1" value="2" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Risk for data loss, hacks, and major disruptions.  Organization have not classified the data and regular &nbsp;&nbsp;&nbsp;&nbsp;backups are not conducted.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd3_2" value="0" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b. Most of the risk already identified and align with data protection act. However there is no proper privacy <br>&nbsp;&nbsp;&nbsp;&nbsp;mechanism.</label></div>
+                                    <div class="col"><input type="radio" id="sd3_2" value="4" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b. Most of the risk already identified and align with data protection act. However there is no proper privacy <br>&nbsp;&nbsp;&nbsp;&nbsp;mechanism.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd3_3" value="5" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c. All solutions aligned with the data protection regulations.</label></div>
+                                    <div class="col"><input type="radio" id="sd3_3" value="6" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c. All solutions aligned with the data protection regulations.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd3_4" value="7.5" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d. Having proper document standards and follows the data protection act. All data are secured and have <br>&nbsp;&nbsp;&nbsp;&nbsp;a proper control mechanism.</label></div>
+                                    <div class="col"><input type="radio" id="sd3_4" value="8" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d. Having proper document standards and follows the data protection act. All data are secured and have <br>&nbsp;&nbsp;&nbsp;&nbsp;a proper control mechanism.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
                                     <div class="col"><input type="radio" id="sd3_5" value="10" name="sd3" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd3_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">e. All solutions are aligned with data protection act and minimum of user involvement for accessing data. <br>&nbsp;&nbsp;&nbsp;&nbsp;All data are fully secured.</label></div>
@@ -110,10 +110,10 @@
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="col" id="choise4" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd4_1" value="0" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Fully</label></div>
+                            <div class="col"><input type="radio" id="sd4_1" value="10" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Fully</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd4_2" value="0" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b. Up to some extent</label></div>
+                            <div class="col"><input type="radio" id="sd4_2" value="2.5" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b. Up to some extent</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd4_3" value="5" name="sd4" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd4_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c. Partially</label></div>
@@ -204,7 +204,7 @@
                             <div class="col"><input type="radio" id="sd6_1" value="10" name="sd6" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd6_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;Yes. A well defined architecture is followed, which is aligned with government enterprise architecture.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd6_2" value="0" name="sd6" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd6_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Yes. We have defined solution architecture internally.</label></div>
+                            <div class="col"><input type="radio" id="sd6_2" value="5" name="sd6" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd6_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Yes. We have defined solution architecture internally.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
                             <div class="col"><input type="radio" id="sd6_3" value="0" name="sd6" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd6_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Do not have any idea on this.</label></div>
@@ -272,10 +272,10 @@
                             <div class="col"><input type="radio"value="10" id="sd10_1" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have well developed single sign-on (SSO) solution to obtain services from an organization</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio"value="7.5" id="sd10_2" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Some online services are available for citizens</label></div>
+                            <div class="col"><input type="radio"value="5" id="sd10_2" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Some online services are available for citizens</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio"value="5" id="sd10_3" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not provide online services for citizens</label></div>
+                            <div class="col"><input type="radio"value="0" id="sd10_3" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not provide online services for citizens</label></div>
                         </div>
                     </div>
                 </div>

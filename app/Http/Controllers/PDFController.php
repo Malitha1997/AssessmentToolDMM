@@ -49,7 +49,6 @@ class PDFController extends Controller
             (int) $percentage->technology,
             (int) $percentage->operation,
             (int) $percentage->culture,
-            (int) $percentage->overall,
         ];
 
         $technology = Auth::user()->govorganizationdetail->technology;

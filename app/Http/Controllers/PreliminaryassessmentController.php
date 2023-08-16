@@ -144,11 +144,11 @@ class PreliminaryassessmentController extends Controller
 
         $customer = new Customer;
 
-        $customer->citizen_engagement = $request->percentage_d11;
-        $customer->citizen_experience = $request->percentage_d12;
-        $customer->citizen_experience_strategy = $request->percentage_d13;
-        $customer->citizen_insights = $request->percentage_d14;
-        $customer->citizen_trust = $request->percentage_d15;
+        $customer->citizen_experience_strategy = $request->percentage_d11;
+        $customer->citizen_engagement = $request->percentage_d12;
+        $customer->citizen_experience = $request->percentage_d13;
+        $customer->citizen_trust= $request->percentage_d14;
+        $customer->citizen_insights  = $request->percentage_d15;
         $customer->govorganizationdetail_id = $request->govorganizationdetail_id;
 
         $customer->save();

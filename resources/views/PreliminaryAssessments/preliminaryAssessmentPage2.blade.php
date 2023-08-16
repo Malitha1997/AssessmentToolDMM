@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-xxl-12" id="choise11" style="margin-top: 20px;margin-bottom: 10px;">
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd11_1" value="2.5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_1" value="0" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
                         <div class="col"><input type="radio" id="sd11_2" value="5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
@@ -57,19 +57,16 @@
                 <div class="row d-flex flex-column" id="choise13" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd13_1" value="5" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">No digital channels. Not aware of self service options/ capabilities</label></div>
-                        </div>
-                        <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd13_2" value="10" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No self service through available digital means</label></div>
+                            <div class="col"><input type="radio" id="sd13_1" value="0" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">No self service through available digital means</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd13_3" value="0" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Enablement of digital self service through only few channels. Partial digital self service</label></div>
+                            <div class="col"><input type="radio" id="sd13_2" value="5" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Enablement of digital self service through only few channels. Partial digital self service</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd13_4" value="0" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital self service enabled through all available channels. There is scope for further addition of self service <br>capabilities across channels</label></div>
+                            <div class="col"><input type="radio" id="sd13_3" value="7.5" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Digital self service enabled through all available channels. There is scope for further addition of self service <br>capabilities across channels</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd13_5" value="0" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Self Service enabled through all possible digital means. All that can be self served is <br>self served - Assisted service only for services where human intervention is unavoidable.</label></div>
+                            <div class="col"><input type="radio" id="sd13_4" value="10" name="sd13" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd13_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Self Service enabled through all possible digital means. All that can be self served is <br>self served - Assisted service only for services where human intervention is unavoidable.</label></div>
                         </div>
                     </div>
                 </div>
@@ -112,19 +109,19 @@
                         <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd15_1" value="10" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Do not capture customer feedback</label></div>
+                                    <div class="col"><input type="radio" id="sd15_1" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Do not capture customer feedback</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd15_2" value="5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Unstructured and irregular feedback capture mechanism.  Manual activities.</label></div>
+                                    <div class="col"><input type="radio" id="sd15_2" value="2.5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Unstructured and irregular feedback capture mechanism.  Manual activities.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd15_3" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Citizen feedback through limited mediums. Manual interventions to identify insights and actions</label></div>
+                                    <div class="col"><input type="radio" id="sd15_3" value="5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Citizen feedback through limited mediums. Manual interventions to identify insights and actions</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd15_4" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular Citizen feedback capture through digital means (mobile app, portals etc.). Manual interventions for <br>generating actionable insights.</label></div>
+                                    <div class="col"><input type="radio" id="sd15_4" value="7.5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular Citizen feedback capture through digital means (mobile app, portals etc.). Manual interventions for <br>generating actionable insights.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd15_5" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular, real time Citizen feedback capture through digital interfaces including Citizen portals, mobile apps etc. <br>Analytics powered solutions for Citizen insight analysis. Automatic usage of Citizen feedbacks for <br>experience capability enhancement.</label></div>
+                                    <div class="col"><input type="radio" id="sd15_5" value="10" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular, real time Citizen feedback capture through digital interfaces including Citizen portals, mobile apps etc. <br>Analytics powered solutions for Citizen insight analysis. Automatic usage of Citizen feedbacks for <br>experience capability enhancement.</label></div>
                                 </div>
                             </div>
                         </div>
