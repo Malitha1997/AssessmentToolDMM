@@ -27,19 +27,19 @@
                     <div class="col" style="text-align: center;"><img src="{{ asset('emblem.png') }}" style="width:58px;height:82px"></div>
                 </div>
                 <div class="row" style="margin-top: 50px;">
-                    <div class="col" style="text-align: center;"><span style="font-size: 40px;color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">Results Report<br>of<br>Preliminary Assessment<br>for<br>{{ Auth::user()->govorganizationdetail->govorganizationname->gov_org_name }}</span></div>
+                    <div class="col" style="text-align: center;"><span style="font-size: 40px;color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">Preliminary Assessment<br>Report of<br>{{ Auth::user()->govorganizationdetail->govorganizationname->gov_org_name }}</span></div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 650px;">
                     <div class="col"><span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Prepared by</span></div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 25px;">
-                    <div class="col"><img src="{{ asset('icta2.png') }}" style="width:253px;height:55px"></div>
+                    <div class="col"><img src="{{ asset('ICTA1.png') }}" style="width:253px;height:100px"></div>
                 </div>
             </div>
         </div>
 
             {{--  Page 02  --}}
-            <div class="page-break"></div>
+            {{--  <div class="page-break"></div>
             <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
             <div class="container" style="width: 535px;height: 800px;">
                 <div class="row" style="margin-top: 200px;text-align: center;">
@@ -59,18 +59,22 @@
                 </div>
             </div>
             </div>
-            </div>
+            </div>  --}}
 
         {{--  Page 03  --}}
         <div class="page-break"></div>
         <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
         <div class="container" style="width: 2400px; height: 782px; ">
+
             <div class="row" style="text-align: center; margin-top: 50px;">
-                <div class="col"><span style="font-family: Poppins, sans-serif; font-size: 20px;">Overall Results of Preliminary Assessment</span></div>
+                <div class="col"><span style="font-family: Poppins, sans-serif; font-size: 20px;">Overall Results of the Preliminary Assessment</span></div>
+            </div>
+            <div class="row" style="text-align: center;margin-top:50px;border-style: solid;border-width: 1px;border-color: #ff0000">
+                <div class="col" ><span style="font-family: Poppins, sans-serif;font-size: 16px;">Your Organization gained<br>{{ Auth::user()->govorganizationdetail->percentage->overall }}% for the Preliminary Assessment.</span></div>
             </div>
             <div class="row" style="margin-top: 50px;text-align: center">
                 <div class="col">
-                    <canvas id="chartId" aria-label="chart" style="margin-left:200px;margin-top:200px; font-size: 20px;" height="500" width="500"></canvas>
+                    <canvas id="chartId" aria-label="chart" style="margin-left:200px;margin-top:50px; font-size: 20px;" height="500" width="500"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
                     <script type="text/javascript">
                         var ctx = document.getElementById("chartId").getContext("2d");
@@ -109,6 +113,9 @@
                         });
                     </script>
                 </div>
+            </div>
+            <div class="row" style="text-align: center;margin-top: 325px;">
+                <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
             </div>
         </div>
     </div>
@@ -228,6 +235,9 @@
                     }
                     </script>
                 </div>
+                <div class="row" style="text-align: center;margin-top: 425px;">
+                    <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -309,6 +319,9 @@
                 }
                 </script>
             </div>
+        </div>
+        <div class="row" style="text-align: center;margin-top: 425px;">
+            <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
         </div>
     </div>
     </div>
