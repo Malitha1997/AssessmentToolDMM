@@ -115,8 +115,14 @@
                     </script>
                 </div>
             </div>
-
-            <div class="row" style="text-align: center;margin-top: 550px;">
+            <ul>
+                <li style="font-family: Poppins, sans-serif;">You gained {{ Auth::user()->govorganizationdetail->percentage->technology }}% for Technology & Data dimension.</li>
+                <li style="font-family: Poppins, sans-serif;">You gained {{ Auth::user()->govorganizationdetail->percentage->customer }}% for Customer dimension.</li>
+                <li style="font-family: Poppins, sans-serif;">You gained {{ Auth::user()->govorganizationdetail->percentage->operation }}% for Operation dimension.</li>
+                <li style="font-family: Poppins, sans-serif;">You gained {{ Auth::user()->govorganizationdetail->percentage->strategy }}% for Strategy dimension.</li>
+                <li style="font-family: Poppins, sans-serif;">You gained {{ Auth::user()->govorganizationdetail->percentage->culture }}% for Organization & Culture dimension.</li>
+            </ul>
+            <div class="row" style="text-align: center;margin-top: 450px;">
                 <div class="col"><img src="{{ asset('Lightning.png') }}" style="width:153px;height:50px"></div>
             </div>
         </div>
@@ -126,6 +132,7 @@
         <div class="page-break"></div>
         <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
         <div class="container" style="width: 2400px; height: 782px;margin-top: 100px ">
+            <h2 style="font-family: Poppins, sans-serif;text-align: center;margin-top: 20px">Description of each dimension</h2>
             <table class="table">
                 <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                     <tr>

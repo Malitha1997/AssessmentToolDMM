@@ -88,7 +88,7 @@
                             <div class="col"><img src="{{ asset('img/Robotic%20hand.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ Auth::user()->govorganizationdetail->percentage->technology }}% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->technology }}% for Technology & Data dimension.<br><br></span></div>
                         </div>
 
                         <div class="row">
@@ -105,7 +105,7 @@
                             <div class="col"><img src="{{ asset('img/Support.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ Auth::user()->govorganizationdetail->percentage->customer }}% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->customer }}% for Customer dimension.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/customerresults">Read More</a></div>
@@ -123,7 +123,7 @@
                             <div class="col"><img src="{{ asset('img/Gears.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ Auth::user()->govorganizationdetail->percentage->operation }}% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->operation }}% for Operation dimension.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/operationresults">Read More</a></div>
@@ -139,7 +139,7 @@
                             <div class="col"><img src="{{ asset('img/Marketing.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ Auth::user()->govorganizationdetail->percentage->strategy }}% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->strategy }}% for Strategy dimension.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/strategyresults">Read More</a></div>
@@ -157,7 +157,7 @@
                             <div class="col"><img src="{{ asset('img/Unity.png') }}"></div>
                         </div>
                         <div class="row" style="text-align: left;margin-left: 5px;">
-                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained a {{ Auth::user()->govorganizationdetail->percentage->culture }}% result for the Preliminary Assessment. You are eligible for deep assessment.<br><br></span></div>
+                            <div class="col" style="height: 150px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 24px;text-align: left;margin-left: 5px;"><br>You gained {{ Auth::user()->govorganizationdetail->percentage->culture }}% for Organization & Culture dimension.<br><br></span></div>
                         </div>
                         <div class="row" style="text-align: center;">
                             <div class="col"><a class="btn btn-primary" type="button" style="font-size: 20px;font-family: Poppins, sans-serif;width: 188px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 6(1).png') }}&quot;);border-width: 0px;" href="/culturerresults">Read More</a></div>
