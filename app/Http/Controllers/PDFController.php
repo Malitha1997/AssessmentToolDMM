@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use PDF;
 use App\Models\User;
+use App\Models\Percentage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -151,7 +152,18 @@ class PDFController extends Controller
             ['Talent Management', (int) $culture->talent_management],
         ];
 
-        return view('report',compact('request','govorganizationname','percentage','culture','technology','labels','customer','operation','strategy'));
+        $percentages = Percentage::all();
+
+        $sums = [
+            'customer' => $percentages->avg('customer'),
+            'strategy' => $percentages->avg('strategy'),
+            'technology' => $percentages->avg('technology'),
+            'operation' => $percentages->avg('operation'),
+            'culture' => $percentages->avg('culture'),
+
+        ];
+
+        return view('report',compact('request','govorganizationname','percentage','culture','technology','labels','customer','operation','strategy','sums'));
         // Render the view with Google Charts code and other content
         //$html = View::make('report', compact('request','govorganizationname','percentage','culture','technology','labels'))->render();
         // //dd($html);

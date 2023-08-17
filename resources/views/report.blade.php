@@ -34,7 +34,7 @@
                     <div class="col"><span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Prepared by</span></div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 25px;">
-                    <div class="col"><img src="{{ asset('ICTA01.png') }}" style=""><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                    <div class="col"><img src="{{ asset('ICTA01.png') }}" style=""><img src="{{ asset('Light.png') }}" style=""></div>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="container" style="width: 2400px; height: 782px; ">
 
             <div class="row" style="text-align: center; margin-top: 10px">
-                <div class="col"><span style="font-family: Poppins, sans-serif; font-size: 20px;">Overall Results of the Preliminary Assessment</span></div>
+                <h2 style="font-family: Poppins, sans-serif; ">Overall Results of the Digital Maturity Preliminary Assessment</h2>
             </div>
             <div class="row" style="margin-top:50px;text-align: center;border-style: solid;border-width: 1px;border-color: #ff0000;width: 500px;margin-left: 25%">
                 <div class="col" ><span style="font-family: Poppins, sans-serif;font-size: 16px;">Your Organization gained<br><b>{{ Auth::user()->govorganizationdetail->percentage->overall }}%</b> for the Preliminary Assessment.</span></div>
@@ -128,7 +128,7 @@
             </div>
 
 
-            <h2 style="font-family: Poppins, sans-serif;text-align: center;margin-top: 20px">Description of each dimension</h2>
+            <h4 style="font-family: Poppins, sans-serif;text-align: center;margin-top: 20px">Description of each Dimension</h4>
             <table class="table">
                 <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                     <tr>
@@ -158,7 +158,9 @@
                 </tr>
             </table>
             <div class="row" style="text-align: center">
-                <div class="col"><img src="{{ asset('Light.png') }}" style=""></div>
+                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">2</span></div>
+                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
             </div>
 
 
@@ -209,7 +211,7 @@
                     </script>
                 </div>
             </div>
-            <table class="table">
+            <table class="table" style="margin-top:10px">
                 <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                     <tr>
                         <th scope="col" >Sub Dimension</th>
@@ -257,8 +259,10 @@
                     <td>Type of online applications, benefits for citizens and gov officials and usage.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;">
-                <div class="col"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center">
+                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">3</span></div>
+                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
             </div>
         </div>
     </div>
@@ -331,8 +335,10 @@
                     <td>A consumer is a person who identifies a need or desire, makes a purchase and then disposes of the product in the consumption process. A typical consumer’s utility is dependent on the consumption of agricultural and industrial goods, services, housing and wealth (Grundey, 2009). No two of them are the same, as everyone is influenced by different internal and external factors which form the consumer behaviour.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;">
-                <div class="col"><img src="{{ asset('Light.png') }}" style="margin-top:300px"></div>
+            <div class="row" style="text-align: center;margin-top: 300px">
+                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">4</span></div>
+                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
             </div>
         </div>
     </div>
@@ -401,8 +407,10 @@
                     <td>Smart Process Management: Automated Generation of. Adaptive Cases based on Intelligent Planning.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;">
-                <div class="col"><img src="{{ asset('Light.png') }}" style="margin-top:300px"></div>
+            <div class="row" style="text-align: center;margin-top: 300px">
+                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">5</span></div>
+                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
             </div>
         </div>
     </div>
@@ -488,8 +496,10 @@
                     <td>Invention is about creating something new, while innovation introduces the concept of “use” of an idea or method.An invention is usually a “thing”, while an innovation is usually an invention that causes change in behavior or interactions.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;">
-                <div class="col"><img src="{{ asset('Light.png') }}" style="margin-top:100px"></div>
+            <div class="row" style="text-align: center;margin-top :50px">
+                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">6</span></div>
+                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
             </div>
     </div>
 </div>
@@ -562,8 +572,13 @@
                 <td>Is a constant process that involves attracting and retaining high-quality employees, developing their skills, and continuously motivating them to improve their performance. </td>
             </tr>
         </table>
-        <div class="row" style="text-align: center;margin-top: 300px;">
-            <div class="col"><img src="{{ asset('Light.png') }}" style=""></div>
+        <div class="row" style="margin-top:100px;text-align:center">
+            <span style="font-family: Poppins, sans-serif;">Click <a href="https://lightingdigital.gov.lk/wp-content/uploads/2023/05/Digital-Maturity-Model-Document.pdf">here</a> to view the Digital Maturity Model document.</span>
+        </div>
+        <div class="row" style="text-align: center;margin-top :250px">
+            <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
+            <div class="col" style=""><span style="font-family: Poppins, sans-serif;">7</span></div>
+            <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
         </div>
     </div>
     </div>
