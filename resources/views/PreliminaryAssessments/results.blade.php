@@ -28,7 +28,8 @@
                 <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;text-align: center;"><br>Summary of the Preliminary Assessment Results<br><br></span></div>
             </div>
             <div class="row" style="text-align: center;">
-                <div class="col"><canvas id="chartId" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 200px; font-size: 20px;" height="664" width="830"></canvas>
+                <div class="col">
+                    <canvas id="chartId" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 200px; font-size: 20px;" height="664" width="830"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
                     <script>
                         var ctx = document.getElementById("chartId").getContext("2d");
@@ -54,14 +55,12 @@
                             },
 
                             scale: {
-                                pointLabels: {
-                                    fontSize: 24,
-                                },
-                                ticks: {
-                                    beginAtZero: true,
-                                    max: 100,
-                                    stepSize: 10,
-                                    fontSize: 36,
+                                r: {
+                                    angleLines: {
+                                        display: false
+                                    },
+                                    suggestedMin: 0,
+                                    suggestedMax: 100
                                 }
 
                             }
@@ -72,7 +71,8 @@
                             data: radarData,
                             options: radarOptions,
                         });
-                    </script></div>
+                    </script>
+                </div>
             </div>
 
             <div class="row" style="text-align: center;">
