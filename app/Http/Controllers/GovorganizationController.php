@@ -121,48 +121,46 @@ class GovorganizationController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    { //dd($request);
+    { dd($request);
         request()->validate([
             'user_id'=> 'required|string',
-            'gov_org_name'=> 'required|string|min:1|max:255',
-            'gov_org_address'=> 'required|string|min:1|max:255',
-            'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'org_category'=> 'required|string',
-            'number_of_employee'=> 'required|int',
+            'gov_org_name'=> 'required|string',
             'related_ministry'=> 'required|string',
-            'types_of_service'=> 'required|string',
-            'availablity_of_IT_unit'=>'required|string',
+            'orgnization_category'=> 'required|string',
+            'types_of_services_provided'=> 'required|string',
+            'number_of_employee'=> 'required|string',
             'districts_of_operations'=> 'required|string',
             'phone_number'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
+            'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'name_of_the_head'=> 'required|string',
-            'head_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'designation'=> 'required|string',
-            'contact_number_of_the_head'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
             'cdio_name'=> 'required|string|min:1|max:255',
             'cdio_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
+            'availablity_of_IT_unit'=>'required|string',
         ]);
         //dd($request);
         $govorganizationdetail = new Govorganizationdetail;
 
         $govorganizationdetail->user_id = $request->user_id;
         $govorganizationdetail->govorganizationname_id = $request->gov_org_name;
-        $govorganizationdetail->gov_org_email = $request->gov_org_email;
-        $govorganizationdetail->gov_org_address = $request->gov_org_address;
-        $govorganizationdetail->organizationcategory_id = $request->org_category;
-        $govorganizationdetail->number_of_employee = $request->number_of_employee;
         $govorganizationdetail->relatedministry_id = $request->related_ministry;
-        $govorganizationdetail->availablity_of_IT_unit = $request->availablity_of_IT_unit;
+        $govorganizationdetail->organizationcategory_id = $request->organization_category;
+        $govorganizationdetail->types_of_service = $request->types_of_services_provide;
+        $govorganizationdetail->number_of_employee = $request->number_of_employee;
         $govorganizationdetail->districts_of_operations = $request->districts_of_operations;
         $govorganizationdetail->phone_number = $request->phone_number;
+        $govorganizationdetail->gov_org_email = $request->gov_org_email;
         $govorganizationdetail->name_of_the_head = $request->name_of_the_head;
-        $govorganizationdetail->head_email = $request->head_email;
-        $govorganizationdetail->contact_number_of_the_head = $request->contact_number_of_the_head;
         $govorganizationdetail->designation = $request->designation;
-        $govorganizationdetail->types_of_service = $request->types_of_service;
         $govorganizationdetail->cdio_name = $request->cdio_name;
         $govorganizationdetail->cdio_email = $request->cdio_email;
         $govorganizationdetail->cdio_contact_no = $request->cdio_contact_no;
+        $govorganizationdetail->availablity_of_IT_unit = $request->availablity_of_IT_unit;
+
+        // $govorganizationdetail->gov_org_address = $request->gov_org_address;
+        // $govorganizationdetail->head_email = $request->head_email;
+        // $govorganizationdetail->contact_number_of_the_head = $request->contact_number_of_the_head;
 
         $govorganizationdetail->update();
 

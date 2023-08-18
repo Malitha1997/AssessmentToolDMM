@@ -101,7 +101,7 @@ Route::get('/search',[SearchController::class,'govOrgNameSearching'])->name('sea
 
 Route::controller(GovOrganizationNameController::class)->group(function(){
     Route::get('test', 'index');
-    Route::get('autocomplete4', 'fetch')->name('autocomplete4');
+    Route::get('autocomplete10', 'autocomplete10')->name('autocomplete10');
 });
 
 Route::get('/testsearch',[SearchController::class,'testsearch'])->name('testsearch');

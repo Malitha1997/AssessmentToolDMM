@@ -25,16 +25,31 @@
         <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
             <div class="container" style="width: 535px;height: 782px;text-align:center">
                 <div class="row" style="margin-top: 100px;">
-                    <div class="col" style="text-align: center;"><img src="{{ asset('emblem.png') }}" style="width:58px;height:82px"></div>
+                    <div class="col" style="text-align: center;"><img src="{{ asset('emblem.png') }}" style="width:102px;height:133px"></div>
                 </div>
                 <div class="row" style="margin-top: 50px;">
                     <div class="col" style="text-align: center;"><span style="font-size: 40px;color: #1c2c84;font-family: Poppins, sans-serif;font-weight: bold;">Preliminary Assessment<br>Report of<br>{{ Auth::user()->govorganizationdetail->govorganizationname->gov_org_name }}</span></div>
                 </div>
                 <div class="row" style="text-align: center;margin-top: 650px;">
-                    <div class="col"><span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Prepared by</span></div>
+                    <div class="col"></div>
                 </div>
-                <div class="row" style="text-align: center;margin-top: 25px;">
-                    <div class="col"><img src="{{ asset('ICTA01.png') }}" style=""><img src="{{ asset('Light.png') }}" style=""></div>
+                <div class="row" style="text-align: center;margin-top: 170px;">
+                    <div class="col">
+                        <div class="row">
+                            <span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Initiation under</span>
+                        </div>
+                        <div class="row">
+                            <img src="{{ asset('ICTA.png') }}" style="margin-left:180px;margin-top:10px;width: 117px;height: 55px">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Prepared by</span>
+                        </div>
+                        <div class="row">
+                            <img src="{{ asset('Light2.png') }}" style="margin-left:190px;margin-top:10px;width:126px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,10 +172,9 @@
                     <td>This dimension gauges the organization's digital readiness and culture, assessing employee willingness to adopt technology, digital literacy, and innovation. Maturity here entails promoting a tech-embracing mindset, facilitating learning, empowering staff for digital input, and featuring digital skill development, change management, and innovation-oriented leadership.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center">
-                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">2</span></div>
-                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center;margin-top:10px">
+                <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">2</span></div>
+                <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
             </div>
 
 
@@ -259,10 +273,9 @@
                     <td>Type of online applications, benefits for citizens and gov officials and usage.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center">
-                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">3</span></div>
-                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center;margin-top:">
+                <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">3</span></div>
+                <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
             </div>
         </div>
     </div>
@@ -335,10 +348,9 @@
                     <td>A consumer is a person who identifies a need or desire, makes a purchase and then disposes of the product in the consumption process. A typical consumer’s utility is dependent on the consumption of agricultural and industrial goods, services, housing and wealth (Grundey, 2009). No two of them are the same, as everyone is influenced by different internal and external factors which form the consumer behaviour.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;margin-top: 300px">
-                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">4</span></div>
-                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center;margin-top:300px">
+                <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">4</span></div>
+                <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
             </div>
         </div>
     </div>
@@ -407,10 +419,9 @@
                     <td>Smart Process Management: Automated Generation of. Adaptive Cases based on Intelligent Planning.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;margin-top: 300px">
-                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">5</span></div>
-                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center;margin-top:350px">
+                <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">5</span></div>
+                <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
             </div>
         </div>
     </div>
@@ -496,10 +507,9 @@
                     <td>Invention is about creating something new, while innovation introduces the concept of “use” of an idea or method.An invention is usually a “thing”, while an innovation is usually an invention that causes change in behavior or interactions.</td>
                 </tr>
             </table>
-            <div class="row" style="text-align: center;margin-top :50px">
-                <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-                <div class="col" style=""><span style="font-family: Poppins, sans-serif;">6</span></div>
-                <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+            <div class="row" style="text-align: center;margin-top:100px">
+                <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">6</span></div>
+                <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
             </div>
     </div>
 </div>
@@ -575,10 +585,9 @@
         <div class="row" style="margin-top:100px;text-align:center">
             <span style="font-family: Poppins, sans-serif;">Click <a href="https://lightingdigital.gov.lk/wp-content/uploads/2023/05/Digital-Maturity-Model-Document.pdf">here</a> to view the Digital Maturity Model document.</span>
         </div>
-        <div class="row" style="text-align: center;margin-top :250px">
-            <div class="col" style="margin-left:-140px"><img src="{{ asset('ICTA01.png') }}" style=""></div>
-            <div class="col" style=""><span style="font-family: Poppins, sans-serif;">7</span></div>
-            <div class="col" style="margin-right:-140px"><img src="{{ asset('Light.png') }}" style=""></div>
+        <div class="row" style="text-align: center;margin-top:200px">
+            <div class="col" style="margin-left:300px"><span style="font-family: Poppins, sans-serif;">7</span></div>
+            <div class="col" style="margin-right:-50px"><img src="{{ asset('ICTA.png') }}" style="width: 117px;height: 55px"><img src="{{ asset('Light2.png') }}" style="width:126px;"></div>
         </div>
     </div>
     </div>

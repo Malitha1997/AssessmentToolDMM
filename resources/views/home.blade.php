@@ -15,37 +15,37 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Building.png') }}" style="margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization name</span>
                         </div>
-                        <div class="col" style="text-align: center"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->govorganizationname->gov_org_name}}" readonly></div>
+                        <div class="col" style="text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->govorganizationname->gov_org_name}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Government.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;" readonly>Related Ministry</span>
                         </div>
-                        <div class="col" style="text-align: center;"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->relatedministry->related_ministry}}" readonly></div>
+                        <div class="col" style="text-align: left;"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->relatedministry->related_ministry}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Menu.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization Category</span>
                         </div>
-                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: center;"><input  class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"  readonly></div>
+                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: left;"><input  class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"  readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Self service.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Types of Services provided</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->types_of_service}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->types_of_service}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Group.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Number of employees</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->number_of_employee}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->number_of_employee}}" readonly></div>
                     </div>
                     <div class="row" data-aos="fade-down" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Map.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">District of operations</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" readonly></div>
                     </div>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Organization Contact Detail</span></div>
@@ -54,13 +54,13 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Land Line.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Phone Number</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->phone_number}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->phone_number}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Email.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;" readonly>Organization email</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->gov_org_email}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->gov_org_email}}" readonly></div>
                     </div>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Details of the Head of Organization</span></div>
@@ -69,19 +69,19 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/User.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Name of the Head of Org.</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->name_of_the_head}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->name_of_the_head}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Menu.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Designation</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->designation}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->designation}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Email.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Email of the head</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->head_email}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->head_email}}" readonly></div>
                     </div>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">CDIO's Contact Detail</span></div>
@@ -90,19 +90,19 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Leader.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's name</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_name}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_name}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Envelope.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's email</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_email}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_email}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Viber.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's contact number</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px" value="{{Auth::user()->govorganizationdetail->cdio_contact_no}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px" value="{{Auth::user()->govorganizationdetail->cdio_contact_no}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
                         <div class="col" style="margin-top: 50px;text-align: right;">

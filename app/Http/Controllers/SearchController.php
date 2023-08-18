@@ -58,16 +58,10 @@ class SearchController extends Controller
 
     public function autocomplete4(Request $request)
     {
-        $query = $request->get('query');
-          $govnames = Govorganizationname::where('gov_org_name', 'LIKE', '%'. $query. '%')->get();
-
-          foreach($govnames as $govname){
-            if($govname != null){
-
-             $response[] = array("value"=>$govname->id,"label"=>$govname->gov_org_name);
-                }
-            }
-          return response()->json($response);
+        $data = Govorganizationname::select("gov_org_name")
+        ->where('gov_org_name', 'LIKE', '%'. $request->get('query'). '%')
+        ->get();
+          return response()->json($data);
 
     }
 

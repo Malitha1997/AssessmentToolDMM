@@ -76,5 +76,19 @@ class GovOrganizationNameController extends Controller
         return response()->json($data);
     }
 
+    public function autocomplete10(Request $request): JsonResponse
+    {
+        $query = $request->get('query');
+          $govnames = Govorganizationname::where('gov_org_name', 'LIKE', '%'. $query. '%')->get();
+
+          foreach($govnames as $govname){
+            if($govname != null){
+
+             $response[] = array("value"=>$govname->id,"label"=>$govname->gov_org_name);
+                }
+            }
+          return response()->json($response);
+    }
+
 
 }
