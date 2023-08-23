@@ -39,7 +39,7 @@
                             <span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Initiation under</span>
                         </div>
                         <div class="row">
-                            <img src="{{ asset('ICTA.png') }}" style="margin-left:180px;margin-top:10px;width: 117px;height: 55px">
+                            <img src="{{ asset('ICTA.png') }}" style="margin-left:165px;margin-top:10px;width: 160px;height: 64px">
                         </div>
                     </div>
                     <div class="col">
@@ -47,7 +47,7 @@
                             <span style="font-family: Poppins, sans-serif;color: var(--bs-emphasis-color);">Prepared by</span>
                         </div>
                         <div class="row">
-                            <img src="{{ asset('Light2.png') }}" style="margin-left:190px;margin-top:10px;width:126px;">
+                            <img src="{{ asset('Light2.png') }}" style="margin-left:183px;margin-top:10px;width:126px;">
                         </div>
                     </div>
                 </div>

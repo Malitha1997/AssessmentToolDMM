@@ -4,7 +4,7 @@
 
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-up" data-aos-duration="1000" >
-        <div class="container" style="margin-top: 150px;margin-bottom: 20px;border-radius: 0px;border: 2px solid #5f2b84;">
+        <div class="container container-expand-sm" style="margin-top: 150px;margin-bottom: 20px;border-radius: 0px;border: 2px solid #5f2b84;">
             <div class="row">
                 <div class="col" style="width: auto;margin-top: 20px">
                     <h1 style="font-family: Poppins, sans-serif;color: #1f2471;font-weight: bold;text-align: center;margin-top: 5px;">Organization Profile</h1>
@@ -27,7 +27,7 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Menu.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization Category</span>
                         </div>
-                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: left;"><input  class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"  readonly></div>
+                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: left;"><input  class="" type="text" data-aos="fade-down" style="width:250px;border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"  readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">

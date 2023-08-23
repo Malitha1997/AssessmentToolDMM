@@ -24,7 +24,7 @@
     {{--  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>  --}}
 
 </head>
-
+ 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <nav class="navbar navbar-light navbar-expand-md fixed-top py-3" data-aos="slide-down" data-aos-duration="1000" style="background: #5f2b84">
         <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex align-items-center" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>

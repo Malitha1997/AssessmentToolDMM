@@ -33,7 +33,7 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container container-expand-sm">
         @yield('content')
     </div>
     <footer data-aos="slide-up" data-aos-duration="1000" id="myFooter" style="background: url(&quot;{{ asset('img/Rectangle 57.png') }}&quot;);">

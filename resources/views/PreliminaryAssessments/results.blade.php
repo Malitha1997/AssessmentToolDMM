@@ -3,7 +3,7 @@
 @section('content')
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section style="height: 3100px;">
-        <div class="container" data-aos="zoom-in" data-aos-duration="1000" style="text-align: center;width: 1211px;height: 480px;margin-top: 150px;border-width: 2px;border-color: #5f2b84;">
+        <div class="container-fluid container-expand-sm" data-aos="zoom-in" data-aos-duration="1000" style="text-align: center;width: 1211px;height: 480px;margin-top: 150px;border-width: 2px;border-color: #5f2b84;">
             <div class="flex-column justify-content-center" style="width: 1211px;height: 480px;border-style: solid;border-color: #5f2b84;">
                 <div class="row" style="margin-top: 30px;">
                     <div class="col"><img src="{{ asset('img/Award.png') }}"></div>
@@ -80,7 +80,7 @@
             </div>
             <div class="row">
                 <div class="col" style="text-align: center;">
-                    <div data-aos="zoom-in" data-aos-duration="1000" style="width: 538px;height: 457px;box-shadow: 10px 10px 20px 2px rgb(146,140,140);margin-left: 35px;">
+                    <div class="container container-expand-sm" data-aos="zoom-in" data-aos-duration="1000" style="width: 538px;height: 457px;box-shadow: 10px 10px 20px 2px rgb(146,140,140);margin-left: 35px;">
                         <div class="row">
                             <div class="col"><span style="color: #1f2471;font-size: 24px;font-family: Poppins, sans-serif;font-weight: bold;" ><br>Technology &amp; Data<br><br></span></div>
                         </div>
