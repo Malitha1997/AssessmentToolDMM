@@ -5,6 +5,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GoogleChartsController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -42,6 +43,8 @@ Route::get('/adminNavbar', function () {
 Route::resource('users', UserController::class);
 
 Auth::routes();
+
+Route::get('/login2',[LoginController::class,'logingovofficial'])->name('login2');
 
 /*All Normal Users Routes List*/
 
@@ -119,5 +122,12 @@ Route::get('/preliminaryAssessment3', [PreliminaryassessmentController::class, '
 Route::get('preview', [PDFController::class,'preview']);
 
 Route::get('download', [PDFController::class,'download'])->name('download');
+
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/logout', [LoginController::class, 'logout2'])->name('logout2');
+
+});
 
 

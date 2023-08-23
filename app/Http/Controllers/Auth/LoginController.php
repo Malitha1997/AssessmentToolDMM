@@ -106,7 +106,7 @@ class LoginController extends Controller
             if (auth()->user()->type == 'admin') {
                 return redirect()->route('home');
             }else if (auth()->user()->type == 'manager') {
-                return redirect()->route('home');
+                return redirect()->route('manager.home');
             }else{
                 return redirect()->route('userHome');
             }
@@ -116,34 +116,42 @@ class LoginController extends Controller
         }
     }
 
-    // public function login2(Request $request): RedirectResponse
-    // {
-    //     $input = $request->all();
-    //     $this->validate($request, [
-    //         'username' => 'required',
-    //         'password' => 'required',
-    //     ]);
+    public function login2(Request $request): RedirectResponse
+    {
+        $input = $request->all();
+        $this->validate($request, [
+            'username' => 'required',
+            'password' => 'required',
+        ]);
 
 
-    //     if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
-    //     {
-    //         if (auth()->user()->type == 'admin') {
-    //             return redirect()->route('home');
-    //         }else if (auth()->user()->type == 'manager') {
-    //             return redirect()->route('home');
-    //         }else{
-    //             return redirect()->route('home');
-    //         }
-    //     }else{
-    //         return redirect()->route('login')
-    //             ->with('error','Username And Password Are Wrong.');
-    //     }
-    // }
+        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->type == 'manager') {
+                return redirect()->route('manager.home');
+            }else{
+                return redirect()->route('home');
+            }
+        }else{
+            return redirect()->route('login2')
+                ->with('error','Username And Password Are Wrong.');
+        }
+    }
 
     public function logout(){
         Auth::logout();
         Session::flush();
         return redirect()->route('home');
+    }
+
+    public function logout2(){
+        Auth::logout();
+        Session::flush();
+        return redirect()->route('login2');
+    }
+
+    public function logingovofficial(){
+        return view('auth.login2');
     }
 
 }
