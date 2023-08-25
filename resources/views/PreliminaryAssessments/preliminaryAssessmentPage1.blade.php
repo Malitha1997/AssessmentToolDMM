@@ -21,8 +21,8 @@
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
                 </div>
                 <input class="form-control" type="hidden" id="weight3" name="weight3" value="1.5625">
-                <div class="table-responsive" id="choise1" style="font-family: Poppins, sans-serif;font-size: 20px;margin-left: 80px;">
-                    <table class="table">
+                <div class="table-responsive" id="choise1" style="width:1200px;font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">
+                    <table class="table table-expand-sm">
                         <thead>
                             <tr>
                                 <th></th>
@@ -131,7 +131,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">5.&nbsp;Rate your organization on the following security aspects?</span></div>
                 </div>
-                <div class="table-responsive" id="choise5" style="font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">
+                <div class="table-responsive" id="choise5" style="width:1200px;font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">
                     <table class="table">
                         <thead>
                             <tr>

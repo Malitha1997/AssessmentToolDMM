@@ -60,7 +60,7 @@ class LoginController extends Controller
 
      protected $redirectTo = '/home';
 
-
+     //protected $redirectTo2 = '/home2';
 
     /**
 
@@ -77,6 +77,7 @@ class LoginController extends Controller
     {
 
         $this->middleware('guest')->except('logout');
+        //$this->middleware('guest')->except('logout2');
 
     }
 
@@ -141,13 +142,25 @@ class LoginController extends Controller
     public function logout(){
         Auth::logout();
         Session::flush();
+
+        // $type=Auth::user()->type;
+
+        // if ($type == '0') {
+        //     return redirect()->route('home');
+        // }else if($type == '1'){
+        //     return redirect()->route('home');
+        // }else if($type == '2'){
+        //     return redirect()->route('login2');
+        // }
+
         return redirect()->route('home');
+
     }
 
     public function logout2(){
-        Auth::logout();
+        Auth::logout2();
         Session::flush();
-        return redirect()->route('login2');
+        return redirect()->route('home2');
     }
 
     public function logingovofficial(){

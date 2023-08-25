@@ -17,7 +17,7 @@
                 <div class="flex-column justify-content-center align-items-center align-content-center align-self-center order-first" style="border-radius: 10px;background: #ffffff;color: rgb(0,0,0);margin-top: 50px;width: 402px;height: 369px;margin-left: 34px;text-align: center;">
                     <h1 style="text-align: center;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;padding-top: 50px;color: #5f2b84;">Don't have an account?&nbsp;</h1><span style="font-family: Poppins, sans-serif;text-align: center;margin-top: 100px;margin-left: 10px;margin-right: 10px;"><br>Register Now and assess the Digital <br>Maturity level of organization.<br><br></span>
 
-                    <a class="btn btn-primary d-flex flex-column justify-content-center align-items-center" href="{{ route('register') }}" style="border-width: 0px;margin-right: 0px;margin-left: 110px;margin-top: 90px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;text-align: center;">Signup</a>
+                    <a class="btn btn-primary d-flex flex-column justify-content-center align-items-center" href="{{ route('register2') }}" style="border-width: 0px;margin-right: 0px;margin-left: 110px;margin-top: 90px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;text-align: center;">Signup</a>
 
                 </div>
             </div>
@@ -42,6 +42,7 @@
                                 </span>
                     @enderror
                     </div>
+                    
                 </div>
                 </section>
                     <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);">Forgot Password</a>

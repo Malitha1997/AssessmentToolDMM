@@ -79,5 +79,26 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
 
+     public function logingovofficialregister(){
+        return view("auth.register2");
+     }
+
+     public function govofficialaccount(Request $request){
+        request()->validate([
+            'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
+            'email' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:6|same:confirm-password',
+        ]);
+dd($request);
+        $user=new User;
+
+        $user->username=$request->username;
+        $user->email=$request->email;
+        $user->password=$request->password;
+
+        $user->save();
+
+        return redirect("login2");
+     }
 
 }
