@@ -10,6 +10,7 @@ use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Percentage;
 use App\Models\Technology;
+use App\Models\Govofficial;
 use App\Models\Relatedministry;
 use App\Models\TypesOfServices;
 use App\Models\Govorganizationname;
@@ -63,7 +64,7 @@ class Govorganizationdetail extends Model
     }
 
     public function govorganizationname(){
-    return $this->belongsTo(Govorganizationname::class);
+        return $this->belongsTo(Govorganizationname::class);
     }
 
     public function customer(){
@@ -88,5 +89,9 @@ class Govorganizationdetail extends Model
 
     public function percentage(){
         return $this->hasOne(Percentage::class);
+    }
+
+    public function govofficials(){
+        return $this->hasMany(Govofficial::class);
     }
 }

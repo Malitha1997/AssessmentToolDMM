@@ -8,6 +8,8 @@ namespace App\Models;
 
 use App\Models\Admin;
 
+use App\Models\Govofficial;
+
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Govorganizationdetail;
@@ -15,7 +17,6 @@ use App\Models\Govorganizationdetail;
 use App\Models\GovernmentOrganization;
 
 use Illuminate\Notifications\Notifiable;
-
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -112,6 +113,10 @@ class User extends Authenticatable
 
     public function admin(){
         return $this->hasOne(Admin::class);
+    }
+
+    public function govofficial(){
+        return $this->hasOne(Govofficial::class);
     }
 
 }

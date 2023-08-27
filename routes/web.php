@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GovofficialController;
 use App\Http\Controllers\GoogleChartsController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\GovofficialUserController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
@@ -130,6 +131,9 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
     Route::get('/logout2', [LoginController::class, 'logout2'])->name('logout2');
     Route::get('/signup2', [GovofficialController::class, 'create'])->name('signup2');
+    Route::resource('govofficials', GovofficialController::class);
 });
+
+
 
 

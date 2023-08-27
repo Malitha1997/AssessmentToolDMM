@@ -5,7 +5,7 @@
 <section data-aos="fade-down" data-aos-duration="1000" style="height: 800px;">
     <div class="container" style="width: 1008px;height: 738px;margin-top: 200px;background: url(&quot;{{ asset('img/Group 159.png') }}&quot;);">
         <h1 style="text-align: center;font-family: Poppins, sans-serif;padding-top: 50px;">Create Account</h1>
-        <form id="form" method="POST" action="{{ route('register') }}" onsubmit="return submitForm(this);">
+        <form id="form" method="POST" action="{{ route('users.store') }}" onsubmit="return submitForm(this);">
             {{csrf_field()}}
         <div class="d-flex" style="width: 900px;height: 540px;font-family: Poppins, sans-serif;background: #ffffff;border-radius: 10px;padding-top: 0px;margin-top: 50px;margin-left: 40px;">
             <div class="col" style="margin-top: 20px;">

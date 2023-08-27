@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Govofficial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GovofficialController extends Controller
 {
@@ -11,7 +14,7 @@ class GovofficialController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -26,8 +29,35 @@ class GovofficialController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {//dd($request);
+        request()->validate([
+            'user_id'=> 'required|string',
+            'full_name'=> 'required|string',
+            'preferred_name'=> 'required|string',
+            'designation'=> 'required|string',
+            'gov_org_name'=> 'required|string',
+            'contact_number'=> 'required|string',
+            'email'=> 'required|string',
+            'employment_layer'=> 'required|string',
+            'date_of_birth'=> 'required|string',
+        ]);
+
+        $govofficial=new Govofficial;
+
+        $govofficial->user_id=$request->user_id;
+        $govofficial->full_name=$request->full_name;
+        $govofficial->preferred_name=$request->preferred_name;
+        $govofficial->designation=$request->designation;
+        $govofficial->govorganizatiodetail_id=$request->gov_org_name;
+        $govofficial->contact_number=$request->contact_number;
+        $govofficial->email=$request->email;
+        $govofficial->employment_layer=$request->employment_layer;
+        $govofficial->date_of_birth=$request->date_of_birth;
+
+        $govofficial->save();
+
+        return view('auth.login2');
+
     }
 
     /**
@@ -60,5 +90,9 @@ class GovofficialController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function createUser(Request $request){
+
     }
 }

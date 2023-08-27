@@ -52,6 +52,7 @@
                             </div>
                         </div>
                     </div>
+                    <input class="form-control-lg" name="type" id="type" type="hidden" value="0">
                     <div class="row" style="margin-left: 50px;margin-top: 30px;width: 600px;background: #d9d9d9;">
                         <div class="col" style="padding-top: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;border-radius: 10px;"><span style="color: #5f2b84;">Password must be at least&nbsp; 6 characters and contain at least one letter and one number. Password are case-sensitive.</span></div>
                     </div>

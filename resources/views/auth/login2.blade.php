@@ -42,7 +42,7 @@
                                 </span>
                     @enderror
                     </div>
-                    
+
                 </div>
                 </section>
                     <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);">Forgot Password</a>

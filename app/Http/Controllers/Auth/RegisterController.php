@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|same:confirm-password',
+            'type'=> 'required|integer'
         ]);
 
 
@@ -65,6 +66,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'type' => $data['type'],
         ]);
         // Auth::guard()->login($user);
 
@@ -88,6 +90,7 @@ class RegisterController extends Controller
             'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|same:confirm-password',
+            'type'=> 'required|string'
         ]);
 dd($request);
         $user=new User;
