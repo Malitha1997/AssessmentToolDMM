@@ -25,7 +25,7 @@ class UserController extends Controller
         $user->type=$request->type;
 
         $user->save();
-
+ 
         return view('govOrganizations.create');
     }
 

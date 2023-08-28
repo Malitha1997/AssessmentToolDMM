@@ -117,6 +117,7 @@ Route::controller(SearchController::class)->group(function(){
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
     Route::get('autocomplete2', 'autocomplete2')->name('autocomplete2');
     Route::get('autocomplete3', 'autocomplete3')->name('autocomplete3');
+
 });
 
 Route::get('/preliminaryAssessment1', [PreliminaryassessmentController::class, 'index'])->name('preliminaryAssessment1');
@@ -129,10 +130,11 @@ Route::get('download', [PDFController::class,'download'])->name('download');
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
-    Route::get('/logout2', [LoginController::class, 'logout2'])->name('logout2');
+    Route::post('/logout2', [LoginController::class, 'logout2'])->name('logout2');
     Route::get('/signup2', [GovofficialController::class, 'create'])->name('signup2');
     Route::resource('govofficials', GovofficialController::class);
 });
+
 
 
 

@@ -42,10 +42,10 @@
                     <div class="row">
                         <div class="col">
                             <input class="form-control-lg" name="gov_org_name" type="text" placeholder="Select Organization Name" id="gov_org_name" style="width: 500px;" value="{{ old('gov_org_name')}}">
-                                {{--  <input type="hidden" name="gov_org_name" id="gov_org_nameid" >
-                                @if($errors->has('gov_org_name'))
-                                <p class="text-danger">{{ $errors->first('gov_org_name') }}</p>
-                                @endif  --}}
+                            <input type="hidden" name="gov_org_name" id="gov_org_nameid" >
+                            @if($errors->has('gov_org_name'))
+                            <p class="text-danger">{{ $errors->first('gov_org_name') }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;">Date of Birth</span></div>
                     </div>
                     <div class="row">
-                        <div class="col"><input class="form-control-lg" id="date_of_birth" name="date_of_birth" type="date" style="width: 500px; color:#aba7a7"></div>
+                        <div class="col"><input class="form-control-lg" id="date_of_birth" name="date_of_birth" type="date" style="width: 500px; color:#000000"></div>
                     </div>
 
                 </div>
@@ -94,7 +94,6 @@
     </form>
     </div>
 </section>
-
 <script type="text/javascript">
     var path = "{{ route('autocomplete') }}";
     $( "#gov_org_name" ).autocomplete({
@@ -122,4 +121,5 @@
         }
       });
 </script>
+
 @endsection

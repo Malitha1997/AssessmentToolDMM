@@ -97,7 +97,9 @@ class GovorganizationController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect("login");
+
+        // return view("auth.login");
     }
 
     /**

@@ -18,13 +18,23 @@
         <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2" style="width: 1440px;text-align: left;font-family: Poppins, sans-serif;"><img src="{{ asset('img/duallogo-white-icta 1(1).png') }}">
                 <ul class="navbar-nav ms-auto"></ul>
+            </div><img src="{{ asset('img/Mask group 276.png') }}" style="margin-right: 10px;">
+            <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);margin-right:70px"></a>
+                <div class="dropdown-menu" style="font-family: Popins;width:50px;margin-right:50px">
+                    <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/home">Profile</a>
+                    <a class="dropdown-item" style="font-family: Poppins" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
             </div>
-
         </div>
     </nav>
-    <section>
-            @yield('content')
-    </section>
+    <section style="height: 750px;"></section>
     <footer data-aos="slide-up" data-aos-duration="1000" id="myFooter" style="background: #C1C2DA;">
         <div class="container-fluid">
             <div class="row text-center">

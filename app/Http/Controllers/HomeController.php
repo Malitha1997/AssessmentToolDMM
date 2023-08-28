@@ -284,7 +284,7 @@ class HomeController extends Controller
 
     public function managerHome(): View
     {
-        return view('layouts.govofficialnavbar');
+        return view('layouts.govofficialusernavbar');
     }
 
     public function userHome(): View

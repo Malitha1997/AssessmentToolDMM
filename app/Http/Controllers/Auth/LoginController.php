@@ -145,22 +145,22 @@ class LoginController extends Controller
 
         // $type=Auth::user()->type;
 
-        // if ($type == '0') {
-        //     return redirect()->route('home');
-        // }else if($type == '1'){
-        //     return redirect()->route('home');
-        // }else if($type == '2'){
-        //     return redirect()->route('login2');
+        // if (Auth::user()->type == '0') {
+        //     return redirect("login");
+        // }else if(Auth::user()->type == '1'){
+        //     return redirect("login");
+        // }else if(Auth::user()->type == '2'){
+        //     return redirect("login2");
         // }
 
-        return redirect()->route('home');
+        return redirect("login");
 
     }
 
     public function logout2(){
         Auth::logout2();
         Session::flush();
-        return redirect()->route('home2');
+        return redirect("login2");
     }
 
     public function logingovofficial(){

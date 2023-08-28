@@ -56,7 +56,7 @@ class GovofficialController extends Controller
 
         $govofficial->save();
 
-        return view('auth.login2');
+        return redirect("signup2"); 
 
     }
 
@@ -90,9 +90,5 @@ class GovofficialController extends Controller
     public function destroy(string $id)
     {
         //
-    }
-
-    public function createUser(Request $request){
-
     }
 }
