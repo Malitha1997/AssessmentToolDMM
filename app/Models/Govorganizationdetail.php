@@ -11,10 +11,10 @@ use App\Models\Operation;
 use App\Models\Percentage;
 use App\Models\Technology;
 use App\Models\Govofficial;
-use App\Models\Relatedministry;
+use App\Models\RelatedMinistry;
 use App\Models\TypesOfServices;
 use App\Models\Govorganizationname;
-use App\Models\Organizationcategory;
+use App\Models\OrganizationCategory;
 use App\Models\PreliminaryAssessment;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationName;
@@ -24,8 +24,8 @@ class Govorganizationdetail extends Model
 {
     protected $fillable = [
         'govorganizationname_id',
-        'organizationcategory_id',
-        'relatedministry_id',
+        'organization_category_id',
+        'related_ministry_id',
         'gov_org_address',
         'gov_org_email',
         'number_of_employee',
@@ -47,12 +47,12 @@ class Govorganizationdetail extends Model
         return $this->hasMany(PreliminaryAssessment::class);
     }
 
-    public function relatedministry(){
-        return $this->belongsTo(Relatedministry::class);
+    public function relatedMinistry(){
+        return $this->belongsTo(RelatedMinistry::class);
     }
 
-    public function organizationcategory(){
-        return $this->belongsTo(Organizationcategory::class);
+    public function organizationCategory(){
+        return $this->belongsTo(OrganizationCategory::class);
     }
 
     public function typesofservices(){

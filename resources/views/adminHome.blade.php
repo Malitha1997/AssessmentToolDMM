@@ -120,7 +120,7 @@
                         <tr style="font-family: Poppins, sans-serif;">
                             <td>{{ $govorganization->user->username }}</td>
                             <td>{{ $govorganization->govorganizationname->gov_org_name }}</td>
-                            <td>{{ $govorganization->organizationcategory->org_category }}</td>
+                            <td>{{ $govorganization->organizationCategory->org_category }}</td>
                             <td>{{ $govorganization->phone_number}}</td>
                             <td>{{ $govorganization->gov_org_email}}</td>
                         </tr>

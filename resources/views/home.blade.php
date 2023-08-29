@@ -21,13 +21,13 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Government.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;" readonly>Related Ministry</span>
                         </div>
-                        <div class="col" style="text-align: left;"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->relatedministry->related_ministry}}" readonly></div>
+                        <div class="col" style="text-align: left;"><input class="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->relatedMinistry->related_ministry}}" readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Menu.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization Category</span>
                         </div>
-                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: left;"><input  class="" type="text" data-aos="fade-down" style="width:250px;border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"  readonly></div>
+                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: left;"><input  class="" type="text" data-aos="fade-down" style="width:250px;border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationCategory->org_category}}"  readonly></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
