@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Relatedministry;
 use App\Models\Govorganizationname;
-use App\Models\Organizationcategory;
+use App\Models\OrganizationCategory;
 use App\Models\GovernmentOrganizationName;
 
 class SearchController extends Controller
@@ -44,7 +44,7 @@ class SearchController extends Controller
     public function autocomplete3(Request $request)
     {
         $query = $request->get('query');
-          $orgcategories = Organizationcategory::where('org_category', 'LIKE', '%'. $query. '%')->get();
+          $orgcategories = OrganizationCategory::where('org_category', 'LIKE', '%'. $query. '%')->get();
 
           foreach($orgcategories as $orgcategory){
             if($orgcategory != null){

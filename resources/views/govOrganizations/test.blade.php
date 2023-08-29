@@ -5,7 +5,9 @@
 <head>
 
     <title>Laravel 10 Autocomplete Search from Database - ItSolutionStuff.com</title>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -16,24 +18,25 @@
         /* Popup container - can be anything you want */
         .popup {
           position: relative;
-          display: inline-block;
+          display:flex;
           cursor: pointer;
           -webkit-user-select: none;
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
+
         }
 
         /* The actual popup */
         .popup .popuptext {
           visibility: hidden;
           width: 160px;
-          background-color: #555;
-          color: #ffffff;
+          background-color: #F5F5F5;
+          width: 783px;
           text-align: center;
           border-radius: 6px;
-          padding: 8px 0;
-          position: absolute;
+          padding: 8px 0 10px;
+          position:absolute;
           z-index: 1;
           bottom: 125%;
           left: 50%;
@@ -85,19 +88,23 @@
     <h1>Laravel 10 Autocomplete Search from Database - ItSolutionStuff.com</h1>
 
     <div class="popup" onclick="myFunction()">
-        <select type="text">
-            <option>first</option>
-            <option>second</option>
-            <option>third</option>
-        </select>
+      <div class="row"><input type="text"></div>
+      <div class="row"><input type="text"></div>
+      <div class="row"><input type="text"></div>
+      <div class="row"><select type="text">
+        <option>first</option>
+        <option>second</option>
+        <option>third</option>
+    </select></div>
+
         <div class="popuptext" id="myPopup">
-            <span id="first">A Simple Popup!</span>
-            <span>A Simple Popup!</span>
+            <span id="first">A Simple Popup!dffdgf<br></span>
+            <span>A Simple Popup!<br>fgbfgfbfbfbfbfb<br>fbfbfbfb</span>
         </div>
 
     </div>
-    <input type="text">
-        <input type="text">
+    <div class="ro"><input type="text"></div>
+    <div class="ro"><input type="text"></div>
 
 
 </div>
