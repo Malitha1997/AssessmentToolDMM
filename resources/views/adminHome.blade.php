@@ -14,7 +14,7 @@
                     <div class="col">
                         <div data-aos="zoom-in" data-aos-duration="1000" style="width: 687px;height: 748px;box-shadow: 5px 0px 15px 1px #747678;">
                             <div class="row">
-                                <h1 style="color: rgb(0,0,0);text-align: center;font-size: 32px;padding-top: 20px;font-family: Poppins, sans-serif;">Overall Results - Preliminary Assessment</h1>
+                                <h1 style="color: rgb(0,0,0);text-align: center;font-size: 32px;padding-top: 20px;font-family: Poppins, sans-serif;">Results - Preliminary Assessment</h1>
                             </div>
                             <div class="row" id="overall" style="margin-top: 30px;width: 604.32px;height: 522px">
                                 {{--  <img src="{{ asset('img/Group 84(1).png') }}">  --}}
