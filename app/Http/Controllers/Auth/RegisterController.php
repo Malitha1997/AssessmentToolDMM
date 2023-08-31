@@ -49,29 +49,35 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {//dd($data);
         return Validator::make($data, [
             'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|same:confirm-password',
-            'type'=> 'required|integer'
+
         ]);
 
 
     }
 
     protected function create(array $data)
-    {
+    {//dd($data);
+
         return User::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'type' => $data['type'],
+            
         ]);
+
         // Auth::guard()->login($user);
 
         //return redirect()->intended('/home');
         //         ->with('error','User account created successfully.');
+
+        //return redirect()->route('signup');
+
+
     }
 
     /**
@@ -85,7 +91,7 @@ class RegisterController extends Controller
         return view("auth.register2");
      }
 
-     public function govofficialaccount(Request $request){
+    public function govofficialaccount(Request $request){
         request()->validate([
             'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|string|max:255|unique:users',

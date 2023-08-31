@@ -282,9 +282,9 @@ class HomeController extends Controller
 
      */
 
-    public function managerHome(): View
+    public function govofficialHome(): View
     {
-        return view('layouts.govofficialusernavbar');
+        return view('govOfficials.profile');
     }
 
     public function userHome(): View

@@ -34,7 +34,9 @@
             </div>
         </div>
     </nav>
-    <section style="height: 750px;"></section>
+    <div class="container">
+        @yield('content')
+    </div>
     <footer data-aos="slide-up" data-aos-duration="1000" id="myFooter" style="background: #C1C2DA;">
         <div class="container-fluid">
             <div class="row text-center">
@@ -66,7 +68,7 @@
             </div>
         </div>
     </footer>
-    <footer class="text-white bg-dark"></footer>
+    <footer class="text-black bg-dark"></footer>
     <script src="{{ asset('jsfile/bootstrap.min.js') }}"></script>
     <script src="{{ asset('jsfile/aos.min.js') }}"></script>
     <script src="{{ asset('jsfile/bs-init.js') }}"></script>

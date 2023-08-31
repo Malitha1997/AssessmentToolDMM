@@ -63,12 +63,17 @@
           <span class="landing-page-text19"><span>GET INVOLVED</span></span>
         </div>
         <div class="landing-page-group24">
-          <img
+          {{--  <img
             src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/2a4fef8d-224c-44fe-ac69-8cf00f4566ab/53e5c767-e74b-4b16-882f-b311dd19e58e?org_if_sml=1591"
             alt="Screenshot56141615"
             class="landing-page-screenshot5614"
-          />
-          <span class="landing-page-text21"><a class="btn btn-primary" type="button" href="{{ route('login') }}" >Get start</span><br><br></a></div>
+          />  --}}
+        <div class="row">
+            <a class="btn btn-primary" type="button" href="{{ route('login') }}" >Preliminary</a>
+        </div>
+        <div class="row">
+            <a class="btn btn-primary" type="button" href="{{ route('login2') }}" >Competency</a>
+        </div>
         </div>
       </div>
     </div>

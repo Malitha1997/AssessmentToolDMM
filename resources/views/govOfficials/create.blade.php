@@ -9,6 +9,7 @@
             {{csrf_field()}}
         <div class="justify-content-center align-items-center" style="width: 1083px;height: 700px;background: #ffffff;font-family: Poppins, sans-serif;color: rgb(0,0,0);margin-top: 10px;margin-left: 33px;border-radius: 10px;border-width: 3px;border-color: rgb(255,106,42);"><span class="text-center text-lg-start text-xxl-center d-flex flex-row" style="color: #f01f75;margin-top: 8px;margin-left: 10px;padding-top: 30px;padding-left: 5px;margin-bottom: 10px;border-radius: 10px;">General Information</span>
             <div class="row d-flex flex-row justify-content-center align-items-center" style="width: 1080px;margin-left: 5px;padding-top: 20px;padding-bottom: 30px;">
+                {{--  <input type="" name="user_id" value="{{ Auth::user()->id }}">  --}}
                 <div class="col">
                     <div class="row">
                         <div class="col"><span style="font-family: Poppins, sans-serif;color: #000000;margin-bottom: 0;padding-bottom: 0;">Full Name</span></div>
@@ -42,10 +43,10 @@
                     <div class="row">
                         <div class="col">
                             <input class="form-control-lg" name="gov_org_name" type="text" placeholder="Select Organization Name" id="gov_org_name" style="width: 500px;" value="{{ old('gov_org_name')}}">
-                            <input type="hidden" name="gov_org_name" id="gov_org_nameid" >
+                            {{--  <input type="hidden" name="gov_org_name" id="gov_org_nameid" >
                             @if($errors->has('gov_org_name'))
                             <p class="text-danger">{{ $errors->first('gov_org_name') }}</p>
-                            @endif
+                            @endif  --}}
                         </div>
                     </div>
                 </div>
