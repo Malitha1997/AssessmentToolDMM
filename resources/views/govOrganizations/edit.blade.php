@@ -27,14 +27,14 @@
                             <picture><img data-aos="fade-down" src="{{ asset('img/Government.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;" >Related Ministry</span>
                         </div>
                         <div class="col" style="text-align: center;"><input class="form-control" name="related_ministry" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->relatedministry->related_ministry}}"></div>
-                        <input type="" name="related_ministry" id="relatedministry_id" value="{{$govorganizationdetail->relatedministry_id}}">
+                        <input type="" name="related_ministry" id="relatedministry_id" value="{{$govorganizationdetail->related_ministry_id}}">
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Menu.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization Category</span>
                         </div>
                         <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: center;"><input  class="form-control" name="organization_category" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->organizationcategory->org_category}}"></div>
-                        <input type="" name="organization_category" id="organizationcategory_id" value="{{$govorganizationdetail->organizationcategory_id}}">
+                        <input type="" name="organization_category" id="organizationcategory_id" value="{{$govorganizationdetail->organization_category_id}}">
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">

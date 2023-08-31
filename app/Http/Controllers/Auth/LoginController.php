@@ -102,12 +102,14 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+
+
         if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
         {
             if (auth()->user()->type == 'admin') {
                 return redirect()->route('home');
             }else if (auth()->user()->type == 'manager') {
-                return redirect()->route('manager.home');
+                return redirect()->route('govofficial.home');
             }else{
                 return redirect()->route('userHome');
             }
@@ -124,7 +126,7 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required',
         ]);
-
+        
 
         if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
         {
@@ -166,5 +168,4 @@ class LoginController extends Controller
     public function logingovofficial(){
         return view('auth.login2');
     }
-
 }

@@ -129,11 +129,14 @@ Route::get('preview', [PDFController::class,'preview']);
 Route::get('download', [PDFController::class,'download'])->name('download');
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/govofficial/home', [HomeController::class, 'govofficialHome'])->name('govofficial.home');
     Route::post('/logout2', [LoginController::class, 'logout2'])->name('logout2');
     Route::get('/signup2', [GovofficialController::class, 'create'])->name('signup2');
-    Route::resource('govofficials', GovofficialController::class);
+    Route::post('/govofficials/create', [GovofficialController::class, 'create'])->name('govofficials.create');
+
 });
+
+Route::resource('govofficials', GovofficialController::class);
 
 
 

@@ -25,7 +25,7 @@ class UserController extends Controller
         $user->type=$request->type;
 
         $user->save();
- 
+
         return view('govOrganizations.create');
     }
 
@@ -46,14 +46,8 @@ class UserController extends Controller
 
         $user->save();
 
+        return redirect()->route('govofficials.create');
 
-
-        if($request->type==2){
-            return view('govOfficials.create');
-        }else if($request->type==0){
-            $user=User::all();
-            return view('govOrganizations.create',compact('user'));
-        }
 
     }
 }

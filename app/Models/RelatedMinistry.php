@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Governmentorganizationdetail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Relatedministry extends Model
+class RelatedMinistry extends Model
 {
     public function govorganizationdetails()
     {

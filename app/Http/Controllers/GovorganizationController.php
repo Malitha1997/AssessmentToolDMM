@@ -76,9 +76,9 @@ class GovorganizationController extends Controller
         $governmentOrganization->govorganizationname_id = $request->gov_org_name;
         $governmentOrganization->gov_org_email = $request->gov_org_email;
         $governmentOrganization->gov_org_address = $request->gov_org_address;
-        $governmentOrganization->organizationcategory_id = $request->org_category;
+        $governmentOrganization->organization_category_id = $request->org_category;
         $governmentOrganization->number_of_employee = $request->number_of_employee;
-        $governmentOrganization->relatedministry_id = $request->related_ministry;
+        $governmentOrganization->related_ministry_id = $request->related_ministry;
         $governmentOrganization->availablity_of_IT_unit = $request->availablity_of_IT_unit;
         $governmentOrganization->districts_of_operations = $request->districts_of_operations;
         $governmentOrganization->phone_number = $request->phone_number;
@@ -146,8 +146,8 @@ class GovorganizationController extends Controller
 
         $govorganizationdetail->user_id = $request->user_id;
         $govorganizationdetail->govorganizationname_id = $request->gov_org_name;
-        $govorganizationdetail->relatedministry_id = $request->related_ministry;
-        $govorganizationdetail->organizationcategory_id = $request->organization_category;
+        $govorganizationdetail->related_ministry_id = $request->related_ministry;
+        $govorganizationdetail->organization_category_id = $request->organization_category;
         $govorganizationdetail->types_of_service = $request->types_of_services_provide;
         $govorganizationdetail->number_of_employee = $request->number_of_employee;
         $govorganizationdetail->districts_of_operations = $request->districts_of_operations;

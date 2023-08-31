@@ -120,7 +120,7 @@ class PreliminaryassessmentController extends Controller
         $technology->govorganizationdetail_id = $request->govorganizationdetail_id;
 
         $technology->save();
-
+ 
         $data =[
             'technologyMarks'=> $request->input('technologyMarks'),
             'technologyPercentage'=> $request->input('technologyPercentage'),
