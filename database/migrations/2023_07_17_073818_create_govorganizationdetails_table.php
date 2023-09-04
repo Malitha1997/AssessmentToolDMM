@@ -25,9 +25,8 @@ return new class extends Migration
             $table->string('head_email');
             $table->string('designation');
             $table->string('types_of_service');
-            $table->string('cdio_name');
-            $table->string('cdio_email');
-            $table->string('cdio_contact_no');
+            $table->string('dtu_type')->default('No data'); ;
+            $table->string('number_of_employees_dtu')->default('No data'); ;
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('related_ministry_id')->constrained('related_ministries');
             $table->foreignId('organization_category_id')->constrained('organization_categories');

@@ -1,7 +1,7 @@
 @extends('layouts.userNavbar')
 
 @section('content')
- 
+
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-up" data-aos-duration="1000" >
         <div class="container container-expand-sm" style="margin-top: 150px;margin-bottom: 20px;border-radius: 0px;border: 2px solid #5f2b84;">

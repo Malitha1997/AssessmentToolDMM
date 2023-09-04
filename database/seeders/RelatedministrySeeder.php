@@ -14,6 +14,10 @@ class RelatedministrySeeder extends Seeder
     public function run(): void
     {
         DB::table('related_ministries')->insert([
+            'related_ministry' => "Not applicable",
+        ]);
+
+        DB::table('related_ministries')->insert([
             'related_ministry' => "President's office",
         ]);
 
