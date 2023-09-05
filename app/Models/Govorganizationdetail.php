@@ -21,7 +21,7 @@ use App\Models\GovernmentOrganizationName;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Govorganizationdetail extends Model
-{
+{//public $timestamps = false;
     protected $fillable = [
         'govorganizationname_id',
         'organization_category_id',
