@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Govorganizationname;
 use App\Models\OrganizationCategory;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Validator;
 use App\Models\Govorganizationdetail;
 use App\Models\GovernmentOrganization;
@@ -73,7 +74,6 @@ class GovorganizationController extends Controller
         $dtuToggleEnabled = $request->has('toggleSwitch'=='switched');
 
         if ($dtuToggleEnabled) {
-            // Validate the "dtu" division fields when the toggle is enabled
             $request->validate([
                 'dtu_type' => 'required|string',
                 'number_of_employees_dtu' => 'required|int',
@@ -105,14 +105,13 @@ class GovorganizationController extends Controller
         $governmentOrganization->contact_number_of_the_head = $request->contact_number_of_the_head;
         $governmentOrganization->designation = $request->designation;
 
-        $typesOfServices = implode(',', $request->input('types_of_services_provide'));
+        $typesOfServices = implode(' , ', $request->input('types_of_services_provide'));
         $governmentOrganization->types_of_service = $typesOfServices;
 
         if ($request->has('toggleSwitch')) {
             $governmentOrganization->dtu_type = $request->input('dtu_type');
             $governmentOrganization->number_of_employees_dtu = $request->input('number_of_employees_dtu');
         } else {
-            // Set default values for fields when toggle switch is not enabled
             $governmentOrganization->dtu_type = 'No Data'; // Change to your actual default value
             $governmentOrganization->number_of_employees_dtu = 'No Data'; // Change to your actual default value
         }
@@ -150,29 +149,41 @@ class GovorganizationController extends Controller
     public function update(Request $request, string $id)
     { //dd($request);
         request()->validate([
-            'user_id'=> 'required|string',
+            'username' => 'required|string|max:255|regex:/^[a-zA-Z0-9]+$/',
+            'email' => 'required|string|max:255',
+            'password' => 'required|string|min:6|same:confirm-password',
             'gov_org_name'=> 'required|string|min:1|max:255',
             'related_ministry'=> 'required|string',
             'org_category'=> 'required|string',
-            'types_of_services_provide'=> 'required|string',
+            'types_of_services_provide' => 'required|string',
+            //'types_of_services_provide.*' => 'required|string',
             'number_of_employee'=> 'required|int',
-            'districts_of_operations'=> 'required|string',
+            'districts_of_operations' => 'required|string',
+            //'districts_of_operations.*' => 'required|string',
             'phone_number'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
+            'gov_org_address'=> 'required|string|min:1|max:255',
             'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
+            //'headTitle'=> 'required|string',
             'name_of_the_head'=> 'required|string',
             'designation'=> 'required|string',
             'head_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'cdio_name'=> 'required|string|min:1|max:255',
-            'cdio_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            'cdio_contact_no'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
-            'availablity_of_IT_unit'=>'required|string',
-            'gov_org_address'=> 'required|string|min:1|max:255',
             'contact_number_of_the_head'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
+            'availablity_of_IT_unit'=>'required|string',
+            'dtu_type' => 'required|string',
+            'number_of_employees_dtu' => 'required|int',
         ]);
         //dd($request);
-        $govorganizationdetail = new Govorganizationdetail;
+        $user = User::find($id);
 
-        $governmentOrganization->user_id = $request->user_id;
+        $user->username=$request->username;
+        $user->email=$request->email;
+        $user->password = Hash::make($request->password);
+
+        $user->update();
+
+        //dd($request);
+        $governmentOrganization =new Govorganizationdetail;
+
         $governmentOrganization->govorganizationname_id = $request->gov_org_name;
         $governmentOrganization->gov_org_email = $request->gov_org_email;
         $governmentOrganization->gov_org_address = $request->gov_org_address;
@@ -180,22 +191,32 @@ class GovorganizationController extends Controller
         $governmentOrganization->number_of_employee = $request->number_of_employee;
         $governmentOrganization->related_ministry_id = $request->related_ministry;
         $governmentOrganization->availablity_of_IT_unit = $request->availablity_of_IT_unit;
+
+        //$districtsOfOperations = implode(' , ', $request->input('districts_of_operations'));
         $governmentOrganization->districts_of_operations = $request->districts_of_operations;
+
         $governmentOrganization->phone_number = $request->phone_number;
+
+        //$headTitle = $request->input('headTitle');
+        //$headName = $request->input('name_of_the_head');
+        //$headNameWithTitle = $headTitle . ' ' . $headName;
         $governmentOrganization->name_of_the_head = $request->name_of_the_head;
+
         $governmentOrganization->head_email = $request->head_email;
         $governmentOrganization->contact_number_of_the_head = $request->contact_number_of_the_head;
         $governmentOrganization->designation = $request->designation;
+
+        //$typesOfServices = implode(' , ', $request->input('types_of_services_provide'));
         $governmentOrganization->types_of_service = $request->types_of_services_provide;
-        $governmentOrganization->cdio_name = $request->cdio_name;
-        $governmentOrganization->cdio_email = $request->cdio_email;
-        $governmentOrganization->cdio_contact_no = $request->cdio_contact_no;
 
-        $govorganizationdetail->update();
+        $governmentOrganization->dtu_type = $request->dtu_type;
+        $governmentOrganization->number_of_employees_dtu = $request->number_of_employees_dtu;
+// dd($request);
+        $user->govorganizationdetail()->update($governmentOrganization->toArray());
 
-        $user=new User;
+        // $user=new User;
 
-        Auth::login($user);
+        // Auth::login($user);
 
         return redirect("home");
     }

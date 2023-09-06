@@ -4,16 +4,62 @@
 
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-up" data-aos-duration="1000" >
-        <div class="container" style="margin-top: 150px;margin-bottom: 20px;border-radius: 0px;border: 2px solid #5f2b84;">
+        <div class="container" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 2px solid #5f2b84;">
             <form method="post" action="{{route('govorganizations.update',$govorganizationdetail->user->id)}}" enctype="multipart/form-data">
                 {{csrf_field()}}
                 @method('PUT')
             <div class="row">
                 <div class="col" style="margin-left: 50px;width: auto;margin-top: 20px">
                     <h1 style="font-family: Poppins, sans-serif;color: #1f2471;font-weight: bold;text-align: center;margin-top: 5px;">Organization Profile</h1>
+                    <div class="container">
+                        <div class="row" style="width:1100px;height:450px;border-radius: 10px;border: 2px solid #5f2b84;">
+                            <div class="row"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">User account</span></div>
+                            <div class="row" style="font-size: 20px;margin-top: 10px;font-family: Poppins, sans-serif;">
+                                <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Username</span>
+                                    <div class="row">
+                                        <div class="col" style="">
+                                            <input class="form-control-lg" name="username" id="username" type="text" placeholder="Enter the Username" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ Auth::user()->username }}">
+                                            @if($errors->has('username'))
+                                            <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('username') }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Email</span>
+                                    <div class="row">
+                                        <div class="col" style=""><input class="form-control-lg" name="email" id="email" type="email" placeholder="Enter the Email" style="padding-left: 16px;margin-left: 50px;width: 340px;" value="{{ Auth::user()->email }}">
+                                            @if($errors->has('email'))
+                                            <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('email') }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="font-family: Poppins, sans-serif;font-size: 20px;margin-top: 10px;">
+                                <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Create Password</span>
+                                    <div class="row">
+                                        <div class="col" style=""><input class="form-control-lg" name="password" id="password" type="password" placeholder="Enter the Password" style="padding-left: 16px;margin-left: 50px;width: 340px;" >
+                                            @if($errors->has('password'))
+                                            <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('password') }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"><span style="color: #5f2b84;font-weight: bold;margin-left: 50px;padding-top: 0px;">Confirm Password</span>
+                                    <div class="row">
+                                        <div class="col" style=""><input class="form-control-lg" name="confirm-password" type="password" placeholder="Confirm Password" style="padding-left: 16px;margin-left: 50px;width: 340px;">
+                                            @if($errors->has('confirm-password'))
+                                            <p class="text-danger" style="margin-left: 50px;font-weight: bold">{{ $errors->first('confirm-password') }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">General Information</span></div>
-                        <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
+                        {{--  <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">  --}}
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
@@ -118,20 +164,38 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Leader.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's name</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="cdio_name" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_name}}" ></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
+                            <input class="form-control" name="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_name}}" ></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Envelope.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's email</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="cdio_email" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_email}}" ></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
+                            <input class="form-control" name="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->cdio_email}}" ></div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Viber.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">CDIO's contact number</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="cdio_contact_no" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px" value="{{Auth::user()->govorganizationdetail->cdio_contact_no}}" ></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
+                            <input class="form-control" name="" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px" value="{{Auth::user()->govorganizationdetail->cdio_contact_no}}" ></div>
                         <input type="hidden" name="availablity_of_IT_unit" id="availablity_of_IT_unit" value="{{ Auth::user()->govorganizationdetail->availablity_of_IT_unit }}"
+                    </div>
+                    <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
+                        <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Digital Transformation Unit (DTU)/ IT unit Details</span></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 25px;">
+                        <div class="col" style="margin-top: 10px;">
+                            <picture><img data-aos="fade-down" src="{{ asset('img/Information Technology.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">DTU type of Organization</span>
+                        </div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="dtu_type" id="dtu_type" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->dtu_type}}"></div>
+                    </div>
+                    <div class="row" style="margin-bottom: 25px;">
+                        <div class="col" style="margin-top: 10px;">
+                            <picture><img data-aos="fade-down" src="{{ asset('img/System Administrator.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Number of employees in the DTU</span>
+                        </div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="number_of_employees_dtu" id="number_of_employees_dtu" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->number_of_employees_dtu}}" ></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
                         <div class="col" style="margin-top: 75px;text-align: right;">

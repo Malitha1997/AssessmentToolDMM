@@ -63,7 +63,7 @@
                             <div class="col">
                                 <div class="col">
                                     <div class="col">
-                                        <input class="form-control-lg" name="org_category" type="text" placeholder="Select the Organization category" id="org_category" style="width: 500px;margin-left:-25px" value="{{ old('org_category')}}">
+                                        <input class="form-control-lg" name="org_category" type="text" placeholder="Select the Organization category" id="org_category" style="width: 500px" value="{{ old('org_category')}}">
                                         <input type="hidden" name="org_category" id="org_categoryid" >
                                         @if($errors->has('org_category'))
                                         <p class="text-danger"><b>Select the Organization Category</b></p>
