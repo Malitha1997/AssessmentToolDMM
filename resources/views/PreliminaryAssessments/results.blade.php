@@ -76,7 +76,7 @@
             </div>
 
             <div class="row" style="text-align: center;">
-                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summery of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
+                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summary of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
             </div>
             <div class="row">
                 <div class="col" style="text-align: center;">

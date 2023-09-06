@@ -29,9 +29,8 @@ class GovorganizationSeeder extends Seeder
             'designation' => 'Head',
             'head_email' => 'head@gmail.com',
             'contact_number_of_the_head' => '0711584238',
-            'cdio_name' => 'Mr.DEF',
-            'cdio_email' => 'cdio@info.lk',
-            'cdio_contact_no' => '0711237895',
+            'dtu_type'=> 'Mid scale',
+            'number_of_employees_dtu'=> '5'
         ]);
     }
 }

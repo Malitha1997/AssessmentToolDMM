@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('employment_layer');
             $table->string('date_of_birth');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->string('linkedin');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->foreignId('govorganizationname_id')->constrained('govorganizationnames');
             $table->foreignId('user_id')->constrained('users');
         });
     }
