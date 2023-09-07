@@ -248,4 +248,15 @@ class PreliminaryAssessmentResultController extends Controller
         return view('PreliminaryAssessments.results', compact('result'));
 
     }
+
+    public function adminResult(string $id){
+
+        $user=User::find($id);
+        $g_user=$user->govorganizationdetail;
+        $percentageExist = $g_user ? $g_user->percentage : null;
+        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
+
+        return view('admin.PreliminaryResults.results',compact('user','g_user','percentageExist','labels'));
+    }
+
 }

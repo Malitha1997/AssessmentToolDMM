@@ -1,7 +1,7 @@
 @extends('layouts.adminNavbar')
 
 @section('content')
-
+<body>
 <div class="container-fluid" style="margin-left: 0px;width: 900px;">
     <div id="wrapper">
     <div class="row">
@@ -34,8 +34,9 @@
                         </div>
                         <div class="row" style="text-align: center;margin-top: -10px;">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
+                                {{--  $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");  --}}
                                 <?php
-                                $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                 $query= "SELECT id FROM govorganizationdetails ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
@@ -56,8 +57,9 @@
                         </div>
                         <div class="row">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 5px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
+                                //$connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
                                 <?php
-                                $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                 $query= "SELECT id FROM percentages ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
@@ -79,7 +81,7 @@
                         <div class="row">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                     <?php
-                                    $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                    $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                     $query= "SELECT id FROM percentages ORDER BY id";
                                     $query_run = mysqli_query ($connection, $query);
@@ -99,30 +101,47 @@
             </div>  --}}
         </div>
     </div>
-    <div class="row">
-        <div class="col" id="organization">
-            <div data-aos="zoom-in" data-aos-duration="1000" style="width:1153px;height:692px;box-shadow: 5px 0px 15px 1px #747678;margin-top:450px">
+    <div class="row" style="width:1200px">
+        <div class="col">
+            <div data-aos="zoom-in" data-aos-duration="1000" style="margin-left:50px;width:500px;height:692px;box-shadow: 5px 0px 15px 1px #747678;margin-top:450px">
                 <div class="row" style="margin-top: 20px">
-                    <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Organizations</span>
+                    <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Preliminary Assessment<br> Completed Organizations</span>
                 </div>
                 <div class="row" style="margin-left: 10px;margin-top: 10px">
-                    <table class="table" style="width: 1100px">
+                    <table class="table" style="width: 400px">
                         <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                             <tr>
-                                <th scope="col" >Username</th>
                                 <th scope="col">Organization Name</th>
-                                <th scope="col">Organization Category</th>
-                                <th scope="col">Phone Number</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        @foreach ($percentageExists as $percentageExist)
+                            <tr style="font-family: Poppins, sans-serif;">
+                                <td>{{ $percentageExist->govorganizationdetail->govorganizationname->gov_org_name }}</td>
+                                <td><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$percentageExist->govorganizationdetail->user_id) }}"></a></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div data-aos="zoom-in" data-aos-duration="1000" style="width:500px;height:692px;box-shadow: 5px 0px 15px 1px #747678;margin-top:450px">
+                <div class="row" style="margin-top: 20px">
+                    <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Registered Organizations</span>
+                </div>
+                <div class="row" style="margin-left: 10px;margin-top: 10px">
+                    <table class="table" style="width: 400px">
+                        <thead class="thead-light" style="font-family: Poppins, sans-serif;">
+                            <tr>
+                                <th scope="col">Organization Name</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         @foreach ($govorganizations as $key => $govorganization)
                         <tr style="font-family: Poppins, sans-serif;">
-                            <td>{{ $govorganization->user->username }}</td>
                             <td>{{ $govorganization->govorganizationname->gov_org_name }}</td>
-                            <td>{{ $govorganization->organizationCategory->org_category }}</td>
-                            <td>{{ $govorganization->phone_number}}</td>
-                            <td>{{ $govorganization->gov_org_email}}</td>
+                            <td><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$govorganization->user_id) }}"></a></td>
                         </tr>
                         @endforeach
                     </table>
@@ -133,7 +152,7 @@
 
     <table>
     <tr>
-        <h1 data-aos="zoom-in" data-aos-duration="1000" style="margin-left:35%;margin-top: 50px;color: #161A55;font-size: 32px;font-weight :bold;font-family: Poppins, sans-serif;">Overall Results of Each Dimension</h1>
+        <h1 data-aos="zoom-in" data-aos-duration="1000" style="margin-left:30%;margin-top: 50px;color: #161A55;font-size: 32px;font-weight :bold;font-family: Poppins, sans-serif;">Overall Results of Each Dimension</h1>
     </tr>
     <tr style="text-align: center">
         <h3 data-aos="zoom-in" data-aos-duration="1000" style="margin-left:57%;margin-top: 30px;color: #161A55;font-size: 20px;font-weight :bold;padding-top: 20px;font-family: Poppins, sans-serif;">Technology & Data</h3>
@@ -392,6 +411,8 @@
         });
     </script>
     </table>
+
 </div>
 </div>
+</body>
 @endsection

@@ -78,6 +78,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/store-value-page04', [PreliminaryassessmentController::class, 'storeValuePage04'])->name('storeValue4');
     Route::post('/store-value-page05', [PreliminaryassessmentController::class, 'storeValuePage05'])->name('storeValue5');
 
+    Route::get('/resources',[GovorganizationController::class,'resources'])->name('resources');
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
@@ -93,7 +94,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home');
-
+    // Route::get('/admin/organizationProfile', [GovorganizationController::class, 'organizationProfile'])->name('organizationProfile');
+    Route::resource('govorganizations', GovorganizationController::class);
+    Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
 });
 
 Route::resource('users', UserController::class);

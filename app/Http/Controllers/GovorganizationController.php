@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\RelatedMinistry;
 use App\Models\TypesOfServices;
+use App\Models\Percentage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Govorganizationname;
 use App\Models\OrganizationCategory;
@@ -131,7 +132,11 @@ class GovorganizationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user=User::find($id);
+        $g_user=$user->govorganizationdetail;
+        $percentageExist = $g_user ? $g_user->percentage : null;
+
+        return view('admin.organizationProfile',compact('user','g_user','percentageExist'));
     }
 
     /**
@@ -244,4 +249,9 @@ class GovorganizationController extends Controller
 
           return response()->json($response);
     }
+
+    public function resources(){
+        return view('govOrganizations.resources');
+    }
+
 }

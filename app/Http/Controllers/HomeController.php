@@ -80,6 +80,7 @@ class HomeController extends Controller
     public function adminHome(): View
     {
         $govorganizations = Govorganizationdetail::get();
+        $percentageExists = Percentage::get();
 
         $percentages = Percentage::all();
 
@@ -268,7 +269,7 @@ class HomeController extends Controller
         ['Policy', $strColumnSums['policy']],
         ['Invention', $strColumnSums['invention']],
     ];
-        return view('adminHome',compact('govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg'));
+        return view('adminHome',compact('govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg','percentageExists'));
     }
 
 
