@@ -1,7 +1,19 @@
 @extends('layouts.userNavbar')
 
 @section('content')
-
+<style>
+    /* Add custom CSS for the tooltip title */
+    .custom-tooltip .tooltip-inner {
+      max-width: 802px; /* Adjust the width as needed */
+      /* Additional styling if desired */
+      background-color: #ffffff;
+      color: #000000;
+      padding: 10px;
+      font-family: Poppins, sans-serif;
+      text-align: justify;
+        text-justify: inter-word;
+    }
+  </style>
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-up" data-aos-duration="1000" >
         <div class="container" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 2px solid #5f2b84;">
@@ -63,7 +75,7 @@
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
-                            <picture><img data-aos="fade-down" src="{{ asset('img/Building.png') }}" style="margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Organization name</span>
+                            <picture><img data-aos="fade-down" src="{{ asset('img/Building.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;" >Organization name</span>
                         </div>
                         <div class="col" style="text-align: center"><input class="form-control" name="gov_org_name" type="text" placeholder="Select Organization Name" id="gov_org_name" data-aos="fade-down" style="margin-left:-12px;border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->govorganizationname->gov_org_name}}">
                             <input type="hidden" name="gov_org_name" id="gov_org_nameid" value="{{ old('gov_org_name',Auth::user()->govorganizationdetail->govorganizationname_id) }}">
@@ -95,33 +107,38 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Self service.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Types of Services provided</span>
                         </div>
+                        <div class="col" style="width: 350px;height: 34px;margin-top: 0px;text-align: center;"><input  class="form-control" name="types_of_services_provide" type="text" placeholder="Select the Organization category" id="types_of_services_provide" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->types_of_service}}"></div>
                     </div>
-                    <div class="row" style="margin-bottom: 25px;text-align:left">
-                            {{--  <input class="form-control" name="types_of_services_provide" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->types_of_service}}" >  --}}
-                            <div class="row">
-                                <div class="col"></div>
-                                    <input type="checkbox" id="Government to Citizen" name="types_of_services_provide[]" value="Government to Citizen" {{ in_array('Government to Citizen', old('types_of_services_provide', [])) ? 'checked' : '' }}>
-                                    <label class="col-form-label" for="Government to Citizen" data-aos="fade-down" style="margin-left:5px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Citizen</span>
-                            </div>
-                            <div class="row">
-                                    <input type="checkbox" id="Government to Government" name="types_of_services_provide[]" value="Government to Government" {{ in_array('Government to Government', old('types_of_services_provide', [])) ? 'checked' : '' }}>
-                                    <label class="col-form-label" for="Government to Government" data-aos="fade-down" style="margin-left:5px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Government</span>
-                            </div>
-                            <div class="row">
-                                    <input type="checkbox" id="Government to Business" name="types_of_services_provide[]" value="Government to Business" {{ in_array('Government to Business', old('types_of_services_provide', [])) ? 'checked' : '' }}>
-                                    <label class="col-form-label" for="GGovernment to Business" data-aos="fade-down" style="margin-left:5px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Business</span>
-                            </div>
-                            <div class="row">
-                                    <input type="checkbox" id="Government to Employee" name="types_of_services_provide[]" value="Government to Employee" {{ in_array('Government to Employee', old('types_of_services_provide', [])) ? 'checked' : '' }}>
-                                    <label class="col-form-label" for="Government to Employee" data-aos="fade-down" style="margin-left:5px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Employee</span>
-                            </div>
-
+                    {{--  <div class="row" data-aos="fade-down" style="margin-bottom: 10px;">
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="districts_of_operations" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" ></div>
+                        <div class="col">
+                            <div class="col">
+                                <div class="row" style="margin-left:10px">
+                                    <div class="col" data-aos="fade-down">
+                                        <input type="checkbox" id="Government to Citizen" name="types_of_services_provide[]" value="Government to Citizen" {{ (old('types_of_services_provide') && in_array('Government to Citizen', old('types_of_services_provide'))) || $governmentToCitizenChecked ? 'checked' : '' }}>
+                                        <label class="col-form-label" for="Government to Citizen" data-aos="fade-down" style="margin-left:10px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Citizen</label>
+                                    </div>
+                                    <div class="col" data-aos="fade-down">
+                                        <input type="checkbox" id="Government to Government" name="types_of_services_provide[]" value="Government to Government" {{ (old('types_of_services_provide') && in_array('Government to Government', old('types_of_services_provide'))) || $governmentToGovernmentChecked ? 'checked' : '' }}>
+                                        <label class="col-form-label" for="Government to Government" data-aos="fade-down" style="margin-left:10px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Government</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-left:10px">
+                                    <div class="col" data-aos="fade-down">
+                                        <input type="checkbox" id="Government to Business" name="types_of_services_provide[]" value="Government to Business" {{ (old('types_of_services_provide') && in_array('Government to Business', old('types_of_services_provide'))) || $governmentToBusinessChecked ? 'checked' : '' }}>
+                                        <label class="col-form-label" for="Government to Business" data-aos="fade-down" style="margin-left:10px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Business</label>
+                                    </div>
+                                    <div class="col" data-aos="fade-down">
+                                        <input type="checkbox" id="Government to Employee" name="types_of_services_provide[]" value="Government to Employee" {{ (old('types_of_services_provide') && in_array('Government to Employee', old('types_of_services_provide'))) || $governmentToEmployeeChecked ? 'checked' : '' }}>
+                                        <label class="col-form-label" for="Government to Employee" data-aos="fade-down" style="margin-left:10px;font-family: Poppins, sans-serif;color :#000000;font-size: 20px;">Government to Employee</label>
+                                    </div>
                                     @if($errors->has('types_of_services_provide'))
                                         <p class="text-danger"><b>Select the Types of service provide</b></p>
-                                        @endif
-
-
-                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>  --}}
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Group.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Number of employees</span>
@@ -132,10 +149,11 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Map.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">District of operations</span>
                         </div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="districts_of_operations" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" ></div>
                     </div>
-                    <div class="row" data-aos="fade-down" style="margin-bottom: 25px;">
+                    {{--  <div class="row" data-aos="fade-down" style="margin-bottom: 25px;">
 
-                        {{--  <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="districts_of_operations" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" ></div>  --}}
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="districts_of_operations" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" ></div>
                         <div class="col">
                             <div class="col">
                                 <div class="row" style="margin-left:10px">
@@ -261,7 +279,7 @@
                                 @endif
                             </div>
                         </div>
-                    </div>
+                    </div>  --}}
 
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Organization Contact Detail</span></div>
@@ -291,7 +309,28 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/User.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">Name of the Head of Org.</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="name_of_the_head" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->name_of_the_head}}" ></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
+                            <div class="col">
+                                <select id="headTitle" name="headTitle" class="form-control text-dark mb-1" style="background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 82px">
+                                    <option value="none" selected disabled hidden style="text-color:#555454">Title</option>
+                                    <option value="Mr." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Mr.' ? 'selected' : '' }}>Mr.</option>
+                                    <option value="Mrs." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Mrs.' ? 'selected' : '' }}>Mrs.</option>
+                                    <option value="Ms." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Ms.' ? 'selected' : '' }}>Ms.</option>
+                                    <option value="Dr." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Dr.' ? 'selected' : '' }}>Dr.</option>
+                                    <option value="Prof." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Prof.' ? 'selected' : '' }}>Prof.</option>
+                                    <option value="Ven." {{ old('headTitle', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head)[0]) == 'Ven.' ? 'selected' : '' }}>Ven.</option>
+                                </select>
+                                @if($errors->has('headTitle'))
+                                    <p class="text-danger"><b>Select the title</b></p>
+                                @endif
+                            </div>
+                            <div class="col" style="width:50px">
+                                <input class="form-control-lg" name="name_of_the_head" type="text" placeholder="Enter the name" style="width: 380px;margin-left:30px" value="{{ old('name_of_the_head', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head, 2)[1]) }}">
+                                @if($errors->has('name_of_the_head'))
+                                    <p class="text-danger"><b>Enter the name</b></p>
+                                @endif
+                            </div>
+                        </div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">
@@ -339,11 +378,34 @@
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Digital Transformation Unit (DTU)/ IT unit Details</span></div>
                     </div>
-                    <div class="row" style="margin-bottom: 25px;">
+                    <div class="row" style="margin-bottom: 5px;">
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Information Technology.png') }}" style="margin-left: 0px;margin-right: 10px;"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">DTU type of Organization</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="form-control" name="dtu_type" id="dtu_type" type="text" data-aos="fade-down" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->dtu_type}}"></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
+                            <select id="dtu_type" name="dtu_type" class="form-control text-dark mb-1" style="font-size:20px;margin-left:15px;background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height:54px;border-radius:5px" value="{{ old('availablity_of_IT_unit')}}" data-toggle="tooltip" data-placement="bottom" title='
+                            Fully Fledged - This IT unit has already implemented and completed digital transformation initiatives, showcasing a track record of successful adoption and integration of digital technologies across various aspects of the organization. The size of the IT unit is larger than nine people, indicating a substantial and dedicated team responsible for managing and driving digital initiatives.<br><br>
+                            Mid Scale - This IT unit is actively engaged in ongoing digital transformation initiatives and has completed some of the digital transformation projects initiated. It demonstrates a commitment to adopting digital technologies and modernizing its operations. The size of the IT unit ranges from three to nine people, suggesting a moderately sized team dedicated to implementing digital initiatives.<br><br>
+                            Small Scale - This IT unit has not yet started any digital transformation initiatives. It may have limited digital capabilities and is yet to fully integrate digital technologies into its operations. The size of the IT unit is less than three people, indicating a small team responsible for basic IT functions.
+                        '>
+                            <script>
+                                $(document).ready(function(){
+                                    $('[data-toggle="tooltip"]').tooltip({
+                                        html: true,
+                                        template: '<div class="tooltip custom-tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                                    });
+                                });
+                            </script>
+                            <option selected disabled hidden style="text-color:#cacaca">Select the answer</option>
+                            <option value="Fully Fledged" {{ old('dtu_type', Auth::user()->govorganizationdetail->dtu_type) == 'Fully Fledged' ? 'selected' : '' }}>Fully Fledged</option>
+                            <option value="Mid Scale" {{ old('dtu_type', Auth::user()->govorganizationdetail->dtu_type) == 'Mid Scale' ? 'selected' : '' }}>Mid Scale</option>
+                            <option value="Small Scale" {{ old('dtu_type', Auth::user()->govorganizationdetail->dtu_type) == 'Small Scale' ? 'selected' : '' }}>Small Scale</option>
+                        </select>
+                        @if($errors->has('dtu_type'))
+                            <p class="text-danger"><b>Select the type</b></p>
+                        @endif
+                        </div>
+                    </div>
                     </div>
                     <div class="row" style="margin-bottom: 25px;">
                         <div class="col" style="margin-top: 10px;">

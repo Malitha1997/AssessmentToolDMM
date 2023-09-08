@@ -38,7 +38,7 @@
                             labels: {!! json_encode($labels) !!},
                             datasets: [{
                                 label: "Marks for each dimension",
-                                data: {!! json_encode($percentageExist) !!},
+                                data: {!! json_encode($percentages) !!},
                                 backgroundColor: "transparent",
                                 borderColor: "rgba(229, 89, 52, 1)",
                                 borderWidth: 2,

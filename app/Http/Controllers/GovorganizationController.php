@@ -126,7 +126,7 @@ class GovorganizationController extends Controller
 
         // return view("auth.login");
     }
-
+ 
     /**
      * Display the specified resource.
      */
@@ -145,7 +145,30 @@ class GovorganizationController extends Controller
     public function edit(string $id)
     {//dd($id);
         $govorganizationdetail=Govorganizationdetail::find($id);
-        return view('govOrganizations.edit',compact('govorganizationdetail'));
+
+        $governmentToCitizenChecked = false;
+        if ($govorganizationdetail && strpos($govorganizationdetail->types_of_service, 'Government to Citizen') !== false) {
+        $governmentToCitizenChecked = true;
+        }
+
+        $governmentToBusinessChecked = false;
+        if ($govorganizationdetail && strpos($govorganizationdetail->types_of_service, 'Government to Business') !== false) {
+        $governmentToBusinessChecked = true;
+        }
+
+        $governmentToGovernmentChecked = false;
+        if ($govorganizationdetail && strpos($govorganizationdetail->types_of_service, 'Government to Government') !== false) {
+        $governmentToGovernmentChecked = true;
+        }
+
+        $governmentToEmployeeChecked = false;
+        if ($govorganizationdetail && strpos($govorganizationdetail->types_of_service, 'Government to Employee') !== false) {
+        $governmentToEmployeeChecked = true;
+        }
+        $districts = ['Ampara', 'Anuradhapura', 'Badulla', 'Batticaloa', 'Colombo', 'Galle', 'Gampaha', 'Hambantota', 'Jaffna', 'Kalutara', 'Kandy', 'Kegalle', 'Kilinochchi', 'Kurunegala', 'Mannar', 'Matale', 'Matara', 'Moneragala', 'Mullaitivu', 'Nuwara Eliya', 'Polonnaruwa', 'Puttalam', 'Ratnapura', 'Trincomalee', 'Vavuniya'];
+
+
+        return view('govOrganizations.edit',compact('govorganizationdetail','governmentToCitizenChecked','governmentToBusinessChecked','governmentToGovernmentChecked','governmentToEmployeeChecked','districts'));
     }
 
     /**
@@ -168,7 +191,7 @@ class GovorganizationController extends Controller
             'phone_number'=> 'required|regex:/^(?:\+\d{1,3}[- ]?)?\d{10}$/',
             'gov_org_address'=> 'required|string|min:1|max:255',
             'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
-            //'headTitle'=> 'required|string',
+            'headTitle'=> 'required|string',
             'name_of_the_head'=> 'required|string',
             'designation'=> 'required|string',
             'head_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
@@ -189,6 +212,7 @@ class GovorganizationController extends Controller
         //dd($request);
         $governmentOrganization =new Govorganizationdetail;
 
+        //$governmentOrganization->user_id = $request->user_id;
         $governmentOrganization->govorganizationname_id = $request->gov_org_name;
         $governmentOrganization->gov_org_email = $request->gov_org_email;
         $governmentOrganization->gov_org_address = $request->gov_org_address;
@@ -202,10 +226,10 @@ class GovorganizationController extends Controller
 
         $governmentOrganization->phone_number = $request->phone_number;
 
-        //$headTitle = $request->input('headTitle');
-        //$headName = $request->input('name_of_the_head');
-        //$headNameWithTitle = $headTitle . ' ' . $headName;
-        $governmentOrganization->name_of_the_head = $request->name_of_the_head;
+        $headTitle = $request->input('headTitle');
+        $headName = $request->input('name_of_the_head');
+        $headNameWithTitle = $headTitle . ' ' . $headName;
+        $governmentOrganization->name_of_the_head = $headNameWithTitle;
 
         $governmentOrganization->head_email = $request->head_email;
         $governmentOrganization->contact_number_of_the_head = $request->contact_number_of_the_head;

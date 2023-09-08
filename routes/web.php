@@ -43,6 +43,7 @@ Route::get('/adminNavbar', function () {
     return view('layouts.adminNavbar');
 });
 
+
 Route::resource('users', UserController::class);
 
 Auth::routes();
@@ -97,6 +98,15 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     // Route::get('/admin/organizationProfile', [GovorganizationController::class, 'organizationProfile'])->name('organizationProfile');
     Route::resource('govorganizations', GovorganizationController::class);
     Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
+    Route::get('generate-pdf/{id}', [PDFController::class, 'adminGeneratePDF'])->name('generate-pdf');
+    Route::get('technologyresults/{id}', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
+    Route::get('customerresults/{id}', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
+    Route::get('operationresults/{id}', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
+    Route::get('strategyresults/{id}', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
+    Route::get('cultureresults/{id}', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
+
+    Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
+    Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
 });
 
 Route::resource('users', UserController::class);

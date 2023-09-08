@@ -254,9 +254,28 @@ class PreliminaryAssessmentResultController extends Controller
         $user=User::find($id);
         $g_user=$user->govorganizationdetail;
         $percentageExist = $g_user ? $g_user->percentage : null;
-        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
+        // Fetch data for the radar chart
+        $percentages = [];
 
-        return view('admin.PreliminaryResults.results',compact('user','g_user','percentageExist','labels'));
+        if ($g_user) {
+        $percentageExist = $g_user->percentage;
+
+        if ($percentageExist) {
+        // Organize the percentage data for the radar chart
+        $percentages = [
+            (int) $percentageExist->customer,
+            (int) $percentageExist->strategy,
+            (int) $percentageExist->technology,
+            (int) $percentageExist->operation,
+            (int) $percentageExist->culture,
+        ];
+        }
+
+        }
+        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
+        return view('admin.PreliminaryResults.userResults',compact('user','g_user','percentageExist','labels','percentages'));
     }
+
+
 
 }
