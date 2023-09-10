@@ -126,7 +126,7 @@ class GovorganizationController extends Controller
 
         // return view("auth.login");
     }
- 
+
     /**
      * Display the specified resource.
      */

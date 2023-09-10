@@ -63,7 +63,8 @@ class HomeController extends Controller
         $strategyDataExists = Auth::user()->govorganizationdetail->strategy;
         $cultureDataExists = Auth::user()->govorganizationdetail->culture;
         $cdioDataExists = Auth::user()->govorganizationdetail->cdio_name;
-        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists'));
+        $resourcedataexists = Auth::user()->govorganizationdetail->resource;
+        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists','resourcedataexists'));
     }
 
 

@@ -315,5 +315,10 @@ class PDFController extends Controller
         return view('admin.PreliminaryResults.generatePDF',compact('percentage','culture','technology','labels','customer','operation','strategy','sums','govorganizationdetail'));
      }
 
+    public function download(){
+        $path=public_path('Resources.xlsx');
+        return response()->download($path);
+    }
+
 
 }

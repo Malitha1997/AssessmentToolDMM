@@ -3,17 +3,21 @@
 @section('content')
 
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section data-aos="fade-down" data-aos-duration="1000" >
-        <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
-            <div class="row" style="width:1377px;height:185px">
-                <div class="col">
-                    <div class="row" style="margin-top:10px;width:1050px"><span style="font-family: Poppins, sans-serif;color: #C51010;font-size:24px"><b>Attention !</b></span></div>
-                    <div class="row" style="margin-top:10px;"><span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">It seems that you have some sections of the incomplete. To proceed, please make sure to click the <br>below button and fill out all the necessary information accurately. After filling these information you <br>can start Preliminary Assessment</span></div>
+    <section data-aos="fade-down" data-aos-duration="1000">
+        @if($resourcedataexists)
+        {{--  If resource data exists, don t display this section  --}}
+        @elseif(!$resourcedataexists)
+                <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
+                    <div class="row" style="width:1377px;height:185px">
+                        <div class="col">
+                            <div class="row" style="margin-top:10px;width:1050px"><span style="font-family: Poppins, sans-serif;color: #C51010;font-size:24px"><b>Attention !</b></span></div>
+                            <div class="row" style="margin-top:10px;"><span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">It seems that you have some sections of the incomplete. To proceed, please make sure to click the <br>below button and fill out all the necessary information accurately. After filling these information you <br>can start Preliminary Assessment.</span></div>
+                        </div>
+                        <div class="col" style="margin-top:60px;width:327px"><a class="btn btn-primary" href="/resources" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Continue</a></div>
+                    </div>
                 </div>
-                <div class="col" style="margin-top:60px;width:327px"><a class="btn btn-primary" href="/resources" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Continue</a></div></div>
-            </div>
-        </div>
-        <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 50px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
+        @endif
+        <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
             <div class="row">
                 <div class="col" style="width:1377px;height:168px">
                     <div class="row" style="margin-top:50px;width:700px">

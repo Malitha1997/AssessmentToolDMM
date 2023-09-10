@@ -203,14 +203,6 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col" style="width: 250px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Resources</span></div>
-                    <div class="col" style="font-size: 18px;width: 250px;margin-left: 100px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Doc</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
                     <div class="col" style="width: 250px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Related Doc<br><br></span></div>
                     <div class="col" style="font-size: 18px;width: 250px;margin-left: 100px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>fghj.pdf</span></div>
                 </div>

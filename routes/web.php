@@ -5,6 +5,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GovofficialController;
 use App\Http\Controllers\GoogleChartsController;
@@ -42,6 +43,7 @@ Route::get('/report', function () {
 Route::get('/adminNavbar', function () {
     return view('layouts.adminNavbar');
 });
+
 
 
 Route::resource('users', UserController::class);
@@ -88,6 +90,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     });
 
     Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
+    Route::get('download','PDFController@download');
+    Route::resource('resourceusers', ResourceController::class);
 
 });
 
