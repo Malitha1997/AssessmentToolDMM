@@ -12,8 +12,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
 
-    
     {{--  <link rel="stylesheet" href="{{ asset('cssfile/chart.css') }}">  --}}
 </head>
 
@@ -27,7 +27,7 @@
                     <div class="sidebar-brand-text mx-3" >
                         <ul class="navbar-nav text-light" id="accordionSidebar-1" style="margin-left: -15px;">
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="/admin/home"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organization"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organizations"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(3).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Assessment</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="{{ route('create-user') }}"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(5).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>

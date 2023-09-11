@@ -458,9 +458,16 @@ class GovorganizationController extends Controller
      */
     public function destroy(Govorganizationdetail $govorganization) : RedirectResponse
     {
+        $user = User::find($govorganization->user_id);
+
+        // Delete the user if it exists
+        if ($user) {
+            $user->delete();
+        }
+
         $govorganization->delete();
 
-         return redirect()->route('home');
+        return redirect()->route('home');
 
     }
 
@@ -482,6 +489,16 @@ class GovorganizationController extends Controller
 
     public function resources(){
         return view('govOrganizations.resources');
+    }
+
+    public function activateUser(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $user->update([
+            'is_active' => $request->has('is_active') ? 1 : 0,
+        ]);
+
+        return redirect()->back()->with('status', 'User account status updated.');
     }
 
 }

@@ -46,7 +46,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        
+
     ];
 
 
@@ -118,6 +118,10 @@ class User extends Authenticatable
 
     public function govofficial(){
         return $this->hasOne(Govofficial::class);
+    }
+    public function isActive()
+    {
+        return $this->is_active == 1;
     }
 
 }

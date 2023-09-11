@@ -111,6 +111,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
     Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
+    
+
 });
 
 Route::resource('users', UserController::class);

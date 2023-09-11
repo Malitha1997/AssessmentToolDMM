@@ -34,10 +34,10 @@
                         </div>
                         <div class="row" style="text-align: center;margin-top: -10px;">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
-                                {{--  $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");  --}}
-                                <?php
-                                $connection = mysqli_connect("localhost","root","","assessmenttool");
 
+                                <?php
+
+                                $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
                                 $query= "SELECT id FROM govorganizationdetails ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
 
@@ -81,7 +81,7 @@
                         <div class="row">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                     <?php
-                                    $connection = mysqli_connect("localhost","root","","assessmenttool");
+                                    $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
 
                                     $query= "SELECT id FROM percentages ORDER BY id";
                                     $query_run = mysqli_query ($connection, $query);
@@ -101,7 +101,7 @@
             </div>  --}}
         </div>
     </div>
-    <div class="row" style="width:1200px">
+    <div class="row" style="width:1200px"  id="organizations">
         <div class="col">
             <div data-aos="zoom-in" data-aos-duration="1000" style="margin-left:50px;width:500px;height:692px;box-shadow: 5px 0px 15px 1px #747678;margin-top:450px">
                 <div class="row" style="margin-top: 20px">
@@ -118,7 +118,8 @@
                         @foreach ($percentageExists as $percentageExist)
                             <tr style="font-family: Poppins, sans-serif;">
                                 <td>{{ $percentageExist->govorganizationdetail->govorganizationname->gov_org_name }}</td>
-                                <td><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$percentageExist->govorganizationdetail->user_id) }}"></a></td>
+                                <td><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$percentageExist->govorganizationdetail->user_id) }}"></a>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
@@ -141,7 +142,7 @@
                         @foreach ($govorganizations as $key => $govorganization)
                         <tr style="font-family: Poppins, sans-serif;">
                             <td>{{ $govorganization->govorganizationname->gov_org_name }}</td>
-                            <td> <form action="{{ route('govorganizations.destroy',$govorganization->id) }}" method="POST">
+                            <td> <form action="{{ route('govorganizations.destroy',$govorganization->id) }}" method="POST" onsubmit="return submitForm(this)">
                                 <div class="row">
                                     <a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$govorganization->user_id) }}"></a>
 
@@ -421,7 +422,24 @@
         });
     </script>
     </table>
+    <script>
+        function submitForm(form) {
+            swal({
+                title: "Are you sure you want to delete this data?",
+                text: "Deleting this data will remove it permanently.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then(function (isOkay) {
+                if (isOkay) {
+                    form.submit();
+                }
+            });
 
+            return false;
+        }
+    </script>
 
 </div>
 </div>
