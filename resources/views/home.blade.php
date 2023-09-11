@@ -4,9 +4,9 @@
 
 <body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-down" data-aos-duration="1000">
-        @if($resourcedataexists)
+        @if($resourceDataExists)
         {{--  If resource data exists, don t display this section  --}}
-        @elseif(!$resourcedataexists)
+        @elseif(!$resourceDataExists)
                 <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
                     <div class="row" style="width:1377px;height:185px">
                         <div class="col">

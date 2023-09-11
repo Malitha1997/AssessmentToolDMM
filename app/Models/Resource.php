@@ -11,6 +11,6 @@ class Resource extends Model
     use HasFactory;
 
     public function govorganizationdetail(){
-        return $this->hasOne(Govorganizationdetail::class);
+        return $this->belongsTo(Govorganizationdetail::class);
     }
 }

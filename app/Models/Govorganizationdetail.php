@@ -97,6 +97,6 @@ class Govorganizationdetail extends Model
     }
 
     public function resource(){
-        return $this->belongsTo(Resource::class);
+        return $this->hasMany(Resource::class);
     }
 }

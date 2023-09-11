@@ -131,7 +131,7 @@
                     <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Registered Organizations</span>
                 </div>
                 <div class="row" style="margin-left: 10px;margin-top: 10px">
-                    <table class="table" style="width: 400px">
+                    <table class="table" style="width: 450px">
                         <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                             <tr>
                                 <th scope="col">Organization Name</th>
@@ -141,7 +141,17 @@
                         @foreach ($govorganizations as $key => $govorganization)
                         <tr style="font-family: Poppins, sans-serif;">
                             <td>{{ $govorganization->govorganizationname->gov_org_name }}</td>
-                            <td><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$govorganization->user_id) }}"></a></td>
+                            <td> <form action="{{ route('govorganizations.destroy',$govorganization->id) }}" method="POST">
+                                <div class="row">
+                                    <a class="btn btn-primary d-flex flex-row justify-content-center align-items-start" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{ route('govorganizations.show',$govorganization->user_id) }}"></a>
+
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" style="background: url(&quot;{{ asset('img/Delete.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;margin-left:5px"></button>
+
+                                </form>
+                                </div>
+                            </td>
                         </tr>
                         @endforeach
                     </table>

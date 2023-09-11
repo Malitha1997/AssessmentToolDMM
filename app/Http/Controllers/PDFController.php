@@ -316,7 +316,7 @@ class PDFController extends Controller
      }
 
     public function download(){
-        $path=public_path('Resources.xlsx');
+        $path=public_path('GoSL_Org District Data Collection Sheet.xlsx');
         return response()->download($path);
     }
 

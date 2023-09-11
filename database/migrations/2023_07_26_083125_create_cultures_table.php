@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('employee_engagement');
             $table->string('level_of_skill');
             $table->string('talent_management');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 
