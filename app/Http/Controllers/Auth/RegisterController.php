@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            
+
         ]);
 
         // Auth::guard()->login($user);
@@ -91,23 +91,23 @@ class RegisterController extends Controller
         return view("auth.register2");
      }
 
-    public function govofficialaccount(Request $request){
+    public function adminUserCreate(Request $request){
         request()->validate([
             'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
             'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6|same:confirm-password',
-            'type'=> 'required|string'
+
         ]);
-dd($request);
+//dd($request);
         $user=new User;
 
         $user->username=$request->username;
         $user->email=$request->email;
-        $user->password=$request->password;
+        $user->password=Hash::make($request->password);
 
         $user->save();
 
-        return redirect("login2");
+        return redirect->route('home');
      }
 
 }

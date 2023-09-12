@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 use App\Models\Culture;
 
 use App\Models\Customer;
+use App\Models\User;
 use App\Models\Strategy;
 use App\Models\Operation;
 use Illuminate\View\View;
@@ -62,7 +63,12 @@ class HomeController extends Controller
         $strategyDataExists = Auth::user()->govorganizationdetail->strategy;
         $cultureDataExists = Auth::user()->govorganizationdetail->culture;
         $cdioDataExists = Auth::user()->govorganizationdetail->cdio_name;
-        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists'));
+        $users = Auth::user();
+        $govOrganizationDetail = $users->govorganizationdetail;
+
+        $resourceDataExists = $govOrganizationDetail ? $govOrganizationDetail->resource()->exists() : false;
+
+        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists','resourceDataExists','users'));
     }
 
 
@@ -80,8 +86,11 @@ class HomeController extends Controller
     public function adminHome(): View
     {
         $govorganizations = Govorganizationdetail::get();
+        $percentageExists = Percentage::get();
 
         $percentages = Percentage::all();
+
+        $users = User::get();
 
     $sums = [
         'customer' => $percentages->avg('customer'),
@@ -268,7 +277,7 @@ class HomeController extends Controller
         ['Policy', $strColumnSums['policy']],
         ['Invention', $strColumnSums['invention']],
     ];
-        return view('adminHome',compact('govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg'));
+        return view('adminHome',compact('govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg','percentageExists','users'));
     }
 
 
@@ -296,5 +305,15 @@ class HomeController extends Controller
     public function landingHome(): View
     {
         return view('landing');
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $user = User::find($request->user_id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+
     }
 }

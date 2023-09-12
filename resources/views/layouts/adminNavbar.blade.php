@@ -9,21 +9,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('cssfile/aos.min.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+
+    {{--  <link rel="stylesheet" href="{{ asset('cssfile/chart.css') }}">  --}}
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <div class="row">
         <div class="col"style="width:150px">
-        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:3586px;margin-top: 108px;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
+        <nav class="navbar align-items-start position-fixed sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:3586px;margin-top: 108px;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
             <div class="container-fluid d-flex flex-column p-0" >
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-text mx-3" >
                         <ul class="navbar-nav text-light" id="accordionSidebar-1" style="margin-left: -15px;">
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="#overall"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organization"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="/admin/home"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organizations"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(3).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Assessment</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="{{ route('create-user') }}"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(5).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>
                         </ul>
                     </div>
@@ -77,18 +83,27 @@
         </div>
     </nav>
 
-    <footer data-aos="slide-down" data-aos-duration="1000" id="myFooter" style="height:98.66px;background-color:#161A55">
+    <footer data-aos="slide-up" data-aos-duration="1000" id="myFooter" style="bottom: 0; width: 100%; background-color: #161A55; height: 98.66px;">
         <div class="container-fluid">
             <div class="row">
-                <span style="font-color:#ffffff">Copyright © 2023 ICT Agency Sri Lanka. All rights reserved</span>
+                <span style="color: #ffffff;">Copyright © 2023 ICT Agency Sri Lanka. All rights reserved.</span>
             </div>
         </div>
     </footer>
+
 
     <script src="{{ asset('jsfile/bootstrap.min.js') }}"></script>
     <script src="{{ asset('jsfile/aos.min.js') }}"></script>
     <script src="{{ asset('jsfile/bs-init.js') }}"></script>
     <script src="{{ asset('jsfile/theme.js') }}"></script>
+    <script src="{{ asset('jsfile/chart.js') }}"></script>
+    <script defer src="{{ asset('jsfile/index.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" >
 </body>
 
 </html>

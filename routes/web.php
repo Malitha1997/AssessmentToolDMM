@@ -5,6 +5,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GovofficialController;
 use App\Http\Controllers\GoogleChartsController;
@@ -43,6 +44,8 @@ Route::get('/adminNavbar', function () {
     return view('layouts.adminNavbar');
 });
 
+
+
 Route::resource('users', UserController::class);
 
 Auth::routes();
@@ -78,6 +81,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/store-value-page04', [PreliminaryassessmentController::class, 'storeValuePage04'])->name('storeValue4');
     Route::post('/store-value-page05', [PreliminaryassessmentController::class, 'storeValuePage05'])->name('storeValue5');
 
+    Route::get('/resources',[GovorganizationController::class,'resources'])->name('resources');
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
@@ -86,6 +90,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     });
 
     Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
+    Route::get('download','PDFController@download');
+    Route::resource('resourceusers', ResourceController::class);
 
 });
 
@@ -93,6 +99,19 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home');
+    // Route::get('/admin/organizationProfile', [GovorganizationController::class, 'organizationProfile'])->name('organizationProfile');
+    Route::resource('govorganizations', GovorganizationController::class);
+    Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
+    Route::get('generate-pdf/{id}', [PDFController::class, 'adminGeneratePDF'])->name('generate-pdf');
+    Route::get('technologyresults/{id}', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
+    Route::get('customerresults/{id}', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
+    Route::get('operationresults/{id}', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
+    Route::get('strategyresults/{id}', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
+    Route::get('cultureresults/{id}', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
+
+    Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
+    Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
+    
 
 });
 

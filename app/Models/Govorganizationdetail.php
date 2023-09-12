@@ -6,6 +6,7 @@ use App\Models\Cdio;
 use App\Models\User;
 use App\Models\Culture;
 use App\Models\Customer;
+use App\Models\Resource;
 use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Percentage;
@@ -93,5 +94,9 @@ class Govorganizationdetail extends Model
 
     public function govofficials(){
         return $this->hasMany(Govofficial::class);
+    }
+
+    public function resource(){
+        return $this->hasMany(Resource::class);
     }
 }

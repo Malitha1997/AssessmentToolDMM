@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('types_of_service');
             $table->string('dtu_type')->default('No data'); ;
             $table->string('number_of_employees_dtu')->default('No data'); ;
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('related_ministry_id')->constrained('related_ministries');
             $table->foreignId('organization_category_id')->constrained('organization_categories');
             $table->foreignId('govorganizationname_id')->constrained('govorganizationnames');
