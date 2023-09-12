@@ -10,6 +10,7 @@
       color: #000000;
       padding: 10px;
       font-family: Poppins, sans-serif;
+      font-size: 15px;
       text-align: justify;
         text-justify: inter-word;
     }
@@ -23,7 +24,7 @@
             <div class="row">
                 <div class="col" style="margin-left: 50px;width: auto;margin-top: 20px">
                     <h1 style="font-family: Poppins, sans-serif;color: #1f2471;font-weight: bold;text-align: center;margin-top: 5px;">Organization Profile</h1>
-                    <div class="container">
+                    {{--  <div class="container">
                         <div class="row" style="width:1100px;height:450px;border-radius: 10px;border: 2px solid #5f2b84;">
                             <div class="row"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">User account</span></div>
                             <div class="row" style="font-size: 20px;margin-top: 10px;font-family: Poppins, sans-serif;">
@@ -68,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  --}}
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">General Information</span></div>
                         {{--  <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">  --}}
@@ -324,8 +325,8 @@
                                     <p class="text-danger"><b>Select the title</b></p>
                                 @endif
                             </div>
-                            <div class="col" style="width:50px">
-                                <input class="form-control-lg" name="name_of_the_head" type="text" placeholder="Enter the name" style="width: 380px;margin-left:30px" value="{{ old('name_of_the_head', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head, 2)[1]) }}">
+                            <div class="col">
+                                <input class="form-control" name="name_of_the_head" type="text" placeholder="Enter the name" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px" value="{{ old('name_of_the_head', explode(' ', Auth::user()->govorganizationdetail->name_of_the_head, 2)[1]) }}">
                                 @if($errors->has('name_of_the_head'))
                                     <p class="text-danger"><b>Enter the name</b></p>
                                 @endif
@@ -384,8 +385,10 @@
                         </div>
                         <div class="col" style="border: 0px;font-family: Poppins;text-align: left">
                             <select id="dtu_type" name="dtu_type" class="form-control text-dark mb-1" style="font-size:20px;margin-left:15px;background: rgb(255,255,255);color: rgb(139,128,128);text-align: left;width: 500px;height:54px;border-radius:5px" value="{{ old('availablity_of_IT_unit')}}" data-toggle="tooltip" data-placement="bottom" title='
-                            Fully Fledged - This IT unit has already implemented and completed digital transformation initiatives, showcasing a track record of successful adoption and integration of digital technologies across various aspects of the organization. The size of the IT unit is larger than nine people, indicating a substantial and dedicated team responsible for managing and driving digital initiatives.<br><br>
-                            Mid Scale - This IT unit is actively engaged in ongoing digital transformation initiatives and has completed some of the digital transformation projects initiated. It demonstrates a commitment to adopting digital technologies and modernizing its operations. The size of the IT unit ranges from three to nine people, suggesting a moderately sized team dedicated to implementing digital initiatives.<br><br>
+                            Fully Fledged - This IT unit has already implemented and completed digital transformation initiatives, showcasing a track record of successful adoption and integration of digital technologies across various aspects of the organization. The size of the IT unit is larger than nine people, indicating a substantial and dedicated team responsible for managing and driving digital initiatives.<br>
+                            <hr>
+                            Mid Scale - This IT unit is actively engaged in ongoing digital transformation initiatives and has completed some of the digital transformation projects initiated. It demonstrates a commitment to adopting digital technologies and modernizing its operations. The size of the IT unit ranges from three to nine people, suggesting a moderately sized team dedicated to implementing digital initiatives.<br>
+                            <hr>
                             Small Scale - This IT unit has not yet started any digital transformation initiatives. It may have limited digital capabilities and is yet to fully integrate digital technologies into its operations. The size of the IT unit is less than three people, indicating a small team responsible for basic IT functions.
                         '>
                             <script>
