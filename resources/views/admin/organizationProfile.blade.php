@@ -64,7 +64,7 @@
         </div>
     </div>
 </div>
-<div data-aos="fade-down" data-aos-duration="1000" style="font-family: Poppins, sans-serif;height: 600px;margin-top: 60px;border-radius: 10px;border: 1.4px solid #05415C;"><span style="color: #F01F75;font-size: 20px;font-weight: bold;background: var(--bs-tertiary-bg);margin-left: 30px;margin-top: 20px;">General Information</span>
+<div data-aos="fade-down" data-aos-duration="1000" style="font-family: Poppins, sans-serif;height: 700px;margin-top: 60px;border-radius: 10px;border: 1.4px solid #05415C;"><span style="color: #F01F75;font-size: 20px;font-weight: bold;background: var(--bs-tertiary-bg);margin-left: 30px;margin-top: 20px;">General Information</span>
     <div class="container" style="margin-top: 30px;height: 500px;">
         <div class="row">
             <div class="col-md-6">
@@ -100,10 +100,7 @@
                     <div class="col" style="width: 250px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Number of Employees:</span></div>
                     <div class="col" style="font-size: 18px;width: 250px;margin-left: -30px;"><span style="color: #1F2471;font-size: 18px;font-weight: bold;"><br>{{ $g_user->number_of_employee }}</span></div>
                 </div>
-                <div class="row">
-                    <div class="col" style="width: 250px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Districts of Operations</span></div>
-                    <div class="col" style="font-size: 18px;width: 250px;margin-left: -30px;"><span style="color: #1F2471;font-size: 18px;font-weight: bold;"><br>{{ $g_user->districts_of_operations }}</span></div>
-                </div>
+
             </div>
             <div class="col-md-6">
                 <div class="row">
@@ -111,7 +108,13 @@
                     <div class="col"><span style="color: #1F2471;font-size: 18px;font-weight: bold;"><br>{{ $g_user->gov_org_address }}</span></div>
                 </div>
             </div>
-        </div><span style="color: #F01F75;font-size: 20px;font-weight: bold;margin-left: 30px;"><br><br>Organization Contact Detail<br><br></span>
+        </div>
+        <div class="row">
+                <div class="col" style="width: 50px;"><span style="color: var(--bs-emphasis-color);font-size: 18px;"><br>Districts of Operations</span></div>
+                <div class="col-md-10" style="font-size: 18px;width: 750px"><span style="color: #1F2471;font-size: 18px;font-weight: bold">{{ $g_user->districts_of_operations }}</span></div>
+        </div>
+
+        <span style="color: #F01F75;font-size: 20px;font-weight: bold;margin-left: 30px;"><br><br>Organization Contact Detail<br><br></span>
         <div class="row">
             <div class="col-md-6">
                 <div class="row">

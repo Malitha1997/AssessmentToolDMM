@@ -380,9 +380,9 @@ class GovorganizationController extends Controller
     public function update(Request $request, string $id)
     { //dd($request);
         request()->validate([
-            'username' => 'required|string|max:255|regex:/^[a-zA-Z0-9]+$/',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|min:6|same:confirm-password',
+            // 'username' => 'required|string|max:255|regex:/^[a-zA-Z0-9]+$/',
+            // 'email' => 'required|string|max:255',
+            // 'password' => 'required|string|min:6|same:confirm-password',
             'gov_org_name'=> 'required|string|min:1|max:255',
             'related_ministry'=> 'required|string',
             'org_category'=> 'required|string',
@@ -406,16 +406,16 @@ class GovorganizationController extends Controller
         //dd($request);
         $user = User::find($id);
 
-        $user->username=$request->username;
-        $user->email=$request->email;
-        $user->password = Hash::make($request->password);
+        // $user->username=$request->username;
+        // $user->email=$request->email;
+        // $user->password = Hash::make($request->password);
 
-        $user->update();
+        // $user->update();
 
         //dd($request);
         $governmentOrganization =new Govorganizationdetail;
 
-        //$governmentOrganization->user_id = $request->user_id;
+        // $governmentOrganization->user_id = $request->user_id;
         $governmentOrganization->govorganizationname_id = $request->gov_org_name;
         $governmentOrganization->gov_org_email = $request->gov_org_email;
         $governmentOrganization->gov_org_address = $request->gov_org_address;

@@ -92,7 +92,7 @@
                         <div class="col" style="margin-top: 10px;">
                             <picture><img data-aos="fade-down" src="{{ asset('img/Map.png') }}" style="margin-left: 0px;margin-right: 10px;" width="25" height="25"></picture><label class="col-form-label" data-aos="fade-down" style="font-family: Poppins, sans-serif;color :#5f2b84;font-size: 20px;margin-top: 0px;">District of operations</span>
                         </div>
-                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" style="border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" readonly></div>
+                        <div class="col" style="border: 0px;font-family: Poppins;text-align: left"><input class="" type="text" style="width:550px;border: 0px;font-family: Poppins;text-align: left;font-size: 20px;" value="{{Auth::user()->govorganizationdetail->districts_of_operations}}" readonly></div>
                     </div>
                     <div class="row" style="margin-top: 30px;margin-bottom: 25px;">
                         <div class="col"><span data-aos="fade-down" style="color: #f01f75;font-size: 20px;font-weight: bold;font-family: Poppins, sans-serif;">Organization Contact Detail</span></div>
