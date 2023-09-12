@@ -34,10 +34,10 @@
                         </div>
                         <div class="row" style="text-align: center;margin-top: -10px;">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
-
+                                {{--  $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");  --}}
                                 <?php
-
                                 $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+
                                 $query= "SELECT id FROM govorganizationdetails ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
 

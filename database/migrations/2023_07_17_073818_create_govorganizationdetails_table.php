@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gov_org_address');
             $table->string('gov_org_email');
             $table->string('number_of_employee');
-            $table->string('districts_of_operations');
+            $table->text('districts_of_operations');
             $table->string('phone_number');
             $table->string('availablity_of_IT_unit');
             $table->string('name_of_the_head');
