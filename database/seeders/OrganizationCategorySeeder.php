@@ -61,5 +61,9 @@ class OrganizationCategorySeeder extends Seeder
             'org_category' => 'Pradeshiya Sabha',
         ]);
 
+        DB::table('organization_categories')->insert([
+            'org_category' => 'Government Owned Company',
+        ]);
+
     }
 }
