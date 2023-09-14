@@ -31,7 +31,7 @@ class GoogleChartsController extends Controller
         ['Citizen Experience', (int) $customer->citizen_experience],
         ['Citizen Experience Strategy', (int) $customer->citizen_experience_strategy],
         ['Citizen Insights', (int) $customer->citizen_insights],
-        ['Citizen Trust', (int) $customer->citizen_trust],
+        ['Citizen Trust', (int) $customer->citizen_trust], 
     ];
 
     // Pass the organized data to the view

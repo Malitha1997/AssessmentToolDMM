@@ -311,6 +311,7 @@
                                     <option value="Dr.">Dr.</option>
                                     <option value="Prof.">Prof.</option>
                                     <option value="Ven.">Ven.</option>
+                                    <option value="Major General (Rtd.)">Major General (Rtd.)</option>
                                 </select>
                                 @if($errors->has('headTitle'))
                                 <p class="text-danger"><b>Select the title</b></p>
