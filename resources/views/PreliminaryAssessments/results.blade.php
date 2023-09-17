@@ -38,13 +38,23 @@
                             datasets: [{
                                 label: "Marks for each dimension",
                                 data: {!! json_encode($percentages) !!},
-                                backgroundColor: "transparent",
+                                backgroundColor: "rgba(255, 99, 132, 0.2)",
                                 borderColor: "rgba(229, 89, 52, 1)",
                                 borderWidth: 2,
                                 pointBackgroundColor: "pink",
                                 pointRadius: 6,
-                            }],
+                            },
+                            {
+                                label: "Overall Results",
+                                data: {!! json_encode($sums) !!},
+                                backgroundColor: "rgba(54, 162, 235, 0.2)",
+                                borderColor: "rgb(54, 162, 235)",
+                                borderWidth: 2,
+                                pointBackgroundColor: "#d0fbfe",
+                                pointRadius: 6,
+                            }]
                         };
+
 
                         var radarOptions = {
                             responsive: false,

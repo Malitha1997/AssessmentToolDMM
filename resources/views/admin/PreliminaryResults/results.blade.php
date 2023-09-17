@@ -32,7 +32,7 @@
                 <div class="col">
                     <canvas id="chartId" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 200px; font-size: 20px;" height="664" width="830"></canvas>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-                    <script> 
+                    <script>
                         var ctx = document.getElementById("chartId").getContext("2d");
                         var radarData = {
                             labels: {!! json_encode($labels) !!},
