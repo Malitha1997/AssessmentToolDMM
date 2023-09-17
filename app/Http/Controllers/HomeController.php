@@ -85,22 +85,25 @@ class HomeController extends Controller
 
     public function adminHome(): View
     {
-        $govorganizations = Govorganizationdetail::get();
+        $govorganizations = Govorganizationdetail::all();
         $percentageExists = Percentage::get();
 
         $percentages = Percentage::all();
 
+        $govorganizationCount=count($govorganizations);
+        $percentagesCount=count($percentages);
+
         $users = User::get();
+        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
 
     $sums = [
-        'customer' => $percentages->avg('customer'),
-        'strategy' => $percentages->avg('strategy'),
-        'technology' => $percentages->avg('technology'),
-        'operation' => $percentages->avg('operation'),
-        'culture' => $percentages->avg('culture'),
+        $percentages->avg('customer'),
+        $percentages->avg('strategy'),
+        $percentages->avg('technology'),
+        $percentages->avg('operation'),
+        $percentages->avg('culture'),
 
     ];
-
     //Technology chart
     $technologies = Technology::all();
 
@@ -277,7 +280,7 @@ class HomeController extends Controller
         ['Policy', $strColumnSums['policy']],
         ['Invention', $strColumnSums['invention']],
     ];
-        return view('adminHome',compact('govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg','percentageExists','users'));
+        return view('adminHome',compact('percentagesCount','govorganizationCount','labels','govorganizations','sums','tecAvg','cusAvg','opAvg','culAvg','strAvg','percentageExists','users'));
     }
 
 

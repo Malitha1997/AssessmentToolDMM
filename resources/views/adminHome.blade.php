@@ -18,7 +18,49 @@
                             </div>
                             <div class="row" id="overall" style="margin-top: 30px;width: 604.32px;height: 522px">
                                 {{--  <img src="{{ asset('img/Group 84(1).png') }}">  --}}
-                                <canvas id="radarChart" style="margin-left: 90px"></canvas>
+                                <canvas id="radarChart" aria-label="chart" data-aos="fade-down" data-aos-duration="1000" style="margin-left: 30px; font-size: 20px;" height="600" width="600"></canvas>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+                                <script>
+                                    var ctx = document.getElementById("radarChart").getContext("2d");
+                                    var radarData = {
+                                        labels: {!! json_encode($labels) !!},
+                                        datasets: [{
+                                            label: "Overall Results",
+                                            data: {!! json_encode($sums) !!},
+                                            backgroundColor: "transparent",
+                                            borderColor: "rgba(229, 89, 52, 1)",
+                                            borderWidth: 2,
+                                            pointBackgroundColor: "pink",
+                                            pointRadius: 6,
+                                        }],
+                                    };
+
+                                    var radarOptions = {
+                                        responsive: false,
+                                        elements: {
+                                            line: {
+                                                borderWidth: 6,
+                                            }
+                                        },
+
+                                        scale: {
+                                            r: {
+                                                angleLines: {
+                                                    display: false
+                                                },
+                                                suggestedMin: 0,
+                                                suggestedMax: 100
+                                            }
+
+                                        }
+                                    };
+
+                                    var radarChart = new Chart(ctx, {
+                                        type: 'radar',
+                                        data: radarData,
+                                        options: radarOptions,
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -35,15 +77,16 @@
                         <div class="row" style="text-align: center;margin-top: -10px;">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                 {{--  $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");  --}}
-                                <?php
-                                $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                {{--  <?php
+                                $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                 $query= "SELECT id FROM govorganizationdetails ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
 
                                 $row = mysqli_num_rows($query_run);
                                 echo '<h3 style="font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold">'.$row.'</h3>';
-                                ?>
+                                ?>  --}}
+                                {{ $govorganizationCount }}
                             </span>
                         </div>
                     </div>
@@ -59,7 +102,7 @@
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 5px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                 //$connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
                                 <?php
-                                $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                 $query= "SELECT id FROM percentages ORDER BY id";
                                 $query_run = mysqli_query ($connection, $query);
@@ -80,15 +123,16 @@
                         </div>
                         <div class="row">
                             <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
-                                    <?php
-                                    $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");
+                                    {{--  <?php
+                                    $connection = mysqli_connect("localhost","root","","assessmenttool");
 
                                     $query= "SELECT id FROM percentages ORDER BY id";
                                     $query_run = mysqli_query ($connection, $query);
 
                                     $row = mysqli_num_rows($query_run);
                                     echo '<h3 style="font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold">'.$row.'</h3>';
-                                    ?>
+                                    ?>  --}}
+                                    {{ $percentagesCount }}
                             </span>
                         </div>
                     </div>
@@ -377,50 +421,7 @@
             </script>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-    <script>
-        var ctx = document.getElementById('radarChart').getContext('2d');
-        var sums = @json($sums);
 
-        var chart = new Chart(ctx, {
-            type: 'radar', // Use radar chart type
-            data: {
-                labels: ['Customer', 'Strategy', 'Technology', 'Operation', 'Culture'],
-                datasets: [
-                    {
-                        label: 'Overall Results',
-                        data: [sums.customer, sums.strategy, sums.technology, sums.operation, sums.culture],
-                        backgroundColor: 'transparent',
-                        borderColor: '#C51010',
-                        borderWidth: 2,
-                        pointRadius: 6,
-                    }
-                ]
-            },
-            options: {
-                elements: {
-                    line: {
-                       borderWidth: 10
-                    }
-                 },
-                scale: {
-                    pointLabels: {
-                        fontSize: 24, // Set the font size
-                        fontStyle: 'bold', // Set the font style
-                    },
-                    gridLines: {
-                        lineWidth: 60, // Set the axis width
-                    },
-                    ticks: {
-                        beginAtZero: true, // Start ticks at 0
-                        min: 0, // Minimum value
-                        max: 100, // Maximum value
-                        stepSize: 10, // Set the step size
-                    }
-                }
-            }
-        });
-    </script>
     </table>
     <script>
         function submitForm(form) {
