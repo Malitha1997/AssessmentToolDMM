@@ -212,7 +212,18 @@ class PreliminaryAssessmentResultController extends Controller
             (int) $percentage->culture,
         ];
 
-        return view('PreliminaryAssessments.results',compact('labels', 'percentages'));
+        $percentagesAll = Percentage::get();
+
+        $sums = [
+            $percentagesAll->avg('customer'),
+            $percentagesAll->avg('strategy'),
+            $percentagesAll->avg('technology'),
+            $percentagesAll->avg('operation'),
+            $percentagesAll->avg('culture'),
+
+        ];
+
+        return view('PreliminaryAssessments.results',compact('labels', 'percentages','sums'));
     }
 
     public function customerresult(){
@@ -272,8 +283,18 @@ class PreliminaryAssessmentResultController extends Controller
         }
 
         }
+        $percentagesAll = Percentage::get();
+
+        $sums = [
+            $percentagesAll->avg('customer'),
+            $percentagesAll->avg('strategy'),
+            $percentagesAll->avg('technology'),
+            $percentagesAll->avg('operation'),
+            $percentagesAll->avg('culture'),
+
+        ];
         $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
-        return view('admin.PreliminaryResults.userResults',compact('user','g_user','percentageExist','labels','percentages'));
+        return view('admin.PreliminaryResults.userResults',compact('sums','user','g_user','percentageExist','labels','percentages'));
     }
 
 
