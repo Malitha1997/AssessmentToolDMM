@@ -46,7 +46,7 @@
                 <div class="row d-flex flex-column" id="choise29" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd29_1" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">We do not capture citizens’ data</label></div>
+                            <div class="col"><input type="radio" id="sd29_1" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">We do not capture citizens’/customers' data</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
                             <div class="col"><input type="radio" id="sd29_2" value="5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">There is a document that has been reviewed and approved as the standard process. But activities might <br>not conducted according to the document as the document is outdated.</label></div>
