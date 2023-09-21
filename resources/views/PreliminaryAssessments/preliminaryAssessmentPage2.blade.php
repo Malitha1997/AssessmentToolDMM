@@ -11,8 +11,8 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="hidden" id="technology_marks" name="technologyMarks" value="{{ $inputValue['technologyMarks']}}">
-                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
+                    {{--  <input type="hidden" id="technology_marks" name="technologyMarks" value="{{ $inputValue['technologyMarks']}}">
+                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">  --}}
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -223,14 +223,14 @@
 
         <script type="text/javascript">
             $('#page2').find(":radio").on('click', e => {
-                tec = document.getElementById("technology_marks").value;
+                {{--  tec = document.getElementById("technology_marks").value;  --}}
                 q11 = document.getElementById("marks11").value;
                 q12 = document.getElementById("marks12").value;
                 q13 = document.getElementById("marks13").value;
                 q14 = document.getElementById("marks14").value;
                 q15 = document.getElementById("marks15").value;
 
-                var a=Number(tec) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
+                var a=Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
                 document.getElementById("page2_total_marks").value= a;
 
                 var cus= Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;

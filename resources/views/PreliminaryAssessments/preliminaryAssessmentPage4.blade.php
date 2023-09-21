@@ -10,10 +10,10 @@
                 <div class="row" style="margin-top: 10px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
+                    {{--  <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
                     <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
                     <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
-                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">
+                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">  --}}
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
             <div data-aos="fade-down" id="page4" data-aos-duration="1000" style="width: 1282px;height: 2550px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
@@ -331,7 +331,7 @@
 
         <script type="text/javascript">
             $('#page4').find(":radio").on('click', e => {
-                p3 = document.getElementById("page3_total_marks").value;
+                {{--  p3 = document.getElementById("page3_total_marks").value;  --}}
                 q20 = document.getElementById("marks20").value;
                 q21 = document.getElementById("marks21").value;
                 q22 = document.getElementById("marks22").value;
@@ -343,7 +343,7 @@
 
 
 
-                var a= Number(p3) + Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;
+                var a= Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;
                 document.getElementById("page4_total_marks").value= a;
 
                 var str= Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;

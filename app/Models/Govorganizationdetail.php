@@ -11,7 +11,12 @@ use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Percentage;
 use App\Models\Technology;
+use App\Models\TmpCulture;
 use App\Models\Govofficial;
+use App\Models\TmpCustomer;
+use App\Models\TmpStrategy;
+use App\Models\TmpOperation;
+use App\Models\TmpTechnology;
 use App\Models\RelatedMinistry;
 use App\Models\TypesOfServices;
 use App\Models\Govorganizationname;
@@ -98,5 +103,25 @@ class Govorganizationdetail extends Model
 
     public function resource(){
         return $this->hasMany(Resource::class);
+    }
+
+    public function tmpTechnology(){
+        return $this->hasOne(TmpTechnology::class);
+    }
+
+    public function tmpCulture(){
+        return $this->hasOne(TmpCulture::class);
+    }
+
+    public function tmpCustomer(){
+        return $this->hasOne(TmpCustomer::class);
+    }
+
+    public function tmpStrategy(){
+        return $this->hasOne(TmpStrategy::class);
+    }
+
+    public function tmpOperation(){
+        return $this->hasOne(TmpOperation::class);
     }
 }
