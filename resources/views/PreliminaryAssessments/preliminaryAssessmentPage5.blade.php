@@ -11,11 +11,15 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="hidden" id="page4_total_marks" name="page4_marks" value="{{ $inputValue['page4_marks']}}">
-                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
-                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
-                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">
-                    <input type="hidden" id="strategy_percentage" name="strategyPercentage" value="{{ $inputValue['strategyPercentage']}}">
+                    {{--  <input class="form-control" type="hidden" id="page4_total_marks" name="page4_marks" value="">  --}}
+                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{$technologyPercentage->technology_percentage}}" readonly>
+                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $customerPercentage->customer_percentage }}" readonly>
+                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $operationPercentage->operation_percentage }}" readonly>
+                    <input type="hidden" id="strategy_percentage" name="strategyPercentage" value="{{ $strategyPercentage->strategy_percentage}}" readonly>
+                    <input type="hidden" id="technology_marks" name="technologyMarks" value="{{$technologyPercentage->technology_marks}}" readonly>
+                    <input type="hidden" id="customer_marks" name="customerMarks" value="{{ $customerPercentage->customer_marks }}" readonly>
+                    <input type="hidden" id="operation_marks" name="operationMarks" value="{{ $operationPercentage->operation_marks }}" readonly>
+                    <input type="hidden" id="strategy_marks" name="strategyMarks" value="{{ $strategyPercentage->strategy_marks}}" readonly>
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -138,6 +142,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks32" name="marks_d32">
                     <input class="form-control" type="hidden" id="percentage32" name="percentage_d32">
+                    <input class="form-control" type="hidden" id="page5_total_marks" name="page5_marks">
                     <input class="form-control" type="hidden" id="culture_percentage" name="culturePercentage">
                     <input class="form-control" type="hidden" id="overall" name="overallPercentage">
                 </div>
@@ -231,7 +236,11 @@
 
         <script type="text/javascript">
             $('#page5').find(":radio").on('click', e => {
-                p4 = document.getElementById("page4_total_marks").value;
+                tec = document.getElementById("technology_marks").value;
+                op = document.getElementById("operation_marks").value;
+                str = document.getElementById("strategy_marks").value;
+                cul = document.getElementById("customer_marks").value;
+
                 q28 = document.getElementById("marks28").value;
                 q29 = document.getElementById("marks29").value;
                 q30 = document.getElementById("marks30").value;
@@ -239,11 +248,13 @@
                 q32 = document.getElementById("marks32").value;
 
                 var cul= Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
+                document.getElementById("page5_total_marks").value= cul;
+
                 var cul2= cul / 156.25;
                 var culture= (cul2 * 100).toFixed(0);
                 document.getElementById("culture_percentage").value= culture;
 
-                var a=Number(p4) + Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
+                var a= Number(tec) + Number(op) + Number(str) + Number(cul) + Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
                 var b= a / 1000;
                 var overall= (b * 100).toFixed(0);
                 document.getElementById("overall").value= overall;
