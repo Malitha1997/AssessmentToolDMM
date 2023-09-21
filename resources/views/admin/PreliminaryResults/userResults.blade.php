@@ -41,7 +41,7 @@
                                 pointRadius: 6,
                             },
                             {
-                                label: "Overall Results",
+                                label: "Country Level",
                                 data: {!! json_encode($sums) !!},
                                 backgroundColor: "rgba(54, 162, 235, 0.2)",
                                 borderColor: "rgb(54, 162, 235)",

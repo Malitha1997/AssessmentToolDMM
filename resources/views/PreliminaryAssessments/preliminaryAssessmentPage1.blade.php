@@ -264,7 +264,7 @@
                     <input class="form-control" type="hidden" id="percentage9" name="percentage_d9">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">10.&nbsp;To what extent does your organization have an online solution for providing services for citizens?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">10.&nbsp;To what extent does your organization have an online solution for providing services for citizens/customers?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise10" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
@@ -272,10 +272,10 @@
                             <div class="col"><input type="radio"value="10" id="sd10_1" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have well developed single sign-on (SSO) solution to obtain services from an organization</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio"value="5" id="sd10_2" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Some online services are available for citizens</label></div>
+                            <div class="col"><input type="radio"value="5" id="sd10_2" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Some online services are available for citizens/customers</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio"value="0" id="sd10_3" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not provide online services for citizens</label></div>
+                            <div class="col"><input type="radio"value="0" id="sd10_3" name="sd10" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd10_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not provide online services for citizens/customers</label></div>
                         </div>
                     </div>
                 </div>
