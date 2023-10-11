@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row" style="height: 50px;">
-    <div class="col" style="height: 50px;"><a href="#" style="margin-left: 50px;color: var(--bs-gray-500);font-size: 20px;">Assessments&nbsp; &nbsp; &nbsp;&gt;</a><a href="#" style="color: var(--bs-emphasis-color);font-size: 20px;">&nbsp; &nbsp; &nbsp; Competency Assessment</a></div>
+    <div class="col" style="height: 50px;"><a href="#" style="margin-left: 50px;color: var(--bs-gray-500);font-size: 20px;font-famly:poppins">Assessments&nbsp; &nbsp; &nbsp;&gt;</a><a href="#" style="color: var(--bs-emphasis-color);font-size: 20px;">&nbsp; &nbsp; &nbsp; Competency Assessment</a></div>
 </div>
 <div class="container" style="height: 100px;margin-top: 30px;margin-bottom:100px;font-family:poppins;">
     <div class="row" style="text-align: center;">
@@ -54,7 +54,7 @@
                         @foreach($govofficials as $govofficial)
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
-                            <td style="font-size: 12px;text-align: center;font-size:15px">{{ $govofficialCount }}</td>
+                            <td style="font-size: 12px;text-align: center;font-size:15px">1</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -113,6 +113,43 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-top: 50px;">
+                <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
+                    {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
+                    <div id="chart_div" style="width:542px;height:259px;font-family: Poppins;margin-left:50px;font-family:poppins"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', {packages: ['corechart', 'bar']});
+                        google.charts.setOnLoadCallback(drawBasic);
+
+                    function drawBasic() {
+                        {{--  var vAxis = ["Citizen Experience Strategy", "Citizen Engagement", "Citizen Experience", "Citizen Trust & Perception", "Citizen Insights & Behavior"];  --}}
+                    var data = google.visualization.arrayToDataTable({{ Js::from($ictAvg) }});
+
+                    var options = {
+
+                        chartArea: {width: '50%'},
+                        hAxis: {
+                        title: 'Proficiency',
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle:{fontName:'Poppins'}
+                        },
+                        vAxis: {
+                        title: 'Competency Area',
+                        textStyle:{fontName:'Poppins'},
+
+                        },
+                        colors: ['#92248D']
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+                    chart.draw(data, options);
+                    }
+                    </script>
+                </div>
+            </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
             <div style="width: 550px;height: 42px;margin-left: 0px;margin-top: 0px;border: 1px solid #545658;text-align: left;border-radius: 5px;"><i class="fa fa-filter" style="color: rgb(0,0,0);width: 20px;height: 20px;margin-left: 15px;font-size: 23px;text-align: left;margin-top: 5px;"></i>
@@ -132,50 +169,12 @@
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td style="font-size: 14px;">Cell 1</td>
-                            <td style="font-size: 12px;">10</td>
+                        @foreach($govofficials as $govofficial)
+                        <tr style="text-align: center;">
+                            <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
+                            <td style="font-size: 12px;text-align: center;font-size:15px">1</td>
                         </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">09</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">01</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">08</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -195,7 +194,7 @@
                             <div class="col"><span style="color: #1F2471;margin-top: 20px;font-size: 17px;">Number Of Responses</span></div>
                         </div>
                         <div class="row" style="background: var(--bs-body-bg);">
-                            <div class="col"><span style="color: #92248D;margin-top: 20px;font-size: 36px;font-weight: bold;">32</span></div>
+                            <div class="col"><span style="color: #92248D;margin-top: 20px;font-size: 36px;font-weight: bold;">{{ $digitalGovernmentCount }}</span></div>
                         </div>
                     </div>
                     <div class="col-md-6" style="width: 238px;background: var(--bs-body-bg);margin-left: 20px;border-radius: 10px;box-shadow: 0px 0px 10px #1F2471;">
@@ -206,6 +205,43 @@
                             <div class="col"><span style="color: #92248D;margin-top: 20px;font-size: 36px;font-weight: bold;">32</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
+                    {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
+                    <div id="chart_div2" style="width:542px;height:259px;font-family: Poppins;margin-left:50px;font-family:poppins"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', {packages: ['corechart', 'bar']});
+                        google.charts.setOnLoadCallback(drawBasic);
+
+                    function drawBasic() {
+                        {{--  var vAxis = ["Citizen Experience Strategy", "Citizen Engagement", "Citizen Experience", "Citizen Trust & Perception", "Citizen Insights & Behavior"];  --}}
+                    var data = google.visualization.arrayToDataTable({{ Js::from($digitalGovernmentAvg) }});
+
+                    var options = {
+
+                        chartArea: {width: '50%'},
+                        hAxis: {
+                        title: 'Proficiency',
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle:{fontName:'Poppins'}
+                        },
+                        vAxis: {
+                        title: 'Competency Area',
+                        textStyle:{fontName:'Poppins'},
+
+                        },
+                        colors: ['#CC1D56']
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+
+                    chart.draw(data, options);
+                    }
+                    </script>
                 </div>
             </div>
         </div>
@@ -226,54 +262,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="font-size: 14px;">Cell 1</td>
-                            <td style="font-size: 12px;">10</td>
+                        @foreach($govofficials as $govofficial)
+                        <tr style="text-align: center;">
+                            <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
+                            <td style="font-size: 12px;text-align: center;font-size:15px">1</td>
                         </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">09</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">01</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">08</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -293,7 +287,7 @@
                             <div class="col"><span style="color: #1F2471;margin-top: 20px;font-size: 17px;">Number Of Responses</span></div>
                         </div>
                         <div class="row" style="background: var(--bs-body-bg);">
-                            <div class="col"><span style="color: #037774;margin-top: 20px;font-size: 36px;font-weight: bold;">32</span></div>
+                            <div class="col"><span style="color: #037774;margin-top: 20px;font-size: 36px;font-weight: bold;">{{ $ManagementCount }}</span></div>
                         </div>
                     </div>
                     <div class="col-md-6" style="width: 238px;background: var(--bs-body-bg);margin-left: 20px;border-radius: 10px;box-shadow: 0px 0px 10px #1F2471;">
@@ -304,6 +298,43 @@
                             <div class="col"><span style="color: #037774;margin-top: 20px;font-size: 36px;font-weight: bold;">32</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
+                    {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
+                    <div id="chart_div3" style="width:542px;height:259px;font-family: Poppins;margin-left:50px;font-family:poppins"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script>
+                        google.charts.load('current', {packages: ['corechart', 'bar']});
+                        google.charts.setOnLoadCallback(drawBasic);
+
+                    function drawBasic() {
+                        {{--  var vAxis = ["Citizen Experience Strategy", "Citizen Engagement", "Citizen Experience", "Citizen Trust & Perception", "Citizen Insights & Behavior"];  --}}
+                    var data = google.visualization.arrayToDataTable({{ Js::from($managementAvg) }});
+
+                    var options = {
+
+                        chartArea: {width: '50%'},
+                        hAxis: {
+                        title: 'Proficiency',
+                        minValue: 0,
+                        maxValue: 100,
+                        textStyle:{fontName:'Poppins'}
+                        },
+                        vAxis: {
+                        title: 'Competency Area',
+                        textStyle:{fontName:'Poppins'},
+
+                        },
+                        colors: ['#037774']
+                    };
+
+                    var chart = new google.visualization.BarChart(document.getElementById('chart_div3'));
+
+                    chart.draw(data, options);
+                    }
+                    </script>
                 </div>
             </div>
         </div>
@@ -324,54 +355,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="font-size: 14px;">Cell 1</td>
-                            <td style="font-size: 12px;">10</td>
+                        @foreach($govofficials as $govofficial)
+                        <tr style="text-align: center;">
+                            <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
+                            <td style="font-size: 12px;text-align: center;font-size:15px">1</td>
                         </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">09</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">01</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr style="font-size: 12px;">
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">04</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">02</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">08</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
-                        <tr>
-                            <td style="font-size: 12px;">Cell 3</td>
-                            <td style="font-size: 12px;">07</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
