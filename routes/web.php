@@ -14,6 +14,7 @@ use App\Http\Controllers\GovofficialUserController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
+use App\Http\Controllers\CompetancyAssessmentController;
 use App\Http\Controllers\PreliminaryassessmentController;
 use App\Http\Controllers\PreliminaryAssessmentResultController;
 
@@ -111,8 +112,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
     Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
-    
 
+    Route::get('competancy/operational', [CompetancyAssessmentController::class, 'operational'])->name('competancyOperational');
 });
 
 Route::resource('users', UserController::class);
