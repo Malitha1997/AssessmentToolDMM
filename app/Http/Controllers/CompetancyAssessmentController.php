@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\OpIct;
 use App\Models\MidIct;
 use App\Models\TopIct;
@@ -13,10 +14,13 @@ use App\Models\TopManagement;
 use App\Models\OpDigitalGovernment;
 use App\Models\MidDigitalGovernment;
 use App\Models\TopDigitalGovernment;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Govorganizationdetail;
 
 class CompetancyAssessmentController extends Controller
 {
     public function operational(){
+        $users=User::get();
         $govofficial=Govofficial::all();
         $govofficialCount=count($govofficial);
         $govofficials=Govofficial::all();
@@ -200,7 +204,65 @@ class CompetancyAssessmentController extends Controller
             ['Capacity Building', (int) $avgCapacityBuilding],
             ['Performance Management', (int) $avgPerformanceManagement],
         ];
+        // dd($govofficials->govorganizationname);
 
-        return view('admin.CompetancyAssessment.OperationalLayer.dashboard',compact('opIct','managementAvg','ManagementCount','digitalGovernmentAvg','digitalGovernmentCount','ictAvg','govofficials','digitalGovernmentCount','ictCount','opIctCount','assessmentInprogress','govofficialCount','assessmentCompletedCount'));
+        return view('admin.CompetancyAssessment.Overall.dashboard',compact('users','opIct','managementAvg','ManagementCount','digitalGovernmentAvg','digitalGovernmentCount','ictAvg','govofficials','digitalGovernmentCount','ictCount','opIctCount','assessmentInprogress','govofficialCount','assessmentCompletedCount'));
+    }
+
+    public function create(Request $request){
+        request()->validate([
+            'username' => 'required|string|max:255|unique:users|regex:/^[a-zA-Z0-9]+$/',
+            'email' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:6|same:confirm-password',
+            'type' => 'required|integer'
+        ]);
+        //dd($request);
+
+        $user=new User;
+
+        $user->username=$request->username;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->password);
+        $user->type=$request->type;
+
+        $user->save();
+
+        return view('admin.CompetancyAssessment.createGovOfficial', ['user_id' => $request->input('user_id')]);
+    }
+
+    public function createGovOfficial(String $id){
+        request()->validate([
+            'user_id'=> 'required|string',
+            'full_name'=> 'required|string',
+            'preferred_name'=> 'required|string',
+            'designation'=> 'required|string',
+            'gov_org_name'=> 'required|string',
+            'contact_number'=> 'required|string',
+            'email'=> 'required|string',
+            'employment_layer'=> 'required|string',
+            'date_of_birth'=> 'required|string',
+        ]);
+//dd($request);
+        $govofficial=new Govofficial;
+
+        $govofficial->user_id=$request->user_id;
+        $govofficial->full_name=$request->full_name;
+        $govofficial->preferred_name=$request->preferred_name;
+        $govofficial->designation=$request->designation;
+        $govofficial->govorganizationdetail_id=$request->gov_org_name;
+        $govofficial->contact_number=$request->contact_number;
+        $govofficial->email=$request->email;
+        $govofficial->employment_layer=$request->employment_layer;
+        $govofficial->date_of_birth=$request->date_of_birth;
+
+        $govofficial->save();
+
+        return redirect("competancyOperational");
+    }
+
+    public function show(String $id){
+        // dd($govorganizationdetail_id);
+        $govofficial=Govofficial::find($id);
+        return view('admin.CompetancyAssessment.govOrganization.govOrganization',compact('govofficial'));
     }
 }

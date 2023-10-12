@@ -16,8 +16,8 @@ class Govorganizationname extends Model
         'gov_org_name'
     ];
 
-    public function govorganizationdetails(){
-        return $this->hasMany(Govorganizationdetail::class);
+    public function govorganizationdetail(){
+        return $this->hasOne(Govorganizationdetail::class);
     }
 
     public function govofficial(){

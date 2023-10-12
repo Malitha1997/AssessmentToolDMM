@@ -47,7 +47,8 @@
                     <thead>
                         <tr>
                             <th style="text-align: center;">Organization Name</th>
-                            <th style="text-align: center;">Number of Responses</th>
+                            <th style="text-align: center;">Number of <br>Responses</th>
+                            <th style="text-align: center;">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,8 @@
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
                             <td style="font-size: 12px;text-align: center;font-size:15px">1</td>
+                            <td style="font-size: 12px;text-align: center;font-size:15px"><a class="btn btn-primary d-flex flex-row justify-content-center align-items-start;margin-left:50%" type="button" style="margin-left: 0px;background: url(&quot;{{ asset('img/Maximize.png') }}&quot;), rgba(13,110,253,0);border-width:0px;width: 25px;height: 25px;" href="{{route('competancyAssessments.show',$govofficial->id)}}"></a></td>
+
                         </tr>
                         @endforeach
                     </tbody>
@@ -62,28 +65,28 @@
             </div>
         </div>
         <div class="col-md-6" style="margin-left: 10px;width: 585px;border-style: solid;border-color: var(--bs-secondary-bg);border-radius: 10px;height: 540px;">
+            @foreach($users as $user)
+            <form method="POST" action="{{ route('create-user-govofficial',$user->id) }}">
+                {{csrf_field()}}
+                @endforeach
             <div class="row">
                 <div class="col" style="text-align: center;background: var(--bs-secondary-bg-subtle);border-radius: 10px;border-style: none;border-color: var(--bs-secondary-bg);"><span style="color: #1F2471;font-weight: bold;text-align: center;font-size: 2;"><br>Add new official<br><br></span></div>
             </div>
             <div class="row" style="margin-top: 20px;">
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Full Name</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Preferred Name</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
+                <div class="col"><span style="color: var(--bs-emphasis-color);">Username</span><input type="text" name="username" id="username" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
+                <div class="col"><span style="color: var(--bs-emphasis-color);">Email</span><input type="email" name="email" id="email" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
             </div>
             <div class="row" style="margin-top: 20px;">
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Designation</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Organization Name</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
+                <div class="col"><span style="color: var(--bs-emphasis-color);">Password</span><input name="password" id="password" type="password" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
+                <div class="col"><span style="color: var(--bs-emphasis-color);">Confirm Password</span><input name="confirm-password" id="confirm-password" type="password" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
             </div>
-            <div class="row" style="margin-top: 20px;">
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Contact Number</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Email Address</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-            </div>
-            <div class="row" style="margin-top: 20px;">
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Employment Layer</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-                <div class="col"><span style="color: var(--bs-emphasis-color);">Date of Birth</span><input type="text" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);"></div>
-            </div>
+            <input type="hidden" name="type" style="height: 40px;width: 225px;margin-left: 10px;border-radius: 5px;border-style: solid;border-color: var(--bs-secondary-border-subtle);" value="0">
             <div class="row" style="margin-top: 50px;">
-                <div class="col"><button class="btn btn-primary" type="button" style="width: 104px;background: var(--bs-btn-active-color);border-style: solid;border-color: #1F2471;color: #1F2471;font-weight: bold;margin-left: 280px;">Cancel</button><button class="btn btn-primary" type="button" style="width: 104px;background: #1F2471;margin-left: 30px;">Add</button></div>
+                <div class="col"><a class="btn btn-primary" type="button" href="{{ route('competancyOperational') }}" style="width: 104px;background: var(--bs-btn-active-color);border-style: solid;border-color: #1F2471;color: #1F2471;font-weight: bold;margin-left: 280px;">Cancel</a>
+                    <button class="btn btn-primary" type="submit" style="width: 104px;background: #1F2471;margin-left: 30px;">Add</button></div>
             </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -168,7 +171,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                         @foreach($govofficials as $govofficial)
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govofficial->govorganizationname->gov_org_name }}</td>
