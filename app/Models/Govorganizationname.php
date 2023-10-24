@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Govofficial;
 use App\Models\Govorganizationdetail;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationDetail;
@@ -15,7 +16,11 @@ class Govorganizationname extends Model
         'gov_org_name'
     ];
 
-    public function govorganizationdetails(){
-        return $this->hasMany(Govorganizationdetail::class);
+    public function govorganizationdetail(){
+        return $this->hasOne(Govorganizationdetail::class);
+    }
+
+    public function govofficial(){
+        return $this->hasOne(Govofficial::class);
     }
 }

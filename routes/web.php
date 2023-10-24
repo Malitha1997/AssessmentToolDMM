@@ -14,6 +14,7 @@ use App\Http\Controllers\GovofficialUserController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
+use App\Http\Controllers\CompetancyAssessmentController;
 use App\Http\Controllers\PreliminaryassessmentController;
 use App\Http\Controllers\PreliminaryAssessmentResultController;
 
@@ -43,6 +44,11 @@ Route::get('/report', function () {
 Route::get('/adminNavbar', function () {
     return view('layouts.adminNavbar');
 });
+
+// Route::get('/create/govofficial', function () {
+//     return view('admin.CompetancyAssessment.createGovOfficial');
+// });
+
 
 
 
@@ -111,8 +117,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
     Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
-    
+    Route::post('create/user/govofficial/{id}', [CompetancyAssessmentController::class, 'create'])->name('create-user-govofficial');
+    Route::post('create/govofficial/', [CompetancyAssessmentController::class, 'createGovOfficial'])->name('create-govofficial');
 
+    Route::get('/competancy/operational', [CompetancyAssessmentController::class, 'operational'])->name('competancyOperational');
+    Route::get('/competancy/govorganization', [CompetancyAssessmentController::class, 'govOrganization'])->name('competancyGovorganization');
+    Route::resource('competancyAssessments', CompetancyAssessmentController::class);
 });
 
 Route::resource('users', UserController::class);
