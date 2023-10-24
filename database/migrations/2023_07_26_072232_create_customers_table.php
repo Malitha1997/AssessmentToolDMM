@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('citizen_experience_strategy');
             $table->string('citizen_insights');
             $table->string('citizen_trust');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 

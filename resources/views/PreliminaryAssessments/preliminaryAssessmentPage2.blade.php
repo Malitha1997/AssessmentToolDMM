@@ -11,25 +11,25 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input type="hidden" id="technology_marks" name="technologyMarks" value="{{ $inputValue['technologyMarks']}}">
-                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
+                    {{--  <input type="hidden" id="technology_marks" name="technologyMarks" value="{{ $inputValue['technologyMarks']}}">
+                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">  --}}
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen experience?</span></div>
+                    <div class="col" style="height: 30px;"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 50px;">11.&nbsp;What is your organization's strategy for the digital citizen/customer experience?</span></div>
                 </div>
                 <div class="col-xxl-12" id="choise11" style="margin-top: 20px;margin-bottom: 10px;">
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd11_1" value="0" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_1" value="0" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a. Do not have a citizen/customer experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd11_2" value="5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_2" value="5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Multi- channel citizen/customer experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd11_3" value="7.5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_3" value="7.5" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;Cross channel citizen/customer experience strategy</label></div>
                     </div>
                     <div class="row" style="margin-bottom: 20px;">
-                        <div class="col"><input type="radio" id="sd11_4" value="10" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen experience strategy</label></div>
+                        <div class="col"><input type="radio" id="sd11_4" value="10" name="sd11" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd11_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Omni-channel citizen/customer experience strategy</label></div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -75,7 +75,7 @@
                     <input class="form-control" type="hidden" id="percentage13" name="percentage_d13">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">14.&nbsp;How does your organization manage citizens trust &amp; perception</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">14.&nbsp;How does your organization manage citizens/customers trust &amp; perception</span></div>
                 </div>
                 <div class="row d-flex flex-column" style="text-align: center;">
                     <div class="col">
@@ -85,13 +85,13 @@
                                     <div class="col"><input type="radio" id="sd14_1" value="10" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">a.&nbsp;We have a well defined digital workflows triggered dynamically for problem resolution and communication</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd14_2" value="7.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Citizen information are captured using digital means</label></div>
+                                    <div class="col"><input type="radio" id="sd14_2" value="7.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">b.&nbsp;Citizen/Customer information are captured using digital means</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
                                     <div class="col"><input type="radio" id="sd14_3" value="0" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">c.&nbsp;We do not have proper mechanism</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd14_4" value="2.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Citizen's data are captured manually and connecting them manually</label></div>
+                                    <div class="col"><input type="radio" id="sd14_4" value="2.5" name="sd14" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd14_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">d.&nbsp;Citizen's/Customer's data are captured manually and connecting them manually</label></div>
                                 </div>
                             </div>
                         </div>
@@ -102,26 +102,26 @@
                     <input class="form-control" type="hidden" id="percentage14" name="percentage_d14">
                 </div>
                 <div class="row" style="margin-top: 20px;">
-                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">15.&nbsp; How do you capture Citizens feedbacks and generate insights?</span></div>
+                    <div class="col"><span style="color: rgb(0,0,0);font-family: Poppins, sans-serif;font-size: 20px;margin-left: 40px;">15.&nbsp; How do you capture Citizens/Customers feedbacks and generate insights?</span></div>
                 </div>
                 <div class="row d-flex flex-column" id="choise15" style="text-align: center;">
                     <div class="col">
                         <div class="row d-flex flex-column" style="text-align: center;">
                             <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd15_1" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Do not capture customer feedback</label></div>
+                                    <div class="col"><input type="radio" id="sd15_1" value="0" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">Do not capture citizen/customer feedback</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
                                     <div class="col"><input type="radio" id="sd15_2" value="2.5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Unstructured and irregular feedback capture mechanism.  Manual activities.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd15_3" value="5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Citizen feedback through limited mediums. Manual interventions to identify insights and actions</label></div>
+                                    <div class="col"><input type="radio" id="sd15_3" value="5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Citizen/Customer feedback through limited mediums. Manual interventions to identify insights and actions</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 40px;">
-                                    <div class="col"><input type="radio" id="sd15_4" value="7.5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular Citizen feedback capture through digital means (mobile app, portals etc.). Manual interventions for <br>generating actionable insights.</label></div>
+                                    <div class="col"><input type="radio" id="sd15_4" value="7.5" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular Citizen/Customer feedback capture through digital means (mobile app, portals etc.).<br>Manual interventions for generating actionable insights.</label></div>
                                 </div>
                                 <div class="row" style="margin-bottom: 20px;">
-                                    <div class="col"><input type="radio" id="sd15_5" value="10" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Regular, real time Citizen feedback capture through digital interfaces including Citizen portals, mobile apps etc. <br>Analytics powered solutions for Citizen insight analysis. Automatic usage of Citizen feedbacks for <br>experience capability enhancement.</label></div>
+                                    <div class="col"><input type="radio" id="sd15_5" value="10" name="sd15" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd15_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular, real time Citizen/Customer feedback capture through digital interfaces including Citizen/Customer <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;portals, mobile apps etc. Analytics powered solutions for Citizen/Customer insight analysis. Automatic usage of &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Citizen/Customer feedbacks for experience capability enhancement.</label></div>
                                 </div>
                             </div>
                         </div>
@@ -223,14 +223,14 @@
 
         <script type="text/javascript">
             $('#page2').find(":radio").on('click', e => {
-                tec = document.getElementById("technology_marks").value;
+                {{--  tec = document.getElementById("technology_marks").value;  --}}
                 q11 = document.getElementById("marks11").value;
                 q12 = document.getElementById("marks12").value;
                 q13 = document.getElementById("marks13").value;
                 q14 = document.getElementById("marks14").value;
                 q15 = document.getElementById("marks15").value;
 
-                var a=Number(tec) + Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
+                var a=Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;
                 document.getElementById("page2_total_marks").value= a;
 
                 var cus= Number(q11) + Number(q12) + Number(q13) + Number(q14) + Number(q15) ;

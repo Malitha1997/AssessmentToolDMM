@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Relatedministry;
+use App\Models\RelatedMinistry;
 use App\Models\Govorganizationname;
 use App\Models\OrganizationCategory;
 use App\Models\GovernmentOrganizationName;
@@ -29,7 +29,7 @@ class SearchController extends Controller
     public function autocomplete2(Request $request)
     {
         $query = $request->get('query');
-          $relate = Relatedministry::where('related_ministry', 'LIKE', '%'. $query. '%')->get();
+          $relate = RelatedMinistry::where('related_ministry', 'LIKE', '%'. $query. '%')->get();
 
           foreach($relate as $relates){
             if($relates != null){

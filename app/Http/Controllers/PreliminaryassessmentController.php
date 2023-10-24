@@ -8,7 +8,13 @@ use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Percentage;
 use App\Models\Technology;
+use App\Models\TmpCulture;
+use App\Models\TmpCustomer;
+use App\Models\TmpStrategy;
+use App\Models\TmpOperation;
 use Illuminate\Http\Request;
+use App\Models\TmpTechnology;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class PreliminaryassessmentController extends Controller
@@ -70,23 +76,29 @@ class PreliminaryassessmentController extends Controller
     }
 
     public function prepage2(Request $request){
-        $inputValue = $request->session()->get('input_value');
-        return view('PreliminaryAssessments.preliminaryAssessmentPage2',compact('inputValue'));
+        // $inputValue = $request->session()->get('input_value');
+        return view('PreliminaryAssessments.preliminaryAssessmentPage2');
     }
 
     public function prepage3(Request $request){
-        $inputValue = $request->session()->get('input_value');
-        return view('PreliminaryAssessments.preliminaryAssessmentPage3',compact('inputValue'));
+        //$inputValue = $request->session()->get('input_value');
+        return view('PreliminaryAssessments.preliminaryAssessmentPage3');
     }
 
     public function prepage4(Request $request){
-        $inputValue = $request->session()->get('input_value');
-        return view('PreliminaryAssessments.preliminaryAssessmentPage4',compact('inputValue'));
+        //$inputValue = $request->session()->get('input_value');
+        return view('PreliminaryAssessments.preliminaryAssessmentPage4');
     }
 
     public function prepage5(Request $request){
-        $inputValue = $request->session()->get('input_value');
-        return view('PreliminaryAssessments.preliminaryAssessmentPage5',compact('inputValue'));
+        //$inputValue = $request->session()->get('input_value');
+        //dd($technologyPercentage);
+        $technologyPercentage=Auth::user()->govorganizationdetail->tmpTechnology;
+        $customerPercentage=Auth::user()->govorganizationdetail->tmpCustomer;
+        $operationPercentage=Auth::user()->govorganizationdetail->tmpOperation;
+        $strategyPercentage=Auth::user()->govorganizationdetail->tmpStrategy;
+        $culturePercentage=Auth::user()->govorganizationdetail->tmpCulture;
+        return view('PreliminaryAssessments.preliminaryAssessmentPage5',compact('culturePercentage','strategyPercentage','operationPercentage','customerPercentage','technologyPercentage'));
     }
 
     public function storeValuePage01(Request $request)
@@ -121,12 +133,25 @@ class PreliminaryassessmentController extends Controller
 
         $technology->save();
 
-        $data =[
-            'technologyMarks'=> $request->input('technologyMarks'),
-            'technologyPercentage'=> $request->input('technologyPercentage'),
-        ];
+        request()->validate([
+            'technologyMarks'=> 'required|string',
+            'technologyPercentage'=> 'required|string',
+            'govorganizationdetail_id'=> 'required|string'
+        ]);
+// dd($request);
+        $tmpTechnology=new TmpTechnology;
 
-        $request->session()->put('input_value', $data);
+        $tmpTechnology->technology_marks=$request->technologyMarks;
+        $tmpTechnology->technology_percentage = $request->technologyPercentage;
+        $tmpTechnology->govorganizationdetail_id = $request->govorganizationdetail_id;
+
+        $tmpTechnology->save();
+        // $data =[
+        //     'technologyMarks'=> $request->input('technologyMarks'),
+        //     'technologyPercentage'=> $request->input('technologyPercentage'),
+        // ];
+
+        // $request->session()->put('input_value', $data);
 
         return redirect()->route('preliminaryAssessment2');
     }
@@ -153,13 +178,27 @@ class PreliminaryassessmentController extends Controller
 
         $customer->save();
 
-        $data =[
-            'page2_marks'=> $request->input('page2_marks'),
-            'technologyPercentage'=> $request->input('technologyPercentage'),
-            'customerPercentage'=> $request->input('customerPercentage'),
-        ];
+        request()->validate([
+            'page2_marks'=> 'required|string',
+            'customerPercentage'=> 'required|string',
+            'govorganizationdetail_id'=> 'required|string'
+        ]);
+// dd($request);
+        $tmpCustomer=new TmpCustomer;
 
-        $request->session()->put('input_value', $data);
+        $tmpCustomer->customer_marks=$request->page2_marks;
+        $tmpCustomer->customer_percentage = $request->customerPercentage;
+        $tmpCustomer->govorganizationdetail_id = $request->govorganizationdetail_id;
+
+        $tmpCustomer->save();
+
+        // $data =[
+        //     'page2_marks'=> $request->input('page2_marks'),
+        //     'technologyPercentage'=> $request->input('technologyPercentage'),
+        //     'customerPercentage'=> $request->input('customerPercentage'),
+        // ];
+
+        // $request->session()->put('input_value', $data);
 
         return redirect()->route('preliminaryAssessment3');
     }
@@ -184,14 +223,27 @@ class PreliminaryassessmentController extends Controller
 
         $operation->save();
 
-        $data =[
-            'page3_marks'=> $request->input('page3_marks'),
-            'technologyPercentage'=> $request->input('technologyPercentage'),
-            'customerPercentage'=> $request->input('customerPercentage'),
-            'operationPercentage'=> $request->input('operationPercentage'),
-        ];
+        request()->validate([
+            'page3_marks'=>'required|string',
+            'operationPercentage'=>'required|string',
+            'govorganizationdetail_id'=>'required|string'
+        ]);
 
-        $request->session()->put('input_value', $data);
+        $tmpOperation=new TmpOperation;
+
+        $tmpOperation->operation_marks=$request->page3_marks;
+        $tmpOperation->operation_percentage = $request->operationPercentage;
+        $tmpOperation->govorganizationdetail_id = $request->govorganizationdetail_id;
+
+        $tmpOperation->save();
+        // $data =[
+        //     'page3_marks'=> $request->input('page3_marks'),
+        //     'technologyPercentage'=> $request->input('technologyPercentage'),
+        //     'customerPercentage'=> $request->input('customerPercentage'),
+        //     'operationPercentage'=> $request->input('operationPercentage'),
+        // ];
+
+        // $request->session()->put('input_value', $data);
 
         return redirect()->route('preliminaryAssessment4');
     }
@@ -224,15 +276,28 @@ class PreliminaryassessmentController extends Controller
 
         $strategy->save();
 
-        $data =[
-            'page4_marks'=> $request->input('page4_marks'),
-            'technologyPercentage'=> $request->input('technologyPercentage'),
-            'customerPercentage'=> $request->input('customerPercentage'),
-            'operationPercentage'=> $request->input('operationPercentage'),
-            'strategyPercentage'=> $request->input('strategyPercentage'),
-        ];
+        request()->validate([
+            'page4_marks'=> 'required|string',
+            'strategyPercentage'=> 'required|string',
+            'govorganizationdetail_id'=> 'required|string'
+        ]);
 
-        $request->session()->put('input_value', $data);
+        $tmpStrategy=new TmpStrategy;
+
+        $tmpStrategy->strategy_marks=$request->page4_marks;
+        $tmpStrategy->strategy_percentage = $request->strategyPercentage;
+        $tmpStrategy->govorganizationdetail_id = $request->govorganizationdetail_id;
+
+        $tmpStrategy->save();
+        // $data =[
+        //     'page4_marks'=> $request->input('page4_marks'),
+        //     'technologyPercentage'=> $request->input('technologyPercentage'),
+        //     'customerPercentage'=> $request->input('customerPercentage'),
+        //     'operationPercentage'=> $request->input('operationPercentage'),
+        //     'strategyPercentage'=> $request->input('strategyPercentage'),
+        // ];
+
+        // $request->session()->put('input_value', $data);
 
         return redirect()->route('preliminaryAssessment5');
     }
@@ -265,6 +330,24 @@ class PreliminaryassessmentController extends Controller
 
         $culture->save();
 
+        $tmpCulture=new TmpCulture;
+
+        $tmpCulture->culture_marks=$request->page5_marks;
+        $tmpCulture->culture_percentage = $request->culturePercentage;
+        $tmpCulture->govorganizationdetail_id = $request->govorganizationdetail_id;
+
+        $tmpCulture->save();
+
+        request()->validate([
+            'customerPercentage'=>'required|string',
+            'strategyPercentage'=>'required|string',
+            'technologyPercentage'=>'required|string',
+            'operationPercentage'=>'required|string',
+            'culturePercentage'=>'required|string',
+            'overallPercentage'=>'required|string',
+            'govorganizationdetail_id'=>'required|string'
+        ]);
+
         $percentage = new Percentage;
 
         $percentage->customer = $request->customerPercentage;
@@ -274,7 +357,6 @@ class PreliminaryassessmentController extends Controller
         $percentage->culture = $request->culturePercentage;
         $percentage->overall = $request->overallPercentage;
         $percentage->govorganizationdetail_id = $request->govorganizationdetail_id;
-
 
         $percentage->save();
 

@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('relatedministries', function (Blueprint $table) {
+        Schema::create('top_ict_in_workplaces', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('related_ministry');
+            $table->string('ict1');
+            $table->string('ict2');
+            $table->string('ict3');
+            $table->string('ict4');
+            $table->foreignId('govofficial_id')->constrained('govofficials')->onDelete('cascade');
         });
     }
 
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('related_ministries');
+        Schema::dropIfExists('top_ict_in_workplaces');
     }
 };

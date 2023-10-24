@@ -4,11 +4,11 @@
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);max-height: 100%;height: 1000px;">
     <section data-aos="fade-down" data-aos-duration="1000" style="height: 500px;">
-        @if (session('status'))
+        {{--  @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
-        @endif
+        @endif  --}}
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -27,12 +27,10 @@
                     <section>
                     <div class="row">
                         <div class="col">
-                        <input class="form-control-lg @error('username') is-invalid @enderror" id="username" type="username" style="padding-bottom: 1px;margin-left: 40px;width: 401px;height: 49px;margin-top: 50px;" name="username" value="{{ old('username') }}" placeholder="Username" required>
-                        @error('username')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                        <input class="form-control-lg" id="username" type="username" style="padding-bottom: 1px;margin-left: 40px;width: 401px;height: 49px;margin-top: 50px;" name="username" value="{{ old('username') }}" placeholder="Username" required>
+                        @if($errors->has('username'))
+                                <p class="text-danger"><b>{{ $errors->first('username') }}</b></p>
+                        @endif
                     </div>
                     <div class="row">
                         <div class="col">

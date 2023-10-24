@@ -22,7 +22,7 @@ class Authenticate extends Middleware
         // }else if(Auth::user()== Manager){
         //     return $request->expectsJson() ? null : route('login2');
         // }
-        return $request->expectsJson() ? null : route('login2');
+        return $request->expectsJson() ? null : route('login');
     }
 
     protected function redirectTo2(Request $request): ?string

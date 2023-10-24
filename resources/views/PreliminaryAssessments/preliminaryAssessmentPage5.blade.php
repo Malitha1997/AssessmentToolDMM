@@ -11,11 +11,15 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="hidden" id="page4_total_marks" name="page4_marks" value="{{ $inputValue['page4_marks']}}">
-                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
-                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
-                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">
-                    <input type="hidden" id="strategy_percentage" name="strategyPercentage" value="{{ $inputValue['strategyPercentage']}}">
+                    {{--  <input class="form-control" type="hidden" id="page4_total_marks" name="page4_marks" value="">  --}}
+                    <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{$technologyPercentage->technology_percentage}}" readonly>
+                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $customerPercentage->customer_percentage }}" readonly>
+                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $operationPercentage->operation_percentage }}" readonly>
+                    <input type="hidden" id="strategy_percentage" name="strategyPercentage" value="{{ $strategyPercentage->strategy_percentage}}" readonly>
+                    <input type="hidden" id="technology_marks" name="technologyMarks" value="{{$technologyPercentage->technology_marks}}" readonly>
+                    <input type="hidden" id="customer_marks" name="customerMarks" value="{{ $customerPercentage->customer_marks }}" readonly>
+                    <input type="hidden" id="operation_marks" name="operationMarks" value="{{ $operationPercentage->operation_marks }}" readonly>
+                    <input type="hidden" id="strategy_marks" name="strategyMarks" value="{{ $strategyPercentage->strategy_marks}}" readonly>
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;">
@@ -42,7 +46,7 @@
                 <div class="row d-flex flex-column" id="choise29" style="text-align: center;">
                     <div class="col" style="margin-top: 20px;margin-bottom: 10px;text-align: left;">
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd29_1" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">We do not capture citizens’ data</label></div>
+                            <div class="col"><input type="radio" id="sd29_1" value="2.5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_1" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;width: 1100px;">We do not capture citizens’/customers' data</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
                             <div class="col"><input type="radio" id="sd29_2" value="5" name="sd29" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd29_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">There is a document that has been reviewed and approved as the standard process. But activities might <br>not conducted according to the document as the document is outdated.</label></div>
@@ -138,6 +142,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" id="marks32" name="marks_d32">
                     <input class="form-control" type="hidden" id="percentage32" name="percentage_d32">
+                    <input class="form-control" type="hidden" id="page5_total_marks" name="page5_marks">
                     <input class="form-control" type="hidden" id="culture_percentage" name="culturePercentage">
                     <input class="form-control" type="hidden" id="overall" name="overallPercentage">
                 </div>
@@ -146,7 +151,7 @@
                         <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                         <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
                             <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
-                            <button class="btn btn-primary" id="next" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
+                            <button class="btn btn-primary" id="next" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Submit</button></div>
                     </div>
                 </div>
             </div>
@@ -231,7 +236,11 @@
 
         <script type="text/javascript">
             $('#page5').find(":radio").on('click', e => {
-                p4 = document.getElementById("page4_total_marks").value;
+                tec = document.getElementById("technology_marks").value;
+                op = document.getElementById("operation_marks").value;
+                str = document.getElementById("strategy_marks").value;
+                cul = document.getElementById("customer_marks").value;
+
                 q28 = document.getElementById("marks28").value;
                 q29 = document.getElementById("marks29").value;
                 q30 = document.getElementById("marks30").value;
@@ -239,11 +248,13 @@
                 q32 = document.getElementById("marks32").value;
 
                 var cul= Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
+                document.getElementById("page5_total_marks").value= cul;
+
                 var cul2= cul / 156.25;
                 var culture= (cul2 * 100).toFixed(0);
                 document.getElementById("culture_percentage").value= culture;
 
-                var a=Number(p4) + Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
+                var a= Number(tec) + Number(op) + Number(str) + Number(cul) + Number(q28) + Number(q29) + Number(q30) + Number(q31) + Number(q32) ;
                 var b= a / 1000;
                 var overall= (b * 100).toFixed(0);
                 document.getElementById("overall").value= overall;

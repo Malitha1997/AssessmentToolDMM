@@ -34,7 +34,7 @@ class UserAccess
 
     public function handle(Request $request, Closure $next, $userType): Response
 
-    {
+    {//dd($userType);
 
         if(auth()->user()->type == $userType){
 

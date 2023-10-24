@@ -38,13 +38,23 @@
                             datasets: [{
                                 label: "Marks for each dimension",
                                 data: {!! json_encode($percentages) !!},
-                                backgroundColor: "transparent",
+                                backgroundColor: "rgba(255, 99, 132, 0.2)",
                                 borderColor: "rgba(229, 89, 52, 1)",
                                 borderWidth: 2,
                                 pointBackgroundColor: "pink",
                                 pointRadius: 6,
-                            }],
+                            },
+                            {
+                                label: "Country Level",
+                                data: {!! json_encode($sums) !!},
+                                backgroundColor: "rgba(54, 162, 235, 0.2)",
+                                borderColor: "rgb(54, 162, 235)",
+                                borderWidth: 2,
+                                pointBackgroundColor: "#d0fbfe",
+                                pointRadius: 6,
+                            }]
                         };
+
 
                         var radarOptions = {
                             responsive: false,
@@ -76,7 +86,7 @@
             </div>
 
             <div class="row" style="text-align: center;">
-                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summery of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
+                <div class="col"><span data-aos="fade-down" data-aos-duration="1000" style="color: #1f2471;font-size: 40px;font-family: Poppins, sans-serif;font-weight: bold;"><br>Summary of the Preliminary Assessment Results <br>for each dimensions<br><br></span></div>
             </div>
             <div class="row">
                 <div class="col" style="text-align: center;">

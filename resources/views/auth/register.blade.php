@@ -52,7 +52,11 @@
                             </div>
                         </div>
                     </div>
-                    <input class="form-control-lg" name="type" id="type" type="hidden" value="0">
+                    {{--  @if(request()->query('from') === 'login2')
+                        <input class="form-control-lg" name="type" id="type" value="2">
+                    @else if(request()->query('from') === 'login')
+                        <input class="form-control-lg" name="type" id="type" value="0">
+                    @endif  --}}
                     <div class="row" style="margin-left: 50px;margin-top: 30px;width: 600px;background: #d9d9d9;">
                         <div class="col" style="padding-top: 20px;padding-left: 20px;padding-right: 20px;padding-bottom: 20px;border-radius: 10px;"><span style="color: #5f2b84;">Password must be at least&nbsp; 6 characters and contain at least one letter and one number. Password are case-sensitive.</span></div>
                     </div>
@@ -62,6 +66,7 @@
                     <div class="row" style="font-size: 20px;">
                         <div class="col d-flex flex-column justify-content-center align-items-center align-content-center" style="margin-top: 20px;"><span class="align-content-center" style="color: rgb(0,0,0);width: 500px;text-align: center;padding-bottom: 0px;">Existing user? Click here to&nbsp;<a href="{{ route('login') }}" style="color: #5f2b84;"><span style="color: rgb(0, 0, 0);">log in</span><br><br></a></span></div>
                     </div>
+
                 </div>
             </div>
             </form>
@@ -85,4 +90,13 @@
             return false;
         }
     </script>
+
+    @if(Session::has('message'))
+
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
+
+    @endif
+
     @endsection

@@ -49,9 +49,16 @@ class CreateUsersSeeder extends Seeder
             [
                'username'=>'user',
                'email'=>'user@icta.lk',
-               'type'=>0,
+               'type'=> 0,
                'password'=> bcrypt('123456'),
             ],
+
+            [
+                'username'=>'govofficial',
+                'email'=>'govofficial@icta.lk',
+                'type'=> 0,
+                'password'=> bcrypt('123456'),
+             ],
 
         ];
 

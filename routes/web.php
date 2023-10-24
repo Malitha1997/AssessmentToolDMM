@@ -5,6 +5,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GovofficialController;
 use App\Http\Controllers\GoogleChartsController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\GovofficialUserController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
+use App\Http\Controllers\CompetancyAssessmentController;
 use App\Http\Controllers\PreliminaryassessmentController;
 use App\Http\Controllers\PreliminaryAssessmentResultController;
 
@@ -42,6 +44,13 @@ Route::get('/report', function () {
 Route::get('/adminNavbar', function () {
     return view('layouts.adminNavbar');
 });
+
+// Route::get('/create/govofficial', function () {
+//     return view('admin.CompetancyAssessment.createGovOfficial');
+// });
+
+
+
 
 Route::resource('users', UserController::class);
 
@@ -78,6 +87,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/store-value-page04', [PreliminaryassessmentController::class, 'storeValuePage04'])->name('storeValue4');
     Route::post('/store-value-page05', [PreliminaryassessmentController::class, 'storeValuePage05'])->name('storeValue5');
 
+    Route::get('/resources',[GovorganizationController::class,'resources'])->name('resources');
 
     Route::controller(SearchController::class)->group(function(){
         Route::get('autocomplete4', 'autocomplete')->name('autocomplete4');
@@ -86,6 +96,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     });
 
     Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');
+    Route::get('download','PDFController@download');
+    Route::resource('resourceusers', ResourceController::class);
 
 });
 
@@ -93,7 +105,24 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home');
+    // Route::get('/admin/organizationProfile', [GovorganizationController::class, 'organizationProfile'])->name('organizationProfile');
+    Route::resource('govorganizations', GovorganizationController::class);
+    Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
+    Route::get('generate-pdf/{id}', [PDFController::class, 'adminGeneratePDF'])->name('generate-pdf');
+    Route::get('technologyresults/{id}', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
+    Route::get('customerresults/{id}', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
+    Route::get('operationresults/{id}', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
+    Route::get('strategyresults/{id}', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
+    Route::get('cultureresults/{id}', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
 
+    Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
+    Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
+    Route::post('create/user/govofficial/{id}', [CompetancyAssessmentController::class, 'create'])->name('create-user-govofficial');
+    Route::post('create/govofficial/', [CompetancyAssessmentController::class, 'createGovOfficial'])->name('create-govofficial');
+
+    Route::get('/competancy/operational', [CompetancyAssessmentController::class, 'operational'])->name('competancyOperational');
+    Route::get('/competancy/govorganization', [CompetancyAssessmentController::class, 'govOrganization'])->name('competancyGovorganization');
+    Route::resource('competancyAssessments', CompetancyAssessmentController::class);
 });
 
 Route::resource('users', UserController::class);
@@ -129,11 +158,14 @@ Route::get('preview', [PDFController::class,'preview']);
 Route::get('download', [PDFController::class,'download'])->name('download');
 
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/govofficial/home', [HomeController::class, 'govofficialHome'])->name('govofficial.home');
     Route::post('/logout2', [LoginController::class, 'logout2'])->name('logout2');
     Route::get('/signup2', [GovofficialController::class, 'create'])->name('signup2');
-    Route::resource('govofficials', GovofficialController::class);
+    Route::post('/govofficials/create', [GovofficialController::class, 'create'])->name('govofficials.create');
+
 });
+
+Route::resource('govofficials', GovofficialController::class);
 
 
 

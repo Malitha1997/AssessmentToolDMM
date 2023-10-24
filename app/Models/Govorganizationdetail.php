@@ -6,26 +6,32 @@ use App\Models\Cdio;
 use App\Models\User;
 use App\Models\Culture;
 use App\Models\Customer;
+use App\Models\Resource;
 use App\Models\Strategy;
 use App\Models\Operation;
 use App\Models\Percentage;
 use App\Models\Technology;
+use App\Models\TmpCulture;
 use App\Models\Govofficial;
-use App\Models\Relatedministry;
+use App\Models\TmpCustomer;
+use App\Models\TmpStrategy;
+use App\Models\TmpOperation;
+use App\Models\TmpTechnology;
+use App\Models\RelatedMinistry;
 use App\Models\TypesOfServices;
 use App\Models\Govorganizationname;
-use App\Models\Organizationcategory;
+use App\Models\OrganizationCategory;
 use App\Models\PreliminaryAssessment;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\GovernmentOrganizationName;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Govorganizationdetail extends Model
-{
+{//public $timestamps = false;
     protected $fillable = [
         'govorganizationname_id',
-        'organizationcategory_id',
-        'relatedministry_id',
+        'organization_category_id',
+        'related_ministry_id',
         'gov_org_address',
         'gov_org_email',
         'number_of_employee',
@@ -47,12 +53,12 @@ class Govorganizationdetail extends Model
         return $this->hasMany(PreliminaryAssessment::class);
     }
 
-    public function relatedministry(){
-        return $this->belongsTo(Relatedministry::class);
+    public function relatedMinistry(){
+        return $this->belongsTo(RelatedMinistry::class);
     }
 
-    public function organizationcategory(){
-        return $this->belongsTo(Organizationcategory::class);
+    public function organizationCategory(){
+        return $this->belongsTo(OrganizationCategory::class);
     }
 
     public function typesofservices(){
@@ -93,5 +99,29 @@ class Govorganizationdetail extends Model
 
     public function govofficials(){
         return $this->hasMany(Govofficial::class);
+    }
+
+    public function resource(){
+        return $this->hasMany(Resource::class);
+    }
+
+    public function tmpTechnology(){
+        return $this->hasOne(TmpTechnology::class);
+    }
+
+    public function tmpCulture(){
+        return $this->hasOne(TmpCulture::class);
+    }
+
+    public function tmpCustomer(){
+        return $this->hasOne(TmpCustomer::class);
+    }
+
+    public function tmpStrategy(){
+        return $this->hasOne(TmpStrategy::class);
+    }
+
+    public function tmpOperation(){
+        return $this->hasOne(TmpOperation::class);
     }
 }

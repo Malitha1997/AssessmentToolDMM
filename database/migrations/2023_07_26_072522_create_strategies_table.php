@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('buisiness_assuarance');
             $table->string('policy');
             $table->string('invention');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 
