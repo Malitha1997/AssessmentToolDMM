@@ -100,7 +100,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 630px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;">Self Assessment - ICT</span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;">ICT</span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">
@@ -193,7 +193,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 690px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Self Assessment -&nbsp;Digital Government <br><br></span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Digital Government<br><br></span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">
@@ -289,7 +289,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 690px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Self Assessment - Management</span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Management</span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">

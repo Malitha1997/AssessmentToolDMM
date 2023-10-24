@@ -235,6 +235,12 @@
                             <label for="Vavuniya" style="margin-left:10px">Vavuniya</label><br>
                         </div>
                     </div>
+                    <div class="row" style="margin-left:10px">
+                        <div class="col">
+                            <input type="checkbox" id="Vavuniya" name="districts_of_operations[]" value="Vavuniya" {{ in_array('Vavuniya', old('districts_of_operations', [])) ? 'checked' : '' }}>
+                            <label for="Vavuniya" style="margin-left:10px">Vavuniya</label><br>
+                        </div>
+                    </div>
                     @if($errors->has('districts_of_operations'))
                     <p class="text-danger"><b>Select districts</b></p>
                     @endif

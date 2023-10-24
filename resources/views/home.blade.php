@@ -17,6 +17,7 @@
                     </div>
                 </div>
         @endif
+        <a class="btn btn-primary" href="{{route('dashboard')}}" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Dashboard</a>
         <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
             <div class="row">
                 <div class="col" style="width:1377px;height:168px">

@@ -11,6 +11,14 @@ class OpIct extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'op_ict_in_workplace',
+        'op_information_management',
+        'op_digital_citizenship',
+        'marks_op_ict',
+        'govofficial_id'
+    ];
+
     public function operational(){
         return $this->belongsTo(Operational::class);
     }
