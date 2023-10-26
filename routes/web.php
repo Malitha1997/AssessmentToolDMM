@@ -100,7 +100,11 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('download','PDFController@download');
     Route::resource('resourceusers', ResourceController::class);
 
-     Route::get('/dashboard',[GovOrganizationDashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('/dashboard',[GovOrganizationDashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('/searchGov2', [GovOrganizationDashboardController::class, 'dashboard']);
+    Route::get('/dashboard/layers',[GovOrganizationDashboardController::class,'layerDashboard'])->name('layerDashboard');
+    Route::get('/searchGov3', [GovOrganizationDashboardController::class, 'layerDashboard']);
+
 
 });
 
@@ -132,6 +136,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/competancy/govorganization/mgt/{id}', [CompetancyAssessmentController::class, 'govManagement'])->name('competancyGovorganizationManagement');
 
     Route::get('/searchGov', [CompetancyAssessmentController::class, 'search']);
+
 });
 
 Route::resource('users', UserController::class);
