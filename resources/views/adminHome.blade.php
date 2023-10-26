@@ -75,7 +75,7 @@
                             <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Registered Organizations</span>
                         </div>
                         <div class="row" style="text-align: center;margin-top: -10px;">
-                            <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
+                            <span id="govorganizationCount" class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                 {{--  $connection = mysqli_connect("localhost","lightingdigital","1qaz2wsx@icta","assessment");  --}}
                                 {{--  <?php
                                 $connection = mysqli_connect("localhost","root","","assessmenttool");
@@ -122,7 +122,7 @@
                             <span style="color: rgb(22,26,85);font-size: 18px;text-align: center;margin-top: 10px;font-weight: bold;font-family: Poppins, sans-serif;">Preliminary Assessment completed</span>
                         </div>
                         <div class="row">
-                            <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
+                            <span id="percentagesCount" class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 48px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 20px;background: url(&quot;{{ asset('img/Ellipse 20.png') }}&quot;);width: 106px;height: 108px;">
                                     {{--  <?php
                                     $connection = mysqli_connect("localhost","root","","assessmenttool");
 
@@ -445,4 +445,52 @@
 </div>
 </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ictCountElement = document.getElementById("govorganizationCount");
+
+        var targetCount = {{$govorganizationCount}}; // Get the actual value from the PHP variable
+        var currentCount = 0;
+
+        // Define the duration for the count animation (e.g., 2 seconds)
+        var animationDuration = 1000; // 2 seconds
+        var interval = 10; // Update every 100 milliseconds
+
+        var increment = (targetCount / (animationDuration / interval));
+
+        var animation = setInterval(function () {
+            currentCount += increment;
+            ictCountElement.textContent = Math.round(currentCount);
+
+            if (currentCount >= targetCount) {
+                clearInterval(animation);
+                ictCountElement.textContent = targetCount; // Ensure the final count is exact
+            }
+        }, interval);
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ictCountElement = document.getElementById("percentagesCount");
+
+        var targetCount = {{$percentagesCount}}; // Get the actual value from the PHP variable
+        var currentCount = 0;
+
+        // Define the duration for the count animation (e.g., 2 seconds)
+        var animationDuration = 1000; // 2 seconds
+        var interval = 10; // Update every 100 milliseconds
+
+        var increment = (targetCount / (animationDuration / interval));
+
+        var animation = setInterval(function () {
+            currentCount += increment;
+            ictCountElement.textContent = Math.round(currentCount);
+
+            if (currentCount >= targetCount) {
+                clearInterval(animation);
+                ictCountElement.textContent = targetCount; // Ensure the final count is exact
+            }
+        }, interval);
+    });
+</script>
 @endsection

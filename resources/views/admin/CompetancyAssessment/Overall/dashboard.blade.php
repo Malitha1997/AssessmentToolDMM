@@ -11,7 +11,7 @@
                 <div class="col" style="width: 204px;border-radius: 20px;"><span style="margin-top: 2px;font-size: 20px;color: var(--bs-body-bg)">Registered Officials</span></div>
             </div>
             <div class="row">
-                <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $govofficialCount }}</span>
+                <span id="govofficialCount" class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $govofficialCount }}</span>
             </div>
         </div>
         <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" style="width: 350px;text-align: center;height: 170px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);margin-left: 20px;border-radius: 20px;">
@@ -19,7 +19,7 @@
                 <div class="col" style="width: 204px;border-radius: 20px;"><span style="margin-top: 3px;font-size: 20px;color: var(--bs-body-bg)">Assessment Completed Officials</span></div>
             </div>
             <div class="row">
-                <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $assessmentCompletedCount }}</span>
+                <span id="assessmentCompletedCount" class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $assessmentCompletedCount }}</span>
             </div>
         </div>
         <div class="col-md-4" data-aos="zoom-in" data-aos-duration="1000" style="width: 350px;text-align: center;height: 170px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);margin-left: 20px;border-radius: 20px;">
@@ -27,7 +27,7 @@
                 <div class="col" style="width: 204px;border-radius: 20px;"><span style="margin-top: 2px;font-size: 20px;color: var(--bs-body-bg)">Inprogress</span></div>
             </div>
             <div class="row">
-                <span class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $assessmentInprogress }}</span>
+                <span id="assessmentInprogress" class="d-xxl-flex justify-content-xxl-center align-items-xxl-center" style="color: #f01f75;font-size: 60px;font-family: Poppins, sans-serif;font-weight: bold;margin-left: 35%;margin-top: 10px;width: 106px;height: 108px;">{{ $assessmentInprogress }}</span>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 630px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;">Self Assessment - ICT</span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;">ICT</span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">
@@ -193,7 +193,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 690px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Self Assessment -&nbsp;Digital Government <br><br></span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Digital Government<br><br></span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">
@@ -289,7 +289,7 @@
 </div>
 <div data-aos="fade-in" data-aos-duration="1000" style="height: 690px;margin-top: 60px;width: 1165px;background: var(--bs-secondary-bg);text-align: center;font-family:poppins">
     <div class="row" style="width: 1160px;text-align: center;margin-left: 0px;margin-top: 50px;color: #1F2471;border-radius: 5px;border-style: solid;border-color: #1F2471;background: #1F2471;height: 50px;">
-        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Self Assessment - Management</span></div>
+        <div class="col-xxl-11" style="color: #1F2471;"><span style="color: var(--bs-body-bg);font-size: 24px;text-align: center;border-color: var(--bs-secondary-text-emphasis);margin-left: 90px;width: 800px;height: 50px;">Management</span></div>
     </div>
     <div class="row" style="margin-top: 40px;">
         <div class="col-xxl-7" style="width: 600px;">
@@ -383,5 +383,77 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ictCountElement = document.getElementById("govofficialCount");
+
+        var targetCount = {{$govofficialCount}}; // Get the actual value from the PHP variable
+        var currentCount = 0;
+
+        // Define the duration for the count animation (e.g., 2 seconds)
+        var animationDuration = 1000; // 2 seconds
+        var interval = 10; // Update every 100 milliseconds
+
+        var increment = (targetCount / (animationDuration / interval));
+
+        var animation = setInterval(function () {
+            currentCount += increment;
+            ictCountElement.textContent = Math.round(currentCount);
+
+            if (currentCount >= targetCount) {
+                clearInterval(animation);
+                ictCountElement.textContent = targetCount; // Ensure the final count is exact
+            }
+        }, interval);
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ictCountElement = document.getElementById("assessmentCompletedCount");
+
+        var targetCount = {{$assessmentCompletedCount}}; // Get the actual value from the PHP variable
+        var currentCount = 0;
+
+        // Define the duration for the count animation (e.g., 2 seconds)
+        var animationDuration = 1000; // 2 seconds
+        var interval = 10; // Update every 100 milliseconds
+
+        var increment = (targetCount / (animationDuration / interval));
+
+        var animation = setInterval(function () {
+            currentCount += increment;
+            ictCountElement.textContent = Math.round(currentCount);
+
+            if (currentCount >= targetCount) {
+                clearInterval(animation);
+                ictCountElement.textContent = targetCount; // Ensure the final count is exact
+            }
+        }, interval);
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ictCountElement = document.getElementById("assessmentInprogress");
+
+        var targetCount = {{$assessmentInprogress}}; // Get the actual value from the PHP variable
+        var currentCount = 0;
+
+        // Define the duration for the count animation (e.g., 2 seconds)
+        var animationDuration = 1000; // 2 seconds
+        var interval = 10; // Update every 100 milliseconds
+
+        var increment = (targetCount / (animationDuration / interval));
+
+        var animation = setInterval(function () {
+            currentCount += increment;
+            ictCountElement.textContent = Math.round(currentCount);
+
+            if (currentCount >= targetCount) {
+                clearInterval(animation);
+                ictCountElement.textContent = targetCount; // Ensure the final count is exact
+            }
+        }, interval);
+    });
+</script>
 
 @endsection

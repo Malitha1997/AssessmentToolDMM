@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
 use App\Http\Controllers\CompetancyAssessmentController;
 use App\Http\Controllers\PreliminaryassessmentController;
+use App\Http\Controllers\GovOrganizationDashboardController;
 use App\Http\Controllers\PreliminaryAssessmentResultController;
 
 /*
@@ -99,6 +100,12 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('download','PDFController@download');
     Route::resource('resourceusers', ResourceController::class);
 
+    Route::get('/dashboard',[GovOrganizationDashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('/searchGov2', [GovOrganizationDashboardController::class, 'dashboard']);
+    Route::get('/dashboard/layers',[GovOrganizationDashboardController::class,'layerDashboard'])->name('layerDashboard');
+    Route::get('/searchGov3', [GovOrganizationDashboardController::class, 'layerDashboard']);
+
+
 });
 
 /*All Admin Routes List*/
@@ -120,9 +127,16 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('create/user/govofficial/{id}', [CompetancyAssessmentController::class, 'create'])->name('create-user-govofficial');
     Route::post('create/govofficial/', [CompetancyAssessmentController::class, 'createGovOfficial'])->name('create-govofficial');
 
-    Route::get('/competancy/operational', [CompetancyAssessmentController::class, 'operational'])->name('competancyOperational');
+    Route::get('/competancy/dashboard', [CompetancyAssessmentController::class, 'operational'])->name('competancyDashboard');
     Route::get('/competancy/govorganization', [CompetancyAssessmentController::class, 'govOrganization'])->name('competancyGovorganization');
     Route::resource('competancyAssessments', CompetancyAssessmentController::class);
+
+    Route::get('/competancy/govorganization/ict/{id}', [CompetancyAssessmentController::class, 'govIct'])->name('competancyGovorganizationIct');
+    Route::get('/competancy/govorganization/dg/{id}', [CompetancyAssessmentController::class, 'govDigitalGovernment'])->name('competancyGovorganizationDigitalGovernment');
+    Route::get('/competancy/govorganization/mgt/{id}', [CompetancyAssessmentController::class, 'govManagement'])->name('competancyGovorganizationManagement');
+
+    Route::get('/searchGov', [CompetancyAssessmentController::class, 'search']);
+
 });
 
 Route::resource('users', UserController::class);
