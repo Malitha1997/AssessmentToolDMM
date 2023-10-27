@@ -22,7 +22,7 @@
     </head>
         <body>
             {{--  Page 01  --}}
-        <div style="border-style: solid;border-color: #000000; width:700px;height:1450px"
+        <div style="border-style: solid;border-color: #000000; width:700px;height:1450px">
             <div class="container" style="width: 535px;height: 782px;text-align:center">
                 <div class="row" style="margin-top: 100px;">
                     <div class="col" style="text-align: center;"><img src="{{ asset('emblem.png') }}" style="width:102px;height:133px"></div>

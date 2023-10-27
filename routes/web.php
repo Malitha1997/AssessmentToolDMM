@@ -15,6 +15,7 @@ use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\GovOrganizationNameController;
 use App\Http\Controllers\CompetancyAssessmentController;
+use App\Http\Controllers\GovOrganizationReportController;
 use App\Http\Controllers\PreliminaryassessmentController;
 use App\Http\Controllers\GovOrganizationDashboardController;
 use App\Http\Controllers\PreliminaryAssessmentResultController;
@@ -104,6 +105,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/searchGov2', [GovOrganizationDashboardController::class, 'dashboard']);
     Route::get('/dashboard/layers',[GovOrganizationDashboardController::class,'layerDashboard'])->name('layerDashboard');
     Route::get('/searchGov3', [GovOrganizationDashboardController::class, 'layerDashboard']);
+
+    Route::get('/report', [GovOrganizationReportController::class, 'report'])->name('govOrganizationReport');
 
 
 });
