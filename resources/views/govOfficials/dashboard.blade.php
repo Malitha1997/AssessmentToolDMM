@@ -86,7 +86,7 @@
                                             chart.draw(data, options);
                                         }
                                     </script>
-                                    
+                                     
                                     </div>
                                 </div>
                                 
@@ -416,7 +416,7 @@
                 <div class="col" style="text-align: center;font-size: 24px;"><span style="color: var(--bs-primary-text-emphasis);border-color: var(--bs-emphasis-color);">You can Download the Preliminary Results report here&nbsp;</span></div>
             </div>
             <div class="row">
-                <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button" style="margin-top: 20px;margin-bottom: 20px;background: #1F2471;">Download</button></div>
+                <div class="col" style="text-align: center;"><a class="btn btn-primary" type="button" href="{{route('govOrganizationReport')}}" style="margin-top: 20px;margin-bottom: 20px;background: #1F2471;">Download</a></div>
             </div>
         </div>
     </div>

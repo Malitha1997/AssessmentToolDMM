@@ -1004,7 +1004,7 @@ class GovOrganizationDashboardController extends Controller
         $avgMidStakeholder=round(($totMidStakeholder / (25 * count($midGovofficials))) * 100,0);
 
         $totMidTeamwork=array_sum($midTeamworkData) ;
-        $avgMidTeamwork=round(($totMidTeamwork / (4 * $opMidGovofficials)) * 100,0);
+        $avgMidTeamwork=round(($totMidTeamwork / (4 * count($midGovofficials))) * 100,0);
 
         $totMidPersonalDevelopment=array_sum($midPersonalDevelopmentData);
         $avgMidPersonalDevelopment=round(($totMidPersonalDevelopment / (5 * count($midGovofficials))) * 100 , 0);
@@ -1047,11 +1047,11 @@ class GovOrganizationDashboardController extends Controller
 
         $managementOp = [
             ['Category', 'Percentage'],
-            ['Communication', (int) $avgCommunication],
-            ['Workplace Management', (int) $avgWorkplaceManagement],
-            ['Stakeholder Management', (int) $avgStakeholder],
-            ['Teamwork', (int) $avgTeamwork],
-            ['Personal Development', (int) $avgPersonalDevelopment],
+            ['Communication', (int) $avgOpCommunication],
+            ['Workplace Management', (int) $avgOpWorkplaceManagement],
+            ['Stakeholder Management', (int) $avgOpStakeholder],
+            ['Teamwork', (int) $avgOpTeamwork],
+            ['Personal Development', (int) $avgOpPersonalDevelopment],
         ];
 
         $opManagementIncomplete=count($opGovofficials)-($opManagementComplete+$opManagementInProgress);
