@@ -175,8 +175,29 @@ class CompetancyAssessmentController extends Controller
         ->groupBy('govorganizationnames.gov_org_name', 'govorganizationnames.id')
         ->get(); 
 
-    $assessmentCompletedCount = $opIct->count() + $opDigitalGovernment->count() + $opManagement->count();
 
+
+
+        $opIctGovOfficialIds = OpIct::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $opDigitalGovernmentGovOfficialIds = OpDigitalGovernment::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $opManagementGovOfficialIds = OpManagement::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $midIctGovOfficialIds = MidIct::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $midDigitalGovernmentGovOfficialIds = MidDigitalGovernment::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $midManagementGovOfficialIds = MidManagement::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $topIctGovOfficialIds = TopIct::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $topDigitalGovernmentGovOfficialIds = TopDigitalGovernment::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+        $topManagementGovOfficialIds = TopManagement::select('govofficial_id')->distinct()->pluck('govofficial_id')->toArray();
+
+        $opCompleteIds = array_intersect($opIctGovOfficialIds, $opDigitalGovernmentGovOfficialIds, $opManagementGovOfficialIds);
+        $midCompleteIds = array_intersect($midIctGovOfficialIds, $midDigitalGovernmentGovOfficialIds, $midManagementGovOfficialIds );
+        $topCompleteIds = array_intersect($topIctGovOfficialIds, $topDigitalGovernmentGovOfficialIds, $topManagementGovOfficialIds );
+
+        $countOpCompleteIds = count($opCompleteIds);
+        $countMidCompleteIds = count($midCompleteIds);
+        $countTopCompleteIds = count($topCompleteIds);
+
+    $assessmentCompletedCount = $countOpCompleteIds + $countMidCompleteIds + $countTopCompleteIds;
+    
     $assessmentInprogress = $govofficialCount - $assessmentCompletedCount;
 
     $ictCount = $opIct->count() + $midIct->count() + $topIct->count();

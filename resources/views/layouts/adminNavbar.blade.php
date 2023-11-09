@@ -26,7 +26,7 @@
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-text mx-3" >
                         <ul class="navbar-nav text-light" id="accordionSidebar-1" style="margin-left: -15px;">
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="/admin/home"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000"><a class="nav-link" href="{{route('home')}}"><img src="{{ asset('img/Mask group(1).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Dashboard</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50"><a class="nav-link" href="#organizations"><img src="{{ asset('img/Mask group(2).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Organizations</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100"><a class="nav-link" href="{{ route('competancyDashboard') }}"><img src="{{ asset('img/Mask group(3).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Assessment</span></a></li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="{{ route('create-user') }}"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
@@ -68,7 +68,7 @@
                 <span style="font-family: Poppins, sans-serif;font-size:20px;margin-right: 15px;color: var(--bs-body-bg)">{{ Auth::user()->username }}</span>
                 <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);margin-right:70px"></a>
                     <div class="dropdown-menu" style="font-family: Popins;width:50px;margin-right:50px">
-                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/admin/home">Profile</a>
+                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="{{route('home')}}">Profile</a>
                         <a class="dropdown-item" style="font-family: Poppins" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">

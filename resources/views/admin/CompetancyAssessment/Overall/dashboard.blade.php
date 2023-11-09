@@ -35,8 +35,8 @@
 <div class="container" data-aos="fade-in" data-aos-duration="1000" style="margin-top: 30px;font-family:poppins">
     <div class="row">
         <div class="col-md-6" style="border-radius: 10px;border-style: solid;border-color: var(--bs-dark-bg-subtle);height: 540px;">
-            
-                <form class="form-control" method="GET" action="/searchGov" style="border-width:0px;height:70px">
+             
+                <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
                     <div class="col">
                         <input id="searchText" placeholder="   Search by Name or ID..." name="searchText" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
@@ -160,7 +160,7 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-                <form class="form-control" method="GET" action="/searchGov" style="border-width:0px;height:70px">
+                <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
                     <div class="col">
                         <input id="searchText2" name="searchText2" type="text" placeholder="   Search by Name or ID..." style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
@@ -256,7 +256,7 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-        <form class="form-control" method="GET" action="/searchGov" style="border-width:0px;height:70px">
+        <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
                     <div class="col">
                         <input id="searchText3" placeholder="   Search by Name or ID..." name="searchText3" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
@@ -352,7 +352,7 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-        <form class="form-control" method="GET" action="/searchGov" style="border-width:0px;height:70px">
+        <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
                     <div class="col">
                         <input id="searchText4" placeholder="   Search by Name or ID..." name="searchText4" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>

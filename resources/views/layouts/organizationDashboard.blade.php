@@ -68,7 +68,7 @@
                 <span style="font-family: Poppins, sans-serif;font-size:20px;margin-right: 15px;color: var(--bs-body-bg)">{{ Auth::user()->username }}</span>
                 <div class="dropdown"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);margin-right:70px"></a>
                     <div class="dropdown-menu" style="font-family: Popins;width:50px;margin-right:50px">
-                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="/home">Profile</a>
+                        <a class="dropdown-item" style="font-family: Poppins,san-serif" href="{{route('userHome')}}">Profile</a>
                         <a class="dropdown-item" style="font-family: Poppins" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">

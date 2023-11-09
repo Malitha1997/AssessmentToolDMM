@@ -138,7 +138,7 @@
                 <div class="row" style="margin-top: 50px;">
                     <div class="col ms-xxl-0" style="margin-left: 62px;"></div>
                     <div class="col" style="width: 250px;text-align: right;padding-left: 0px;margin-left: -390px;">
-                        <a class="btn btn-primary" href="/home" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
+                        <a class="btn btn-primary" href="{{route('userHome')}}" type="button" style="width: 152px;margin-right: 30px;height: 55px;font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;background: rgb(255,255,255);border-radius: 10px;font-weight: bold;border: 2px solid #1f2471 ;">Resume</a>
                         <button class="btn btn-primary" id="next" type="submit" style="width: 152px;height: 55px;font-family: Poppins, sans-serif;font-size: 24px;background: #1f2471;border-width: 0px;border-radius: 10px;" >Next</button></div>
                 </div>
             </div>
