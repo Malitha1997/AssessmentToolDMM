@@ -212,7 +212,18 @@ class PreliminaryAssessmentResultController extends Controller
             (int) $percentage->culture,
         ];
 
-        return view('PreliminaryAssessments.results',compact('labels', 'percentages'));
+        $percentagesAll = Percentage::get();
+
+        $sums = [
+            $percentagesAll->avg('customer'),
+            $percentagesAll->avg('strategy'),
+            $percentagesAll->avg('technology'),
+            $percentagesAll->avg('operation'),
+            $percentagesAll->avg('culture'),
+
+        ];
+
+        return view('PreliminaryAssessments.results',compact('labels', 'percentages','sums'));
     }
 
     public function customerresult(){
@@ -248,4 +259,44 @@ class PreliminaryAssessmentResultController extends Controller
         return view('PreliminaryAssessments.results', compact('result'));
 
     }
+
+    public function adminResult(string $id){
+
+        $user=User::find($id);
+        $g_user=$user->govorganizationdetail;
+        $percentageExist = $g_user ? $g_user->percentage : null;
+        // Fetch data for the radar chart
+        $percentages = [];
+
+        if ($g_user) {
+        $percentageExist = $g_user->percentage;
+
+        if ($percentageExist) {
+        // Organize the percentage data for the radar chart
+        $percentages = [
+            (int) $percentageExist->customer,
+            (int) $percentageExist->strategy,
+            (int) $percentageExist->technology,
+            (int) $percentageExist->operation,
+            (int) $percentageExist->culture,
+        ];
+        }
+
+        }
+        $percentagesAll = Percentage::get();
+
+        $sums = [
+            $percentagesAll->avg('customer'),
+            $percentagesAll->avg('strategy'),
+            $percentagesAll->avg('technology'),
+            $percentagesAll->avg('operation'),
+            $percentagesAll->avg('culture'),
+
+        ];
+        $labels = ["Customer", "Strategy", "Technology & data", "Operation", "Organization & culture"];
+        return view('admin.PreliminaryResults.userResults',compact('sums','user','g_user','percentageExist','labels','percentages'));
+    }
+
+
+
 }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('integrated_service_management');
             $table->string('real_time_insights');
             $table->string('smart_process_management');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 

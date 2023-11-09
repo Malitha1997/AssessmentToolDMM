@@ -41,14 +41,14 @@ class GovofficialController extends Controller
             'employment_layer'=> 'required|string',
             'date_of_birth'=> 'required|string',
         ]);
-
+//dd($request);
         $govofficial=new Govofficial;
 
         $govofficial->user_id=$request->user_id;
         $govofficial->full_name=$request->full_name;
         $govofficial->preferred_name=$request->preferred_name;
         $govofficial->designation=$request->designation;
-        $govofficial->govorganizatiodetail_id=$request->gov_org_name;
+        $govofficial->govorganizationdetail_id=$request->gov_org_name;
         $govofficial->contact_number=$request->contact_number;
         $govofficial->email=$request->email;
         $govofficial->employment_layer=$request->employment_layer;
@@ -56,7 +56,7 @@ class GovofficialController extends Controller
 
         $govofficial->save();
 
-        return redirect("signup2"); 
+        return redirect("signup2");
 
     }
 

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('data_engineering');
             $table->string('interoperbility');
             $table->string('application_for_users');
-            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 

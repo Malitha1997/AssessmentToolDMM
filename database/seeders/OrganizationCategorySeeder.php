@@ -13,52 +13,56 @@ class OrganizationCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Ministry',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Statutary Body',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Department',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'District Secretariat',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Provincial Councils',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Local Authority',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Divisional Secretariat',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Provincial Ministry',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Provincial Department',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Municipal Council',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Urban Council',
         ]);
 
-        DB::table('organizationcategories')->insert([
+        DB::table('organization_categories')->insert([
             'org_category' => 'Pradeshiya Sabha',
+        ]);
+
+        DB::table('organization_categories')->insert([
+            'org_category' => 'Government Owned Company',
         ]);
 
     }

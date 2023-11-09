@@ -12,10 +12,11 @@ use App\Models\Govofficial;
 
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Govorganizationname;
+
 use App\Models\Govorganizationdetail;
 
 use App\Models\GovernmentOrganization;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -46,6 +47,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+
     ];
 
 
@@ -118,5 +120,12 @@ class User extends Authenticatable
     public function govofficial(){
         return $this->hasOne(Govofficial::class);
     }
+    public function isActive()
+    {
+        return $this->is_active == 1;
+    }
 
+    public function govorganizationname(){
+        return $this->hasOne(Govorganizationname::class);
+    }
 }

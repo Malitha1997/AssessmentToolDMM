@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organizationcategories', function (Blueprint $table) {
+        Schema::create('tmp_operations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('org_category');
+            $table->string('operation_marks');
+            $table->string('operation_percentage');
+            $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails')->onDelete('cascade');
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organization_categories');
+        Schema::dropIfExists('tmp_operations');
     }
 };

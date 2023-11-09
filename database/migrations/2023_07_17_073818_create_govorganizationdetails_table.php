@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gov_org_address');
             $table->string('gov_org_email');
             $table->string('number_of_employee');
-            $table->string('districts_of_operations');
+            $table->text('districts_of_operations');
             $table->string('phone_number');
             $table->string('availablity_of_IT_unit');
             $table->string('name_of_the_head');
@@ -25,12 +25,11 @@ return new class extends Migration
             $table->string('head_email');
             $table->string('designation');
             $table->string('types_of_service');
-            $table->string('cdio_name');
-            $table->string('cdio_email');
-            $table->string('cdio_contact_no');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('relatedministry_id')->constrained('relatedministries');
-            $table->foreignId('organizationcategory_id')->constrained('organizationcategories');
+            $table->string('dtu_type')->default('No data'); ;
+            $table->string('number_of_employees_dtu')->default('No data'); ;
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('related_ministry_id')->constrained('related_ministries');
+            $table->foreignId('organization_category_id')->constrained('organization_categories');
             $table->foreignId('govorganizationname_id')->constrained('govorganizationnames');
         });
     }

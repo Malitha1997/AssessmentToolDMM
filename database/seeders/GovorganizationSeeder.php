@@ -18,9 +18,9 @@ class GovorganizationSeeder extends Seeder
             'govorganizationname_id' => 1,
             'gov_org_address' => 'Thummulla,Colombo',
             'gov_org_email' => 'org@gmail.com',
-            'organizationcategory_id' => 1,
+            'organization_category_id' => 1,
             'number_of_employee' => '150',
-            'relatedministry_id' => 1,
+            'related_ministry_id' => 1,
             'types_of_service' => 'Government to Citizen',
             'districts_of_operations' => 'Colombo',
             'phone_number' => '0111234567',
@@ -29,9 +29,8 @@ class GovorganizationSeeder extends Seeder
             'designation' => 'Head',
             'head_email' => 'head@gmail.com',
             'contact_number_of_the_head' => '0711584238',
-            'cdio_name' => 'Mr.DEF',
-            'cdio_email' => 'cdio@info.lk',
-            'cdio_contact_no' => '0711237895',
+            'dtu_type'=> 'Mid scale',
+            'number_of_employees_dtu'=> '5'
         ]);
     }
 }

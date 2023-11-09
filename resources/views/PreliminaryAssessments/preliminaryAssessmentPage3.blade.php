@@ -11,9 +11,9 @@
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="hidden" id="page2_total_marks" name="page2_marks" value="{{ $inputValue['page2_marks']}}">
+                    {{--  <input class="form-control" type="hidden" id="page2_total_marks" name="page2_marks" value="{{ $inputValue['page2_marks']}}">
                     <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
-                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
+                    <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">  --}}
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
                 <div class="row" style="margin-top: 20px;margin-bottom:20px">
@@ -216,13 +216,13 @@
 
         <script type="text/javascript">
             $('#page3').find(":radio").on('click', e => {
-                p2 = document.getElementById("page2_total_marks").value;
+                {{--  p2 = document.getElementById("page2_total_marks").value;  --}}
                 q16 = document.getElementById("marks16").value;
                 q17 = document.getElementById("marks17").value;
                 q18 = document.getElementById("marks18").value;
                 q19 = document.getElementById("marks19").value;
 
-                var a=Number(p2) + Number(q16) + Number(q17) + Number(q18) + Number(q19) ;
+                var a=Number(q16) + Number(q17) + Number(q18) + Number(q19) ;
                 document.getElementById("page3_total_marks").value= a;
 
                 var op= Number(q16) + Number(q17) + Number(q18) + Number(q19) ;

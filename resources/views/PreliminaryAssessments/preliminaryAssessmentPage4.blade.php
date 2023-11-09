@@ -3,20 +3,20 @@
 @section('content')
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <section class="d-flex flex-column align-items-center" style="height: 2900px;">
+    <section class="d-flex flex-column align-items-center" style="height: 3000px;">
         <div class="container align-content-center align-self-center" style="margin: 150px;width: 1358px;height: 600px;">
             <form method="POST" action="{{ route('storeValue4') }}">
                 {{csrf_field()}}
                 <div class="row" style="margin-top: 10px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
-                    <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
+                    {{--  <input class="form-control" type="hidden" id="page3_total_marks" name="page3_marks" value="{{ $inputValue['page3_marks']}}">
                     <input type="hidden" id="technology_percentage" name="technologyPercentage" value="{{ $inputValue['technologyPercentage']}}">
                     <input type="hidden" id="customer_percentage" name="customerPercentage" value="{{ $inputValue['customerPercentage']}}">
-                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">
+                    <input type="hidden" id="operation_percentage" name="operationPercentage" value="{{ $inputValue['operationPercentage']}}">  --}}
                     <input class="form-control" type="hidden" id="gov_org_id" name="govorganizationdetail_id" value="{{Auth::user()->govorganizationdetail->id}}" readonly>
                 </div>
-            <div data-aos="fade-down" id="page4" data-aos-duration="1000" style="width: 1282px;height: 2550px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
+            <div data-aos="fade-down" id="page4" data-aos-duration="1000" style="width: 1282px;height: 2570px;margin-top: 10px;border-radius: 10px;border: 2px solid #5f2b84;padding-left: 0px;margin-left: 6px;">
                 <div class="row" style="margin-top: 20px;">
                     <input class="form-control" type="hidden" value="3.125" id="weight">
                     <input class="form-control" type="hidden" value="31.25" id="max_weight">
@@ -99,13 +99,13 @@
                             <div class="col"><input type="radio" id="sd23_2" value="2.5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_2" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Some digital initiatives are identified based on the requirements of the services being offered by the organization</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd23_3" value="5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives based on the requirements of the organization's <br>customers and stakeholders</label></div>
+                            <div class="col"><input type="radio" id="sd23_3" value="5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_3" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives based on the requirements of the organization's <br>citizens/customers and stakeholders</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 40px;">
-                            <div class="col"><input type="radio" id="sd23_4" value="7.5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's <br>customers and stakeholders. APIs available to use by others.</label></div>
+                            <div class="col"><input type="radio" id="sd23_4" value="7.5" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_4" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's <br>citizens/customers and stakeholders. APIs available to use by others.</label></div>
                         </div>
                         <div class="row" style="margin-bottom: 20px;">
-                            <div class="col"><input type="radio" id="sd23_5" value="10" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">Well Defined planned and execution of digital initiatives base on the requirements of the organization's, customers <br>and stakeholders. APIs available. Constant improvements made based on market insights and demands.</label></div>
+                            <div class="col"><input type="radio" id="sd23_5" value="10" name="sd23" style="width:15px;height:15px;margin-left: 100px;"><label class="form-label" for="sd23_5" style="font-family: Poppins, sans-serif;font-size: 20px;color: #1f2471;margin-left: 20px;margin-top: -28px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Well Defined planned and execution of digital initiatives base on the requirements of the organization's, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;citizens/customers and stakeholders. APIs available. Constant improvements made based on market insights and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;demands.</label></div>
                         </div>
                     </div>
                 </div>
@@ -331,7 +331,7 @@
 
         <script type="text/javascript">
             $('#page4').find(":radio").on('click', e => {
-                p3 = document.getElementById("page3_total_marks").value;
+                {{--  p3 = document.getElementById("page3_total_marks").value;  --}}
                 q20 = document.getElementById("marks20").value;
                 q21 = document.getElementById("marks21").value;
                 q22 = document.getElementById("marks22").value;
@@ -343,7 +343,7 @@
 
 
 
-                var a= Number(p3) + Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;
+                var a= Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;
                 document.getElementById("page4_total_marks").value= a;
 
                 var str= Number(q20) + Number(q21) + Number(q22) + Number(q23) + Number(q24) + Number(q25) + Number(q26) + Number(q27) ;
