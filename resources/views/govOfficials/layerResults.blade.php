@@ -65,7 +65,7 @@
                 <div class="col-md-6 col-xxl-6">
                     <div class="row" style="margin-left:4%">
                         <div class="col">
-                            <form class="form-control" method="GET" action="/searchGov3" style="border-width:0px;height:70px">
+                            <form class="form-control" method="GET" action="{{route('searchGov3')}}" style="border-width:0px;height:70px">
                             <div class="col">
                                 <input id="searchText" placeholder="   Search by Name or ID..." name="searchText" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                             </div>

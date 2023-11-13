@@ -7,7 +7,7 @@
         <div style="height: 630px;width: 1177px;margin-top: 180px;margin-left:45px;background: #161A55;border-radius: 10px;">
             <div class="container container-expand-sm">
                 <div class="row">
-                    <a class="btn btn-primary d-flex flex-row justify-content-center " type="button" style="margin-left: 10px;margin-top:30px;background: url(&quot;{{ asset('img/Back white.png') }}&quot;), rgba(13,110,253,0);border-color: rgba(255,255,255,0);width: 30px;height: 30px;" href="/home"></a>
+                    <a class="btn btn-primary d-flex flex-row justify-content-center " type="button" style="margin-left: 10px;margin-top:30px;background: url(&quot;{{ asset('img/Back white.png') }}&quot;), rgba(13,110,253,0);border-color: rgba(255,255,255,0);width: 30px;height: 30px;" href="{{route('userHome')}}"></a>
                     <span style="font-size: 32px;font-family: poppins;text-align: center;">Details About Available Resources</span>
                 </div>
             </div>

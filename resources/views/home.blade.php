@@ -2,25 +2,25 @@
 
 @section('content')
 
-<body style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
+<body id="body" style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-down" data-aos-duration="1000">
         @if($resourceDataExists)
         {{--  If resource data exists, don t display this section  --}}
         @elseif(!$resourceDataExists)
-                <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
-                    <div class="row" style="width:1377px;height:185px">
+                <div class="container container-expand-sm" id="container" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
+                    <div class="row" id="row" style="width:1377px;height:185px">
                         <div class="col">
-                            <div class="row" style="margin-top:10px;width:1050px"><span style="font-family: Poppins, sans-serif;color: #C51010;font-size:24px"><b>Attention !</b></span></div>
-                            <div class="row" style="margin-top:10px;"><span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">It seems that you have some sections of the incomplete. To proceed, please make sure to click the <br>below button and fill out all the necessary information accurately. After filling these information you <br>can start Preliminary Assessment.</span></div>
+                            <div class="row" id="row" style="margin-top:10px;width:1050px"><span class="fonts" style="font-family: Poppins, sans-serif;color: #C51010;font-size:24px"><b>Attention !</b></span></div>
+                            <div class="row" id="row" style="margin-top:10px;"><span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">It seems that you have some sections of the incomplete. To proceed, please make sure to click the <br>below button and fill out all the necessary information accurately. After filling these information you <br>can start Preliminary Assessment.</span></div>
                         </div>
-                        <div class="col" style="margin-top:60px;width:327px"><a class="btn btn-primary" href="/resources" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Continue</a></div>
+                        <div class="col" id="col" style="margin-top:60px;width:327px"><a class="btn btn-primary" href="{{route('resources')}}" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Continue</a></div>
                     </div>
-                </div>
+                </div> 
         @endif
         <a class="btn btn-primary" href="{{route('dashboard')}}" data-aos="fade-down" type="button" style="width: 156.09px;height: 51px;font-size: 18px;font-family: Poppins, sans-serif;border-width: 0px;background: url(&quot;{{ asset('img/Screenshot (561) 10.png') }}&quot;);margin-right: 80px;">Dashboard</a>
-        <div class="container container-expand-sm" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
+        <div class="container container-expand-sm" id="container" data-aos="fade-down" data-aos-duration="1000" style="margin-top: 150px;margin-bottom: 20px;border-radius: 10px;border: 4px solid #5f2b84;">
             <div class="row">
-                <div class="col" style="width:1377px;height:168px">
+                <div class="col" id="col" style="width:1377px;height:168px">
                     <div class="row" style="margin-top:50px;width:700px">
                         @if($dataExists)
                         <span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">You have already done the Preliminary Assessment. </span>
@@ -28,21 +28,21 @@
                         <span style="font-family: Poppins, sans-serif;color: #000000;font-size:20px">You are eligible for Preliminary assessment.  Asses the Digital Maturity Level of organization. </span>
                         @endif
                     </div>
-                </div>
+                </div> 
                 <div class="col" style="width:150px">
                     <div class="row" style="margin-top:50px;">
                         @if($dataExists)
                             <button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" disabled>Preliminary Assessment</button>
                             @elseif(!$technologyDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment1" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment1')}}" >Preliminary Assessment</a>
                             @elseif(!$customerDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment2" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment2')}}" >Preliminary Assessment</a>
                             @elseif(!$operationDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment3" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment3')}}" >Preliminary Assessment</a>
                             @elseif(!$strategyDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment4" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment4')}}" >Preliminary Assessment</a>
                             @elseif(!$cultureDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment5" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment5')}}" >Preliminary Assessment</a>
                             @endif
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                     <div class="row" style="margin-bottom: 20px;">
                         <div class="col" style="margin-top: 50px;text-align: right;">
                             @if($dataExists)
-                            <a class="btn btn-primary" href="/preliminaryResults" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #ef4323;background: rgb(255,255,255);border-width: 2px;border-color: #ef4323;margin-right: 10px; border-radius: 10px">View Results</a>
+                            <a class="btn btn-primary" href="{{route('preliminaryResults')}}" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #ef4323;background: rgb(255,255,255);border-width: 2px;border-color: #ef4323;margin-right: 10px; border-radius: 10px">View Results</a>
                             @else
                             <button class="btn btn-primary" data-aos="fade-down" type="button" style="width: 198px;height: 47px;font-family: Poppins, sans-serif;font-size: 18px;color: #898382;background: rgb(255,255,255);border-width: 2px;border-color: #898382;margin-right: 10px; border-radius: 10px" disabled>View Results</button>
                             @endif
@@ -213,15 +213,15 @@
                             @if($dataExists)
                             <button class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" disabled>Preliminary Assessment</button>
                             @elseif(!$technologyDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment1" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment1')}}" >Preliminary Assessment</a>
                             @elseif(!$customerDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment2" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment2')}}" >Preliminary Assessment</a>
                             @elseif(!$operationDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment3" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment3')}}" >Preliminary Assessment</a>
                             @elseif(!$strategyDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment4" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment4')}}" >Preliminary Assessment</a>
                             @elseif(!$cultureDataExists)
-                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="/preliminaryAssessment5" >Preliminary Assessment</a>
+                            <a class="btn btn-primary" type="button" style="width: 266px;height: 55px;background: url(&quot;{{ asset('img/Screenshot (561) 5.png') }}&quot;);border-width: 0px;font-family: Poppins, sans-serif;font-size: 20px;" href="{{route('preliminaryAssessment5')}}" >Preliminary Assessment</a>
                             @endif
                         </div>
                     <div class="row" style="margin-top: 50px;">

@@ -281,9 +281,9 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xxl-6" style="width: 570px;">
-                    <div class="row">
+                    <div class="row"> 
                         <div class="col">
-                            <form class="form-control" method="GET" action="/searchGov2" style="border-width:0px;height:70px">
+                            <form class="form-control" method="GET" action="{{route('searchGov2')}}" style="border-width:0px;height:70px">
                             <div class="col">
                                 <input id="searchText" placeholder="   Search by Name or ID..." name="searchText" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                             </div>

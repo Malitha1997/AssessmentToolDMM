@@ -102,9 +102,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::resource('resourceusers', ResourceController::class);
 
     Route::get('/dashboard',[GovOrganizationDashboardController::class,'dashboard'])->name('dashboard');
-    Route::get('/searchGov2', [GovOrganizationDashboardController::class, 'dashboard']);
+    Route::get('/searchGov2', [GovOrganizationDashboardController::class, 'dashboard'])->name('searchGov2');
     Route::get('/dashboard/layers',[GovOrganizationDashboardController::class,'layerDashboard'])->name('layerDashboard');
-    Route::get('/searchGov3', [GovOrganizationDashboardController::class, 'layerDashboard']);
+    Route::get('/searchGov3', [GovOrganizationDashboardController::class, 'layerDashboard'])->name('searchGov3');
 
     Route::get('/report', [GovOrganizationReportController::class, 'report'])->name('govOrganizationReport');
 
