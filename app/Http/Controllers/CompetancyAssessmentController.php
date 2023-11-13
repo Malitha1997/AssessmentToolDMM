@@ -333,6 +333,9 @@ class CompetancyAssessmentController extends Controller
             ->where('employment_layer', 'operational')
             ->exists();
 
+        $countOperationalCompleted=0;
+        $countOperationalNotCompleted=0;
+        if($opGovofficials2==true){
         foreach ($opGovofficials as $opGovofficial) {
             if ($opGovofficial) {
                 $hasOpIctData = $opGovofficial->opIct ? $opGovofficial->opIct->exists() : false;
@@ -350,7 +353,7 @@ class CompetancyAssessmentController extends Controller
         }
         $countOperationalCompleted=count($opGovofficialOperationalCompleted);
         $countOperationalNotCompleted=count($opGovofficialOperationalNot);
-
+        }
         $midGovofficials = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
             ->get();
@@ -383,7 +386,12 @@ class CompetancyAssessmentController extends Controller
         $topGovofficials2 = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
             ->exists();
-        if($topGovofficials2== true){
+        $topManagementGovofficials=$topGovofficials
+            ->has('topManagement');
+
+        $countTopCompleted=0;
+        $countTopNotCompleted=0;
+        if($topManagementGovofficials== true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopIctData = $topGovofficial->topIct ? $topGovofficial->topIct->exists() : false;
@@ -419,6 +427,10 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
+        $opIctGovofficials= $operationalGovofficials -> has('opIct');
+        $countOpIct=0;
+        $countOpIctInprogress=0;
+        if($opIctGovofficials==true){
         foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpIctData = $operationalGovofficial->opIct ? $operationalGovofficial->opIct->exists() : false;
@@ -431,6 +443,7 @@ class CompetancyAssessmentController extends Controller
 
         $countOpIct=count($govofficialOpIct);
         $countOpIctInprogress=$countOperationalGovofficials - $countOpIct;
+        }
 
         $midGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
@@ -452,12 +465,18 @@ class CompetancyAssessmentController extends Controller
         $countMidIct=count($govofficialMidIct);
         $countMidIctInprogress=$countMidGovofficials - $countMidIct;
         }
-        if($topGovofficials2 == true){
+        
         $topGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
+        $topIctGovofficials= $topGovofficials
+                            ->has('topIct');
+
+        $countTopIct=0;
+        $countTopIctInprogress=0;
+        if($topIctGovofficials== true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopIctData = $topGovofficial->topIct ? $topGovofficial->topIct->exists() : false;
@@ -472,7 +491,8 @@ class CompetancyAssessmentController extends Controller
         $countTopIct=count($govofficialTopIct);
         $countTopIctInprogress=$countTopGovofficials - $countTopIct;
         }
-        $countIct=$countOpIct ?? 0 + $countMidIct ?? 0 + $countTopIct ?? 0;
+
+        $countIct=$countOpIct  + $countMidIct  + $countTopIct ;
         $countIctInprogress=$countOpIctInprogress ?? 0 + $countMidIctInprogress ?? 0 + $countTopIctInprogress ?? 0;
 
         $operationalGovofficials = $govorganizationname->govofficials()
@@ -481,6 +501,12 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
+        $opDigitalGovernmentOfficials=$operationalGovofficials
+                            ->has('opDigitalGovernment');
+         
+        $countOpDigitalGovernment=0;
+        $countOpDigitalGovernmentInprogress=0;
+        if($opDigitalGovernmentOfficials==true){                    
         foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpDigitalGovernmentData = $operationalGovofficial->opDigitalGovernment ? $operationalGovofficial->opDigitalGovernment->exists() : false;
@@ -493,6 +519,7 @@ class CompetancyAssessmentController extends Controller
 
         $countOpDigitalGovernment=count($govofficialOpDigitalGovernment);
         $countOpDigitalGovernmentInprogress=$countOperationalGovofficials - $countOpDigitalGovernment;
+        }
 
         $midGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
@@ -519,7 +546,12 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
-        if($topGovofficials2==true){
+        $topDigitalGovernmentOfficials=$topGovofficials
+                                ->has('topDigitalGovernment');
+
+        $countTopDigitalGovernment=0;
+        $countTopDigitalGovernmentInprogress=0;
+        if($topDigitalGovernmentOfficials==true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopDigitalGovernmentData = $topGovofficial->topDigitalGovernment ? $topGovofficial->topDigitalGovernment->exists() : false;
@@ -734,7 +766,7 @@ class CompetancyAssessmentController extends Controller
         $sumTopIctInformationManagement=array_sum($topIctInformationManagement);
         $avgTopInformationManagement=0;
         if($countTopGovofficials!==0){
-            $avgTopInformationManagement=round(($sumIctInformationManagement/($countTopGovofficials*11))*100 , 0);
+            $avgTopInformationManagement=round(($sumIctInformationManagement ?? 0/($countTopGovofficials*11))*100 , 0);
         }
         $sumIctInformationManagement=$sumOpIctInfromationManagement+$sumMidIctInformationManagement+$sumTopIctInformationManagement;
         $avgIctInformationManagement=0;
@@ -1429,6 +1461,10 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
+        $opIctGovofficials=$operationalGovofficials -> has('opIct');
+        $countOpIct=0;
+        $countOpIctInprogress=0;
+        if($opIctGovofficials==true){
         foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpIctData = $operationalGovofficial->opIct ? $operationalGovofficial->opIct->exists() : false;
@@ -1441,6 +1477,7 @@ class CompetancyAssessmentController extends Controller
 
         $countOpIct=count($govofficialOpIct);
         $countOpIctInprogress=$countOperationalGovofficials - $countOpIct;
+        }
 
         $midGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
@@ -1477,9 +1514,11 @@ class CompetancyAssessmentController extends Controller
                             ->where('employment_layer', 'top')
                             ->exists();
 
+        $topIctGovofficials=$topGovofficials -> has('topIct');
         $countTopIct=0;
         $countTopIctInprogress=0;
-        if($topGovofficials2==true){
+       
+        if($topIctGovofficials==true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopIctData = $topGovofficial->topIct ? $topGovofficial->topIct->exists() : false;
@@ -1494,8 +1533,9 @@ class CompetancyAssessmentController extends Controller
         $countTopIct=count($govofficialTopIct);
         $countTopIctInprogress=$countTopGovofficials - $countTopIct;
         }
-        $countIct=$countOpIct ?? 0 + $countMidIct ?? 0 + $countTopIct ?? 0;
-        $countIctInprogress=$countOpIctInprogress ?? 0 + $countMidIctInprogress ?? 0 + $countTopIctInprogress ?? 0;
+
+        $countIct=$countOpIct  + $countMidIct  + $countTopIct ;
+        $countIctInprogress=$countOpIctInprogress  + $countMidIctInprogress  + $countTopIctInprogress ;
 
         //Ict In Workplace
         $opIctInWorkplace = $govorganizationname->govofficials()
@@ -1506,12 +1546,17 @@ class CompetancyAssessmentController extends Controller
 
         $opGovofficials = $govorganizationname->govofficials()
             ->where('employment_layer', 'operational')
-            ->get()
-            ->toArray();
+            ->get();
 
         $sumOpIctInWorkplace=array_sum($opIctInWorkplace);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpIctInWorkplace=round(($sumOpIctInWorkplace/($countOpGovofficials*40))*100 , 0);
+
+        $opIctInWorkplaceGovofficials=$opGovofficials -> has('opIctInWorkPlace');
+        $avgOpIctInWorkplace=0;
+
+        if($opIctInWorkplaceGovofficials==true){
+            $avgOpIctInWorkplace=round(($sumOpIctInWorkplace/($countOpGovofficials*40))*100 , 0);
+        }
 
         $midIctInWorkplace = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -1959,6 +2004,11 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
+        $opDigitalGovernmentOfficials=$operationalGovofficials -> has('opDigitalGovernment');
+
+        $countOpDigitalGovernment=0;
+        $countOpDigitalGovernmentInprogress=0;
+        if($opDigitalGovernmentOfficials==true){
         foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpDigitalGovernmentData = $operationalGovofficial->opDigitalGovernment ? $operationalGovofficial->opDigitalGovernment->exists() : false;
@@ -1971,12 +2021,20 @@ class CompetancyAssessmentController extends Controller
 
         $countOpDigitalGovernment=count($govofficialOpDigitalGovernment);
         $countOpDigitalGovernmentInprogress=$countOperationalGovofficials - $countOpDigitalGovernment;
+        }
 
         $midGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
                             ->get();
         $countMidGovofficials=count($midGovofficials);
 
+        
+        $midGovofficials2 = $govorganizationname->govofficials()
+                            ->where('employment_layer', 'middle')
+                            ->exists();
+
+        $countMidDigitalGovernment=0;
+        $countMidDigitalGovernmentInprogress=0;
         if($midGovofficials2==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
@@ -1998,6 +2056,15 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
+        
+        $topGovofficials2 = $govorganizationname->govofficials()
+                            ->where('employment_layer', 'top')
+                            ->exists();
+
+        $topDigitalGovernmentOfficials=$topGovofficials -> has('topDigitalGovernment');
+        $countTopDigitalGovernment=0;     
+        $countTopDigitalGovernmentInprogress=0;               
+        if($topDigitalGovernmentOfficials==true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopDigitalGovernmentData = $topGovofficial->topDigitalGovernment ? $topGovofficial->topDigitalGovernment->exists() : false;
@@ -2011,7 +2078,7 @@ class CompetancyAssessmentController extends Controller
 
         $countTopDigitalGovernment=count($govofficialTopDigitalGovernment);
         $countTopDigitalGovernmentInprogress=$countTopGovofficials - $countTopDigitalGovernment;
-
+        }
         $countDigitalGovernment=$countOpDigitalGovernment+$countMidDigitalGovernment+$countTopDigitalGovernment;
         $countDigitalGovernmentInprogress=$countOpDigitalGovernmentInprogress+$countMidDigitalGovernmentInprogress+$countTopDigitalGovernmentInprogress;
 
@@ -2029,7 +2096,10 @@ class CompetancyAssessmentController extends Controller
 
         $sumOpChangeManagement=array_sum($opChangeManagement);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpChangeManagement=round(($sumOpChangeManagement/($countOpGovofficials*11))*100 , 0);
+        $avgOpChangeManagement=0;
+        if($countOpGovofficials!==0){
+            $avgOpChangeManagement=round(($sumOpChangeManagement/($countOpGovofficials*11))*100 , 0);
+        }
 
         $midIctChangeManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2044,7 +2114,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumMidChangeManagement=array_sum($midIctChangeManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidChangeManagement=round(($sumMidChangeManagement/($countMidGovofficials*18))*100 , 0);
+        $avgMidChangeManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidChangeManagement=round(($sumMidChangeManagement/($countMidGovofficials*18))*100 , 0);
+        }
 
         $topChangeManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2059,10 +2132,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopChangeManagement=array_sum($topChangeManagement);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopChangeManagement=round(($sumTopChangeManagement/($countTopGovofficials*13))*100 , 0);
+        $avgTopChangeManagement=0;
+        if($countTopGovofficials!==0){
+            $avgTopChangeManagement=round(($sumTopChangeManagement/($countTopGovofficials*13))*100 , 0);
+        }
 
         $sumChangeManagement=$sumOpChangeManagement+$sumMidChangeManagement+$sumTopChangeManagement;
-        $avgChangeManagement=round(($sumChangeManagement/($countGovOfficials * 42)) * 100, 0);
+        $avgChangeManagement=0;
+        if($countGovOfficials!==0){
+            $avgChangeManagement=round(($sumChangeManagement/($countGovOfficials * 42)) * 100, 0);
+        }
 
         //Project Management
         $midProjectManagement = $govorganizationname->govofficials()
@@ -2073,7 +2152,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumMidProjectManagement=array_sum($midProjectManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidProjectManagement=round(($sumMidProjectManagement/($countMidGovofficials*12))*100 , 0);
+        $avgMidProjectManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidProjectManagement=round(($sumMidProjectManagement/($countMidGovofficials*12))*100 , 0);
+        }
 
         $topProjectManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2083,10 +2165,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopProjectManagement=array_sum($topProjectManagement);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopProjectManagement=round(($sumTopProjectManagement/($countTopGovofficials*23))*100 , 0);
+        $avgTopProjectManagement=0;
+        if($countTopGovofficials!==0){
+            $avgTopProjectManagement=round(($sumTopProjectManagement/($countTopGovofficials*23))*100 , 0);
+        }
 
         $sumProjectManagement=$sumMidProjectManagement+$sumTopProjectManagement;
-        $avgProjectManagement=round(($sumProjectManagement/($countGovOfficials * 55)) * 100, 0);
+        $avgProjectManagement=0;
+        if($countGovOfficials!==0){
+            $avgProjectManagement=round(($sumProjectManagement/($countGovOfficials * 55)) * 100, 0);
+        }
 
         //Collaboration
         $opCollaboration = $govorganizationname->govofficials()
@@ -2097,7 +2185,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpCollaboration=array_sum($opCollaboration);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpCollaboration=round(($sumOpCollaboration/($countOpGovofficials*11))*100 , 0);
+        $avgOpCollaboration=0;
+        if($countOpGovofficials!==0){
+            $avgOpCollaboration=round(($sumOpCollaboration/($countOpGovofficials*11))*100 , 0);
+        }
 
         $midCollaboration = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2107,7 +2198,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumMidCollaboration=array_sum($midCollaboration);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidCollaboration=round(($sumMidCollaboration/($countMidGovofficials*12))*100 , 0);
+        $avgMidCollaboration=0;
+        if($countMidGovofficials!==0){
+            $avgMidCollaboration=round(($sumMidCollaboration/($countMidGovofficials*12))*100 , 0);
+        }
 
         $topCollaboration = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2117,10 +2211,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopCollaboration=array_sum($topCollaboration);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopCollaboration=round(($sumTopCollaboration/($countTopGovofficials*22))*100 , 0);
+        $avgTopCollaboration=0;
+        if($countTopGovofficials!==0){
+            $avgTopCollaboration=round(($sumTopCollaboration/($countTopGovofficials*22))*100 , 0);
+        }
 
         $sumCollaboration=$sumMidCollaboration+$sumTopCollaboration;
-        $avgCollaboration=round(($sumCollaboration/($countGovOfficials * 45)) * 100, 0);
+        $avgCollaboration=0;
+        if($countGovOfficials!==0){
+            $avgCollaboration=round(($sumCollaboration/($countGovOfficials * 45)) * 100, 0);
+        }
 
         //Orientation
         $opOrientation = $govorganizationname->govofficials()
@@ -2131,7 +2231,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpOrientation=array_sum($opOrientation);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpOrientation=round(($sumOpOrientation/($countOpGovofficials*12))*100 , 0);
+        $avgOpOrientation=0;
+        if($countOpGovofficials!==0){
+            $avgOpOrientation=round(($sumOpOrientation/($countOpGovofficials*12))*100 , 0);
+        }
 
         $midOrientation = $govorganizationname->govofficials()
         ->where('employment_layer', 'middle')
@@ -2141,7 +2244,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidOrientation=array_sum($midOrientation);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidOrientation=round(($sumMidOrientation/($countMidGovofficials*14))*100 , 0);
+        $avgMidOrientation=0;
+        if($countMidGovofficials!==0){
+            $avgMidOrientation=round(($sumMidOrientation/($countMidGovofficials*14))*100 , 0);
+        }
 
         $topOrientation = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2151,10 +2257,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopOrientation=array_sum($topOrientation);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopOrientation=round(($sumTopOrientation/($countTopGovofficials*14))*100 , 0);
+        $avgTopOrientation=0;
+        if($countTopGovofficials!==0){
+            $avgTopOrientation=round(($sumTopOrientation/($countTopGovofficials*14))*100 , 0);
+        }
 
         $sumOrientation=$sumOpOrientation+$sumMidOrientation+$sumTopOrientation;
-        $avgOrientation=round(($sumOrientation/($countGovOfficials * 40)) * 100, 0);
+        $avgOrientation=0;
+        if($countGovOfficials!==0){
+            $avgOrientation=round(($sumOrientation/($countGovOfficials * 40)) * 100, 0);
+        }
 
         //Quality Management
         $opQualityManagement = $govorganizationname->govofficials()
@@ -2165,7 +2277,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpQualityManagement=array_sum($opQualityManagement);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpQualityManagement=round(($sumOpQualityManagement/($countOpGovofficials*18))*100 , 0);
+        $avgOpQualityManagement=0;
+        if($countOpGovofficials!==0){
+            $avgOpQualityManagement=round(($sumOpQualityManagement/($countOpGovofficials*18))*100 , 0);
+        }
 
         $midQualityManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2175,7 +2290,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidQualityManagement=array_sum($midQualityManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidQualityManagement=round(($sumMidQualityManagement/($countMidGovofficials*15))*100 , 0);
+        $avgMidQualityManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidQualityManagement=round(($sumMidQualityManagement/($countMidGovofficials*15))*100 , 0);
+        }
 
         $topQualityManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2185,10 +2303,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopQualityManagement=array_sum($topQualityManagement);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopQualityManagement=round(($sumTopQualityManagement/($countTopGovofficials*20))*100 , 0);
+        $avgTopQualityManagement=0;
+        if($countTopGovofficials!==0){
+            $avgTopQualityManagement=round(($sumTopQualityManagement/($countTopGovofficials*20))*100 , 0);
+        }
 
         $sumQualityManagement=$sumOpQualityManagement+$sumMidQualityManagement+$sumTopQualityManagement;
-        $avgQualityManagement=round(($sumQualityManagement/($countGovOfficials * 53)) * 100, 0);
+        $avgQualityManagement=0;
+        if($countGovOfficials!==0){
+            $avgQualityManagement=round(($sumQualityManagement/($countGovOfficials * 53)) * 100, 0);
+        }
 
         //Initiative
         $opInitiative = $govorganizationname->govofficials()
@@ -2209,10 +2333,16 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidInitiative=array_sum($midInitiative);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidInitiative=round(($sumMidInitiative/($countMidGovofficials*29))*100 , 0);
+        $avgMidInitiative=0;
+        if($countMidGovofficials!==0){
+            $avgMidInitiative=round(($sumMidInitiative/($countMidGovofficials*29))*100 , 0);
+        }
 
         $sumInitiative=$sumOpInitiative+$sumMidInitiative;
-        $avgInitiative=round(($sumInitiative/($countGovOfficials * 53)) * 100, 0);
+        $avgInitiative=0;
+        if($countGovOfficials!==0){
+            $avgInitiative=round(($sumInitiative/($countGovOfficials * 53)) * 100, 0);
+        }
 
         $overallDigitalGovernment = [
             ['Category', 'Percentage'],
@@ -2264,10 +2394,18 @@ class CompetancyAssessmentController extends Controller
                             ->where('employment_layer', 'operational')
                             ->get();
 
+        $operationalGovofficials2 = $govorganizationname->govofficials()
+                            ->where('employment_layer', 'operational')
+                            ->exists();
+        $opManagementGovofficials = $operationalGovofficials
+                            ->has('opManagement');
+                            
         $countOperationalGovofficials=count($operationalGovofficials);
-// dd($operationalManagement);
-        if($operationalGovofficials2==true){
-        foreach ($operationalGovofficials->OpManagement as $operationalGovofficial) {
+
+        $countOpManagement=0;
+        $countOpManagementInprogress=0;
+        if($opManagementGovofficials ==true){
+        foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpManagementData = $operationalGovofficial->opManagement ? $operationalGovofficial->opManagement->exists() : false;
 
@@ -2279,13 +2417,22 @@ class CompetancyAssessmentController extends Controller
 
         $countOpManagement=count($govofficialOpManagement);
         $countOpManagementInprogress=$countOperationalGovofficials - $countOpManagement;
-    }
+        }
         $midGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
                             ->get();
         $countMidGovofficials=count($midGovofficials);
 
+        $midGovofficials2 = $govorganizationname->govofficials()
+                            ->where('employment_layer', 'middle')
+                            ->exists();
 
+        $midManagementGovofficials = $midGovofficials
+                            ->has('midManagement');
+
+        $countMidManagement=0;
+        $countMidManagementInprogress=0;
+        if($midManagementGovofficials==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
                 $hasMidManagementData = $midGovofficial->midManagement ? $midGovofficial->midManagement->exists() : false;
@@ -2299,12 +2446,19 @@ class CompetancyAssessmentController extends Controller
 
         $countMidManagement=count($govofficialMidManagement);
         $countMidManagementInprogress=$countMidGovofficials - $countMidManagement;
+        }
 
         $topGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
+        $topManagementGovofficials=$topGovofficials
+                            ->has('topManagement');
+
+        $countTopManagement=0;
+        $countTopManagementInprogress=0;
+        if($topManagementGovofficials==true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopManagementData = $topGovofficial->topManagement ? $topGovofficial->topManagement->exists() : false;
@@ -2318,7 +2472,7 @@ class CompetancyAssessmentController extends Controller
 
         $countTopManagement=count($govofficialTopManagement);
         $countTopManagementInprogress=$countTopGovofficials - $countTopManagement;
-
+        }
         $countManagement=$countOpManagement+$countMidManagement+$countTopManagement;
         $countManagementInprogress=$countOpManagementInprogress+$countMidManagementInprogress+$countTopManagementInprogress;
 
@@ -2336,7 +2490,10 @@ class CompetancyAssessmentController extends Controller
 
         $sumOpCommunication=array_sum($opCommunication);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpCommunication=round(($sumOpCommunication/($countOpGovofficials*28))*100 , 0);
+        $avgOpCommunication=0;
+        if($countOpGovofficials!==0){
+            $avgOpCommunication=round(($sumOpCommunication/($countOpGovofficials*28))*100 , 0);
+        }
 
         $midIctCommunication = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2351,7 +2508,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumMidCommunication=array_sum($midIctCommunication);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidCommunication=round(($sumMidCommunication/($countMidGovofficials*12))*100 , 0);
+        $avgMidCommunication=0;
+        if($countMidGovofficials!==0){
+            $avgMidCommunication=round(($sumMidCommunication/($countMidGovofficials*12))*100 , 0);
+        }
 
         $topCommunication = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2366,10 +2526,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopCommunication=array_sum($topCommunication);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopCommunication=round(($sumTopCommunication/($countTopGovofficials*18))*100 , 0);
+        $avgTopCommunication=0;
+        if($countTopGovofficials!==0){
+            $avgTopCommunication=round(($sumTopCommunication/($countTopGovofficials*18))*100 , 0);
+        }
 
         $sumCommunication=$sumOpCommunication+$sumMidCommunication+$sumTopCommunication;
-        $avgCommunication=round(($sumCommunication/($countGovOfficials * 48)) * 100, 0);
+        $avgCommunication=0;
+        if($countGovOfficials!==0){
+            $avgCommunication=round(($sumCommunication/($countGovOfficials * 48)) * 100, 0);
+        }
 
         //Workplace Management
         $opWorkplaceManagement = $govorganizationname->govofficials()
@@ -2380,7 +2546,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpWorkplaceManagement=array_sum($opWorkplaceManagement);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpWorkplaceManagement=round(($sumOpWorkplaceManagement/($countOpGovofficials*12))*100 , 0);
+        $avgOpWorkplaceManagement=0;
+        if($countOpGovofficials!==0){
+            $avgOpWorkplaceManagement=round(($sumOpWorkplaceManagement/($countOpGovofficials*12))*100 , 0);
+        }
 
         $midWorkplaceManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2390,7 +2559,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidWorkplaceManagement=array_sum($midWorkplaceManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidWorkplaceManagement=round(($sumMidWorkplaceManagement/($countMidGovofficials*10))*100 , 0);
+        $avgMidWorkplaceManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidWorkplaceManagement=round(($sumMidWorkplaceManagement/($countMidGovofficials*10))*100 , 0);
+        }
 
         $topWorkplaceManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2400,10 +2572,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopWorkplaceManagement=array_sum($topWorkplaceManagement);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopWorkplaceManagement=round(($sumTopWorkplaceManagement/($countTopGovofficials*12))*100 , 0);
+        $avgTopWorkplaceManagement=0;
+        if($countTopGovofficials!==0){
+            $avgTopWorkplaceManagement=round(($sumTopWorkplaceManagement/($countTopGovofficials*12))*100 , 0);
+        }
 
         $sumWorkplaceManagement=$sumOpWorkplaceManagement+$sumMidWorkplaceManagement+$sumTopWorkplaceManagement;
-        $avgWorkplaceManagement=round(($sumWorkplaceManagement/($countGovOfficials * 34)) * 100, 0);
+        $avgWorkplaceManagement=0;
+        if($countGovOfficials!==0){
+            $avgWorkplaceManagement=round(($sumWorkplaceManagement/($countGovOfficials * 34)) * 100, 0);
+        }
 
         //Decision Making
         $midDecisionMaking = $govorganizationname->govofficials()
@@ -2414,7 +2592,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidDecisionMaking=array_sum($midDecisionMaking);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidDecisionMaking=round(($sumMidDecisionMaking/($countMidGovofficials*19))*100 , 0);
+        $avgMidDecisionMaking=0;
+        if($countMidGovofficials!==0){
+            $avgMidDecisionMaking=round(($sumMidDecisionMaking/($countMidGovofficials*19))*100 , 0);
+        }
 
         $topDecisionMaking = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2424,10 +2605,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopDecisionMaking=array_sum($topDecisionMaking);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopDecisionMaking=round(($sumTopDecisionMaking/($countTopGovofficials*10))*100 , 0);
+        $avgTopDecisionMaking=0;
+        if($countTopGovofficials!==0){
+            $avgTopDecisionMaking=round(($sumTopDecisionMaking/($countTopGovofficials*10))*100 , 0);
+        }
 
         $sumDecisionMaking=$sumMidDecisionMaking+$sumTopDecisionMaking;
-        $avgDecisionMaking=round(($sumDecisionMaking/($countGovOfficials * 29)) * 100, 0);
+        $avgDecisionMaking=0;
+        if($countGovOfficials!==0){
+            $avgDecisionMaking=round(($sumDecisionMaking/($countGovOfficials * 29)) * 100, 0);
+        }
 
         //Stakeholder
         $opStakeholderManagement = $govorganizationname->govofficials()
@@ -2438,7 +2625,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpStakeholderManagement=array_sum($opStakeholderManagement);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpStakeholderManagement=round(($sumOpStakeholderManagement/($countOpGovofficials*24))*100 , 0);
+        $avgOpStakeholderManagement=0;
+        if($countOpGovofficials!==0){
+            $avgOpStakeholderManagement=round(($sumOpStakeholderManagement/($countOpGovofficials*24))*100 , 0);
+        }
 
         $midStakeholderManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2448,7 +2638,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidStakeholderManagement=array_sum($midStakeholderManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidStakeholderManagement=round(($sumMidStakeholderManagement/($countMidGovofficials*25))*100 , 0);
+        $avgMidStakeholderManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidStakeholderManagement=round(($sumMidStakeholderManagement/($countMidGovofficials*25))*100 , 0);
+        }
 
         $topStakeholderManagement = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2458,10 +2651,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopStakeholderManagement=array_sum($topStakeholderManagement);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopStakeholderManagement=round(($sumTopStakeholderManagement/($countTopGovofficials*14))*100 , 0);
+        $avgTopStakeholderManagement=0;
+        if($countTopGovofficials!==0){
+            $avgTopStakeholderManagement=round(($sumTopStakeholderManagement/($countTopGovofficials*14))*100 , 0);
+        }
 
         $sumStakeholderManagement=$sumOpStakeholderManagement+$sumMidStakeholderManagement+$sumTopStakeholderManagement;
-        $avgStakeholderManagement=round(($sumStakeholderManagement/($countGovOfficials * 63)) * 100, 0);
+        $avgStakeholderManagement=0;
+        if($countGovOfficials!==0){
+            $avgStakeholderManagement=round(($sumStakeholderManagement/($countGovOfficials * 63)) * 100, 0);
+        }
 
         //Teamwork
         $opTeamwork = $govorganizationname->govofficials()
@@ -2472,7 +2671,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpTeamwork=array_sum($opTeamwork);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpTeamwork=round(($sumOpTeamwork/($countOpGovofficials*24))*100 , 0);
+        $avgOpTeamwork=0;
+        if($countOpGovofficials!==0){
+            $avgOpTeamwork=round(($sumOpTeamwork/($countOpGovofficials*24))*100 , 0);
+        }
 
         $midTeamwork = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2482,10 +2684,16 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidTeamwork=array_sum($midTeamwork);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidTeamwork=round(($sumMidTeamwork/($countMidGovofficials*4))*100 , 0);
+        $avgMidTeamwork=0;
+        if($countMidGovofficials!==0){
+            $avgMidTeamwork=round(($sumMidTeamwork/($countMidGovofficials*4))*100 , 0);
+        }
 
         $sumTeamwork=$sumOpTeamwork+$sumMidTeamwork;
-        $avgTeamwork=round(($sumTeamwork/($countGovOfficials * 28)) * 100, 0);
+        $avgTeamwork=0;
+        if($countGovOfficials!==0){
+            $avgTeamwork=round(($sumTeamwork/($countGovOfficials * 28)) * 100, 0);
+        }
 
         //Personal Development
         $opPersonalDevelopment = $govorganizationname->govofficials()
@@ -2496,7 +2704,10 @@ class CompetancyAssessmentController extends Controller
         
         $sumOpPersonalDevelopment=array_sum($opPersonalDevelopment);
         $countOpGovofficials=count($opGovofficials);
-        $avgOpPersonalDevelopment=round(($sumOpPersonalDevelopment/($countOpGovofficials*12))*100 , 0);
+        $avgOpPersonalDevelopment=0;
+        if($countOpGovofficials!==0){
+            $avgOpPersonalDevelopment=round(($sumOpPersonalDevelopment/($countOpGovofficials*12))*100 , 0);
+        }
 
         $midPersonalDevelopment = $govorganizationname->govofficials()
             ->where('employment_layer', 'middle')
@@ -2506,7 +2717,10 @@ class CompetancyAssessmentController extends Controller
     
         $sumMidPersonalDevelopment=array_sum($midPersonalDevelopment);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidPersonalDevelopment=round(($sumMidPersonalDevelopment/($countMidGovofficials*5))*100 , 0);
+        $avgMidPersonalDevelopment=0;
+        if($countMidGovofficials!==0){
+            $avgMidPersonalDevelopment=round(($sumMidPersonalDevelopment/($countMidGovofficials*5))*100 , 0);
+        }
 
         $topPersonalDevelopment = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2516,10 +2730,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopPersonalDevelopment=array_sum($topPersonalDevelopment);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopPersonalDevelopment=round(($sumTopPersonalDevelopment/($countTopGovofficials*6))*100 , 0);
+        $avgTopPersonalDevelopment=0;
+        if($countTopGovofficials!==0){
+            $avgTopPersonalDevelopment=round(($sumTopPersonalDevelopment/($countTopGovofficials*6))*100 , 0);
+        }
 
         $sumPersonalDevelopment=$sumOpPersonalDevelopment+$sumMidPersonalDevelopment;
-        $avgPersonalDevelopment=round(($sumPersonalDevelopment/($countGovOfficials * 23)) * 100, 0);
+        $avgPersonalDevelopment=0;
+        if($countGovOfficials!==0){
+            $avgPersonalDevelopment=round(($sumPersonalDevelopment/($countGovOfficials * 23)) * 100, 0);
+        }
 
         //Capacity Building
         $midCapacityBuilding = $govorganizationname->govofficials()
@@ -2530,7 +2750,10 @@ class CompetancyAssessmentController extends Controller
 
         $sumMidCapacityBuilding=array_sum($midCapacityBuilding);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidCapacityBuilding=round(($sumMidCapacityBuilding/($countMidGovofficials*8))*100 , 0);
+        $avgMidCapacityBuilding=0;
+        if($countMidGovofficials!==0){
+            $avgMidCapacityBuilding=round(($sumMidCapacityBuilding/($countMidGovofficials*8))*100 , 0);
+        }
 
         $topCapacityBuilding = $govorganizationname->govofficials()
             ->where('employment_layer', 'top')
@@ -2540,10 +2763,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopCapacityBuilding=array_sum($topCapacityBuilding);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopCapacityBuilding=round(($sumTopCapacityBuilding/($countTopGovofficials*20))*100 , 0);
+        $avgTopCapacityBuilding=0;
+        if($countTopGovofficials!==0){
+            $avgTopCapacityBuilding=round(($sumTopCapacityBuilding/($countTopGovofficials*20))*100 , 0);
+        }
 
         $sumCapacityBuilding=$sumMidCapacityBuilding+$sumTopCapacityBuilding;
-        $avgCapacityBuilding=round(($sumCapacityBuilding/($countGovOfficials * 28)) * 100, 0);
+        $avgCapacityBuilding=0;
+        if($countGovOfficials!==0){
+            $avgCapacityBuilding=round(($sumCapacityBuilding/($countGovOfficials * 28)) * 100, 0);
+        }
 
         //Performance Management
         $midPerformanceManagement = $govorganizationname->govofficials()
@@ -2554,10 +2783,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumMidPerformanceManagement=array_sum($midPerformanceManagement);
         $countMidGovofficials=count($midGovofficials);
-        $avgMidPerformanceManagement=round(($sumMidPerformanceManagement/($countMidGovofficials*17))*100 , 0);
+        $avgMidPerformanceManagement=0;
+        if($countMidGovofficials!==0){
+            $avgMidPerformanceManagement=round(($sumMidPerformanceManagement/($countMidGovofficials*17))*100 , 0);
+        }
 
+        $avgPerformanceManagement=0;
         $sumPerformanceManagement=$sumMidPerformanceManagement;
-        $avgPerformanceManagement=round(($sumPerformanceManagement/($countGovOfficials * 17)) * 100, 0);
+        if($countGovOfficials!==0){
+            $avgPerformanceManagement=round(($sumPerformanceManagement/($countGovOfficials * 17)) * 100, 0);
+        }
 
         //Human Resource
         $topHumanResource = $govorganizationname->govofficials()
@@ -2568,10 +2803,16 @@ class CompetancyAssessmentController extends Controller
 
         $sumTopHumanResource=array_sum($topHumanResource);
         $countTopGovofficials=count($topGovofficials);
-        $avgTopHumanResource=round(($sumTopHumanResource/($countTopGovofficials*6))*100 , 0);
+        $avgTopHumanResource=0;
+        if($countTopGovofficials!==0){
+            $avgTopHumanResource=round(($sumTopHumanResource/($countTopGovofficials*6))*100 , 0);
+        }
 
         $sumHumanResource=$sumTopHumanResource;
-        $avgHumanResource=round(($sumHumanResource/($countGovOfficials * 6)) * 100, 0);
+        $avgHumanResource=0;
+        if($countGovOfficials!==0){
+            $avgHumanResource=round(($sumHumanResource/($countGovOfficials * 6)) * 100, 0);
+        }
 
         $overallManagement = [
             ['Category', 'Percentage'],
