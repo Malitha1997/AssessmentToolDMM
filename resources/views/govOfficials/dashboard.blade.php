@@ -304,7 +304,7 @@
                                         <tr>
                                             <th>User Name</th>
                                             <th>Designation</th>
-                                            <th style="width: 200px;">Employment Layer</th>
+                                            <th>Employment Layer</th>
                                         </tr>
                                     </thead>
                                     <tbody>

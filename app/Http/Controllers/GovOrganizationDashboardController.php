@@ -120,10 +120,21 @@ class GovOrganizationDashboardController extends Controller
                 $topResponse++;
             }
         }
+        $avgOpResponse=0;
+        $avgMidResponse=0;
+        $avgTopResponse=0;
 
-        $avgOpResponse=round(($opResponse / count($opGovofficials))*100 , 0);
-        $avgMidResponse=round(($midResponse / count($midGovofficials))*100 , 0);
-        $avgTopResponse=round(($topResponse / count($topGovofficials))*100 , 0);
+        if(count($opGovofficials)!==0){
+            $avgOpResponse=round(($opResponse / count($opGovofficials))*100 , 0);
+        }
+
+        if(count($midGovofficials)){
+            $avgMidResponse=round(($midResponse / count($midGovofficials))*100 , 0);
+        }
+
+        if(count($topGovofficials)){
+            $avgTopResponse=round(($topResponse / count($topGovofficials))*100 , 0);
+        }
 
         $layerResponses = [
             ['Category', 'Percentage'],
@@ -152,9 +163,19 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $avgOpIctResponse=round(($opIctResponse / count($opGovofficials)) * 100 , 0);
-        $avgOpDigitalGovernmentResponse=round(($opDigitalGovernmentResponse / count($opGovofficials)) * 100 , 0);
-        $avgOpManagementResponse=round(($opManagementResponse / count($opGovofficials)) * 100 , 0);
+        $avgOpIctResponse=0;
+        $avgOpDigitalGovernmentResponse=0;
+        $avgOpManagementResponse=0;
+
+        if(count($opGovofficials)!==0){
+            $avgOpIctResponse=round(($opIctResponse / count($opGovofficials)) * 100 , 0);
+        }
+        if(count($opGovofficials)!==0){
+            $avgOpDigitalGovernmentResponse=round(($opDigitalGovernmentResponse / count($opGovofficials)) * 100 , 0);
+        }
+        if(count($opGovofficials)!==0){
+            $avgOpManagementResponse=round(($opManagementResponse / count($opGovofficials)) * 100 , 0);
+        }
 
         $midIctResponse=0;
         $midDigitalGovernmentResponse=0;
@@ -176,9 +197,19 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $avgMidIctResponse=round(($midIctResponse / count($midGovofficials)) * 100 , 0);
-        $avgMidDigitalGovernmentResponse=round(($midDigitalGovernmentResponse / count($midGovofficials)) * 100 , 0);
-        $avgMidManagementResponse=round(($midManagementResponse / count($midGovofficials)) * 100 , 0);
+        $avgMidIctResponse=0;
+        $avgMidDigitalGovernmentResponse=0;
+        $avgMidManagementResponse=0;
+
+        if(count($midGovofficials)!==0){
+            $avgMidIctResponse=round(($midIctResponse / count($midGovofficials)) * 100 , 0);
+        }
+        if(count($midGovofficials)!==0){
+            $avgMidDigitalGovernmentResponse=round(($midDigitalGovernmentResponse / count($midGovofficials)) * 100 , 0);
+        }
+        if(count($midGovofficials)!==0){
+            $avgMidManagementResponse=round(($midManagementResponse / count($midGovofficials)) * 100 , 0);
+        }
 
         $topIctResponse=0;
         $topDigitalGovernmentResponse=0;
@@ -200,9 +231,20 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $avgTopIctResponse=round(($topIctResponse / count($topGovofficials)) * 100 , 0);
-        $avgTopDigitalGovernmentResponse=round(($topDigitalGovernmentResponse / count($topGovofficials)) * 100 , 0);
-        $avgTopManagementResponse=round(($topManagementResponse / count($topGovofficials)) * 100 , 0);
+        $avgTopIctResponse=0;
+        $avgTopDigitalGovernmentResponse=0;
+        $avgTopManagementResponse=0;
+
+        if(count($topGovofficials)!==0){
+            $avgTopIctResponse=round(($topIctResponse / count($topGovofficials)) * 100 , 0);
+        }
+        if(count($topGovofficials)!==0){
+            $avgTopDigitalGovernmentResponse=round(($topDigitalGovernmentResponse / count($topGovofficials)) * 100 , 0);
+        }
+        if(count($topGovofficials)!==0){
+            $avgTopManagementResponse=round(($topManagementResponse / count($topGovofficials)) * 100 , 0);
+        }
+
         $avgCdio=0;
 
         $labels=["Top & 2nd Tier Management","CDIO","Middle & Junior Management","Operational Staff"];
@@ -248,15 +290,22 @@ class GovOrganizationDashboardController extends Controller
                 $topDigitalCitizenshipData[] = $topGovofficial->topIct->digital_citizenship;
             }
         }
-
+        $avgIctInWorkplace=0;
         $totIctInWorkplace=array_sum($opIctInWorkplaceData) + array_sum($midIctInWorkplaceData) + array_sum($topIctInWorkplaceData);
-        $avgIctInWorkplace= round(($totIctInWorkplace/(110 * count($govofficials))) *100 , 0);
-
+        if(count($govofficials)!==0){
+            $avgIctInWorkplace= round(($totIctInWorkplace/(110 * count($govofficials))) *100 , 0);
+        }
         $totInformationManagement=array_sum($opInformationManagementData) + array_sum($midInformationManagementData) + array_sum($topInformationManagementData);
-        $avgInformationManagement= round(($totInformationManagement/(31 * count($govofficials))) *100 , 0);
+        $avgInformationManagement=0;
+        if(count($govofficials)!==0){
+            $avgInformationManagement= round(($totInformationManagement/(31 * count($govofficials))) *100 , 0);
+        }
 
         $totDigitalCitizenship=array_sum($opDigitalCitizenshipData) + array_sum($midDigitalCitizenshipData) + array_sum($topDigitalCitizenshipData);
-        $avgDigitalCitizenship= round(($totDigitalCitizenship/(159 * count($govofficials))) *100 , 0);
+        $avgDigitalCitizenship=0;
+        if(count($govofficials)!==0){
+            $avgDigitalCitizenship= round(($totDigitalCitizenship/(159 * count($govofficials))) *100 , 0);
+        }
 
         $ictMarks = [
             ['Category', 'Percentage'],
@@ -316,25 +365,43 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $totProjectManagement=array_sum($midProjectManagementData) + array_sum($topProjectManagementData);
-        $midTopGovofficials=count($midGovofficials)+count($topGovofficials);
-        $avgProjectManagement=round(($totProjectManagement / (35 * $midTopGovofficials)) * 100,0);
+        $totProjectManagement=array_sum($midProjectManagementData) ?? 0 + array_sum($topProjectManagementData) ?? 0;
+        $midTopGovofficials=count($midGovofficials) ?? 0+count($topGovofficials) ?? 0;
+        $avgProjectManagement=0;
+        if($midTopGovofficials!==0){
+            $avgProjectManagement=round(($totProjectManagement / (35 * $midTopGovofficials)) * 100,0);
+        }
 
-        $totChangeManagement=array_sum($opChangeManagementData) + array_sum($midChangeManagementData) + array_sum($topChangeManagementData);
-        $avgChangeManagement=round(($totChangeManagement / (42 * count($govofficials)))  * 100,0);
+        $totChangeManagement=array_sum($opChangeManagementData) ?? 0 + array_sum($midChangeManagementData) ?? 0 + array_sum($topChangeManagementData) ?? 0;
+        $avgChangeManagement=0;
+        if(count($govofficials)!==0){
+            $avgChangeManagement=round(($totChangeManagement / (42 * count($govofficials)))  * 100,0);
+        }
 
-        $totCollaboration=array_sum($opCollaborationData) + array_sum($midCollaborationData) + array_sum($topCollaborationData);
-        $avgCollaboration=round(($totCollaboration / (57 * count($govofficials))) * 100,0);
+        $totCollaboration=array_sum($opCollaborationData) ?? 0 + array_sum($midCollaborationData) ??0 + array_sum($topCollaborationData) ?? 0;
+        $avgCollaboration=0;
+        if(count($govofficials)!==0){
+            $avgCollaboration=round(($totCollaboration / (57 * count($govofficials))) * 100,0);
+        }
 
-        $totOrientation=array_sum($opOrientationData) + array_sum($midOrientationData) + array_sum($topOrientationData);
-        $avgOrientation=round(($totOrientation / (40 * count($govofficials))) * 100,0);
+        $totOrientation=array_sum($opOrientationData) ?? 0 + array_sum($midOrientationData) ?? 0 + array_sum($topOrientationData) ?? 0;
+        $avgOrientation=0;
+        if(count($govofficials)!==0){
+            $avgOrientation=round(($totOrientation / (40 * count($govofficials))) * 100,0);
+        }
 
-        $totQualityManagement=array_sum($opQualityManagementData) +array_sum($midQualityManagementData) + array_sum($topQualityManagementData);
-        $avgQualityManagement=round(($totQualityManagement / (61 * count($govofficials))) * 100 , 0);
+        $totQualityManagement=array_sum($opQualityManagementData) ?? 0 +array_sum($midQualityManagementData) ?? 0 + array_sum($topQualityManagementData) ?? 0;
+        $avgQualityManagement=0;
+        if(count($govofficials)!==0){
+            $avgQualityManagement=round(($totQualityManagement / (61 * count($govofficials))) * 100 , 0);
+        }
 
-        $totInitiative=array_sum($opInitiativeData) + array_sum($midInitiativeData);
-        $opMidGovofficials=count($opGovofficials)+count($midGovofficials);
-        $avgInitiative=round(($totInitiative / (69 * $opMidGovofficials)) * 100 , 0);
+        $totInitiative=array_sum($opInitiativeData) ?? 0 + array_sum($midInitiativeData) ?? 0;
+        $opMidGovofficials=count($opGovofficials) ?? 0 +count($midGovofficials) ?? 0;
+        $avgInitiative=0;
+        if($opMidGovofficials!==0){
+            $avgInitiative=round(($totInitiative / (69 * $opMidGovofficials)) * 100 , 0);
+        }
 
         $digitalGovernmentMarks = [
             ['Category', 'Percentage'],
@@ -403,30 +470,54 @@ class GovOrganizationDashboardController extends Controller
         }
 
         $totCommunication=array_sum($opCommunicationData) + array_sum($midCommunicationData) + array_sum($topCommunicationData);
-        $avgCommunication=round(($totCommunication / (58 * count($govofficials))) * 100,0);
+        $avgCommunication=0;
+        if(count($govofficials)!==0){
+            $avgCommunication=round(($totCommunication / (58 * count($govofficials))) * 100,0);
+        }
 
         $totWorkplaceManagement=array_sum($opWorkplaceManagementData) + array_sum($midWorkplaceManagementData) + array_sum($topWorkplaceManagementData);
-        $avgWorkplaceManagement=round(($totWorkplaceManagement / (34 * count($govofficials))) * 100,0);
+        $avgWorkplaceManagement=0;
+        if(count($govofficials)!==0){
+            $avgWorkplaceManagement=round(($totWorkplaceManagement / (34 * count($govofficials))) * 100,0);
+        }
 
         $totStakeholder=array_sum($opStakeholderData) + array_sum($midStakeholderData) + array_sum($topStakeholderData);
-        $avgStakeholder=round(($totStakeholder / (63 * count($govofficials))) * 100,0);
+        $avgStakeholder=0;
+        if(count($govofficials)!==0){
+            $avgStakeholder=round(($totStakeholder / (63 * count($govofficials))) * 100,0);
+        }
 
         $totTeamwork=array_sum($opTeamworkData) + array_sum($midTeamworkData) ;
         $opMidGovofficials=count($opGovofficials ?? 0)+count($midGovofficials ?? 0);
-        $avgTeamwork=round(($totTeamwork / (28 * $opMidGovofficials)) * 100,0);
+        $avgTeamwork=0;
+        if($opMidGovofficials!==0){
+            $avgTeamwork=round(($totTeamwork / (28 * $opMidGovofficials)) * 100,0);
+        }
 
         $totPersonalDevelopment=array_sum($opPersonalDevelopmentData) +array_sum($midPersonalDevelopmentData) + array_sum($topPersonalDevelopmentData);
-        $avgPersonalDevelopment=round(($totPersonalDevelopment / (23 * count($govofficials))) * 100 , 0);
+        $avgPersonalDevelopment=0;
+        if(count($govofficials)!==0){
+            $avgPersonalDevelopment=round(($totPersonalDevelopment / (23 * count($govofficials))) * 100 , 0);
+        }
 
         $totDecisionMaking=array_sum($midDecisionMakingData) + array_sum($topDecisionMakingData);
         $midTopGovofficials=count($midGovofficials ?? 0)+count($topGovofficials ?? 0);
-        $avgDecisionMaking=round(($totDecisionMaking / (29 * $midTopGovofficials)) * 100 , 0);
+        $avgDecisionMaking=0;
+        if($midTopGovofficials!==0){
+            $avgDecisionMaking=round(($totDecisionMaking / (29 * $midTopGovofficials)) * 100 , 0);
+        }
 
         $totCapacityBuilding=array_sum($midCapacityBuildingData) + array_sum($topCapacityBuildingData);
-        $avgCapacityBuilding=round(($totCapacityBuilding / (29 * $midTopGovofficials)) * 100 , 0);
+        $avgCapacityBuilding=0;
+        if($midTopGovofficials!==0){
+            $avgCapacityBuilding=round(($totCapacityBuilding / (29 * $midTopGovofficials)) * 100 , 0);
+        }
 
         $totPerformanceManagement=array_sum($midPerformanceManagementData) ;
-        $avgPerformanceManagement=round(($totPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        $avgPerformanceManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgPerformanceManagement=round(($totPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        }
 
         $managementMarks = [
             ['Category', 'Percentage'],
@@ -561,14 +652,23 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $totIctInWorkplace=array_sum($opIctInWorkplaceData) + array_sum($midIctInWorkplaceData) + array_sum($topIctInWorkplaceData);
-        $avgIctInWorkplace= round(($totIctInWorkplace/(110 * count($govofficials))) *100 , 0);
+        $totIctInWorkplace=array_sum($opIctInWorkplaceData) ?? 0 + array_sum($midIctInWorkplaceData) ?? 0 + array_sum($topIctInWorkplaceData) ?? 0;
+        $avgIctInWorkplace=0;
+        if(count($govofficials)!==0){
+            $avgIctInWorkplace= round(($totIctInWorkplace/(110 * count($govofficials))) *100 , 0);
+        }
 
-        $totInformationManagement=array_sum($opInformationManagementData) + array_sum($midInformationManagementData) + array_sum($topInformationManagementData);
-        $avgInformationManagement= round(($totInformationManagement/(31 * count($govofficials))) *100 , 0);
+        $totInformationManagement=array_sum($opInformationManagementData) ?? 0 + array_sum($midInformationManagementData) ?? 0 + array_sum($topInformationManagementData) ?? 0;
+        $avgInformationManagement=0;
+        if(count($govofficials)!==0){
+            $avgInformationManagement= round(($totInformationManagement/(31 * count($govofficials))) *100 , 0);
+        }
 
-        $totDigitalCitizenship=array_sum($opDigitalCitizenshipData) + array_sum($midDigitalCitizenshipData) + array_sum($topDigitalCitizenshipData);
-        $avgDigitalCitizenship= round(($totDigitalCitizenship/(159 * count($govofficials))) *100 , 0);
+        $totDigitalCitizenship=array_sum($opDigitalCitizenshipData) ?? 0 + array_sum($midDigitalCitizenshipData) ?? 0 + array_sum($topDigitalCitizenshipData) ?? 0;
+        $avgDigitalCitizenship=0;
+        if(count($govofficials)!==0){
+            $avgDigitalCitizenship= round(($totDigitalCitizenship/(159 * count($govofficials))) *100 , 0);
+        }
 
         $ictMarks = [
             ['Category', 'Percentage'],
@@ -579,14 +679,23 @@ class GovOrganizationDashboardController extends Controller
 
         $topIctIncomplete=count($topGovofficials)-($topIctComplete+$topIctInProgress);
 
-        $totTopIctInWorkplace=array_sum($topIctInWorkplaceData);
-        $avgTopIctInWorkplace=round(($totTopIctInWorkplace/(24 * count($topGovofficials))),0);
+        $totTopIctInWorkplace=array_sum($topIctInWorkplaceData) ?? 0;
+        $avgTopIctInWorkplace=0;
+        if(count($topGovofficials)!==0){
+            $avgTopIctInWorkplace=round(($totTopIctInWorkplace/(24 * count($topGovofficials))),0);
+        }
 
-        $totTopInformationManagement=array_sum($topInformationManagementData);
-        $avgTopInformationManagement=round(($totTopInformationManagement/(11 * count($topGovofficials))),0);
+        $totTopInformationManagement=array_sum($topInformationManagementData) ?? 0;
+        $avgTopInformationManagement=0;
+        if(count($topGovofficials)!==0){
+            $avgTopInformationManagement=round(($totTopInformationManagement/(11 * count($topGovofficials))),0);
+        }
 
-        $totTopDigitalCitizenship=array_sum($topDigitalCitizenshipData);
-        $avgTopDigitalCitizenship=round(($totTopDigitalCitizenship/(5 * count($topGovofficials))),0);
+        $totTopDigitalCitizenship=array_sum($topDigitalCitizenshipData) ?? 0;
+        $avgTopDigitalCitizenship=0;
+        if(count($topGovofficials)!==0){
+            $avgTopDigitalCitizenship=round(($totTopDigitalCitizenship/(5 * count($topGovofficials))),0);
+        }
 
         $ictTop = [
             ['Category', 'Percentage'],
@@ -597,14 +706,23 @@ class GovOrganizationDashboardController extends Controller
 
         $midIctIncomplete=count($midGovofficials)-($midIctComplete+$midIctInProgress);
 
-        $totMidIctInWorkplace=array_sum($midIctInWorkplaceData);
-        $avgMidIctInWorkplace=round(($totMidIctInWorkplace/(32 * count($midGovofficials))),0);
+        $totMidIctInWorkplace=array_sum($midIctInWorkplaceData) ?? 0;
+        $avgMidIctInWorkplace=0;
+        if(count($midGovofficials)!==0){
+            $avgMidIctInWorkplace=round(($totMidIctInWorkplace/(32 * count($midGovofficials))),0);
+        }
 
-        $totMidInformationManagement=array_sum($midInformationManagementData);
-        $avgMidInformationManagement=round(($totMidInformationManagement/(10 * count($midGovofficials))),0);
+        $totMidInformationManagement=array_sum($midInformationManagementData) ?? 0;
+        $avgMidInformationManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgMidInformationManagement=round(($totMidInformationManagement/(10 * count($midGovofficials))),0);
+        }
 
-        $totMidDigitalCitizenship=array_sum($midDigitalCitizenshipData);
-        $avgMidDigitalCitizenship=round(($totMidDigitalCitizenship/(58 * count($midGovofficials))),0);
+        $totMidDigitalCitizenship=array_sum($midDigitalCitizenshipData) ?? 0;
+        $avgMidDigitalCitizenship=0;
+        if(count($midGovofficials)!==0){
+            $avgMidDigitalCitizenship=round(($totMidDigitalCitizenship/(58 * count($midGovofficials))),0);
+        }
 
         $ictMid = [
             ['Category', 'Percentage'],
@@ -615,14 +733,23 @@ class GovOrganizationDashboardController extends Controller
 
         $opIctIncomplete=count($opGovofficials)-($opIctComplete+$opIctInProgress);
 
-        $totOpIctInWorkplace=array_sum($opIctInWorkplaceData);
-        $avgOpIctInWorkplace=round(($totOpIctInWorkplace/(54 * count($opGovofficials))),0);
+        $totOpIctInWorkplace=array_sum($opIctInWorkplaceData) ?? 0;
+        $avgOpIctInWorkplace=0;
+        if(count($opGovofficials)!==0){
+            $avgOpIctInWorkplace=round(($totOpIctInWorkplace/(54 * count($opGovofficials))),0);
+        }
 
-        $totOpInformationManagement=array_sum($opInformationManagementData);
-        $avgOpInformationManagement=round(($totOpInformationManagement/(10 * count($opGovofficials))),0);
+        $totOpInformationManagement=array_sum($opInformationManagementData) ?? 0;
+        $avgOpInformationManagement=0;
+        if(count($opGovofficials)!==0){
+            $avgOpInformationManagement=round(($totOpInformationManagement/(10 * count($opGovofficials))),0);
+        }
 
-        $totOpDigitalCitizenship=array_sum($opDigitalCitizenshipData);
-        $avgOpDigitalCitizenship=round(($totOpDigitalCitizenship/(36 * count($opGovofficials))),0);
+        $totOpDigitalCitizenship=array_sum($opDigitalCitizenshipData) ?? 0;
+        $avgOpDigitalCitizenship=0;
+        if(count($opGovofficials)!==0){
+            $avgOpDigitalCitizenship=round(($totOpDigitalCitizenship/(36 * count($opGovofficials))),0);
+        }
 
         $ictOp = [
             ['Category', 'Percentage'],
@@ -704,7 +831,7 @@ class GovOrganizationDashboardController extends Controller
 
         $topProjectManagementData = [];
         $topChangeManagementData = [];
-        $topCollaborationtData = [];
+        $topCollaborationData = [];
         $topOrientationData = [];
         $topQualityManagementData = [];
         
@@ -719,25 +846,43 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $totProjectManagement=array_sum($midProjectManagementData) + array_sum($topProjectManagementData);
+        $totProjectManagement=array_sum($midProjectManagementData) ?? 0 + array_sum($topProjectManagementData) ?? 0;
         $midTopGovofficials=count($midGovofficials)+count($topGovofficials);
-        $avgProjectManagement=round(($totProjectManagement / (35 * $midTopGovofficials)) * 100,0);
+        $avgProjectManagement=0;
+        if($midTopGovofficials!==0){
+            $avgProjectManagement=round(($totProjectManagement / (35 * $midTopGovofficials)) * 100,0);
+        }
 
-        $totChangeManagement=array_sum($opChangeManagementData) + array_sum($midChangeManagementData) + array_sum($topChangeManagementData);
-        $avgChangeManagement=round(($totChangeManagement / (42 * count($govofficials)))  * 100,0);
+        $totChangeManagement=array_sum($opChangeManagementData) ?? 0 + array_sum($midChangeManagementData) ?? 0 + array_sum($topChangeManagementData) ?? 0;
+        $avgChangeManagement=0;
+        if(count($govofficials)!==0){
+            $avgChangeManagement=round(($totChangeManagement / (42 * count($govofficials)))  * 100,0);
+        }
 
-        $totCollaboration=array_sum($opCollaborationData) + array_sum($midCollaborationData) + array_sum($topCollaborationData);
-        $avgCollaboration=round(($totCollaboration / (57 * count($govofficials))) * 100,0);
+        $totCollaboration=array_sum($opCollaborationData) ?? 0 + array_sum($midCollaborationData) ?? 0 + array_sum($topCollaborationData) ?? 0;
+        $avgCollaboration=0;
+        if(count($govofficials)!==0){
+            $avgCollaboration=round(($totCollaboration / (57 * count($govofficials))) * 100,0);
+        }
 
-        $totOrientation=array_sum($opOrientationData) + array_sum($midOrientationData) + array_sum($topOrientationData);
-        $avgOrientation=round(($totOrientation / (40 * count($govofficials))) * 100,0);
+        $totOrientation=array_sum($opOrientationData) ?? 0 + array_sum($midOrientationData) ?? 0 + array_sum($topOrientationData) ?? 0;
+        $avgOrientation=0;
+        if(count($govofficials)!==0){
+            $avgOrientation=round(($totOrientation / (40 * count($govofficials))) * 100,0);
+        }
 
-        $totQualityManagement=array_sum($opQualityManagementData) +array_sum($midQualityManagementData) + array_sum($topQualityManagementData);
-        $avgQualityManagement=round(($totQualityManagement / (61 * count($govofficials))) * 100 , 0);
+        $totQualityManagement=array_sum($opQualityManagementData) ?? 0 +array_sum($midQualityManagementData) ?? 0 + array_sum($topQualityManagementData) ?? 0;
+        $avgQualityManagement=0;
+        if(count($govofficials)!==0){
+            $avgQualityManagement=round(($totQualityManagement / (61 * count($govofficials))) * 100 , 0);
+        }
 
-        $totInitiative=array_sum($opInitiativeData) + array_sum($midInitiativeData);
+        $totInitiative=array_sum($opInitiativeData) ?? 0 + array_sum($midInitiativeData) ?? 0;
         $opMidGovofficials=count($opGovofficials)+count($midGovofficials);
-        $avgInitiative=round(($totInitiative / (69 * $opMidGovofficials)) * 100 , 0);
+        $avgInitiative=0;
+        if($opMidGovofficials!==0){
+            $avgInitiative=round(($totInitiative / (69 * $opMidGovofficials)) * 100 , 0);
+        }
 
         $digitalGovernmentMarks = [
             ['Category', 'Percentage'],
@@ -751,20 +896,35 @@ class GovOrganizationDashboardController extends Controller
 
         $topDigitalGovernmentIncomplete=count($topGovofficials)-($topDigitalGovernmentComplete+$topDigitalGovernmentInProgress);
 
-        $totTopProjectManagement=array_sum($topProjectManagementData);
-        $avgTopProjectManagement=round(($totTopProjectManagement / (23 * count($topGovofficials))) * 100,0);
+        $totTopProjectManagement=array_sum($topProjectManagementData) ?? 0;
+        $avgTopProjectManagement=0;
+        if(count($topGovofficials)!==0){
+            $avgTopProjectManagement=round(($totTopProjectManagement / (23 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopChangeManagement=array_sum($topChangeManagementData);
-        $avgTopChangeManagement=round(($totTopChangeManagement / (13 * count($topGovofficials)))  * 100,0);
+        $totTopChangeManagement=array_sum($topChangeManagementData) ?? 0;
+        $avgTopChangeManagement=0;
+        if(count($topGovofficials)!==0){
+            $avgTopChangeManagement=round(($totTopChangeManagement / (13 * count($topGovofficials)))  * 100,0);
+        }
 
-        $totTopCollaboration=array_sum($topCollaborationData);
-        $avgTopCollaboration=round(($totTopCollaboration / (22 * count($topGovofficials))) * 100,0);
+        $totTopCollaboration=array_sum($topCollaborationData) ?? 0;
+        $avgTopCollaboration=0;
+        if(count($topGovofficials)!==0){
+            $avgTopCollaboration=round(($totTopCollaboration / (22 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopOrientation=array_sum($topOrientationData);
-        $avgTopOrientation=round(($totTopOrientation / (14 * count($topGovofficials))) * 100,0);
+        $totTopOrientation=array_sum($topOrientationData) ?? 0;
+        $avgTopOrientation=0;
+        if(count($topGovofficials)!==0){
+            $avgTopOrientation=round(($totTopOrientation / (14 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopQualityManagement=array_sum($topQualityManagementData);
-        $avgTopQualityManagement=round(($totTopQualityManagement / (28 * count($topGovofficials))) * 100 , 0);
+        $totTopQualityManagement=array_sum($topQualityManagementData) ?? 0;
+        $avgTopQualityManagement=0;
+        if(count($topGovofficials)!==0){
+            $avgTopQualityManagement=round(($totTopQualityManagement / (28 * count($topGovofficials))) * 100 , 0);
+        }
 
         $digitalGovernmentTop = [
             ['Category', 'Percentage'],
@@ -777,23 +937,41 @@ class GovOrganizationDashboardController extends Controller
 
         $midDigitalGovernmentIncomplete=count($midGovofficials)-($midDigitalGovernmentComplete+$midDigitalGovernmentInProgress);
 
-        $totMidProjectManagement=array_sum($midProjectManagementData);
-        $avgMidProjectManagement=round(($totMidProjectManagement / (12 * count($midGovofficials))) * 100,0);
+        $totMidProjectManagement=array_sum($midProjectManagementData) ?? 0;
+        $avgMidProjectManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgMidProjectManagement=round(($totMidProjectManagement / (12 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidChangeManagement=array_sum($midChangeManagementData);
-        $avgMidChangeManagement=round(($totMidChangeManagement / (18 * count($midGovofficials)))  * 100,0);
+        $totMidChangeManagement=array_sum($midChangeManagementData) ?? 0;
+        $avgMidChangeManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgMidChangeManagement=round(($totMidChangeManagement / (18 * count($midGovofficials)))  * 100,0);
+        }
 
-        $totMidCollaboration=array_sum($midCollaborationData);
-        $avgMidCollaboration=round(($totMidCollaboration / (12 * count($midGovofficials))) * 100,0);
+        $totMidCollaboration=array_sum($midCollaborationData) ?? 0;
+        $avgMidCollaboration=0;
+        if(count($midGovofficials)!==0){
+            $avgMidCollaboration=round(($totMidCollaboration / (12 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidOrientation=array_sum($midOrientationData);
-        $avgMidOrientation=round(($totMidOrientation / (14 * count($midGovofficials))) * 100,0);
+        $totMidOrientation=array_sum($midOrientationData) ?? 0;
+        $avgMidOrientation=0;
+        if(count($midGovofficials)!==0){
+            $avgMidOrientation=round(($totMidOrientation / (14 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidQualityManagement=array_sum($midQualityManagementData);
-        $avgMidQualityManagement=round(($totMidQualityManagement / (15 * count($midGovofficials))) * 100 , 0);
+        $totMidQualityManagement=array_sum($midQualityManagementData) ?? 0;
+        $avgMidQualityManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgMidQualityManagement=round(($totMidQualityManagement / (15 * count($midGovofficials))) * 100 , 0);
+        }
 
-        $totMidInitiative=array_sum($midInitiativeData);
-        $avgMidInitiative=round(($totMidInitiative / (29 * count($midGovofficials))) * 100 , 0);
+        $totMidInitiative=array_sum($midInitiativeData) ?? 0;
+        $avgMidInitiative=0;
+        if(count($midGovofficials)!==0){
+            $avgMidInitiative=round(($totMidInitiative / (29 * count($midGovofficials))) * 100 , 0);
+        }
 
         $digitalGovernmentMid = [
             ['Category', 'Percentage'],
@@ -807,20 +985,34 @@ class GovOrganizationDashboardController extends Controller
 
         $opDigitalGovernmentIncomplete=count($opGovofficials)-($opDigitalGovernmentComplete+$opDigitalGovernmentInProgress);
 
-        $totOpChangeManagement=array_sum($opChangeManagementData);
-        $avgOpChangeManagement=round(($totOpChangeManagement / (11 * count($opGovofficials)))  * 100,0);
+        $totOpChangeManagement=array_sum($opChangeManagementData) ?? 0;
+        $avgOpChangeManagement=0;
+        if(count($opGovofficials)!==0){
+            $avgOpChangeManagement=round(($totOpChangeManagement / (11 * count($opGovofficials)))  * 100,0);
+        }
 
-        $totOpCollaboration=array_sum($opCollaborationData);
-        $avgOpCollaboration=round(($totOpCollaboration / (11 * count($opGovofficials))) * 100,0);
+        $totOpCollaboration=array_sum($opCollaborationData) ?? 0;
+        $avgOpCollaboration=0;
+        if(count($opGovofficials)!==0){
+            $avgOpCollaboration=round(($totOpCollaboration / (11 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpOrientation=array_sum($opOrientationData);
-        $avgOpOrientation=round(($totOpOrientation / (12 * count($opGovofficials))) * 100,0);
+        $totOpOrientation=array_sum($opOrientationData) ?? 0;
+        $avgOpOrientation=0;
+        if(count($opGovofficials)!==0){
+            $avgOpOrientation=round(($totOpOrientation / (12 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpQualityManagement=array_sum($opQualityManagementData);
-        $avgOpQualityManagement=round(($totOpQualityManagement / (18 * count($opGovofficials))) * 100 , 0);
+        $totOpQualityManagement=array_sum($opQualityManagementData) ?? 0;
+        $avgOpQualityManagement=0;
+        if(count($opGovofficials)!==0){
+            $avgOpQualityManagement=round(($totOpQualityManagement / (18 * count($opGovofficials))) * 100 , 0);
+        }
 
-        $totOpInitiative=array_sum($opInitiativeData);
-        $avgOpInitiative=round(($totOpInitiative / (48 * count($opGovofficials))) * 100 , 0);
+        $totOpInitiative=array_sum($opInitiativeData) ?? 0;
+        if(count($opGovofficials)!==0){
+            $avgOpInitiative=round(($totOpInitiative / (48 * count($opGovofficials))) * 100 , 0);
+        }
 
         $digitalGovernmentOp = [
             ['Category', 'Percentage'],
@@ -924,31 +1116,55 @@ class GovOrganizationDashboardController extends Controller
             }
         }
 
-        $totCommunication=array_sum($opCommunicationData) + array_sum($midCommunicationData) + array_sum($topCommunicationData);
-        $avgCommunication=round(($totCommunication / (58 * count($govofficials))) * 100,0);
+        $totCommunication=array_sum($opCommunicationData) ?? 0 + array_sum($midCommunicationData) ?? 0 + array_sum($topCommunicationData) ?? 0;
+        $avgCommunication=0;
+        if(count($govofficials)!==0){
+            $avgCommunication=round(($totCommunication / (58 * count($govofficials))) * 100,0);
+        }
 
-        $totWorkplaceManagement=array_sum($opWorkplaceManagementData) + array_sum($midWorkplaceManagementData) + array_sum($topWorkplaceManagementData);
-        $avgWorkplaceManagement=round(($totWorkplaceManagement / (34 * count($govofficials))) * 100,0);
+        $totWorkplaceManagement=array_sum($opWorkplaceManagementData) ?? 0 + array_sum($midWorkplaceManagementData) ?? 0 + array_sum($topWorkplaceManagementData) ?? 0;
+        $avgWorkplaceManagement=0;
+        if(count($govofficials)!==0){
+            $avgWorkplaceManagement=round(($totWorkplaceManagement / (34 * count($govofficials))) * 100,0);
+        }
 
-        $totStakeholder=array_sum($opStakeholderData) + array_sum($midStakeholderData) + array_sum($topStakeholderData);
-        $avgStakeholder=round(($totStakeholder / (63 * count($govofficials))) * 100,0);
+        $totStakeholder=array_sum($opStakeholderData) ?? 0 + array_sum($midStakeholderData) ?? 0 + array_sum($topStakeholderData) ?? 0;
+        $avgStakeholder=0;
+        if(count($govofficials)!==0){
+            $avgStakeholder=round(($totStakeholder / (63 * count($govofficials))) * 100,0);
+        }
 
-        $totTeamwork=array_sum($opTeamworkData) + array_sum($midTeamworkData) ;
+        $totTeamwork=array_sum($opTeamworkData) ?? 0 + array_sum($midTeamworkData) ?? 0 ;
         $opMidGovofficials=count($opGovofficials ?? 0)+count($midGovofficials ?? 0);
-        $avgTeamwork=round(($totTeamwork / (28 * $opMidGovofficials)) * 100,0);
+        $avgTeamwork=0;
+        if($opMidGovofficials!==0){
+            $avgTeamwork=round(($totTeamwork / (28 * $opMidGovofficials)) * 100,0);
+        }
 
-        $totPersonalDevelopment=array_sum($opPersonalDevelopmentData) +array_sum($midPersonalDevelopmentData) + array_sum($topPersonalDevelopmentData);
-        $avgPersonalDevelopment=round(($totPersonalDevelopment / (23 * count($govofficials))) * 100 , 0);
+        $totPersonalDevelopment=array_sum($opPersonalDevelopmentData) ?? 0 +array_sum($midPersonalDevelopmentData) ?? 0 + array_sum($topPersonalDevelopmentData) ?? 0;
+        $avgPersonalDevelopment=0;
+        if(count($govofficials)!==0){
+            $avgPersonalDevelopment=round(($totPersonalDevelopment / (23 * count($govofficials))) * 100 , 0);
+        }
 
-        $totDecisionMaking=array_sum($midDecisionMakingData) + array_sum($topDecisionMakingData);
+        $totDecisionMaking=array_sum($midDecisionMakingData) ?? 0 + array_sum($topDecisionMakingData) ?? 0;
         $midTopGovofficials=count($midGovofficials ?? 0)+count($topGovofficials ?? 0);
-        $avgDecisionMaking=round(($totDecisionMaking / (29 * $midTopGovofficials)) * 100 , 0);
+        $avgDecisionMaking=0;
+        if($midTopGovofficials!==0){
+            $avgDecisionMaking=round(($totDecisionMaking / (29 * $midTopGovofficials)) * 100 , 0);
+        }
 
-        $totCapacityBuilding=array_sum($midCapacityBuildingData) + array_sum($topCapacityBuildingData);
-        $avgCapacityBuilding=round(($totCapacityBuilding / (29 * $midTopGovofficials)) * 100 , 0);
+        $totCapacityBuilding=array_sum($midCapacityBuildingData) ?? 0 + array_sum($topCapacityBuildingData) ?? 0;
+        $avgCapacityBuilding=0;
+        if($midTopGovofficials!==0){
+            $avgCapacityBuilding=round(($totCapacityBuilding / (29 * $midTopGovofficials)) * 100 , 0);
+        }
 
-        $totPerformanceManagement=array_sum($midPerformanceManagementData) ;
-        $avgPerformanceManagement=round(($totPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        $totPerformanceManagement=array_sum($midPerformanceManagementData) ?? 0;
+        $avgPerformanceManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgPerformanceManagement=round(($totPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        }
 
         $managementMarks = [
             ['Category', 'Percentage'],
@@ -964,23 +1180,41 @@ class GovOrganizationDashboardController extends Controller
 
         $topManagementIncomplete=count($topGovofficials)-($topManagementComplete+$topManagementInProgress);
 
-        $totTopCommunication=array_sum($topCommunicationData);
-        $avgTopCommunication=round(($totTopCommunication / (18 * count($topGovofficials))) * 100,0);
+        $totTopCommunication=array_sum($topCommunicationData) ?? 0;
+        $avgTopCommunication=0;
+        if(count($topGovofficials)!==0){
+            $avgTopCommunication=round(($totTopCommunication / (18 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopWorkplaceManagement=array_sum($topWorkplaceManagementData);
-        $avgTopWorkplaceManagement=round(($totTopWorkplaceManagement / (12 * count($topGovofficials))) * 100,0);
+        $totTopWorkplaceManagement=array_sum($topWorkplaceManagementData) ?? 0;
+        $avgTopWorkplaceManagement=0;
+        if(count($topGovofficials)){
+            $avgTopWorkplaceManagement=round(($totTopWorkplaceManagement / (12 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopStakeholder=array_sum($topStakeholderData);
-        $avgTopStakeholder=round(($totTopStakeholder / (14 * count($topGovofficials))) * 100,0);
+        $totTopStakeholder=array_sum($topStakeholderData) ?? 0;
+        $avgTopStakeholder=0;
+        if(count($topGovofficials)!==0){
+            $avgTopStakeholder=round(($totTopStakeholder / (14 * count($topGovofficials))) * 100,0);
+        }
 
-        $totTopPersonalDevelopment=array_sum($topPersonalDevelopmentData);
-        $avgTopPersonalDevelopment=round(($totTopPersonalDevelopment / (6 * count($topGovofficials))) * 100 , 0);
+        $totTopPersonalDevelopment=array_sum($topPersonalDevelopmentData) ?? 0;
+        $avgTopPersonalDevelopment=0;
+        if(count($topGovofficials)!==0){
+            $avgTopPersonalDevelopment=round(($totTopPersonalDevelopment / (6 * count($topGovofficials))) * 100 , 0);
+        }
 
-        $totTopDecisionMaking=array_sum($topDecisionMakingData);
-        $avgTopDecisionMaking=round(($totTopDecisionMaking / (10 * count($topGovofficials))) * 100 , 0);
+        $totTopDecisionMaking=array_sum($topDecisionMakingData) ?? 0;
+        $avgTopDecisionMaking=0;
+        if(count($topGovofficials)!==0){
+            $avgTopDecisionMaking=round(($totTopDecisionMaking / (10 * count($topGovofficials))) * 100 , 0);
+        }
 
-        $totTopCapacityBuilding=array_sum($topCapacityBuildingData);
-        $avgTopCapacityBuilding=round(($totTopCapacityBuilding / (20 * count($topGovofficials))) * 100 , 0);
+        $totTopCapacityBuilding=array_sum($topCapacityBuildingData) ?? 0;
+        $avgTopCapacityBuilding=0;
+        if(count($topGovofficials)!==0){
+            $avgTopCapacityBuilding=round(($totTopCapacityBuilding / (20 * count($topGovofficials))) * 100 , 0);
+        }
 
         $managementTop = [
             ['Category', 'Percentage'],
@@ -994,29 +1228,53 @@ class GovOrganizationDashboardController extends Controller
 
         $midManagementIncomplete=count($midGovofficials)-($midManagementComplete+$midManagementInProgress);
 
-        $totMidCommunication=array_sum($midCommunicationData) ;
-        $avgMidCommunication=round(($totMidCommunication / (12 * count($midGovofficials))) * 100,0);
+        $totMidCommunication=array_sum($midCommunicationData) ?? 0;
+        $avgMidCommunication=0;
+        if(count($midGovofficials)!==0){
+            $avgMidCommunication=round(($totMidCommunication / (12 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidWorkplaceManagement=array_sum($midWorkplaceManagementData);
-        $avgMidWorkplaceManagement=round(($totMidWorkplaceManagement / (10 * count($midGovofficials))) * 100,0);
+        $totMidWorkplaceManagement=array_sum($midWorkplaceManagementData) ?? 0;
+        $avgMidWorkplaceManagement=0;
+        if(count($midGovofficials)){
+            $avgMidWorkplaceManagement=round(($totMidWorkplaceManagement / (10 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidStakeholder=array_sum($midStakeholderData);
-        $avgMidStakeholder=round(($totMidStakeholder / (25 * count($midGovofficials))) * 100,0);
+        $totMidStakeholder=array_sum($midStakeholderData) ?? 0;
+        $avgMidStakeholder=0;
+        if(count($midGovofficials)!==0){
+            $avgMidStakeholder=round(($totMidStakeholder / (25 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidTeamwork=array_sum($midTeamworkData) ;
-        $avgMidTeamwork=round(($totMidTeamwork / (4 * count($midGovofficials))) * 100,0);
+        $totMidTeamwork=array_sum($midTeamworkData) ?? 0;
+        $avgMidTeamwork=0;
+        if(count($midGovofficials)!==0){
+            $avgMidTeamwork=round(($totMidTeamwork / (4 * count($midGovofficials))) * 100,0);
+        }
 
-        $totMidPersonalDevelopment=array_sum($midPersonalDevelopmentData);
-        $avgMidPersonalDevelopment=round(($totMidPersonalDevelopment / (5 * count($midGovofficials))) * 100 , 0);
+        $totMidPersonalDevelopment=array_sum($midPersonalDevelopmentData) ?? 0;
+        $avgMidPersonalDevelopment=0;
+        if(count($midGovofficials)!==0){
+            $avgMidPersonalDevelopment=round(($totMidPersonalDevelopment / (5 * count($midGovofficials))) * 100 , 0);
+        }
 
-        $totMidDecisionMaking=array_sum($midDecisionMakingData);
-        $avgMidDecisionMaking=round(($totMidDecisionMaking / (19 * count($midGovofficials))) * 100 , 0);
+        $totMidDecisionMaking=array_sum($midDecisionMakingData) ?? 0;
+        $avgMidDecisionMaking=0;
+        if(count($midGovofficials)!==0){
+            $avgMidDecisionMaking=round(($totMidDecisionMaking / (19 * count($midGovofficials))) * 100 , 0);
+        }
 
-        $totMidCapacityBuilding=array_sum($midCapacityBuildingData);
-        $avgMidCapacityBuilding=round(($totMidCapacityBuilding / (8 * count($midGovofficials))) * 100 , 0);
+        $totMidCapacityBuilding=array_sum($midCapacityBuildingData) ?? 0;
+        $avgMidCapacityBuilding=0;
+        if(count($midGovofficials)!==0){
+            $avgMidCapacityBuilding=round(($totMidCapacityBuilding / (8 * count($midGovofficials))) * 100 , 0);
+        }
 
-        $totMidPerformanceManagement=array_sum($midPerformanceManagementData) ;
-        $avgMidPerformanceManagement=round(($totMidPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        $totMidPerformanceManagement=array_sum($midPerformanceManagementData) ?? 0;
+        $avgMidPerformanceManagement=0;
+        if(count($midGovofficials)!==0){
+            $avgMidPerformanceManagement=round(($totMidPerformanceManagement / (17 * count($midGovofficials))) * 100 , 0);
+        }
 
         $managementMid = [
             ['Category', 'Percentage'],
@@ -1030,20 +1288,35 @@ class GovOrganizationDashboardController extends Controller
             ['Performance Management', (int) $avgMidPerformanceManagement],
         ];
 
-        $totOpCommunication=array_sum($opCommunicationData);
-        $avgOpCommunication=round(($totOpCommunication / (28 * count($opGovofficials))) * 100,0);
+        $totOpCommunication=array_sum($opCommunicationData) ?? 0;
+        $avgOpCommunication=0;
+        if(count($opGovofficials)!==0){
+            $avgOpCommunication=round(($totOpCommunication / (28 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpWorkplaceManagement=array_sum($opWorkplaceManagementData);
-        $avgOpWorkplaceManagement=round(($totOpWorkplaceManagement / (12 * count($opGovofficials))) * 100,0);
+        $totOpWorkplaceManagement=array_sum($opWorkplaceManagementData) ?? 0;
+        $avgOpWorkplaceManagement=0;
+        if(count($opGovofficials)!==0){
+            $avgOpWorkplaceManagement=round(($totOpWorkplaceManagement / (12 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpStakeholder=array_sum($opStakeholderData);
-        $avgOpStakeholder=round(($totOpStakeholder / (24 * count($opGovofficials))) * 100,0);
+        $totOpStakeholder=array_sum($opStakeholderData) ?? 0;
+        $avgOpStakeholder=0;
+        if(count($opGovofficials)){
+            $avgOpStakeholder=round(($totOpStakeholder / (24 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpTeamwork=array_sum($opTeamworkData);
-        $avgOpTeamwork=round(($totOpTeamwork / (24 * count($opGovofficials))) * 100,0);
+        $totOpTeamwork=array_sum($opTeamworkData) ?? 0;
+        $avgOpTeamwork=0;
+        if(count($opGovofficials)!==0){
+            $avgOpTeamwork=round(($totOpTeamwork / (24 * count($opGovofficials))) * 100,0);
+        }
 
-        $totOpPersonalDevelopment=array_sum($opPersonalDevelopmentData);
-        $avgOpPersonalDevelopment=round(($totOpPersonalDevelopment / (12 * count($opGovofficials))) * 100 , 0);
+        $totOpPersonalDevelopment=array_sum($opPersonalDevelopmentData) ?? 0;
+        $avgOpPersonalDevelopment=0;
+        if(count($opGovofficials)!==0){
+            $avgOpPersonalDevelopment=round(($totOpPersonalDevelopment / (12 * count($opGovofficials))) * 100 , 0);
+        }
 
         $managementOp = [
             ['Category', 'Percentage'],
