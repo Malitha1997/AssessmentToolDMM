@@ -341,7 +341,7 @@ class CompetancyAssessmentController extends Controller
                 $hasOpIctData = $opGovofficial->opIct ? $opGovofficial->opIct->exists() : false;
                 $hasOpDigitalGovernmentData = $opGovofficial->opDigitalGovernment ? $opGovofficial->opDigitalGovernment->exists() : false;
                 $hasOpManagementData = $opGovofficial->opManagement ? $opGovofficial->opManagement->exists() : false;
-                
+                $opGovofficialOperationalCompleted=[];
                 if ($hasOpIctData ?? 0 && $hasOpDigitalGovernmentData ?? 0 && $hasOpManagementData ?? 0) {
                     $opGovofficialOperationalCompleted[] = $opGovofficial;
                 } 
@@ -366,7 +366,7 @@ class CompetancyAssessmentController extends Controller
                 $hasMidIctData = $midGovofficial->midIct ? $midGovofficial->midIct->exists() : false;
                 $hasMidDigitalGovernmentData = $midGovofficial->midDigitalGovernment ? $midGovofficial->midDigitalGovernment->exists() : false;
                 $hasMidManagementData = $midGovofficial->midManagement ? $midGovofficial->midManagement->exists() : false;
-                
+                $midGovofficialMidCompleted=[];
                 if (($hasMidIctData ?? 0) && ($hasMidDigitalGovernmentData ?? 0) && ($hasMidManagementData ?? 0)) {
                     $midGovofficialMidCompleted[] = $midGovofficial;
                 } 
@@ -397,7 +397,7 @@ class CompetancyAssessmentController extends Controller
                 $hasTopIctData = $topGovofficial->topIct ? $topGovofficial->topIct->exists() : false;
                 $hasTopDigitalGovernmentData = $topGovofficial->topDigitalGovernment ? $topGovofficial->topDigitalGovernment->exists() : false;
                 $hasTopManagementData = $topGovofficial->topManagement ? $topGovofficial->topManagement->exists() : false;
-
+                $topGovofficialTopCompleted=[];
                 if ($hasTopIctData && $hasTopDigitalGovernmentData && $hasTopManagementData) {
                     $topGovofficialTopCompleted[] = $topGovofficial;
                 } 
@@ -427,7 +427,11 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
-        $opIctGovofficials= $operationalGovofficials -> has('opIct');
+        $opIctGovofficials= $govorganizationname->govofficials()
+            ->where('employment_layer', 'operational')
+            ->has('opIct')
+            ->exists();
+
         $countOpIct=0;
         $countOpIctInprogress=0;
         if($opIctGovofficials==true){
@@ -450,7 +454,14 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countMidGovofficials=count($midGovofficials);
 
-        if($midGovofficials2 == true){
+        $midIctGoveofficials=$govorganizationname->govofficials()
+            ->where('employment_layer', 'middle')
+            ->has('midIct')
+            ->exists();
+
+        $countMidIct=0;
+        $countMidIctInprogress=0;
+        if($midIctGoveofficials==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
                 $hasMidIctData = $midGovofficial->midIct ? $midGovofficial->midIct->exists() : false;
@@ -465,14 +476,16 @@ class CompetancyAssessmentController extends Controller
         $countMidIct=count($govofficialMidIct);
         $countMidIctInprogress=$countMidGovofficials - $countMidIct;
         }
-        
+
         $topGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
-        $topIctGovofficials= $topGovofficials
-                            ->has('topIct');
+        $topIctGovofficials= $govorganizationname->govofficials()
+                        ->where('employment_layer', 'top')
+                        ->has('topIct')
+                        ->exists();
 
         $countTopIct=0;
         $countTopIctInprogress=0;
@@ -493,7 +506,7 @@ class CompetancyAssessmentController extends Controller
         }
 
         $countIct=$countOpIct  + $countMidIct  + $countTopIct ;
-        $countIctInprogress=$countOpIctInprogress ?? 0 + $countMidIctInprogress ?? 0 + $countTopIctInprogress ?? 0;
+        $countIctInprogress=$countOpIctInprogress  + $countMidIctInprogress  + $countTopIctInprogress ;
 
         $operationalGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'operational')
@@ -501,9 +514,11 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
-        $opDigitalGovernmentOfficials=$operationalGovofficials
-                            ->has('opDigitalGovernment');
-         
+        $opDigitalGovernmentOfficials=$govorganizationname->govofficials()
+                            ->where('employment_layer', 'operational')
+                            ->has('opDigitalGovernment')
+                            ->exists();
+  
         $countOpDigitalGovernment=0;
         $countOpDigitalGovernmentInprogress=0;
         if($opDigitalGovernmentOfficials==true){                    
@@ -521,12 +536,14 @@ class CompetancyAssessmentController extends Controller
         $countOpDigitalGovernmentInprogress=$countOperationalGovofficials - $countOpDigitalGovernment;
         }
 
-        $midGovofficials = $govorganizationname->govofficials()
+        $midDigitalGovernmentGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
-                            ->get();
-        $countMidGovofficials=count($midGovofficials);
+                            ->has('midDigitalGovernment')
+                            ->exists();
 
-        if($midGovofficials2==true){
+        $countMidDigitalGovernment=0;
+        $countMidDigitalGovernmentInprogress=0;
+        if($midDigitalGovernmentGovofficials==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
                 $hasMidDigitalGovernmentData = $midGovofficial->midDigitalGovernment ? $midGovofficial->midDigitalGovernment->exists() : false;
@@ -541,13 +558,11 @@ class CompetancyAssessmentController extends Controller
         $countMidDigitalGovernment=count($govofficialMidDigitalGovernment);
         $countMidDigitalGovernmentInprogress=$countMidGovofficials - $countMidDigitalGovernment;
         }
-        $topGovofficials = $govorganizationname->govofficials()
-                            ->where('employment_layer', 'top')
-                            ->get();
-        $countTopGovofficials=count($topGovofficials);
 
-        $topDigitalGovernmentOfficials=$topGovofficials
-                                ->has('topDigitalGovernment');
+        $topDigitalGovernmentOfficials=$govorganizationname->govofficials()
+                            ->where('employment_layer', 'top')
+                            ->has('topDigitalGovernment')
+                            ->exists();
 
         $countTopDigitalGovernment=0;
         $countTopDigitalGovernmentInprogress=0;
@@ -566,112 +581,83 @@ class CompetancyAssessmentController extends Controller
         $countTopDigitalGovernment=count($govofficialTopDigitalGovernment);
         $countTopDigitalGovernmentInprogress=$countTopGovofficials - $countTopDigitalGovernment;
         }
-        $countDigitalGovernment=$countOpDigitalGovernment ?? 0 + $countMidDigitalGovernment ?? 0 + $countTopDigitalGovernment ?? 0;
-        $countDigitalGovernmentInprogress=$countOpDigitalGovernmentInprogress ?? 0 + $countMidDigitalGovernmentInprogress ?? 0 + $countTopDigitalGovernmentInprogress ?? 0;
 
-        $operationalGovofficials = $govorganizationname->govofficials()
-                            ->where('employment_layer', 'operational')
-                            ->get();
-
-        $operationalGovofficials2 = $govorganizationname->govofficials()
-                            ->where('employment_layer', 'operational')
-                            ->exists();
+        $countDigitalGovernment=$countOpDigitalGovernment  + $countMidDigitalGovernment  + $countTopDigitalGovernment ;
+        $countDigitalGovernmentInprogress=$countOpDigitalGovernmentInprogress  + $countMidDigitalGovernmentInprogress  + $countTopDigitalGovernmentInprogress ;
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
-        if ($operationalGovofficials->isNotEmpty()) {
-            $operationalManagementExists = $operationalGovofficials
-                ->has('opManagement');
-                
-        }
+        $opManagementGovofficials=$govorganizationname->govofficials()
+                            ->where('employment_layer', 'operational')
+                            ->has('opManagement')
+                            ->exists();
+
         $countOpManagement=0;
         $countOpManagementInprogress=0;
-        if($operationalGovofficials2==true){  
-            if($operationalManagementExists==true){    
-                foreach ($operationalGovofficials as $operationalGovofficial) {
-                    if ($operationalGovofficial) {
-                        $hasOpManagementData = $operationalGovofficial->opManagement ? $operationalGovofficial->opManagement->exists() : false;
+        if($opManagementGovofficials==true){  
+            foreach ($operationalGovofficials as $operationalGovofficial) {
+                if ($operationalGovofficial) {
+                    $hasOpManagementData = $operationalGovofficial->opManagement ? $operationalGovofficial->opManagement->exists() : false;
 
-                        if ($hasOpManagementData) {
-                            $govofficialOpManagement[] = $operationalGovofficial;
-                        } 
-                    }
+                    if ($hasOpManagementData) {
+                        $govofficialOpManagement[] = $operationalGovofficial;
+                    } 
                 }
-
-                $countOpManagement=count($govofficialOpManagement);
-                $countOpManagementInprogress=$countOperationalGovofficials - $countOpManagement;
             }
-        }
-        $midGovofficials = $govorganizationname->govofficials()
-                            ->where('employment_layer', 'middle')
-                            ->get();
-        $countMidGovofficials=count($midGovofficials);
 
-        $midGovofficials2 = $govorganizationname->govofficials()
+            $countOpManagement=count($govofficialOpManagement);
+            $countOpManagementInprogress=$countOperationalGovofficials - $countOpManagement;
+            
+        }
+
+        $midManagementGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
+                            ->has('midManagement')
                             ->exists();
 
-        if ($midGovofficials->isNotEmpty()) {
-            $middleManagementExists = $midGovofficials
-                ->has('midManagement');
-                
-        }
         $countMidManagement=0;
         $countMidManagementInprogress=0;
-        if($midGovofficials2==true){
-            if($middleManagementExists==true){
-                foreach ($midGovofficials as $midGovofficial) {
-                    if ($midGovofficial) {
-                        $hasMidManagementData = $midGovofficial->midManagement ? $midGovofficial->midManagement->exists() : false;
+        if($midManagementGovofficials==true){
+            foreach ($midGovofficials as $midGovofficial) {
+                if ($midGovofficial) {
+                    $hasMidManagementData = $midGovofficial->midManagement ? $midGovofficial->midManagement->exists() : false;
 
-                        if ($hasMidManagementData) {
-                            $govofficialMidManagement[] = $midGovofficial;
-                        } 
-                        
-                    }
+                    if ($hasMidManagementData) {
+                        $govofficialMidManagement[] = $midGovofficial;
+                    } 
+                    
                 }
-
-                $countMidManagement=count($govofficialMidManagement);
-                $countMidManagementInprogress=$countMidGovofficials - $countMidManagement;
             }
+            $countMidManagement=count($govofficialMidManagement);
+            $countMidManagementInprogress=$countMidGovofficials - $countMidManagement; 
         }
 
-        $topGovofficials = $govorganizationname->govofficials()
+        $topManagementGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
-                            ->get();
-        $countTopGovofficials=count($topGovofficials);
-
-        $topGovofficials2 = $govorganizationname->govofficials()
-                            ->where('employment_layer', 'top')
+                            ->has('topManagement')
                             ->exists();
-        
-        if ($topGovofficials->isNotEmpty()) {
-            $topManagementExists = $topGovofficials
-                ->has('topManagement');
-                
-        }
 
         $countTopManagement=0;
-        $countManagementInprogress=0;
-        if($topGovofficials2){
-            if($topManagementExists){
-                foreach ($topGovofficials as $topGovofficial) {
-                    if ($topGovofficial) {
-                        $hasTopManagementData = $topGovofficial->topManagement ? $topGovofficial->topManagement->exists() : false;
+        $countTopManagementInprogress=0;
+        if($topManagementGovofficials){
+            foreach ($topGovofficials as $topGovofficial) {
+                if ($topGovofficial) {
+                    $hasTopManagementData = $topGovofficial->topManagement ? $topGovofficial->topManagement->exists() : false;
 
-                        if ($hasTopManagementData) {
-                            $govofficialTopManagement[] = $topGovofficial;
-                        } 
-                        
-                    }
+                    if ($hasTopManagementData) {
+                        $govofficialTopManagement[] = $topGovofficial;
+                    } 
+                    
                 }
-
-                $countTopManagement=count($govofficialTopManagement);
-                $countTopManagementInprogress=$countTopGovofficials - $countTopManagement;
             }
+
+            $countTopManagement=count($govofficialTopManagement);
+            $countTopManagementInprogress=$countTopGovofficials - $countTopManagement;
+            
         }
-        $countManagement=$countOpManagement ?? 0 + $countMidManagement ?? 0 + $countTopManagement ?? 0;
-        $countManagementInprogress=$countOpManagementInprogress ?? 0 + $countMidManagementInprogress ?? 0 + $countTopManagementInprogress ?? 0;
+
+        $countManagement=$countOpManagement  + $countMidManagement  + $countTopManagement ;
+        $countManagementInprogress=$countOpManagementInprogress  + $countMidManagementInprogress  + $countTopManagementInprogress ;
 
         //Ict In Workplace
         $opIctInWorkplace = $govorganizationname->govofficials()
@@ -1461,7 +1447,11 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
-        $opIctGovofficials=$operationalGovofficials -> has('opIct');
+        $opIctGovofficials=$govorganizationname->govofficials()
+                            ->where('employment_layer', 'operational')
+                            -> has('opIct')
+                            ->exists();
+
         $countOpIct=0;
         $countOpIctInprogress=0;
         if($opIctGovofficials==true){
@@ -1484,13 +1474,14 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countMidGovofficials=count($midGovofficials);
 
-        $midGovofficials2 = $govorganizationname->govofficials()
+        $midIctGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
+                            ->has('midIct')
                             ->exists();
 
         $countMidIctInprogress=0;
         $countMidIct=0;
-        if($midGovofficials2==true){
+        if($midIctGovofficials==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
                 $hasMidIctData = $midGovofficial->midIct ? $midGovofficial->midIct->exists() : false;
@@ -1510,11 +1501,11 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
-        $topGovofficials2 = $govorganizationname->govofficials()
+        $topIctGovofficials= $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
+                            ->has('topIct')
                             ->exists();
 
-        $topIctGovofficials=$topGovofficials -> has('topIct');
         $countTopIct=0;
         $countTopIctInprogress=0;
        
@@ -2004,11 +1995,14 @@ class CompetancyAssessmentController extends Controller
 
         $countOperationalGovofficials=count($operationalGovofficials);
 
-        $opDigitalGovernmentOfficials=$operationalGovofficials -> has('opDigitalGovernment');
+        $opDigitalGovernmentGovofficials = $govorganizationname->govofficials()
+                            ->where('employment_layer', 'operational')
+                            ->has('opDigitalGovernment')
+                            ->exists();
 
         $countOpDigitalGovernment=0;
         $countOpDigitalGovernmentInprogress=0;
-        if($opDigitalGovernmentOfficials==true){
+        if($opDigitalGovernmentGovofficials==true){
         foreach ($operationalGovofficials as $operationalGovofficial) {
             if ($operationalGovofficial) {
                 $hasOpDigitalGovernmentData = $operationalGovofficial->opDigitalGovernment ? $operationalGovofficial->opDigitalGovernment->exists() : false;
@@ -2029,13 +2023,14 @@ class CompetancyAssessmentController extends Controller
         $countMidGovofficials=count($midGovofficials);
 
         
-        $midGovofficials2 = $govorganizationname->govofficials()
+        $midDigitalGovernmentGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
+                            ->has('midDigitalGovernment')
                             ->exists();
 
         $countMidDigitalGovernment=0;
         $countMidDigitalGovernmentInprogress=0;
-        if($midGovofficials2==true){
+        if($midDigitalGovernmentGovofficials==true){
         foreach ($midGovofficials as $midGovofficial) {
             if ($midGovofficial) {
                 $hasMidDigitalGovernmentData = $midGovofficial->midDigitalGovernment ? $midGovofficial->midDigitalGovernment->exists() : false;
@@ -2057,14 +2052,15 @@ class CompetancyAssessmentController extends Controller
         $countTopGovofficials=count($topGovofficials);
 
         
-        $topGovofficials2 = $govorganizationname->govofficials()
+        $topDigitalGovernmentGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'top')
+                            ->has('topDigitalGovernment')
                             ->exists();
 
         $topDigitalGovernmentOfficials=$topGovofficials -> has('topDigitalGovernment');
         $countTopDigitalGovernment=0;     
         $countTopDigitalGovernmentInprogress=0;               
-        if($topDigitalGovernmentOfficials==true){
+        if($topDigitalGovernmentGovofficials==true){
         foreach ($topGovofficials as $topGovofficial) {
             if ($topGovofficial) {
                 $hasTopDigitalGovernmentData = $topGovofficial->topDigitalGovernment ? $topGovofficial->topDigitalGovernment->exists() : false;
@@ -2394,11 +2390,10 @@ class CompetancyAssessmentController extends Controller
                             ->where('employment_layer', 'operational')
                             ->get();
 
-        $operationalGovofficials2 = $govorganizationname->govofficials()
+        $opManagementGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'operational')
+                            ->has('opManagement')
                             ->exists();
-        $opManagementGovofficials = $operationalGovofficials
-                            ->has('opManagement');
                             
         $countOperationalGovofficials=count($operationalGovofficials);
 
@@ -2423,12 +2418,10 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countMidGovofficials=count($midGovofficials);
 
-        $midGovofficials2 = $govorganizationname->govofficials()
+        $midManagementGovofficials = $govorganizationname->govofficials()
                             ->where('employment_layer', 'middle')
+                            ->has('midManagement')
                             ->exists();
-
-        $midManagementGovofficials = $midGovofficials
-                            ->has('midManagement');
 
         $countMidManagement=0;
         $countMidManagementInprogress=0;
@@ -2453,8 +2446,10 @@ class CompetancyAssessmentController extends Controller
                             ->get();
         $countTopGovofficials=count($topGovofficials);
 
-        $topManagementGovofficials=$topGovofficials
-                            ->has('topManagement');
+        $topManagementGovofficials=$govorganizationname->govofficials()
+                            ->where('employment_layer', 'top')
+                            ->has('topManagement')
+                            ->exists();
 
         $countTopManagement=0;
         $countTopManagementInprogress=0;

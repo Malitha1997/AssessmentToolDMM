@@ -2,53 +2,68 @@
 
 @section('content')
 
-<body style="border-color: rgb(46,127,208);color: rgb(255,255,255);max-height: 100%;height: 1000px;">
-    <section data-aos="fade-down" data-aos-duration="1000" style="height: 500px;">
+<body>
+    
         {{--  @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
         </div>
         @endif  --}}
-
+        
         <form method="POST" action="{{ route('login') }}">
             @csrf
-        <div class="container" style="width: 1008px;height: 468px;margin-top: 150px;border-style: solid;border-color: #5f2b84;">
-            <div class="row" style="height: 468px;">
-                <div class="col" style="width: 527px;height: 468px;background: url(&quot;{{ asset('img/Group 3.png') }}&quot;);margin-left: -15px;margin-top: -3px">
-                    <div class="flex-column justify-content-center align-items-center align-content-center align-self-center order-first" style="border-radius: 10px;background: #ffffff;color: rgb(0,0,0);margin-top: 50px;width: 402px;height: 369px;margin-left: 34px;text-align: center;">
-                        <h1 style="text-align: center;font-family: Poppins, sans-serif;font-size: 24px;font-weight: bold;padding-top: 50px;color: #5f2b84;">Don't have an account?&nbsp;</h1><span style="font-family: Poppins, sans-serif;text-align: center;margin-top: 100px;margin-left: 10px;margin-right: 10px;"><br>Register Now and assess the Digital <br>Maturity level of organization.<br><br></span>
+        <div class="container" data-aos="fade-down" data-aos-duration="1000"  style="width: 80%;margin-top: 5%;margin-bottom:5%">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-sm-6" style="background: url(&quot;{{ asset('img/Group 3.png') }}&quot;)">
+                    <!-- <div class="flex-column justify-content-center align-items-center align-content-center align-self-center order-first" style="border-radius: 10px;background: #ffffff;color: rgb(0,0,0);margin-top: 50px;width: 402px;height: 369px;margin-left: 34px;text-align: center;"> -->
+                    <div class="container" style="background-color:#fff;border-radius: 10px;height:70%;width:85%;margin-top:10%;height:80%">  
+                        <div class="row">
+                            <h4 style="text-align: center;font-family: Poppins, sans-serif;margin-top: 10%;color: #5f2b84;font-weight:bold">Don't have an account?</h4>
+                        </div>
+                        <div class="row">
+                            <h6 style="font-family: Poppins, sans-serif;text-align: center;color: #000;margin-top:10%"><br>Register Now and assess the Digital <br>Maturity level of organization.</h6>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-primary justify-content-center align-items-center" href="{{ route('register') }}" style="margin-left:25%;width:50%;background:#EF4323;border-width: 0px;font-family: Poppins, sans-serif;text-align: center;margin-top:15%;margin-bottom:30%">Signup</a>
+                        </div>
 
-                        <a class="btn btn-primary d-flex flex-column justify-content-center align-items-center" href="{{ route('register') }}" style="border-width: 0px;margin-right: 0px;margin-left: 110px;margin-top: 90px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;text-align: center;">Signup</a>
+                        
 
                     </div>
                 </div>
-                <div class="col" style="border-color: rgb(0,10,255);">
-                    <h1 style="color: #f01f75;text-align: center;font-family: Poppins, sans-serif;font-size: 24px;margin-top: 20px;font-weight: bold;">Login Your Account</h1>
-                    <section>
-                    <div class="row">
-                        <div class="col">
-                        <input class="form-control-lg" id="username" type="username" style="padding-bottom: 1px;margin-left: 40px;width: 401px;height: 49px;margin-top: 50px;" name="username" value="{{ old('username') }}" placeholder="Username" required>
-                        @if($errors->has('username'))
-                                <p class="text-danger"><b>{{ $errors->first('username') }}</b></p>
-                        @endif
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                        <input class="form-control-lg @error('password') is-invalid @enderror" id="password" type="password" style="width: 401px;height: 49px;margin-top: 50px;margin-left: 40px;padding-bottom: 1px;" name="password" value="{{ old('password') }}" placeholder="Password" required autocomplete="current-password">
-                        @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
+                <div class="col-lg-6 col-sm-6" style="height:60%;border-color: rgb(0,10,255);border-style: solid;border-color: #5f2b84;">
+                    <h3 style="color: #f01f75;text-align: center;font-family: Poppins, sans-serif;margin-top: 5%;font-weight:bold">Login Your Account</h3>
+                    <div class="container justify-content-center" style="margin-left:8%">
+                        <div class="row">
+                            
+                            <input class="form-control-lg" id="username" type="username" style="font-family: Poppins, sans-serif;width: 80%;height: 10%;margin-top: 10%;" name="username" value="{{ old('username') }}" placeholder="Username" required>
+                            @if($errors->has('username'))
+                                    <p class="text-danger"><b>{{ $errors->first('username') }}</b></p>
+                            @endif
                         </div>
+                        <div class="row">
+                            
+                            <input class="form-control-lg @error('password') is-invalid @enderror" id="password" type="password" style="font-family: Poppins, sans-serif;width: 80%;height: 10%;margin-top: 10%;" name="password" value="{{ old('password') }}" placeholder="Password" required autocomplete="current-password">
+                            @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                            @enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);margin-top:10%">Forgot Password</a>
+                        </div>  
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary"  style="margin-left:30%;width:40%;margin-bottom:5%;border-width: 0px;margin-top: 10%;background:#EF4323;font-family: Poppins, sans-serif;">{{ __('Login') }}</button>
+                        </div>                  
+                        
                     </div>
-                    </section>
-                        <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);">Forgot Password</a>
-                        <button type="submit" class="btn btn-primary"  style="border-width: 0px;margin-right: 0px;margin-left: 50px;margin-top: 100px;background: url(&quot;{{ asset('img/Screenshot (561) 2.png') }}&quot;);font-family: Poppins, sans-serif;width: 178px;height: 55px;">{{ __('Login') }}</button>
+                        
                 </div>
             </div>
         </div>
         </form>
-    </section>
+   
 </body>
 @endsection

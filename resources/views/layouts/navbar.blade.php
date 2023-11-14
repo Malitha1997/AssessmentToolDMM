@@ -27,7 +27,7 @@
 </head>
 
 <body style="border-color: rgb(46,127,208);color: rgb(255,255,255);">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top py-3" data-aos="slide-down" data-aos-duration="1000" style="background: #5f2b84">
+    <nav class="navbar navbar-light navbar-expand-md py-3" data-aos="slide-down" data-aos-duration="1000" style="background: #5f2b84">
         <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2" style="width: 1440px;text-align: left;font-family: Poppins, sans-serif;"><img src="{{ asset('img/duallogo-white-icta%201(1).png') }}">
                 <ul class="navbar-nav ms-auto">
@@ -43,7 +43,7 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-12 col-sm-6 col-md-3">
-                    <h1 class="logo" style="margin-top: 30px;"></h1><span style="text-align: center;font-family: Poppins, sans-serif;"><br>Aiming at a digitally competent society and an empowered Government workforce with required competencies.<br><br></span><img src="{{ asset('img/Mask%20group.png') }}">
+                    <h1 class="logo" style="margin-top: 30px;"></h1><span style="text-align: center;font-family: Poppins, sans-serif;"><br>Aiming at a digitally competent society and an empowered Government workforce with required competencies.<br><br></span>
                 </div>
                 <div class="col-12 col-sm-6 col-md-2 col-xl-2 pe-xl-0">
                     <h5 style="font-family: Poppins, sans-serif;">Links</h5>
