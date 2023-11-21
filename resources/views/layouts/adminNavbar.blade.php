@@ -21,7 +21,7 @@
     <div id="wrapper">
         <div class="row">
         <div class="col"style="width:150px">
-        <nav class="navbar align-items-start position-fixed sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:3586px;margin-top: 108px;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
+        <nav class="navbar align-items-start position-fixed sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"  data-aos="fade-right" data-aos-duration="500" style="width:224px;height:3586px;margin-top: 5%;background: rgba(78,115,223,0);box-shadow: 0px 0px 20px;">
             <div class="container-fluid d-flex flex-column p-0" >
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-text mx-3" >
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-light navbar-expand-md fixed-top py-3" data-aos="slide-down" data-aos-duration="1000" style="background: #5f2b84">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top py-3" data-aos="slide-down" data-aos-duration="1000" style="background: #5f2b84;height:15%">
         <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex align-items-center" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2" style="width: 1440px;text-align: left;font-family: Poppins, sans-serif;"><img src="{{ asset('img/duallogo-white-icta%201(1).png') }}">
                 <ul class="navbar-nav ms-auto">
@@ -105,5 +105,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" >
 </body>
-
+ <!-- <script>
+      window.addEventListener("beforeunload", (event) => {
+        console.log("I am the 2nd one.");
+      });
+      window.addEventListener("unload", (event) => {
+        console.log("I am the 4th and last one…");
+      });
+    </script> -->
 </html>

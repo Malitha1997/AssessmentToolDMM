@@ -24,7 +24,7 @@
                             <h6 style="font-family: Poppins, sans-serif;text-align: center;color: #000;margin-top:10%"><br>Register Now and assess the Digital <br>Maturity level of organization.</h6>
                         </div>
                         <div class="row">
-                            <a class="btn btn-primary justify-content-center align-items-center" href="{{ route('register') }}" style="margin-left:25%;width:50%;background:#EF4323;border-width: 0px;font-family: Poppins, sans-serif;text-align: center;margin-top:15%;margin-bottom:30%">Signup</a>
+                            <a class="btn btn-primary justify-content-center align-items-center" href="{{ route('register') }}" style="margin-left:25%;width:50%;background: linear-gradient(to right, #ff0000 0%, #ff9933 100%);border-width: 0px;font-family: Poppins, sans-serif;text-align: center;margin-top:15%;margin-bottom:30%">Signup</a>
                         </div>
 
                         
@@ -55,7 +55,7 @@
                             <a href="{{ route('forget.password.get') }}" style="color: rgb(0,0,0);margin-top:10%">Forgot Password</a>
                         </div>  
                         <div class="row">
-                            <button type="submit" class="btn btn-primary"  style="margin-left:30%;width:40%;margin-bottom:5%;border-width: 0px;margin-top: 10%;background:#EF4323;font-family: Poppins, sans-serif;">{{ __('Login') }}</button>
+                            <button type="submit" class="btn btn-primary"  style="margin-left:30%;width:40%;margin-bottom:5%;border-width: 0px;margin-top: 10%;background: linear-gradient(to right, #ff0000 0%, #ff9933 100%);font-family: Poppins, sans-serif;">{{ __('Login') }}</button>
                         </div>                  
                         
                     </div>

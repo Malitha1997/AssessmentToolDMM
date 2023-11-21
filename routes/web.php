@@ -63,7 +63,7 @@ Route::get('/register2',[RegisterController::class,'logingovofficialregister'])-
 
 /*All Normal Users Routes List*/
 
-Route::middleware(['auth', 'user-access:user'])->group(function () {
+Route::middleware(['auth', 'user-access:user','prevent-back-history','web'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('userHome');
     Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
     Route::resource('govorganizations', GovorganizationController::class);
@@ -113,7 +113,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
 
 /*All Admin Routes List*/
 
-Route::middleware(['auth', 'user-access:admin'])->group(function () {
+Route::middleware(['auth', 'user-access:admin','prevent-back-history','web'])->group(function () {
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('home');
     // Route::get('/admin/organizationProfile', [GovorganizationController::class, 'organizationProfile'])->name('organizationProfile');
     Route::resource('govorganizations', GovorganizationController::class);
