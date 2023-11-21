@@ -1,6 +1,6 @@
 @extends('layouts.userNavbar')
 
-@section('content')
+@section('content') 
 
 <body id="body" style="width: auto;border-color: rgb(46,127,208);color: rgb(255,255,255);">
     <section data-aos="fade-down" data-aos-duration="1000">
