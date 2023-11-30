@@ -1545,7 +1545,7 @@ class CompetancyAssessmentController extends Controller
         $opIctInWorkplaceGovofficials=$opGovofficials -> has('opIctInWorkPlace');
         $avgOpIctInWorkplace=0;
 
-        if($opIctInWorkplaceGovofficials==true){
+        if($countOpGovofficials!==0){
             $avgOpIctInWorkplace=round(($sumOpIctInWorkplace/($countOpGovofficials*40))*100 , 0);
         }
 

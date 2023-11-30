@@ -34,7 +34,7 @@
 </div>
 <div class="container" data-aos="fade-in" data-aos-duration="1000" style="margin-top: 30px;font-family:poppins">
     <div class="row">
-        <div class="col-md-6" style="border-radius: 10px;border-style: solid;border-color: var(--bs-dark-bg-subtle);height: 540px;">
+        <div class="col-md-6" style="border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);height: 540px;">
              
                 <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
                     <div class="col">
@@ -72,7 +72,7 @@
             </div>
 
         </div>
-        <div class="col-md-6" style="margin-left: 10px;width: 585px;border-style: solid;border-color: var(--bs-secondary-bg);border-radius: 10px;height: 540px;">
+        <div class="col-md-6" style="margin-left: 10px;width: 585px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);border-radius: 10px;height: 540px;">
             @foreach($users as $user)
             <form method="POST" action="{{ route('create-user-govofficial',$user->id) }}">
                 {{csrf_field()}}
@@ -128,7 +128,7 @@
                 <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
                     {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
                     <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div" style="width: 542px; height: 259px; font-family: Poppins; margin-left: 50px; font-family: Poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    
                     <script>
                         google.charts.load('current', { packages: ['corechart', 'bar'] });
                         google.charts.setOnLoadCallback(drawBasic);
@@ -221,7 +221,7 @@
                 <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
                     {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
                     <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div2" style="width:542px;height:259px;font-family: Poppins;margin-left:50px;font-family:poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                   
                     <script>
                         google.charts.load('current', {packages: ['corechart', 'bar']});
                         google.charts.setOnLoadCallback(drawBasic);
@@ -317,7 +317,7 @@
                 <div class="container" style="width: 545px;height: 270px;text-align: center;margin-top: 0px;">
                     {{--  <img src="{{ asset('img/Group 2d83.png') }}" style="margin-top: 70px;width: 600px;height: 400px;">  --}}
                     <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div3" style="width:542px;height:259px;font-family: Poppins;margin-left:50px;font-family:poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    
                     <script>
                         google.charts.load('current', {packages: ['corechart', 'bar']});
                         google.charts.setOnLoadCallback(drawBasic);

@@ -7,7 +7,7 @@
 <span data-aos="fade-in" data-aos-duration="1000" style="margin-top: 180px;color: #1F2471;font-size: 24px;font-weight: bold;margin-left: 400px;font-family:poppins">{{ $govorganizationname->gov_org_name }}</span>
 <div class="container" data-aos="fade-in" data-aos-duration="1000" style="margin-top: 50px;font-family:poppins">
     <div class="row" style="height: 479px;">
-        <div class="col-md-6" style="height: 420px;border-radius: 10px;border-style: solid;border-color: var(--bs-dark-border-subtle);"><span style="color: #F01F75;">General Information</span>
+        <div class="col-md-6" style="height: 420px;border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);"><span style="color: #F01F75;">General Information</span>
             <div class="row">
                 <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">User Name</span><input type="text" style="margin-left: 150px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" value="{{ $govorganizationname->govorganizationdetail->user->username}}" readonly></div>
             </div>
@@ -27,11 +27,11 @@
                 <div class="col" style="margin-top: 10px;"><input type="text" style="margin-left: 240px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" readonly><input type="text" style="margin-left: 240px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;margin-top: 10px;" readonly></div>
             </div>
         </div>
-        <div class="col-md-6" style="margin-left: 20px;height: 420px;width: 550px;border-radius: 10px;border-style: solid;border-color: var(--bs-dark-border-subtle);"><span style="color: #F01F75;">Responses</span>
+        <div class="col-md-6" style="margin-left: 20px;height: 420px;width: 550px;border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);"><span style="color: #F01F75;">Responses</span>
             <div class="row">
                 <div class="col" style="text-align: center;">
                 <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div" style="width:500px;height:350px;font-family: Poppins;margin-left:5%;font-family:poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                   
                     <script>
                         google.charts.load('current', { packages: ['corechart'] });
                         google.charts.setOnLoadCallback(drawPieChart);
@@ -73,7 +73,7 @@
 <div data-aos="fade-in" data-aos-duration="1000" class="row" style="background: #1F2471;text-align: center;font-family:poppins">
     <div class="col" style="height: 75px;"><span style="font-size: 24px;color: #ffff;">Overall Results of Digital Government Competency Assessment</span></div>
 </div>
-<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;border-style: solid;border-color: var(--bs-emphasis-color);font-family:poppins">
+<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);font-family:poppins">
     <div class="row" style="text-align: center;font-size: 20px;">
         <div class="col"><span style="color: var(--bs-emphasis-color);"><br>Self Assessment - ICT</span></div>
     </div>
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div2" style="width: 542px; height: 259px; font-family: Poppins; margin-left: 50px; font-family: Poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    
                     <script>
                         google.charts.load('current', { packages: ['corechart', 'bar'] });
                         google.charts.setOnLoadCallback(drawBasic);
@@ -134,7 +134,7 @@
         </div>
     </div>
 </div>
-<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;border-style: solid;border-color: var(--bs-emphasis-color);font-family:poppins">
+<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);font-family:poppins">
     <div class="row" style="text-align: center;font-size: 20px;">
         <div class="col"><span style="color: var(--bs-emphasis-color);"><br>Self Assessment -Digital Government</span></div>
     </div>
@@ -163,8 +163,8 @@
                             <div class="col"><a href="{{route('competancyGovorganizationDigitalGovernment',$govorganizationname->id)}}" type="button">See more</a></div>
                 </div>
             </div>
-            <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div3" style="width: 542px; height: 259px; font-family: Poppins; margin-left: 50px; font-family: Poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div3" style="width: 542px; height: 380px; font-family: Poppins; font-family: Poppins"></div>
+                    
                     <script>
                         google.charts.load('current', { packages: ['corechart', 'bar'] });
                         google.charts.setOnLoadCallback(drawBasic);
@@ -195,7 +195,7 @@
         </div>
     </div>
 </div>
-<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;border-style: solid;border-color: var(--bs-emphasis-color);font-family:poppins">
+<div data-aos="fade-in" data-aos-duration="1000" style="height: 500px;margin-top: 20px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);font-family:poppins">
     <div class="row" style="text-align: center;font-size: 20px;">
         <div class="col"><span style="color: var(--bs-emphasis-color);"><br>Self Assessment - Management</span></div>
     </div>
@@ -225,7 +225,7 @@
                 </div>
             </div>
             <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div4" style="width: 542px; height: 259px; font-family: Poppins; margin-left: 50px; font-family: Poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    
                     <script>
                         google.charts.load('current', { packages: ['corechart', 'bar'] });
                         google.charts.setOnLoadCallback(drawBasic);
