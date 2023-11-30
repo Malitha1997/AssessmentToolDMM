@@ -13,7 +13,7 @@
                 <div class="col-md-6" style="text-align: center;">
                     <div class="row">
                         <div class="col">
-                            <div class="row" style="width: 257px;height: 85px;margin-top: 50px;margin-bottom: 50px;margin-left: 150px;background: var(--bs-body-bg);border-radius: 10px;box-shadow: 0px 0px 8px 0px var(--bs-emphasis-color);">
+                            <div class="row" style="width: 257px;height: 85px;margin-top: 50px;margin-bottom: 50px;margin-left: 150px;background: var(--bs-body-bg);border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);">
                                 <div class="col" style="border-radius: 10px;"><span style="color: var(--bs-emphasis-color);margin-top: 10px;">Number of Responses</span>
                                     <div class="row" style="font-weight: bold;">
                                         <div class="col"><span style="color: var(--bs-emphasis-color);font-size: 24px;">{{$countDigitalGovernment}}</span></div>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="width: 257px;height: 85px;margin-left: 150px;background: var(--bs-body-bg);border-radius: 10px;box-shadow: 0px 0px 8px var(--bs-emphasis-color);">
+                    <div class="row" style="width: 257px;height: 85px;margin-left: 150px;background: var(--bs-body-bg);border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);">
                         <div class="col"><span style="color: var(--bs-emphasis-color);margin-top: 10px;">Inprogress</span>
                             <div class="row" style="font-weight: bold;">
                                 <div class="col"><span style="color: var(--bs-emphasis-color);font-size: 24px;">{{$countDigitalGovernmentInprogress}}</span></div>
@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div" style="width: 542px; height: 259px; font-family: Poppins; margin-left: 25px; font-family: Poppins"></div>
-                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div" style="width: 542px; height: 380px; font-family: Poppins; margin-left: 25px; font-family: Poppins"></div>
+                    
                     <script>
                         google.charts.load('current', { packages: ['corechart', 'bar'] });
                         google.charts.setOnLoadCallback(drawBasic);
@@ -65,9 +65,9 @@
         </div>
         <div class="container" data-aos="fade-in" data-aos-duration="1000" style="margin-top: 70px;font-family:poppins">
             <div class="row">
-                <div class="col-md-6" style="width: 563px;margin-left: 20px;height: 700px;border-style: solid;border-color: var(--bs-dark-border-subtle);">
+                <div class="col-md-6" style="width: 563px;margin-left: 20px;height: 700px;box-shadow: 0px 10px 10px 1px var(--bs-body-color);">
                     <div class="row" style="background: #586CA9;text-align: center;">
-                        <div class="col" style="height: 60px;"><span style="margin-top: 20px;">Top &amp; 2nd Tier Management</span></div>
+                        <div class="col" style="height: 60px;"><span style="color:#fff;margin-top:20px">Top &amp; 2nd Tier Management</span></div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -86,7 +86,7 @@
                             <div class="row" style="height: 40px;text-align: center;margin-top: 5px;">
                                 <div class="col" style="margin-top: 40px;">
                                 <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div2" style="width: 460px; height: 259px; font-family: Poppins; margin-left: 25px; font-family: Poppins"></div>
-                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                
                                 <script>
                                     google.charts.load('current', { packages: ['corechart', 'bar'] });
                                     google.charts.setOnLoadCallback(drawBasic);
@@ -119,9 +119,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 563px;margin-left: 20px;border-style: solid;border-color: var(--bs-dark-border-subtle);">
-                    <div class="row" style="background: #586CA9;text-align: center;">
-                        <div class="col" style="height: 60px;background: #0BA253;"><span style="margin-top: 20px;">Chief Digital Information Officers</span></div>
+                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 563px;margin-left: 20px;box-shadow: 0px 10px 10px 1px var(--bs-body-color);border-radius:10px">
+                    <div class="row" style="background: #586CA9;text-align: center;border-radius:10px 10px 0px 0px">
+                        <div class="col" style="height: 60px;background: #0BA253;"><span style="color:#fff;margin-top: 20px;">Chief Digital Information Officers</span></div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -147,9 +147,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 563px;margin-left: 20px;height: 700px;border-style: solid;border-color: var(--bs-dark-border-subtle);margin-top: 20px;">
+                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 563px;margin-left: 20px;height: 700px;box-shadow: 0px 10px 10px 1px var(--bs-body-color);margin-top: 20px;">
                     <div class="row" style="background: #586CA9;text-align: center;">
-                        <div class="col" style="height: 60px;background: #ED2C3D;"><span style="margin-top: 20px;">Middle &amp; Junior Management</span></div>
+                        <div class="col" style="height: 60px;background: #ED2C3D;"><span style="color:#fff;margin-top: 20px;">Middle &amp; Junior Management</span></div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -168,7 +168,7 @@
                             <div class="row" style="height: 40px;text-align: center;margin-top: 5px;">
                                 <div class="col" style="margin-top: 40px;">
                                 <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div3" style="width: 460px; height: 259px; font-family: Poppins; margin-left: 25px; font-family: Poppins"></div>
-                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                
                                 <script>
                                     google.charts.load('current', { packages: ['corechart', 'bar'] });
                                     google.charts.setOnLoadCallback(drawBasic);
@@ -201,9 +201,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 550px;margin-left: 20px;border-style: solid;border-color: var(--bs-dark-border-subtle);margin-top: 20px;">
+                <div class="col-md-6" data-aos="fade-in" data-aos-duration="1000" style="font-family:poppins;width: 550px;margin-left: 20px;box-shadow: 0px 10px 10px 1px var(--bs-body-color);margin-top: 20px;">
                     <div class="row" style="background: #586CA9;text-align: center;">
-                        <div class="col" style="height: 60px;background: #F68C42;"><span style="margin-top: 20px;">Operational Staff</span></div>
+                        <div class="col" style="height: 60px;background: #F68C42;"><span style="color:#fff;margin-top: 20px;">Operational Staff</span></div>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -222,7 +222,7 @@
                             <div class="row" style="height: 40px;text-align: center;margin-top: 5px;">
                                 <div class="col" style="margin-top: 40px;">
                                 <div data-aos="zoom-in" data-aos-duration="1000" id="chart_div4" style="width: 460px; height: 259px; font-family: Poppins; margin-left: 25px; font-family: Poppins"></div>
-                                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                                
                                 <script>
                                     google.charts.load('current', { packages: ['corechart', 'bar'] });
                                     google.charts.setOnLoadCallback(drawBasic);
