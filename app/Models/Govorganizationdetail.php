@@ -65,10 +65,6 @@ class Govorganizationdetail extends Model
         return $this->belongsTo(TypesOfServices::class);
     }
 
-    public function cdio(){
-        return $this->belongsTo(Cdio::class);
-    }
-
     public function govorganizationname(){
         return $this->belongsTo(Govorganizationname::class);
     }
@@ -123,5 +119,9 @@ class Govorganizationdetail extends Model
 
     public function tmpOperation(){
         return $this->hasOne(TmpOperation::class);
+    }
+
+    public function cdio(){
+        return $this->hasOne(Cdio::class);
     }
 }

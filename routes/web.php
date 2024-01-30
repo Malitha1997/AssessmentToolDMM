@@ -5,11 +5,13 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\AddNewOrganization;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GovofficialController;
 use App\Http\Controllers\GoogleChartsController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\DeepAssessmentController;
 use App\Http\Controllers\GovofficialUserController;
 use App\Http\Controllers\GovorganizationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -119,11 +121,11 @@ Route::middleware(['auth', 'user-access:admin','prevent-back-history','web'])->g
     Route::resource('govorganizations', GovorganizationController::class);
     Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
     Route::get('generate-pdf/{id}', [PDFController::class, 'adminGeneratePDF'])->name('generate-pdf');
-    Route::get('technologyresults/{id}', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
-    Route::get('customerresults/{id}', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
-    Route::get('operationresults/{id}', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
-    Route::get('strategyresults/{id}', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
-    Route::get('cultureresults/{id}', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
+    Route::get('technologyresults', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
+    Route::get('customerresults', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
+    Route::get('operationresults', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
+    Route::get('strategyresults', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
+    Route::get('cultureresults', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
 
     Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
     Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');
@@ -139,6 +141,11 @@ Route::middleware(['auth', 'user-access:admin','prevent-back-history','web'])->g
     Route::get('/competancy/govorganization/mgt/{id}', [CompetancyAssessmentController::class, 'govManagement'])->name('competancyGovorganizationManagement');
 
     Route::get('/searchGov', [CompetancyAssessmentController::class, 'search']);
+
+    Route::get('/cdio', [DeepAssessmentController::class, 'index'])->name('cdio');
+
+    Route::get('/add/organization', [AddNewOrganization::class, 'create'])->name('addOrganization');
+    Route::post('/store/organization', [AddNewOrganization::class, 'store'])->name('storeOrganization');
 
 });
 

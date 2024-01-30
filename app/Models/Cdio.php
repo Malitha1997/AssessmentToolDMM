@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cdio extends Model
 {
-    public function governmentOrganization(){
-        return $this->hasOne(GovernmentOrganizationDetail::class);
+    public function govorganizationdetail(){
+        return $this->belongsTo(Govorganizationdetail::class);
     }
 }
