@@ -15,6 +15,8 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     {{--  <link rel="stylesheet" href="{{ asset('cssfile/chart.css') }}">  --}}
 </head>
 
@@ -36,12 +38,13 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-white">
                                     <li><a class="dropdown-item" href="{{ route('competancyDashboard') }}" style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;">Competancy Assessment</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('cdio') }}" style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;">Deep Assessment</a></li>
                                     <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                                 </ul>
                             </li>
                             <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="150"><a class="nav-link" href="{{ route('create-user') }}"><img src="{{ asset('img/Mask group(4).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Create User</span></a></li>
-                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="#"><img src="{{ asset('img/Mask group(5).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>
+                            <li class="nav-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200"><a class="nav-link" href="{{route('addOrganization')}}"><img src="{{ asset('img/Mask group(5).png') }}"><span style="color: #5f2b84;font-family: Poppins, sans-serif;font-size: 16px;margin-left: 10px;">Settings</span></a></li>
                         </ul>
                     </div>
                 </a>

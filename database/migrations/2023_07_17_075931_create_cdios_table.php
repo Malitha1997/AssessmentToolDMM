@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cdio_name');
             $table->string('cdio_email');
             $table->string('cdio_contact_number');
+            $table->string('action')->default('deactive');
             $table->foreignId('govorganizationdetail_id')->constrained('govorganizationdetails');
         });
     }
