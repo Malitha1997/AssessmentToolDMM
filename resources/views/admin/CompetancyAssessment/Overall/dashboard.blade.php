@@ -36,16 +36,16 @@
     <div class="row">
         <div class="col-md-6" style="border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);height: 540px;">
              
-                <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
+                {{--<form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px"> --}}
                     <div class="col">
-                        <input id="searchText" placeholder="   Search by Name or ID..." name="searchText" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
+                        <input class="form-control-md" id="search" name="search" type="text" placeholder="   Search by Name..." style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
                     <div class="col">               
-                            <button id="searchButton" type="submit" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
+                            <button id="searchButton" type="button" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" fill="currentColor"></path>
                             </svg>Search</button>
                     </div> 
-                </form> 
+                {{--</form>  --}}
                 
             <div class="table-responsive" style="margin-top: 10px;height: 450px;">
                 <table class="table">
@@ -56,7 +56,7 @@
                             <th style="text-align: center;">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="org_table_body">
                     @foreach($counts->groupBy('gov_org_name') as $orgName => $orgCounts)
                     <tr style="text-align: center;">
                         <td style="font-size: 12px; text-align: left; font-size: 15px">{{ $orgName }}</td>
@@ -160,16 +160,16 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-                <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
+                {{--<form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">--}}
                     <div class="col">
-                        <input id="searchText2" name="searchText2" type="text" placeholder="   Search by Name or ID..." style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
+                        <input id="search2" name="search2" type="text" placeholder="   Search by Name..." style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
                     <div class="col">               
-                            <button id="searchButton" type="submit" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
+                            <button id="searchButton" type="button" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" fill="currentColor"></path>
                             </svg>Search</button>
                     </div> 
-                </form> 
+                {{--</form> --}}
             <div class="table-responsive" style="margin-top: 40px;height: 450px;margin-left: 50px;width: 480px;">
                 <table class="table">
                     <thead>
@@ -178,7 +178,7 @@
                             <th>Number of Responses</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="org_table_body2">
                         @foreach($govIctOrgCounts as $govIctOrgCount)
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govIctOrgCount -> gov_org_name}}</td>
@@ -256,16 +256,16 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-        <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
+        {{--<form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">--}}
                     <div class="col">
-                        <input id="searchText3" placeholder="   Search by Name or ID..." name="searchText3" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
+                        <input id="search3" name="search3" type="text" placeholder="   Search by Name..."  style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
                     <div class="col">               
-                            <button id="searchButton" type="submit" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
+                            <button id="searchButton" type="button" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" fill="currentColor"></path>
                             </svg>Search</button>
                     </div> 
-                </form> 
+                {{--</form> --}}
             <div class="table-responsive" style="margin-top: 40px;height: 450px;margin-left: 50px;width: 480px;">
                 <table class="table">
                     <thead>
@@ -274,7 +274,7 @@
                             <th>Number of Responses</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="org_table_body3">
                         @foreach($govDigitalGovernmentOrgCounts as $govDigitalGovernmentOrgCount)
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govDigitalGovernmentOrgCount->gov_org_name}}</td>
@@ -352,16 +352,16 @@
             </div>
         </div>
         <div class="col-xxl-5" style="height: 460px;">
-        <form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">
+        {{--<form class="form-control" method="GET" action="{{route('search')}}" style="border-width:0px;height:70px">--}}
                     <div class="col">
-                        <input id="searchText4" placeholder="   Search by Name or ID..." name="searchText4" type="text" style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
+                        <input id="search4" name="search4" type="text" placeholder="   Search by Name..."   style="width: 580px;height: 52px;margin-left: -10px;margin-top: 20px;border: 1px solid #545658;text-align: left;border-radius: 5px;" />
                     </div>
                     <div class="col">               
-                            <button id="searchButton" type="submit" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
+                            <button id="searchButton" type="button" class="btn btn-primary" style="text-align: center;margin-left: 400px;width: 169px;height: 52px;font-size: 18px;border-radius: 5px;border: 2px solid #5f2b84;color: rgb(95,43,132);background: rgba(13,110,253,0);margin-top: -77px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 34px;margin-right: 10px;width: 30px;height: 30px;margin-left: -10px;">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.319 14.4326C20.7628 11.2941 20.542 6.75347 17.6569 3.86829C14.5327 0.744098 9.46734 0.744098 6.34315 3.86829C3.21895 6.99249 3.21895 12.0578 6.34315 15.182C9.22833 18.0672 13.769 18.2879 16.9075 15.8442C16.921 15.8595 16.9351 15.8745 16.9497 15.8891L21.1924 20.1317C21.5829 20.5223 22.2161 20.5223 22.6066 20.1317C22.9971 19.7412 22.9971 19.1081 22.6066 18.7175L18.364 14.4749C18.3493 14.4603 18.3343 14.4462 18.319 14.4326ZM16.2426 5.28251C18.5858 7.62565 18.5858 11.4246 16.2426 13.7678C13.8995 16.1109 10.1005 16.1109 7.75736 13.7678C5.41421 11.4246 5.41421 7.62565 7.75736 5.28251C10.1005 2.93936 13.8995 2.93936 16.2426 5.28251Z" fill="currentColor"></path>
                             </svg>Search</button>
                     </div> 
-                </form> 
+                {{--</form> --}}
             <div class="table-responsive" style="margin-top: 40px;height: 450px;margin-left: 50px;width: 480px;">
                 <table class="table">
                     <thead>
@@ -370,7 +370,7 @@
                             <th>Number of Responses</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="org_table_body4">
                         @foreach($govManagementOrgCounts as $govManagementOrgCount)
                         <tr style="text-align: center;">
                             <td style="font-size: 12px;text-align: left;font-size:15px">{{ $govManagementOrgCount -> gov_org_name}}</td>
@@ -453,6 +453,46 @@
                 ictCountElement.textContent = targetCount; // Ensure the final count is exact
             }
         }, interval);
+    });
+</script>
+<script>
+    $(document).ready(function(){
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#org_table_body tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+    $("#search2").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#org_table_body2 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+    $("#search3").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#org_table_body3 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+    $("#search4").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#org_table_body4 tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
     });
 </script>
 

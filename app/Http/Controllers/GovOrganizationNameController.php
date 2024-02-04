@@ -90,5 +90,13 @@ class GovOrganizationNameController extends Controller
           return response()->json($response);
     }
 
+    public function getOrganizationNames(Request $request)
+    {
+    $searchTerm = $request->input('searchTerm');
+    $organizationNames = Govorganizationname::where('gov_org_name', 'like', '%' . $searchTerm . '%')->get();
+
+    return response()->json($organizationNames);
+    }
+
 
 }
