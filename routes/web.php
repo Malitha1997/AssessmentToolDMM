@@ -68,6 +68,7 @@ Route::get('/register2',[RegisterController::class,'logingovofficialregister'])-
 Route::middleware(['auth', 'user-access:user','prevent-back-history','web'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('userHome');
     Route::get('/signup', [GovorganizationController::class, 'create'])->name('signup');
+    Route::get('/get-organization-names', [GovOrganizationNameController::class, 'getOrganizationNames']);
     Route::resource('govorganizations', GovorganizationController::class);
     Route::get('/livesearch',[SearchController::class,'livesearch'])->name('livesearch');
 

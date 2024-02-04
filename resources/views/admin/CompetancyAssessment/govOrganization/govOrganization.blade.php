@@ -9,10 +9,10 @@
     <div class="row" style="height: 479px;">
         <div class="col-md-6" style="height: 420px;border-radius: 10px;box-shadow: 0px 0px 12px 1px rgb(37,30,30);"><span style="color: #F01F75;">General Information</span>
             <div class="row">
-                <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">User Name</span><input type="text" style="margin-left: 150px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" value="{{ $govorganizationname->govorganizationdetail->user->username}}" readonly></div>
+                <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">User Name</span><input type="text" style="margin-left: 150px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" value="{{ $govorganizationname->govorganizationdetail->user->username ?? ''}}" readonly></div>
             </div>
             <div class="row">
-                <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">Organization Name</span><input type="text" style="margin-left: 84px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" value="{{ $govorganizationname->gov_org_name }}" readonly></div>
+                <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">Organization Name</span><input type="text" style="margin-left: 84px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" value="{{ $govorganizationname->gov_org_name ?? ''}}" readonly></div>
             </div>
             <div class="row">
                 <div class="col" style="margin-top: 30px;"><span style="color: var(--bs-emphasis-color);">CDIO Name</span><input type="text" style="margin-left: 145px;width: 300px;border-style: solid;border-color: var(--bs-secondary-border-subtle);border-radius: 5px;" readonly></div>
