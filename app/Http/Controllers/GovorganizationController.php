@@ -255,7 +255,7 @@ class GovorganizationController extends Controller
     {//dd($request);
         request()->validate([
             'user_id'=> 'required|string',
-            'gov_org_name'=> 'required|string|min:1|max:255',
+            'gov_org_name'=> 'required|string|min:1|max:255|unique:govorganizationnames,gov_org_name',
             'gov_org_address'=> 'required|string|min:1|max:255',
             'gov_org_email'=> 'required|regex:/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/',
             'org_category'=> 'required|string',
