@@ -122,11 +122,11 @@ Route::middleware(['auth', 'user-access:admin','prevent-back-history','web'])->g
     Route::resource('govorganizations', GovorganizationController::class);
     Route::get('/show_results/{id}', [PreliminaryAssessmentResultController::class, 'adminResult'])->name('show_results');
     Route::get('generate-pdf/{id}', [PDFController::class, 'adminGeneratePDF'])->name('generate-pdf');
-    Route::get('technologyresults', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
-    Route::get('customerresults', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
-    Route::get('operationresults', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
-    Route::get('strategyresults', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
-    Route::get('cultureresults', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
+    Route::get('technologyresults/{id}', [GoogleChartsController::class, 'adminTechnologyChart'])->name('technologyresults');
+    Route::get('customerresults/{id}', [GoogleChartsController::class, 'adminCustomerChart'])->name('customerresults');
+    Route::get('operationresults{id}', [GoogleChartsController::class, 'adminOperationChart'])->name('operationresults');
+    Route::get('strategyresults/{id}', [GoogleChartsController::class, 'adminStrategyChart'])->name('strategyresults');
+    Route::get('cultureresults/{id}', [GoogleChartsController::class, 'adminCultureChart'])->name('cultureresults');
 
     Route::get('create-user', [UserController::class, 'createAdmin'])->name('create-user');
     Route::get('createUser', [RegisterController::class, 'adminUserCreate'])->name('createUser');

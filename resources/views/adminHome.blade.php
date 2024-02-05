@@ -151,7 +151,7 @@
                 <div class="row" style="margin-top: 20px">
                     <span style="font-weight: bold;font-family: Poppins, sans-serif;font-size:24px;color:#1f2471;margin-top:20px;margin-left:20px">Preliminary Assessment<br> Completed Organizations</span>
                 </div>
-                <div class="row" style="margin-left: 10px;margin-top: 10px">
+                <div style="margin-left: 10px;margin-top: 10px;overflow-x:auto;">
                     <table class="table" style="width: 400px">
                         <thead class="thead-light" style="font-family: Poppins, sans-serif;">
                             <tr>
