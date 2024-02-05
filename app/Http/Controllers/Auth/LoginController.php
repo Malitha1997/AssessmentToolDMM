@@ -93,67 +93,39 @@ class LoginController extends Controller
 
      */
 
-    public function login(Request $request): RedirectResponse
-    {
-        $input = $request->all();
-
-        $this->validate($request, [
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-
-
-
-        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
-        {
-            if (auth()->user()->type == 'admin') {
-                return redirect()->route('home');
-            }else if (auth()->user()->type == 'manager') {
-                return redirect()->route('govofficial.home');
-            }else{
-                return redirect()->route('userHome');
-            }
-        }else{
-            return redirect()->route('login')
-                ->with('error','Username And Password Are Wrong.');
-        }
-    }
-
-    public function login2(Request $request): RedirectResponse
-    {
-        $input = $request->all();
-        $this->validate($request, [
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-        
-
-        if(auth()->attempt(array('username' => $input['username'], 'password' => $input['password'])))
-        {
-            if (auth()->user()->type == 'manager') {
-                return redirect()->route('manager.home');
-            }else{
-                return redirect()->route('home');
-            }
-        }else{
-            return redirect()->route('login2')
-                ->with('error','Username And Password Are Wrong.');
-        }
-    }
-
+     public function login(Request $request)
+     {
+         $this->validate($request, [
+             'username' => 'required',
+             'password' => 'required',
+         ]);
+     
+         $credentials = $request->only('username', 'password');
+     
+         if (auth()->attempt($credentials)) {
+             $user = auth()->user();
+             
+             switch ($user->type) {
+                 case 'admin':
+                     return redirect()->route('home');
+                     break;
+                 case 'manager':
+                     return redirect()->route('userHome');
+                     break;
+                 default:
+                     return redirect()->route('userHome');
+                     break;
+             }
+         }
+     
+         return redirect()->route('login')
+             ->withErrors(['username' => 'Invalid credentials'])
+             ->withInput($request->except('password')); // Except password for security reasons
+     }
+     
     public function logout(){
         Auth::logout();
         Session::flush();
-
-        // $type=Auth::user()->type;
-
-        // if (Auth::user()->type == '0') {
-        //     return redirect("login");
-        // }else if(Auth::user()->type == '1'){
-        //     return redirect("login");
-        // }else if(Auth::user()->type == '2'){
-        //     return redirect("login2");
-        // }
 
         return redirect("login");
 
@@ -168,4 +140,17 @@ class LoginController extends Controller
     public function logingovofficial(){
         return view('auth.login2');
     }
+
+
+
+
+    // $type=Auth::user()->type;
+
+        // if (Auth::user()->type == '0') {
+        //     return redirect("login");
+        // }else if(Auth::user()->type == '1'){
+        //     return redirect("login");
+        // }else if(Auth::user()->type == '2'){
+        //     return redirect("login2");
+        // }
 }
