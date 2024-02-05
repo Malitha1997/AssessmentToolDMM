@@ -56,19 +56,27 @@ class HomeController extends Controller
 
     public function index(): View
     {
-        $dataExists = Auth::user()->govorganizationdetail->percentage;
-        $technologyDataExists = Auth::user()->govorganizationdetail->technology;
-        $customerDataExists = Auth::user()->govorganizationdetail->customer;
-        $operationDataExists = Auth::user()->govorganizationdetail->operation;
-        $strategyDataExists = Auth::user()->govorganizationdetail->strategy;
-        $cultureDataExists = Auth::user()->govorganizationdetail->culture;
-        $cdioDataExists = Auth::user()->govorganizationdetail->cdio_name;
-        $users = Auth::user();
-        $govOrganizationDetail = $users->govorganizationdetail;
+        if(Auth::user()->govorganizationdetail != NULL){
+            $dataExists = Auth::user()->govorganizationdetail->percentage;
+            $technologyDataExists = Auth::user()->govorganizationdetail->technology;
+            $customerDataExists = Auth::user()->govorganizationdetail->customer;
+            $operationDataExists = Auth::user()->govorganizationdetail->operation;
+            $strategyDataExists = Auth::user()->govorganizationdetail->strategy;
+            $cultureDataExists = Auth::user()->govorganizationdetail->culture;
+            $cdioDataExists = Auth::user()->govorganizationdetail->cdio_name;
+            $users = Auth::user();
+            $govOrganizationDetail = $users->govorganizationdetail;
 
-        $resourceDataExists = $govOrganizationDetail ? $govOrganizationDetail->resource()->exists() : false;
+            $resourceDataExists = $govOrganizationDetail ? $govOrganizationDetail->resource()->exists() : false;
+        
+            return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists','resourceDataExists','users'));
+        }
+        else{
+            return view('home');
+        }
+        
 
-        return view('home',compact('dataExists','technologyDataExists','customerDataExists','operationDataExists','strategyDataExists','cultureDataExists','cdioDataExists','resourceDataExists','users'));
+        
     }
 
 

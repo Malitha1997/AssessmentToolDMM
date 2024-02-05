@@ -321,11 +321,11 @@ class GovorganizationController extends Controller
         }
         $governmentOrganization->save();
 
-        $user=new User;
+        // $user=new User;
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect("login");
+        return redirect()->route('userHome');
 
         // return view("auth.login");
     }
